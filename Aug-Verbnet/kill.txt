@@ -1,30 +1,5 @@
-NP V NP (Basic Transitive)
-  Syntax: NP[Agent] VERB NP[Asset]
-  Semantics:
-    * exist(start(E), Asset)
-    * exist(end(E), Asset)
-    * spend(during(E), Agent, Asset, ?Goal)
-NP V NP S_ING (NP-ING-SC)
-  Syntax: NP[Agent] VERB NP[Asset] NP[Goal +sc_ing]
-  Semantics:
-    * exist(start(E), Asset)
-    * exist(end(E), Asset)
-    * spend(during(E), Agent, Asset, Goal)
-NP.instrument V NP (Instrument Subject Alternation)
-  Syntax: NP[Instrument] VERB NP[Patient]
-  Semantics:
-    * alive(start(E), Patient)
-    * alive(result(E), Patient)
-    * cause(?Agent, E)
-    * use(during(E), ?Agent, Instrument)
-NP V NP (NP)
-  Syntax: NP[Agent] VERB NP[Patient]
-  Semantics:
-    * cause(Agent, E)
-    * subjugated(during(E), Patient)
-NP V NP PP.instrument (NP-PP; with-PP)
-  Syntax: NP[Agent] VERB NP[Patient] PREP[with] NP[Instrument]
-  Semantics:
-    * cause(Agent, E)
-    * subjugated(during(E), Patient)
-    * use(during(E), Agent, Instrument)
+NP[Agent] VERB NP[Asset]
+NP[Agent] VERB NP[Asset] NP[Goal +sc_ing]
+NP[Instrument] VERB NP[Patient]
+NP[Agent] VERB NP[Patient]
+NP[Agent] VERB NP[Patient] PREP[with] NP[Instrument]

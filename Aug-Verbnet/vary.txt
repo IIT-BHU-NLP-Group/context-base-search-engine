@@ -1,36 +1,8 @@
-NP.attribute V (Intransitive; Attribute Subject)
-  Syntax: NP[Patient] LEX['s] NP[Attribute] VERB
-  Semantics:
-    * change_value(during(E), Direction, Attribute, Patient)
-NP V PP.co-theme (PP; from/with-PP)
-  Syntax: NP[Theme] VERB PREP[from with] NP[Co-Theme]
-  Semantics:
-    * different(Theme, Co-Theme)
-NP V (Simple Reciprocal Intransitive)
-  Syntax: NP[Theme +plural] VERB
-  Semantics:
-    * different(Theme, Co-Theme)
-NP V NP.patient (Basic Transitive; Causative)
-  Syntax: NP[Agent] VERB NP[Patient]
-  Semantics:
-    * cause(Agent, E)
-    * state(result(E), Endstate, Patient)
-NP V NP PP.instrument (NP-PP; Instrument-PP)
-  Syntax: NP[Agent] VERB NP[Patient] PREP[with] NP[Instrument]
-  Semantics:
-    * cause(Agent, E)
-    * state(result(E), Endstate, Patient)
-    * use(during(E), Agent, Instrument)
-NP.patient V (Intransitive; Inchoative)
-  Syntax: NP[Patient] VERB
-  Semantics:
-    * state(result(E), Endstate, Patient)
-NP V ADV-Middle (Middle Construction)
-  Syntax: NP[Patient] VERB ADV
-  Semantics:
-    * state(result(E), Endstate, Patient)
-NP.instrument V NP (Instrument Subject Alternation)
-  Syntax: NP[Instrument] VERB NP[Patient]
-  Semantics:
-    * use(during(E), ?Agent, Instrument)
-    * state(result(E), Endstate, Patient)
+NP[Patient] LEX['s] NP[Attribute] VERB
+NP[Theme] VERB PREP[from with] NP[Co-Theme]
+NP[Theme +plural] VERB
+NP[Agent] VERB NP[Patient]
+NP[Agent] VERB NP[Patient] PREP[with] NP[Instrument]
+NP[Patient] VERB
+NP[Patient] VERB ADV
+NP[Instrument] VERB NP[Patient]

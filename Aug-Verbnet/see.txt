@@ -1,65 +1,15 @@
-NP V how S (HOW-S)
-  Syntax: NP[Agent] VERB NP[Theme +how_extract]
-  Semantics:
-    * describe(during(E), Agent, Theme)
-    * cause(Agent, E)
-NP V how S_INF (HOW-TO-INF)
-  Syntax: NP[Agent] VERB NP[Theme +wh_inf]
-  Semantics:
-    * describe(during(E), Agent, Theme)
-    * cause(Agent, E)
-NP V NP ADJ (NP-VEN-NP-OMIT)
-  Syntax: NP[Agent] VERB NP[Theme +np_ppart] NP[Attribute -sentential]
-  Semantics:
-    * consider(during(E), Agent, Theme)
-NP V whether/if S (WH-S)
-  Syntax: NP[Agent] VERB NP[Theme +wh_comp]
-  Semantics:
-    * consider(during(E), Agent, Theme)
-NP V what S (WHAT-S)
-  Syntax: NP[Agent] VERB NP[Theme +what_extract]
-  Semantics:
-    * consider(during(E), Agent, Theme)
-NP V what S_INF (WHAT-TO-INF)
-  Syntax: NP[Agent] VERB NP[Theme +what_inf]
-  Semantics:
-    * consider(during(E), Agent, Theme)
-NP V how S (HOW-S)
-  Syntax: NP[Agent] VERB NP[Theme +how_extract]
-  Semantics:
-    * discover(during(E), Agent, Theme, ?Source)
-NP V how S_INF (HOW-TO-INF)
-  Syntax: NP[Agent] VERB NP[Theme +wh_inf]
-  Semantics:
-    * discover(during(E), Agent, Theme, ?Source)
-NP V NP (Basic Transitive)
-  Syntax: NP[Agent] VERB NP[Theme -sentential]
-  Semantics:
-    * discover(during(E), Agent, Theme, ?Source)
-NP V that S (S)
-  Syntax: NP[Agent] VERB NP[Theme +that_comp]
-  Semantics:
-    * discover(during(E), Agent, Theme, ?Source)
-NP V what S (WHAT-S)
-  Syntax: NP[Agent] VERB NP[Theme +what_extract]
-  Semantics:
-    * discover(during(E), Agent, Theme, ?Source)
-NP V what S_INF (WHAT-TO-INF)
-  Syntax: NP[Agent] VERB NP[Theme +what_inf]
-  Semantics:
-    * discover(during(E), Agent, Theme, ?Source)
-NP V S (NP-INF-OC)
-  Syntax: NP[Experiencer] VERB NP[Stimulus +oc_bare_inf]
-  Semantics:
-    * perceive(during(E), Experiencer, Stimulus)
-    * in_reaction_to(E, Stimulus)
-NP V S_ING (NP-ING-OC)
-  Syntax: NP[Experiencer] VERB NP[Stimulus +oc_ing]
-  Semantics:
-    * perceive(during(E), Experiencer, Stimulus)
-    * in_reaction_to(E, Stimulus)
-NP V S_ING (POSSING)
-  Syntax: NP[Experiencer] VERB NP[Stimulus +poss_ing]
-  Semantics:
-    * perceive(during(E), Experiencer, Stimulus)
-    * in_reaction_to(E, Stimulus)
+NP[Agent] VERB NP[Theme +how_extract]
+NP[Agent] VERB NP[Theme +wh_inf]
+NP[Agent] VERB NP[Theme +np_ppart] NP[Attribute -sentential]
+NP[Agent] VERB NP[Theme +wh_comp]
+NP[Agent] VERB NP[Theme +what_extract]
+NP[Agent] VERB NP[Theme +what_inf]
+NP[Agent] VERB NP[Theme +how_extract]
+NP[Agent] VERB NP[Theme +wh_inf]
+NP[Agent] VERB NP[Theme -sentential]
+NP[Agent] VERB NP[Theme +that_comp]
+NP[Agent] VERB NP[Theme +what_extract]
+NP[Agent] VERB NP[Theme +what_inf]
+NP[Experiencer] VERB NP[Stimulus +oc_bare_inf]
+NP[Experiencer] VERB NP[Stimulus +oc_ing]
+NP[Experiencer] VERB NP[Stimulus +poss_ing]

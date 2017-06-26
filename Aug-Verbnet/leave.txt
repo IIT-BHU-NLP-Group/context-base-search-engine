@@ -1,89 +1,15 @@
-NP V PP.attribute
-  Syntax: NP[Patient] VERB PREP[in] NP[Result -sentential]
-  Semantics:
-    * state(result(E), Result, Patient)
-    * Pred(result(E), Patient)
-NP V NP (Locative Preposition Drop)
-  Syntax: NP[Theme] VERB NP[Initial_Location]
-  Semantics:
-    * motion(during(E), Theme)
-    * path(during(E), Theme, Initial_Location, ?Trajectory, ?Destination)
-NP V NP PP.recipient (NP-PP; Recipient-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[to] NP[Recipient]
-  Semantics:
-    * has_possession(start(E), Agent, Theme)
-    * has_possession(end(E), Recipient, Theme)
-    * transfer(during(E), Theme)
-    * cause(Agent, E)
-NP V NP-Fulfilling PP.theme (Fulfilling Alternation)
-  Syntax: NP[Agent] VERB NP[Recipient] PREP[with] NP[Theme]
-  Semantics:
-    * has_possession(start(E), Agent, Theme)
-    * has_possession(end(E), Recipient, Theme)
-    * transfer(during(E), Theme)
-    * cause(Agent, E)
-NP V NP (Transitive)
-  Syntax: NP[Agent] VERB NP[Theme]
-  Semantics:
-    * has_possession(start(E), Agent, Theme)
-    * has_possession(end(E), ?Recipient, Theme)
-    * transfer(during(E), Theme)
-    * cause(Agent, E)
-NP V NP PP.goal (NP-PP; Goal-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[to] NP[Goal]
-  Semantics:
-    * has_possession(start(E), Agent, Theme)
-    * future_possession(end(E), Goal, Theme)
-    * cause(Agent, E)
-NP V NP.theme (PP) (Transitive; Theme Object)
-  Syntax: NP[Agent] VERB NP[Theme]
-  Semantics:
-    * has_possession(start(E), Agent, Theme)
-    * future_possession(end(E), ?Goal, Theme)
-    * cause(Agent, E)
-NP V NP-Dative NP (Dative)
-  Syntax: NP[Agent] VERB NP[Goal] NP[Theme]
-  Semantics:
-    * has_possession(start(E), Agent, Theme)
-    * future_possession(end(E), Goal, Theme)
-    * cause(Agent, E)
-NP V NP PP.goal (NP-PP; for-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[for] NP[Goal]
-  Semantics:
-    * has_possession(start(E), Agent, Theme)
-    * future_possession(end(E), Goal, Theme)
-    * cause(Agent, E)
-NP V NP PP.location (NP-PP; locative-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[+loc] NP[Location]
-  Semantics:
-    * Prep(during(E), Theme, Location)
-    * cause(Agent, E)
-NP V NP (Basic Transitive)
-  Syntax: NP[Agent] VERB NP[Theme]
-  Semantics:
-    * has_possession(during(E), Agent, Theme)
-NP V (Basic Intransitive)
-  Syntax: NP[Theme] VERB
-  Semantics:
-    * motion(during(E), Theme)
-    * location(start(E), Theme, ?Source)
-    * location(end(E), Theme, ?Source)
-    * direction(during(E), from, Theme, ?Source)
-NP V (Intransitive)
-  Syntax: NP[Agent] VERB
-  Semantics:
-    * cause(Agent, E)
-    * location(start(E), ?Source)
-    * location(end(E), ?Source)
-NP V NP (NP)
-  Syntax: NP[Agent] VERB NP[Source]
-  Semantics:
-    * cause(Agent, E)
-    * location(start(E), Source)
-    * location(end(E), Source)
-NP V PP.source (PP; from-PP)
-  Syntax: NP[Agent] VERB PREP[from] NP[Source -sentential]
-  Semantics:
-    * cause(Agent, E)
-    * location(start(E), Source)
-    * location(end(E), Source)
+NP[Patient] VERB PREP[in] NP[Result -sentential]
+NP[Theme] VERB NP[Initial_Location]
+NP[Agent] VERB NP[Theme] PREP[to] NP[Recipient]
+NP[Agent] VERB NP[Recipient] PREP[with] NP[Theme]
+NP[Agent] VERB NP[Theme]
+NP[Agent] VERB NP[Theme] PREP[to] NP[Goal]
+NP[Agent] VERB NP[Theme]
+NP[Agent] VERB NP[Goal] NP[Theme]
+NP[Agent] VERB NP[Theme] PREP[for] NP[Goal]
+NP[Agent] VERB NP[Theme] PREP[+loc] NP[Location]
+NP[Agent] VERB NP[Theme]
+NP[Theme] VERB
+NP[Agent] VERB
+NP[Agent] VERB NP[Source]
+NP[Agent] VERB PREP[from] NP[Source -sentential]

@@ -1,30 +1,6 @@
-NP V (Basic Instransitive)
-  Syntax: NP[Agent] VERB
-  Semantics:
-    * think(during(E), Agent, ?Topic)
-    * cause(E, Agent)
-NP V PP.topic (PP; about-PP)
-  Syntax: NP[Agent] VERB PREP[about] NP[Topic -sentential]
-  Semantics:
-    * think(during(E), Agent, Topic)
-    * cause(E, Agent)
-NP V PP.theme S_ING (P-ING-SC; about-PP)
-  Syntax: NP[Agent] VERB PREP[about] NP[Topic +sc_ing]
-  Semantics:
-    * think(during(E), Agent, Topic)
-    * cause(E, Agent)
-NP V PP.topic what S (P-WHAT-S; about-PP)
-  Syntax: NP[Agent] VERB PREP[about] NP[Topic +what_extract]
-  Semantics:
-    * think(during(E), Agent, Topic)
-    * cause(E, Agent)
-NP V PP.topic what S_INF (P-WHAT-TO-INF; about-PP)
-  Syntax: NP[Agent] VERB PREP[about] NP[Topic +what_inf]
-  Semantics:
-    * think(during(E), Agent, Topic)
-    * cause(E, Agent)
-NP V PP.stimulus (PP; Stimulus-PP)
-  Syntax: NP[Experiencer] VERB PREP[over] NP[Stimulus]
-  Semantics:
-    * emotional_state(result(E), Emotion, Experiencer)
-    * in_reaction_to(E, Stimulus)
+NP[Agent] VERB
+NP[Agent] VERB PREP[about] NP[Topic -sentential]
+NP[Agent] VERB PREP[about] NP[Topic +sc_ing]
+NP[Agent] VERB PREP[about] NP[Topic +what_extract]
+NP[Agent] VERB PREP[about] NP[Topic +what_inf]
+NP[Experiencer] VERB PREP[over] NP[Stimulus]

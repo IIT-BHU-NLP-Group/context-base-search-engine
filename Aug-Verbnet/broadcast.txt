@@ -1,85 +1,17 @@
-NP V NP (Basic Transitive)
-  Syntax: NP[Agent] VERB NP[Topic]
-  Semantics:
-    * transfer_info(during(E), Agent, ?Recipient, Topic)
-    * cause(Agent, E)
-NP V NP.recipient (Transitive; Recipient Object, ellided Topic)
-  Syntax: NP[Agent] VERB NP[Recipient]
-  Semantics:
-    * transfer_info(during(E), Agent, Recipient, ?Topic)
-    * cause(Agent, E)
-NP V NP PP.recipient (NP-PP; to-PP)
-  Syntax: NP[Agent] VERB NP[Topic] PREP[to] NP[Recipient]
-  Semantics:
-    * transfer_info(during(E), Agent, Recipient, Topic)
-    * cause(Agent, E)
-NP V NP-Dative NP (Dative)
-  Syntax: NP[Agent] VERB NP[Recipient] NP[Topic]
-  Semantics:
-    * transfer_info(during(E), Agent, Recipient, Topic)
-    * cause(Agent, E)
-NP V NP.recipient S-Quote (NP-QUOT; Recipient Object)
-  Syntax: NP[Agent] VERB NP[Recipient] NP[Topic]
-  Semantics:
-    * transfer_info(during(E), Agent, Recipient, Topic)
-    * cause(Agent, E)
-NP V PP.recipient S-Quote (PP-QUOT; Recipient-PP)
-  Syntax: NP[Agent] VERB PREP[to] NP[Recipient] NP[Topic]
-  Semantics:
-    * transfer_info(during(E), Agent, Recipient, Topic)
-    * cause(Agent, E)
-NP V NP PP.topic (NP-PP; Topic-PP)
-  Syntax: NP[Agent] VERB NP[Recipient] PREP[about] NP[Topic]
-  Semantics:
-    * transfer_info(during(E), Agent, Recipient, Topic)
-    * cause(Agent, E)
-NP V that S (S)
-  Syntax: NP[Agent] VERB NP[Topic +that_comp]
-  Semantics:
-    * transfer_info(during(E), Agent, ?Recipient, Topic)
-    * cause(Agent, E)
-NP V when S_INF (WHEN-TO-INF)
-  Syntax: NP[Agent] VERB NP[Topic +wh_inf]
-  Semantics:
-    * transfer_info(during(E), Agent, ?Recipient, Topic)
-    * cause(Agent, E)
-NP V S_INF (TO-INF-AC)
-  Syntax: NP[Agent] VERB NP[Topic +ac_to_inf]
-  Semantics:
-    * transfer_info(during(E), Agent, ?Recipient, Topic)
-    * cause(Agent, E)
-NP V NP.recipient that S (NP-S; Recipient Object)
-  Syntax: NP[Agent] VERB NP[Recipient] NP[Topic +that_comp]
-  Semantics:
-    * transfer_info(during(E), Agent, Recipient, Topic)
-    * cause(Agent, E)
-NP V NP.recipient when S_INF (NP-WHEN-TO-INF; Recipient Object)
-  Syntax: NP[Agent] VERB NP[Recipient] NP[Topic +wh_inf]
-  Semantics:
-    * transfer_info(during(E), Agent, Recipient, Topic)
-    * cause(Agent, E)
-NP V NP.recipient S_INF (NP-TO-INF-AC; Recipient Object)
-  Syntax: NP[Agent] VERB NP[Recipient] NP[Topic +ac_to_inf]
-  Semantics:
-    * transfer_info(during(E), Agent, Recipient, Topic)
-    * cause(Agent, E)
-NP V PP.recipient that S (PP-S; Recipient-PP)
-  Syntax: NP[Agent] VERB PREP[to] NP[Recipient] NP[Topic +that_comp]
-  Semantics:
-    * transfer_info(during(E), Agent, Recipient, Topic)
-    * cause(Agent, E)
-NP V PP.recipient when S_INF (PP-WHEN-TO-INF; Recipient-PP)
-  Syntax: NP[Agent] VERB PREP[to] NP[Recipient] NP[Topic +wh_inf]
-  Semantics:
-    * transfer_info(during(E), Agent, Recipient, Topic)
-    * cause(Agent, E)
-NP V PP.recipient S_INF (PP-TO-INF-AC; Recipient-PP)
-  Syntax: NP[Agent] VERB PREP[to] NP[Recipient] NP[Topic +ac_to_inf]
-  Semantics:
-    * transfer_info(during(E), Agent, Recipient, Topic)
-    * cause(Agent, E)
-NP V for NP S_INF (FOR-TO-INF)
-  Syntax: NP[Agent] VERB PREP[for] NP[Recipient] NP[Topic +for_comp]
-  Semantics:
-    * transfer_info(during(E), Agent, Recipient, Topic)
-    * cause(Agent, E)
+NP[Agent] VERB NP[Topic]
+NP[Agent] VERB NP[Recipient]
+NP[Agent] VERB NP[Topic] PREP[to] NP[Recipient]
+NP[Agent] VERB NP[Recipient] NP[Topic]
+NP[Agent] VERB NP[Recipient] NP[Topic]
+NP[Agent] VERB PREP[to] NP[Recipient] NP[Topic]
+NP[Agent] VERB NP[Recipient] PREP[about] NP[Topic]
+NP[Agent] VERB NP[Topic +that_comp]
+NP[Agent] VERB NP[Topic +wh_inf]
+NP[Agent] VERB NP[Topic +ac_to_inf]
+NP[Agent] VERB NP[Recipient] NP[Topic +that_comp]
+NP[Agent] VERB NP[Recipient] NP[Topic +wh_inf]
+NP[Agent] VERB NP[Recipient] NP[Topic +ac_to_inf]
+NP[Agent] VERB PREP[to] NP[Recipient] NP[Topic +that_comp]
+NP[Agent] VERB PREP[to] NP[Recipient] NP[Topic +wh_inf]
+NP[Agent] VERB PREP[to] NP[Recipient] NP[Topic +ac_to_inf]
+NP[Agent] VERB PREP[for] NP[Recipient] NP[Topic +for_comp]

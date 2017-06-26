@@ -1,42 +1,8 @@
-NP V NP (NP)
-  Syntax: NP[Agent] VERB NP[Theme]
-  Semantics:
-    * cause(Agent, E)
-    * location(start(E), Theme, ?Source)
-    * location(end(E), Theme, ?Source)
-NP V NP PP.source (NP-PP; from-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[from] NP[Source]
-  Semantics:
-    * cause(Agent, E)
-    * location(start(E), Theme, Source)
-    * location(end(E), Theme, Source)
-NP V NP PP.attribute (NP-PP; as-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[as] NP[Attribute -sentential]
-  Semantics:
-    * cause(Agent, E)
-    * location(start(E), Theme, ?Source, Attribute)
-    * location(end(E), Theme, ?Source, Attribute)
-NP.theme V (Intransitive; Inchoative)
-  Syntax: NP[Theme] VERB
-  Semantics:
-    * end(E, Theme)
-NP V NP.theme (NP; Causative variant)
-  Syntax: NP[Agent] VERB NP[Theme]
-  Semantics:
-    * end(E, Theme)
-    * cause(Agent, E)
-NP V PP.instrument (PP; with-PP)
-  Syntax: NP[Theme] VERB PREP[with] NP[Instrument]
-  Semantics:
-    * end(E, Theme)
-    * use(during(E), ?Agent, Instrument)
-NP V NP.theme PP.instrument (NP-PP; Causative variant)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[with] NP[Instrument]
-  Semantics:
-    * end(E, Theme)
-    * use(during(E), Agent, Instrument)
-    * cause(Agent, E)
-NP V ADJ-Middle ((SUBCAT ADL))
-  Syntax: NP[Theme] VERB ADV
-  Semantics:
-    * end(E, Theme)
+NP[Agent] VERB NP[Theme]
+NP[Agent] VERB NP[Theme] PREP[from] NP[Source]
+NP[Agent] VERB NP[Theme] PREP[as] NP[Attribute -sentential]
+NP[Theme] VERB
+NP[Agent] VERB NP[Theme]
+NP[Theme] VERB PREP[with] NP[Instrument]
+NP[Agent] VERB NP[Theme] PREP[with] NP[Instrument]
+NP[Theme] VERB ADV

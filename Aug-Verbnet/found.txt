@@ -1,26 +1,5 @@
-NP V NP PP.source (NP-PP; on-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[on] NP[Source]
-  Semantics:
-    * cause(E, Agent)
-    * base(E, Theme, Source)
-NP V NP PP.source whether S (NP-P-WH-S; on-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[on] NP[Source +wh_comp]
-  Semantics:
-    * cause(E, Agent)
-    * base(E, Theme, Source)
-NP V NP PP.source S_ING (NP-P-POSSING; on-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[on] NP[Source +poss_ing]
-  Semantics:
-    * cause(E, Agent)
-    * base(E, Theme, Source)
-NP V NP PP.source S (NP-P-NP-ING; on-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[on] NP[Source +ac_ing]
-  Semantics:
-    * cause(E, Agent)
-    * base(E, Theme, Source)
-NP V NP PP.instrument (NP-PP; with-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[with] NP[Instrument]
-  Semantics:
-    * begin(E, Theme)
-    * use(during(E), Agent, Instrument)
-    * cause(Agent, E)
+NP[Agent] VERB NP[Theme] PREP[on] NP[Source]
+NP[Agent] VERB NP[Theme] PREP[on] NP[Source +wh_comp]
+NP[Agent] VERB NP[Theme] PREP[on] NP[Source +poss_ing]
+NP[Agent] VERB NP[Theme] PREP[on] NP[Source +ac_ing]
+NP[Agent] VERB NP[Theme] PREP[with] NP[Instrument]

@@ -1,12 +1,3 @@
-NP V NP to be NP (Infinitival Copular Clause)
-  Syntax: NP[Agent] VERB NP[Theme] NP[Predicate]
-  Semantics:
-    * declare(during(E), Agent, Theme, Predicate)
-NP V that S (S)
-  Syntax: NP[Agent] VERB NP[Theme +that_comp]
-  Semantics:
-    * declare(during(E), Agent, Theme, ?Predicate)
-NP V NP (Basic Transitive)
-  Syntax: NP[Agent] VERB NP[Theme -sentential]
-  Semantics:
-    * declare(during(E), Agent, Theme, ?Predicate)
+NP[Agent] VERB NP[Theme] NP[Predicate]
+NP[Agent] VERB NP[Theme +that_comp]
+NP[Agent] VERB NP[Theme -sentential]

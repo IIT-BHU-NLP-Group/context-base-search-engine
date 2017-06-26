@@ -1,15 +1,3 @@
-NP V PP.co-agent how S (PP-HOW-S; with-PP)
-  Syntax: NP[Agent] VERB PREP[with] NP[Co-Agent] NP[Theme +how_extract]
-  Semantics:
-    * social_interaction(during(E), Agent, Co-Agent)
-    * about(E, Theme)
-NP V PP.co-agent how S_INF (PP-HOW-TO-INF; with-PP)
-  Syntax: NP[Agent] VERB PREP[with] NP[Co-Agent] NP[Theme +wh_inf]
-  Semantics:
-    * social_interaction(during(E), Agent, Co-Agent)
-    * about(E, Theme)
-NP V what S_INF (WHAT-TO-INF)
-  Syntax: NP[Agent +plural] VERB NP[Theme +what_inf]
-  Semantics:
-    * social_interaction(during(E), Agent_i, Agent_j)
-    * about(E, Theme)
+NP[Agent] VERB PREP[with] NP[Co-Agent] NP[Theme +how_extract]
+NP[Agent] VERB PREP[with] NP[Co-Agent] NP[Theme +wh_inf]
+NP[Agent +plural] VERB NP[Theme +what_inf]

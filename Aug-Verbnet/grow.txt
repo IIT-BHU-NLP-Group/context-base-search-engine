@@ -1,179 +1,28 @@
-NP V (Basic Intransitive)
-  Syntax: NP[Theme] VERB
-  Semantics:
-    * appear(during(E), Theme)
-NP V PP.location (PP; Location-PP)
-  Syntax: NP[Theme] VERB PREP[+loc] NP[Location]
-  Semantics:
-    * appear(during(E), Theme)
-    * Prep(start(E), Theme, Location)
-    * Prep(end(E), Theme, Location)
-There V NP PP (NP-PP; Expletive-there Subject)
-  Syntax: LEX[there] VERB NP[Theme] PREP[+loc] NP[Location]
-  Semantics:
-    * appear(during(E), Theme)
-    * Prep(start(E), Theme, Location)
-    * Prep(end(E), Theme, Location)
-PP.location V NP (Locative Inversion)
-  Syntax: PREP[+loc] NP[Location] VERB NP[Theme]
-  Semantics:
-    * appear(during(E), Theme)
-    * Prep(start(E), Theme, Location)
-    * Prep(end(E), Theme, Location)
-NP V ADV (ADVP-PRED; here/there)
-  Syntax: NP[Theme] VERB NP[Location +adv_loc]
-  Semantics:
-    * appear(during(E), Theme)
-    * location(start(E), Theme, Location)
-    * location(end(E), Theme, Location)
-NP V NP ADJ
-  Syntax: NP[Patient] VERB NP[Result]
-  Semantics:
-    * state(result(E), Result, Patient)
-    * Pred(result(E), Patient)
-NP V NP (Basic Transitive)
-  Syntax: NP[Agent] VERB NP[Product]
-  Semantics:
-    * exist(start(E), Product)
-    * exist(result(E), Product)
-    * made_of(result(E), Product, ?Material)
-    * cause(Agent, E)
-NP V (Unspecified Object)
-  Syntax: NP[Agent] VERB
-  Semantics:
-    * exist(start(E), ?Product)
-    * exist(result(E), ?Product)
-    * made_of(result(E), ?Product, ?Material)
-    * cause(Agent, E)
-NP V NP.product PP.material (Material/Product Alternation Transitive; Product Object)
-  Syntax: NP[Agent] VERB NP[Product] PREP[from out_of] NP[Material]
-  Semantics:
-    * exist(start(E), Product)
-    * exist(result(E), Product)
-    * made_of(result(E), Product, Material)
-    * cause(Agent, E)
-NP V NP.material PP.product (Material/Product Alternation Transitive; Material Object)
-  Syntax: NP[Agent] VERB NP[Material] PREP[into] NP[Product]
-  Semantics:
-    * exist(start(E), Product)
-    * exist(result(E), Product)
-    * made_of(result(E), Product, Material)
-    * cause(Agent, E)
-NP V NP PP.beneficiary (NP-PP; for-PP)
-  Syntax: NP[Agent] VERB NP[Product] PREP[for] NP[Beneficiary]
-  Semantics:
-    * exist(start(E), Product)
-    * exist(result(E), Product)
-    * made_of(result(E), Product, ?Material)
-    * cause(Agent, E)
-    * benefit(E, Beneficiary)
-NP V NP.beneficiary NP PP (NP-NP; Object Beneficiary)
-  Syntax: NP[Agent] VERB NP[Beneficiary] NP[Product] PREP[from out_of] NP[Material]
-  Semantics:
-    * exist(start(E), Product)
-    * exist(result(E), Product)
-    * made_of(result(E), Product, Material)
-    * cause(Agent, E)
-    * benefit(E, Beneficiary)
-NP V NP PP.material PP.beneficiary (NP-PP-PP; Source-PP Beneficiary-PP)
-  Syntax: NP[Agent] VERB NP[Product] PREP[from out_of] NP[Material] PREP[for] NP[Beneficiary]
-  Semantics:
-    * exist(start(E), Product)
-    * exist(result(E), Product)
-    * made_of(result(E), Product, Material)
-    * cause(Agent, E)
-    * benefit(E, Beneficiary)
-NP V NP PP.beneficiary (NP-PP; for-PP)
-  Syntax: NP[Agent] VERB NP[Material] PREP[for] NP[Beneficiary]
-  Semantics:
-    * exist(start(E), ?Product)
-    * exist(result(E), ?Product)
-    * made_of(result(E), ?Product, Material)
-    * cause(Agent, E)
-    * benefit(E, Beneficiary)
-NP V NP PP.product PP.beneficiary (NP-PP-PP; Product-PP Beneficiary-PP)
-  Syntax: NP[Agent] VERB NP[Material] PREP[into] NP[Product] PREP[for] NP[Beneficiary]
-  Semantics:
-    * exist(start(E), Product)
-    * exist(result(E), Product)
-    * made_of(result(E), Product, Material)
-    * cause(Agent, E)
-    * benefit(E, Beneficiary)
-NP.material V NP (Raw Material Subject)
-  Syntax: NP[Material] VERB NP[Product]
-  Semantics:
-    * exist(start(E), Product)
-    * exist(result(E), Product)
-    * made_of(result(E), Product, Material)
-    * cause(?Agent, E)
-NP V NP NP PP.asset (NP-NP-PP; Asset-PP)
-  Syntax: NP[Agent] VERB NP[Beneficiary] NP[Product] PREP[for] NP[Asset]
-  Semantics:
-    * exist(start(E), Product)
-    * exist(result(E), Product)
-    * made_of(result(E), Product, ?Material)
-    * cause(Agent, E)
-    * benefit(E, Beneficiary)
-    * cost(E, Asset)
-NP V NP PP.material PP.asset (NP-PP-PP; Material-PP, Asset-PP)
-  Syntax: NP[Agent] VERB NP[Product] PREP[from out_of] NP[Material] PREP[for] NP[Asset]
-  Semantics:
-    * exist(start(E), Product)
-    * exist(result(E), Product)
-    * made_of(result(E), Product, Material)
-    * cause(Agent, E)
-    * cost(E, Asset)
-NP.attribute V (Intransitive; Attribute Subject)
-  Syntax: NP[Patient] LEX['s] NP[Attribute] VERB
-  Semantics:
-    * change_value(during(E), Direction, Attribute, Patient)
-NP.material V PP.product (Material/Product Alternation Intransitive; Material Subject)
-  Syntax: NP[Material] VERB PREP[into] NP[Product]
-  Semantics:
-    * exist(start(E), Product)
-    * exist(result(E), Product)
-    * made_of(result(E), Product, Material)
-NP.product V PP.material (Material/Product Alternation Intransitive; Product Subject)
-  Syntax: NP[Product] VERB PREP[from out_of] NP[Material]
-  Semantics:
-    * exist(start(E), Product)
-    * exist(result(E), Product)
-    * made_of(result(E), Product, Material)
-NP V NP.product PP.material (NP-PP; Causative variant, Material-PP)
-  Syntax: NP[Agent] VERB NP[Product] PREP[from out_of] NP[Material]
-  Semantics:
-    * exist(start(E), Product)
-    * exist(result(E), Product)
-    * made_of(result(E), Product, Material)
-    * cause(Agent, E)
-NP V NP.material PP.product (NP-PP; Causative variant, Product-PP)
-  Syntax: NP[Agent] VERB NP[Material] PREP[into] NP[Product]
-  Semantics:
-    * exist(start(E), Product)
-    * exist(result(E), Product)
-    * made_of(result(E), Product, Material)
-    * cause(Agent, E)
-NP V NP.patient (Basic Transitive; Causative)
-  Syntax: NP[Agent] VERB NP[Patient]
-  Semantics:
-    * cause(Agent, E)
-    * state(result(E), Endstate, Patient)
-NP V NP PP.instrument (NP-PP; Instrument-PP)
-  Syntax: NP[Agent] VERB NP[Patient] PREP[with] NP[Instrument]
-  Semantics:
-    * cause(Agent, E)
-    * state(result(E), Endstate, Patient)
-    * use(during(E), Agent, Instrument)
-NP.patient V (Intransitive; Inchoative)
-  Syntax: NP[Patient] VERB
-  Semantics:
-    * state(result(E), Endstate, Patient)
-NP V ADV-Middle (Middle Construction)
-  Syntax: NP[Patient] VERB ADV
-  Semantics:
-    * state(result(E), Endstate, Patient)
-NP.instrument V NP (Instrument Subject Alternation)
-  Syntax: NP[Instrument] VERB NP[Patient]
-  Semantics:
-    * use(during(E), ?Agent, Instrument)
-    * state(result(E), Endstate, Patient)
+NP[Theme] VERB
+NP[Theme] VERB PREP[+loc] NP[Location]
+LEX[there] VERB NP[Theme] PREP[+loc] NP[Location]
+PREP[+loc] NP[Location] VERB NP[Theme]
+NP[Theme] VERB NP[Location +adv_loc]
+NP[Patient] VERB NP[Result]
+NP[Agent] VERB NP[Product]
+NP[Agent] VERB
+NP[Agent] VERB NP[Product] PREP[from out_of] NP[Material]
+NP[Agent] VERB NP[Material] PREP[into] NP[Product]
+NP[Agent] VERB NP[Product] PREP[for] NP[Beneficiary]
+NP[Agent] VERB NP[Beneficiary] NP[Product] PREP[from out_of] NP[Material]
+NP[Agent] VERB NP[Product] PREP[from out_of] NP[Material] PREP[for] NP[Beneficiary]
+NP[Agent] VERB NP[Material] PREP[for] NP[Beneficiary]
+NP[Agent] VERB NP[Material] PREP[into] NP[Product] PREP[for] NP[Beneficiary]
+NP[Material] VERB NP[Product]
+NP[Agent] VERB NP[Beneficiary] NP[Product] PREP[for] NP[Asset]
+NP[Agent] VERB NP[Product] PREP[from out_of] NP[Material] PREP[for] NP[Asset]
+NP[Patient] LEX['s] NP[Attribute] VERB
+NP[Material] VERB PREP[into] NP[Product]
+NP[Product] VERB PREP[from out_of] NP[Material]
+NP[Agent] VERB NP[Product] PREP[from out_of] NP[Material]
+NP[Agent] VERB NP[Material] PREP[into] NP[Product]
+NP[Agent] VERB NP[Patient]
+NP[Agent] VERB NP[Patient] PREP[with] NP[Instrument]
+NP[Patient] VERB
+NP[Patient] VERB ADV
+NP[Instrument] VERB NP[Patient]

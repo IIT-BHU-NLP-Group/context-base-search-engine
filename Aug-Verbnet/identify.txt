@@ -1,35 +1,7 @@
-NP V S_ING (ING-AC)
-  Syntax: NP[Agent] VERB NP[Theme +ac_ing]
-  Semantics:
-    * describe(during(E), Agent, Theme)
-    * cause(Agent, E)
-NP V what S (WHAT-S)
-  Syntax: NP[Agent] VERB NP[Theme +what_extract]
-  Semantics:
-    * describe(during(E), Agent, Theme)
-    * cause(Agent, E)
-NP V what S_INF (WHAT-TO-INF)
-  Syntax: NP[Agent] VERB NP[Theme +what_inf]
-  Semantics:
-    * describe(during(E), Agent, Theme)
-    * cause(Agent, E)
-NP V (Intransitive)
-  Syntax: NP[Experiencer] VERB
-  Semantics:
-    * emotional_state(E, Experiencer)
-    * in_reaction_to(E, ?Stimulus)
-NP V PP.stimulus (PP; with-PP)
-  Syntax: NP[Experiencer] VERB PREP[with] NP[Stimulus -sentential]
-  Semantics:
-    * emotional_state(E, Experiencer)
-    * in_reaction_to(E, Stimulus)
-NP V PP.stimulus S_ING (P-POSSING; with-P)
-  Syntax: NP[Experiencer] VERB PREP[with] NP[Stimulus +poss_ing]
-  Semantics:
-    * emotional_state(E, Experiencer)
-    * in_reaction_to(E, Stimulus)
-NP V PP.stimulus what S (P-WHAT-TO-INF; with-P)
-  Syntax: NP[Experiencer] VERB PREP[with] NP[Stimulus +what_inf]
-  Semantics:
-    * emotional_state(E, Experiencer)
-    * in_reaction_to(E, Stimulus)
+NP[Agent] VERB NP[Theme +ac_ing]
+NP[Agent] VERB NP[Theme +what_extract]
+NP[Agent] VERB NP[Theme +what_inf]
+NP[Experiencer] VERB
+NP[Experiencer] VERB PREP[with] NP[Stimulus -sentential]
+NP[Experiencer] VERB PREP[with] NP[Stimulus +poss_ing]
+NP[Experiencer] VERB PREP[with] NP[Stimulus +what_inf]

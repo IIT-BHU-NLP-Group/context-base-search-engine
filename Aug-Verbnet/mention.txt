@@ -1,10 +1,2 @@
-NP V that S (S)
-  Syntax: NP[Agent] VERB NP[Topic +that_comp]
-  Semantics:
-    * transfer_info(during(E), Agent, ?Recipient, Topic)
-    * cause(Agent, E)
-NP V that S (S-SUBJUNCT)
-  Syntax: NP[Agent] VERB NP[Topic +that_comp -tensed_that]
-  Semantics:
-    * transfer_info(during(E), Agent, ?Recipient, Topic)
-    * cause(Agent, E)
+NP[Agent] VERB NP[Topic +that_comp]
+NP[Agent] VERB NP[Topic +that_comp -tensed_that]

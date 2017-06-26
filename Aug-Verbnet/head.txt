@@ -1,12 +1,2 @@
-NP V NP (Basic Transitive)
-  Syntax: NP[Theme] VERB NP[Co-Theme]
-  Semantics:
-    * contact(during(E), Theme, Co-Theme)
-    * exist(during(E), Theme)
-    * exist(during(E), Co-Theme)
-NP V NP (Basic Transitive)
-  Syntax: NP[Agent] VERB NP[Source]
-  Semantics:
-    * cause(Agent, E)
-    * location(start(E), ?Theme, Source)
-    * location(end(E), ?Theme, Source)
+NP[Theme] VERB NP[Co-Theme]
+NP[Agent] VERB NP[Source]

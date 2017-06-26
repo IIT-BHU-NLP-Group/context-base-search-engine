@@ -1,24 +1,6 @@
-NP V (Intransitive)
-  Syntax: NP[Agent] VERB
-  Semantics:
-    * take_care_of(during(E), Agent, ?Patient)
-NP V NP (Transitive)
-  Syntax: NP[Agent] VERB NP[Patient]
-  Semantics:
-    * take_care_of(during(E), Agent, Patient)
-NP V NP (Unspecified Reflexive ObjectReflexive variant)
-  Syntax: NP[Agent] VERB NP[Patient +refl]
-  Semantics:
-    * take_care_of(during(E), Agent, Patient)
-NP V (Intransitive)
-  Syntax: NP[Agent] VERB
-  Semantics:
-    * perform(during(E), Agent, ?Theme)
-NP V NP (NP)
-  Syntax: NP[Agent] VERB NP[Theme]
-  Semantics:
-    * perform(during(E), Agent, Theme)
-NP V S_ING (ING-SC)
-  Syntax: NP[Agent] VERB NP[Theme +sc_ing]
-  Semantics:
-    * perform(during(E), Agent, Theme)
+NP[Agent] VERB
+NP[Agent] VERB NP[Patient]
+NP[Agent] VERB NP[Patient +refl]
+NP[Agent] VERB
+NP[Agent] VERB NP[Theme]
+NP[Agent] VERB NP[Theme +sc_ing]

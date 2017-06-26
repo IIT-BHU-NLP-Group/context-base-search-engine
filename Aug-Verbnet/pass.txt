@@ -1,106 +1,18 @@
-NP V NP (Basic Transitive)
-  Syntax: NP[Agent] VERB NP[Asset]
-  Semantics:
-    * exist(start(E), Asset)
-    * exist(end(E), Asset)
-    * spend(during(E), Agent, Asset, ?Goal)
-NP V NP S_ING (NP-ING-SC)
-  Syntax: NP[Agent] VERB NP[Asset] NP[Goal +sc_ing]
-  Semantics:
-    * exist(start(E), Asset)
-    * exist(end(E), Asset)
-    * spend(during(E), Agent, Asset, Goal)
-NP V NP PP.recipient (NP-PP; Recipient-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[to] NP[Recipient]
-  Semantics:
-    * has_possession(start(E), Agent, Theme)
-    * has_possession(end(E), Recipient, Theme)
-    * transfer(during(E), Theme)
-    * cause(Agent, E)
-NP V NP-Dative NP (Dative)
-  Syntax: NP[Agent] VERB NP[Recipient] NP[Theme]
-  Semantics:
-    * has_possession(start(E), Agent, Theme)
-    * has_possession(end(E), Recipient, Theme)
-    * transfer(during(E), Theme)
-    * cause(Agent, E)
-NP V NP (Basic Transitive)
-  Syntax: NP[Agent] VERB NP[Theme]
-  Semantics:
-    * has_possession(start(E), Agent, Theme)
-    * has_possession(end(E), ?Recipient, Theme)
-    * transfer(during(E), Theme)
-    * cause(Agent, E)
-NP V PP.recipient (PP; Recipient-PP)
-  Syntax: NP[Agent] VERB PREP[to] NP[Recipient]
-  Semantics:
-    * has_possession(start(E), Agent, ?Theme)
-    * has_possession(end(E), Recipient, ?Theme)
-    * transfer(during(E), ?Theme)
-    * cause(Agent, E)
-NP V PP.location (PP; path-PP)
-  Syntax: NP[Theme] VERB PREP[+path] NP[Location]
-  Semantics:
-    * Prep(during(E), Theme, Location)
-    * exist(during(E), Theme)
-PP.location V NP (Locative Inversion)
-  Syntax: PREP[+path] NP[Location] VERB NP[Theme]
-  Semantics:
-    * Prep(during(E), Theme, Location)
-    * exist(during(E), Theme)
-There V PP NP (PP-NP; Expletive-there Subject)
-  Syntax: LEX[there] VERB PREP[+path] NP[Location] NP[Theme]
-  Semantics:
-    * Prep(during(E), Theme, Location)
-    * exist(during(E), Theme)
-There V NP PP (NP-PP; Expletive-there Subject)
-  Syntax: LEX[there] VERB NP[Theme] PREP[+path] NP[Location]
-  Semantics:
-    * Prep(during(E), Theme, Location)
-    * exist(during(E), Theme)
-NP v (Basic Intransitive)
-  Syntax: NP[Theme] VERB
-  Semantics:
-    * occur(during(E), Theme)
-There V NP (NP; Expletive-there Subject)
-  Syntax: LEX[there] VERB NP[Theme]
-  Semantics:
-    * occur(during(E), Theme)
-NP V PP.location (PP; Location-PP)
-  Syntax: NP[Theme] VERB PREP[+loc] NP[Location]
-  Semantics:
-    * occur(during(E), Theme)
-    * Prep(during(E), Theme, Location)
-PP.location V NP (Locative Inversion)
-  Syntax: PREP[+loc] NP[Location] VERB NP[Theme]
-  Semantics:
-    * occur(during(E), Theme)
-    * Prep(during(E), Theme, Location)
-It V that S (SEEM-S)
-  Syntax: LEX[it] VERB NP[Theme +that_comp]
-  Semantics:
-    * occur(during(E), Theme)
-NP V NP-Dative NP (Dative)
-  Syntax: NP[Agent] VERB NP[Destination] NP[Theme]
-  Semantics:
-    * motion(during(E), Theme)
-    * direction(during(E), toward, Theme, Destination)
-    * location(end(E), Theme, Destination)
-    * cause(Agent, E)
-NP V NP (NP)
-  Syntax: NP[Agent] VERB NP[Theme]
-  Semantics:
-    * exist(start(E), Theme)
-    * exist(end(E), Theme)
-    * spend(during(E), Agent, Theme)
-NP V NP-Dative NP (Dative)
-  Syntax: NP[Agent] VERB NP[Destination] NP[Theme]
-  Semantics:
-    * exert_force(during(E0), Agent, Theme)
-    * contact(end(E0), Agent, Theme)
-    * motion(during(E1), Theme)
-    * contact(during(E1), Agent, Theme)
-    * location(start(E1), Theme, Destination)
-    * location(end(E1), Theme, Destination)
-    * cause(Agent, E1)
-    * meets(E0, E1)
+NP[Agent] VERB NP[Asset]
+NP[Agent] VERB NP[Asset] NP[Goal +sc_ing]
+NP[Agent] VERB NP[Theme] PREP[to] NP[Recipient]
+NP[Agent] VERB NP[Recipient] NP[Theme]
+NP[Agent] VERB NP[Theme]
+NP[Agent] VERB PREP[to] NP[Recipient]
+NP[Theme] VERB PREP[+path] NP[Location]
+PREP[+path] NP[Location] VERB NP[Theme]
+LEX[there] VERB PREP[+path] NP[Location] NP[Theme]
+LEX[there] VERB NP[Theme] PREP[+path] NP[Location]
+NP[Theme] VERB
+LEX[there] VERB NP[Theme]
+NP[Theme] VERB PREP[+loc] NP[Location]
+PREP[+loc] NP[Location] VERB NP[Theme]
+LEX[it] VERB NP[Theme +that_comp]
+NP[Agent] VERB NP[Destination] NP[Theme]
+NP[Agent] VERB NP[Theme]
+NP[Agent] VERB NP[Destination] NP[Theme]

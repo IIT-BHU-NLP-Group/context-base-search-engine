@@ -1,30 +1,5 @@
-NP V NP (Basic Transitive)
-  Syntax: NP[Agent] VERB NP[Theme]
-  Semantics:
-    * created_image(result(E), Theme)
-    * location(end(E), Theme, ?Destination)
-    * cause(Agent, E)
-NP V NP PP.destination (NP-PP; locative-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[+loc +dest_conf] NP[Destination]
-  Semantics:
-    * created_image(result(E), Theme)
-    * Prep(end(E), Theme, Destination)
-    * cause(Agent, E)
-NP V (Unspecified Object)
-  Syntax: NP[Agent] VERB
-  Semantics:
-    * created_image(result(E), ?Theme)
-    * location(end(E), ?Theme, ?Destination)
-    * cause(Agent, E)
-NP V NP (Basic Transitive)
-  Syntax: NP[Agent] VERB NP[Theme]
-  Semantics:
-    * created_image(result(E), Theme)
-    * location(end(E), Theme, ?Destination)
-    * cause(Agent, E)
-NP V NP PP.destination (NP-PP; locative-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[+loc +dest_conf] NP[Destination]
-  Semantics:
-    * created_image(result(E), Theme)
-    * Prep(end(E), Theme, Destination)
-    * cause(Agent, E)
+NP[Agent] VERB NP[Theme]
+NP[Agent] VERB NP[Theme] PREP[+loc +dest_conf] NP[Destination]
+NP[Agent] VERB
+NP[Agent] VERB NP[Theme]
+NP[Agent] VERB NP[Theme] PREP[+loc +dest_conf] NP[Destination]

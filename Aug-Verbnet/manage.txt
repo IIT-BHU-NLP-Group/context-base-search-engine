@@ -1,16 +1,4 @@
-NP V NP (Basic Transitive)
-  Syntax: NP[Agent] VERB NP[Theme]
-  Semantics:
-    * cope(E, Agent, Theme)
-NP V S_INF (TO-INF-SC)
-  Syntax: NP[Agent] VERB NP[Theme +sc_to_inf]
-  Semantics:
-    * neglect(E, Agent, Theme)
-NP V NP (Basic Transitive)
-  Syntax: NP[Agent] VERB NP[Theme]
-  Semantics:
-    * neglect(E, Agent, Theme)
-NP V S_INF (TO-INF-SC)
-  Syntax: NP[Agent] VERB NP[Theme +sc_to_inf]
-  Semantics:
-    * successful_in(E, Agent, Theme)
+NP[Agent] VERB NP[Theme]
+NP[Agent] VERB NP[Theme +sc_to_inf]
+NP[Agent] VERB NP[Theme]
+NP[Agent] VERB NP[Theme +sc_to_inf]

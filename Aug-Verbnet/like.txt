@@ -1,13 +1,3 @@
-NP V S_INF (TO-INF-SC)
-  Syntax: NP[Experiencer] VERB NP[Stimulus +sc_to_inf]
-  Semantics:
-    * emotional_state(E, Emotion, Experiencer)
-    * in_reaction_to(E, Stimulus)
-NP V NP S_INF (NP-TO-INF)
-  Syntax: NP[Pivot] VERB NP[Theme +np_to_inf]
-  Semantics:
-    * desire(E, Pivot, Theme)
-NP V NP to be ADJ (NP-TOBE)
-  Syntax: NP[Pivot] VERB NP[Theme +to_be]
-  Semantics:
-    * desire(E, Pivot, Theme)
+NP[Experiencer] VERB NP[Stimulus +sc_to_inf]
+NP[Pivot] VERB NP[Theme +np_to_inf]
+NP[Pivot] VERB NP[Theme +to_be]

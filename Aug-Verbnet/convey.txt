@@ -1,41 +1,7 @@
-NP V that S (S)
-  Syntax: NP[Agent] VERB NP[Topic +that_comp]
-  Semantics:
-    * transfer_info(during(E), Agent, ?Recipient, Topic)
-    * cause(Agent, E)
-NP V that S (S-SUBJUNCT)
-  Syntax: NP[Agent] VERB NP[Topic +that_comp -tensed_that]
-  Semantics:
-    * transfer_info(during(E), Agent, ?Recipient, Topic)
-    * cause(Agent, E)
-NP V NP (Basic Transitive)
-  Syntax: NP[Agent] VERB NP[Theme]
-  Semantics:
-    * motion(during(E), Theme)
-    * cause(Agent, E)
-NP V NP PP.initial_location (NP-PP; Initial_Location-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[+src] NP[Initial_Location]
-  Semantics:
-    * motion(during(E), Theme)
-    * location(start(E), Theme, Initial_Location)
-    * cause(Agent, E)
-NP V NP PP.destination (NP-PP; Goal-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[to] NP[Destination]
-  Semantics:
-    * motion(during(E), Theme)
-    * location(end(E), Theme, Destination)
-    * cause(Agent, E)
-NP V NP PP.initial_location PP.destination (NP-PP-PP; Initial_Location-PP Goal-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[+src] NP[Initial_Location] PREP[to] NP[Destination]
-  Semantics:
-    * motion(during(E), Theme)
-    * location(start(E), Theme, Initial_Location)
-    * location(end(E), Theme, Destination)
-    * cause(Agent, E)
-NP V NP PP.destination PP.initial_location (NP-PP-PP; Goal-PP Initial_Location-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[to] NP[Destination] PREP[+src] NP[Initial_Location]
-  Semantics:
-    * motion(during(E), Theme)
-    * location(start(E), Theme, Initial_Location)
-    * location(end(E), Theme, Destination)
-    * cause(Agent, E)
+NP[Agent] VERB NP[Topic +that_comp]
+NP[Agent] VERB NP[Topic +that_comp -tensed_that]
+NP[Agent] VERB NP[Theme]
+NP[Agent] VERB NP[Theme] PREP[+src] NP[Initial_Location]
+NP[Agent] VERB NP[Theme] PREP[to] NP[Destination]
+NP[Agent] VERB NP[Theme] PREP[+src] NP[Initial_Location] PREP[to] NP[Destination]
+NP[Agent] VERB NP[Theme] PREP[to] NP[Destination] PREP[+src] NP[Initial_Location]

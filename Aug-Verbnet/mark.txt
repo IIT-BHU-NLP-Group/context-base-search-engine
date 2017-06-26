@@ -1,50 +1,9 @@
-NP V NP NP (NP-NP)
-  Syntax: NP[Agent] VERB NP[Theme] NP[Result]
-  Semantics:
-    * designated(result(E), Theme, Result)
-    * cause(Agent, E)
-NP V NP PP.result (NP-PP; as-PP)
-  Syntax: NP[Agent] VERB NP[Theme] LEX[as] NP[Result -sentential]
-  Semantics:
-    * designated(result(E), Theme, Result)
-    * cause(Agent, E)
-NP V NP to be NP (Infinitival Copular Clause)
-  Syntax: NP[Agent] VERB NP[Theme] LEX[to] LEX[be] NP[Result -sentential]
-  Semantics:
-    * designated(result(E), Theme, Result)
-    * cause(Agent, E)
-NP V NP (Basic Transitive)
-  Syntax: NP[Agent] VERB NP[Theme]
-  Semantics:
-    * designated(result(E), Theme, Result)
-    * cause(Agent, E)
-NP V NP.theme PP.destination (NP-PP; Theme Object, on-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[+loc +dest_conf] NP[Destination]
-  Semantics:
-    * created_image(result(E), Theme)
-    * Prep(end(E), Theme, Destination)
-    * cause(Agent, E)
-NP V NP.destination PP.theme (NP-PP; Destination Object, Theme-PP)
-  Syntax: NP[Agent] VERB NP[Destination] PREP[with] NP[Theme]
-  Semantics:
-    * created_image(result(E), Theme)
-    * location(end(E), Theme, Destination)
-    * cause(Agent, E)
-NP V NP.destination (Transitive; Destination Object)
-  Syntax: NP[Agent] VERB NP[Destination]
-  Semantics:
-    * created_image(result(E), ?Theme)
-    * location(end(E), ?Theme, Destination)
-    * cause(Agent, E)
-NP V NP.theme (Transitive; Theme Object)
-  Syntax: NP[Agent] VERB NP[Theme]
-  Semantics:
-    * created_image(result(E), Theme)
-    * location(end(E), Theme, ?Destination)
-    * cause(Agent, E)
-NP V (Unspecified Object)
-  Syntax: NP[Agent] VERB
-  Semantics:
-    * created_image(result(E), ?Theme)
-    * location(end(E), ?Theme, ?Destination)
-    * cause(Agent, E)
+NP[Agent] VERB NP[Theme] NP[Result]
+NP[Agent] VERB NP[Theme] LEX[as] NP[Result -sentential]
+NP[Agent] VERB NP[Theme] LEX[to] LEX[be] NP[Result -sentential]
+NP[Agent] VERB NP[Theme]
+NP[Agent] VERB NP[Theme] PREP[+loc +dest_conf] NP[Destination]
+NP[Agent] VERB NP[Destination] PREP[with] NP[Theme]
+NP[Agent] VERB NP[Destination]
+NP[Agent] VERB NP[Theme]
+NP[Agent] VERB

@@ -1,34 +1,7 @@
-NP V NP (Basic Transitive)
-  Syntax: NP[Agent] VERB NP[Theme]
-  Semantics:
-    * location(start(E), Theme, ?Destination)
-    * location(end(E), Theme, ?Destination)
-    * confined(result(E), Theme)
-    * cause(Agent, E)
-NP V NP to be NP (Infinitival Copular Clause)
-  Syntax: NP[Agent] VERB NP[Theme] LEX[to] LEX[be] NP[Predicate]
-  Semantics:
-    * believe(during(E), Agent, Theme, Predicate)
-NP V that S (S)
-  Syntax: NP[Agent] VERB NP[Theme +that_comp]
-  Semantics:
-    * believe(during(E), Agent, Theme, ?Predicate)
-NP V NP (Basic Transitive)
-  Syntax: NP[Agent] VERB NP[Theme -sentential]
-  Semantics:
-    * believe(during(E), Agent, Theme, ?Predicate)
-NP.location V NP (Location Subject Alternation)
-  Syntax: NP[Location] VERB NP[Value]
-  Semantics:
-    * capacity(E, Location, Value)
-NP V NP PP.location (NP-PP; Location-PP)
-  Syntax: NP[Agent] VERB NP[Value] PREP[in] NP[Location]
-  Semantics:
-    * capacity(E, Location, Value)
-    * cause(Agent, E)
-NP V NP (Transitive; Body-part Object)
-  Syntax: NP[Agent] VERB NP[Theme]
-  Semantics:
-    * hold(during(E), Agent, Theme)
-    * contact(during(E), Agent, Theme)
-    * cause(Agent, E)
+NP[Agent] VERB NP[Theme]
+NP[Agent] VERB NP[Theme] LEX[to] LEX[be] NP[Predicate]
+NP[Agent] VERB NP[Theme +that_comp]
+NP[Agent] VERB NP[Theme -sentential]
+NP[Location] VERB NP[Value]
+NP[Agent] VERB NP[Value] PREP[in] NP[Location]
+NP[Agent] VERB NP[Theme]

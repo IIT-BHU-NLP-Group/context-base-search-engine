@@ -1,4 +1,1 @@
-NP V (Simple Reciprocal Intransitive)
-  Syntax: NP[Patient +plural] VERB
-  Semantics:
-    * together(end(E), physical, Patient_i, Patient_j)
+NP[Patient +plural] VERB

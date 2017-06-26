@@ -1,7 +1,1 @@
-NP V NP.initial_location (Transitive; basically, locative preposition drop of "from")
-  Syntax: NP[Theme] VERB NP[Source]
-  Semantics:
-    * motion(during(E), Theme)
-    * location(start(E), Theme, Source)
-    * location(end(E), Theme, Source)
-    * direction(during(E), from, Theme, Source)
+NP[Theme] VERB NP[Source]

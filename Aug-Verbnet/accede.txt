@@ -1,12 +1,3 @@
-NP V PP.co-agent (NP-PP; to-PP)
-  Syntax: NP[Agent] VERB PREP[to] NP[Co-Agent]
-  Semantics:
-    * yield(during(E), Agent, Co-Agent)
-NP V S_INF (TO_INF; N-SC)
-  Syntax: NP[Agent] VERB NP[Theme +sc_to_inf]
-  Semantics:
-    * yield(during(E), Agent, Theme)
-NP V PP.theme (NP-PP; to-PP)
-  Syntax: NP[Agent] VERB PREP[to] NP[Theme]
-  Semantics:
-    * yield(during(E), Agent, Theme)
+NP[Agent] VERB PREP[to] NP[Co-Agent]
+NP[Agent] VERB NP[Theme +sc_to_inf]
+NP[Agent] VERB PREP[to] NP[Theme]

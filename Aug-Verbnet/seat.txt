@@ -1,9 +1,2 @@
-NP.location V NP (Location Subject Alternation)
-  Syntax: NP[Location] VERB NP[Value]
-  Semantics:
-    * capacity(E, Location, Value)
-NP V NP PP.location (NP-PP; Location-PP)
-  Syntax: NP[Agent] VERB NP[Value] PREP[in] NP[Location]
-  Semantics:
-    * capacity(E, Location, Value)
-    * cause(Agent, E)
+NP[Location] VERB NP[Value]
+NP[Agent] VERB NP[Value] PREP[in] NP[Location]

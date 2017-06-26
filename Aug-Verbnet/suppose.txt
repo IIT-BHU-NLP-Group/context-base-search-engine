@@ -1,20 +1,5 @@
-NP V NP ADJ (NP-ADJP-PRED)
-  Syntax: NP[Agent] VERB NP[Theme] NP[Attribute -sentential]
-  Semantics:
-    * consider(during(E), Agent, Theme)
-NP V NP NP (NP-NP-PRED)
-  Syntax: NP[Agent] VERB NP[Theme] NP[Attribute -sentential]
-  Semantics:
-    * consider(during(E), Agent, Theme)
-NP V NP to be NP (NP-TOBE)
-  Syntax: NP[Agent] VERB NP[Theme +to_be]
-  Semantics:
-    * consider(during(E), Agent, Theme)
-NP V NP ADJ (NP-VEN-NP-OMIT)
-  Syntax: NP[Agent] VERB NP[Theme +np_ppart] NP[Attribute -sentential]
-  Semantics:
-    * consider(during(E), Agent, Theme)
-NP V that S (S)
-  Syntax: NP[Agent] VERB NP[Theme +that_comp]
-  Semantics:
-    * consider(during(E), Agent, Theme)
+NP[Agent] VERB NP[Theme] NP[Attribute -sentential]
+NP[Agent] VERB NP[Theme] NP[Attribute -sentential]
+NP[Agent] VERB NP[Theme +to_be]
+NP[Agent] VERB NP[Theme +np_ppart] NP[Attribute -sentential]
+NP[Agent] VERB NP[Theme +that_comp]

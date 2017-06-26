@@ -1,56 +1,12 @@
-NP V NP (Basic Transitive)
-  Syntax: NP[Experiencer] VERB NP[Stimulus]
-  Semantics:
-    * emotional_state(E, Emotion, Experiencer)
-    * in_reaction_to(E, Stimulus)
-NP V NP PP.attribute (NP-PP; Possessor Object, Attribute-PP)
-  Syntax: NP[Experiencer] VERB NP[Stimulus] PREP[for] NP[Attribute]
-  Semantics:
-    * emotional_state(E, Emotion, Experiencer)
-    * in_reaction_to(E, Stimulus, Attribute)
-NP V NP.stimulus (NP-PP; Attribute Object, Possessor-PP)
-  Syntax: NP[Experiencer] VERB NP[Stimulus]
-  Semantics:
-    * emotional_state(E, Emotion, Experiencer)
-    * in_reaction_to(E, Stimulus)
-NP V that S (S)
-  Syntax: NP[Experiencer] VERB NP[Stimulus +that_comp]
-  Semantics:
-    * emotional_state(E, Emotion, Experiencer)
-    * in_reaction_to(E, Stimulus)
-NP V S_ING (ING-SC/BE-ING)
-  Syntax: NP[Experiencer] VERB NP[Stimulus +be_sc_ing]
-  Semantics:
-    * emotional_state(E, Emotion, Experiencer)
-    * in_reaction_to(E, Stimulus)
-NP V NP S_ING (POSSING)
-  Syntax: NP[Experiencer] VERB NP[Stimulus +poss_ing]
-  Semantics:
-    * emotional_state(E, Emotion, Experiencer)
-    * in_reaction_to(E, Stimulus)
-NP V NP (Basic Transitive)
-  Syntax: NP[Theme] VERB NP[Co-Theme]
-  Semantics:
-    * contact(during(E), Theme, Co-Theme)
-    * exist(during(E), Theme)
-    * exist(during(E), Co-Theme)
-NP V NP (Basic Transitive)
-  Syntax: NP[Agent] VERB NP[Beneficiary]
-  Semantics:
-    * help(during(E), Agent, Beneficiary, ?Theme)
-NP V NP PP.theme (NP-PP; with-PP)
-  Syntax: NP[Agent] VERB NP[Beneficiary] PREP[with] NP[Theme -sentential]
-  Semantics:
-    * help(during(E), Agent, Beneficiary, Theme)
-NP V NP S_ING (NP-P-ING-OC; with-PP)
-  Syntax: NP[Agent] VERB NP[Beneficiary] PREP[with] NP[Theme +oc_ing]
-  Semantics:
-    * help(during(E), Agent, Beneficiary, Theme)
-NP V NP S_INF (NP-TO-INF-OC)
-  Syntax: NP[Agent] VERB NP[Beneficiary] NP[Theme +oc_to_inf]
-  Semantics:
-    * help(during(E), Agent, Beneficiary, Theme)
-NP V S_ING (P-ING-AC; with-PP)
-  Syntax: NP[Agent] VERB PREP[with] NP[Theme +ac_ing]
-  Semantics:
-    * help(during(E), Agent, ?Beneficiary, Theme)
+NP[Experiencer] VERB NP[Stimulus]
+NP[Experiencer] VERB NP[Stimulus] PREP[for] NP[Attribute]
+NP[Experiencer] VERB NP[Stimulus]
+NP[Experiencer] VERB NP[Stimulus +that_comp]
+NP[Experiencer] VERB NP[Stimulus +be_sc_ing]
+NP[Experiencer] VERB NP[Stimulus +poss_ing]
+NP[Theme] VERB NP[Co-Theme]
+NP[Agent] VERB NP[Beneficiary]
+NP[Agent] VERB NP[Beneficiary] PREP[with] NP[Theme -sentential]
+NP[Agent] VERB NP[Beneficiary] PREP[with] NP[Theme +oc_ing]
+NP[Agent] VERB NP[Beneficiary] NP[Theme +oc_to_inf]
+NP[Agent] VERB PREP[with] NP[Theme +ac_ing]

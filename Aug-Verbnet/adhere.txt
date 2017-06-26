@@ -1,8 +1,2 @@
-NP V PP.co-theme (PP; with/to-PP)
-  Syntax: NP[Theme] VERB PREP[to with] NP[Co-Theme]
-  Semantics:
-    * together(end(E), physical, Theme, Co-Theme)
-NP V together (Together Reciprocal Alternation Intransitive)
-  Syntax: NP[Theme +plural] VERB LEX[together]
-  Semantics:
-    * together(end(E), physical, Theme_i, Theme_j)
+NP[Theme] VERB PREP[to with] NP[Co-Theme]
+NP[Theme +plural] VERB LEX[together]

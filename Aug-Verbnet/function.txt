@@ -1,4 +1,1 @@
-NP V PP.attribute (PP; as-PP)
-  Syntax: NP[Agent] VERB LEX[as] NP[Attribute]
-  Semantics:
-    * masquerade(during(E), Agent, Attribute)
+NP[Agent] VERB LEX[as] NP[Attribute]

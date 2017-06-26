@@ -1,72 +1,13 @@
-NP V NP PP.theme (NP-PP; with-PP)
-  Syntax: NP[Agent] VERB NP[Destination] PREP[with] NP[Theme]
-  Semantics:
-    * motion(during(E), Theme)
-    * location(start(E), Theme, Destination)
-    * location(end(E), Theme, Destination)
-    * cause(Agent, E)
-NP V NP (Locatum Subject Alternation)
-  Syntax: NP[Theme] VERB NP[Destination]
-  Semantics:
-    * location(E, Theme, Destination)
-NP V NP.destination (Transitive; Destination Object)
-  Syntax: NP[Agent] VERB NP[Destination]
-  Semantics:
-    * motion(during(E), ?Theme)
-    * location(start(E), ?Theme, Destination)
-    * location(end(E), ?Theme, Destination)
-    * cause(Agent, E)
-NP V NP.patient (Basic Transitive; Causative)
-  Syntax: NP[Agent] VERB NP[Patient]
-  Semantics:
-    * cause(Agent, E)
-    * state(result(E), Endstate, Patient)
-NP V NP PP.instrument (NP-PP; Instrument-PP)
-  Syntax: NP[Agent] VERB NP[Patient] PREP[with] NP[Instrument]
-  Semantics:
-    * cause(Agent, E)
-    * state(result(E), Endstate, Patient)
-    * use(during(E), Agent, Instrument)
-NP.patient V (Intransitive; Inchoative)
-  Syntax: NP[Patient] VERB
-  Semantics:
-    * state(result(E), Endstate, Patient)
-NP V ADV-Middle (Middle Construction)
-  Syntax: NP[Patient] VERB ADV
-  Semantics:
-    * state(result(E), Endstate, Patient)
-NP.instrument V NP (Instrument Subject Alternation)
-  Syntax: NP[Instrument] VERB NP[Patient]
-  Semantics:
-    * use(during(E), ?Agent, Instrument)
-    * state(result(E), Endstate, Patient)
-NP.theme V (Basic Intransitive; inchoative)
-  Syntax: NP[Theme] VERB
-  Semantics:
-    * motion(during(E), Theme)
-NP V PP.location (PP; locative-PP)
-  Syntax: NP[Theme] VERB PREP[+path] NP[Location]
-  Semantics:
-    * motion(during(E), Theme)
-    * Prep(E, Theme, Location)
-NP V NP PP.location (NP-PP; Induced Action with accompanied motion, path-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[+path] NP[Location]
-  Semantics:
-    * motion(during(E0), Theme)
-    * Prep(E0, Theme, Location)
-    * cause(Agent, E0)
-    * equals(E0, E1)
-    * motion(during(E1), Agent)
-    * Prep(E1, Agent, Location)
-NP V NP ADJP (NP-ADJP; Resultative)
-  Syntax: NP[Agent] VERB NP[Theme] NP[Result]
-  Semantics:
-    * motion(during(E), Theme)
-    * cause(Agent, E)
-    * Pred(result(E), Result)
-NP V NP PP.result (NP-PP; Result-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[to into] NP[Result +state]
-  Semantics:
-    * motion(during(E), Theme)
-    * cause(Agent, E)
-    * Pred(result(E), Result)
+NP[Agent] VERB NP[Destination] PREP[with] NP[Theme]
+NP[Theme] VERB NP[Destination]
+NP[Agent] VERB NP[Destination]
+NP[Agent] VERB NP[Patient]
+NP[Agent] VERB NP[Patient] PREP[with] NP[Instrument]
+NP[Patient] VERB
+NP[Patient] VERB ADV
+NP[Instrument] VERB NP[Patient]
+NP[Theme] VERB
+NP[Theme] VERB PREP[+path] NP[Location]
+NP[Agent] VERB NP[Theme] PREP[+path] NP[Location]
+NP[Agent] VERB NP[Theme] NP[Result]
+NP[Agent] VERB NP[Theme] PREP[to into] NP[Result +state]

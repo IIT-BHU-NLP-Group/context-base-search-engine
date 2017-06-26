@@ -1,4 +1,1 @@
-NP V NP (NP)
-  Syntax: NP[Pivot] VERB NP[Theme]
-  Semantics:
-    * has_possession(E, Pivot, Theme)
+NP[Pivot] VERB NP[Theme]

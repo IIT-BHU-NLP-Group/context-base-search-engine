@@ -1,4 +1,1 @@
-NP V NP.value (Transitive; Attribute Object)
-  Syntax: NP[Theme] VERB NP[Value]
-  Semantics:
-    * value(E, Agent, Theme, Value)
+NP[Theme] VERB NP[Value]

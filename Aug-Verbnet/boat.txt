@@ -1,37 +1,6 @@
-NP.theme V (Basic Intransitive; inchoative)
-  Syntax: NP[Theme] VERB
-  Semantics:
-    * motion(during(E), Theme)
-NP.theme V PP.location (PP; inchoative, locative-PP)
-  Syntax: NP[Theme] VERB PREP[+path] NP[Location]
-  Semantics:
-    * motion(during(E), Theme)
-    * Prep(E, Theme, Location)
-NP V NP PP.location (NP-PP; Induced Action with accompanied motion, path-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[+path] NP[Location]
-  Semantics:
-    * motion(during(E0), Theme)
-    * Prep(E0, Theme, Location)
-    * cause(Agent, E0)
-    * equals(E0, E1)
-    * motion(during(E1), Agent)
-    * Prep(E1, Agent, Location)
-NP V NP (NP; Induced Action with accompanied motion)
-  Syntax: NP[Agent] VERB NP[Theme]
-  Semantics:
-    * motion(during(E0), Theme)
-    * cause(Agent, E0)
-    * equals(E0, E1)
-    * motion(during(E1), Agent)
-NP V NP ADJ (NP-ADJP; Resultative)
-  Syntax: NP[Agent] VERB NP[Theme] NP[Result]
-  Semantics:
-    * motion(during(E), Theme)
-    * cause(Agent, E)
-    * Pred(result(E), Theme)
-NP V NP PP.result (NP-PP; Result-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[to into] NP[Result +state]
-  Semantics:
-    * motion(during(E), Theme)
-    * cause(Agent, E)
-    * Pred(result(E), Theme)
+NP[Theme] VERB
+NP[Theme] VERB PREP[+path] NP[Location]
+NP[Agent] VERB NP[Theme] PREP[+path] NP[Location]
+NP[Agent] VERB NP[Theme]
+NP[Agent] VERB NP[Theme] NP[Result]
+NP[Agent] VERB NP[Theme] PREP[to into] NP[Result +state]

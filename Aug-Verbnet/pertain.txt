@@ -1,4 +1,1 @@
-NP V PP.co-theme (PP; to-PP)
-  Syntax: NP[Theme] VERB PREP[to] NP[Co-Theme]
-  Semantics:
-    * relate(E, Theme, Co-Theme)
+NP[Theme] VERB PREP[to] NP[Co-Theme]

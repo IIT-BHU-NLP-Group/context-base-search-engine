@@ -1,35 +1,7 @@
-NP V PP.stimulus (PP; Theme-PP)
-  Syntax: NP[Experiencer] VERB PREP[+spatial] NP[Stimulus]
-  Semantics:
-    * perceive(during(E), Experiencer, Stimulus)
-    * in_reaction_to(E, Stimulus)
-NP V PP.location (PP; Location-PP)
-  Syntax: NP[Agent] VERB PREP[over through into] NP[Location]
-  Semantics:
-    * search(during(E), Agent, Location, ?Theme)
-NP V PP.location PP.theme (PP-PP; Location-PP Theme-PP)
-  Syntax: NP[Agent] VERB PREP[+loc] NP[Location] PREP[for] NP[Theme]
-  Semantics:
-    * search(during(E), Agent, Location, Theme)
-NP V PP.attribute (PP-PRED-RSin-PP)
-  Syntax: NP[Theme] VERB PREP[in] NP[Attribute -sentential]
-  Semantics:
-    * seem(E, Theme, Attribute)
-NP V ADJ (ADJ)
-  Syntax: NP[Stimulus] VERB ADJ
-  Semantics:
-    * Pred(during(E), Stimulus)
-    * perceive(during(E), ?Experiencer, Stimulus)
-    * in_reaction_to(E, Stimulus)
-NP V ADJ PP.experiencer (PP; Experiencer-PP)
-  Syntax: NP[Stimulus] VERB ADJ PREP[to] NP[Experiencer]
-  Semantics:
-    * perceive(during(E), Experiencer, Stimulus)
-    * Pred(during(E), Stimulus)
-    * in_reaction_to(E, Stimulus)
-NP V             PP.attribute (PP; like-PP)
-  Syntax: NP[Stimulus] VERB PREP[like]
-  Semantics:
-    * Pred(during(E), Stimulus)
-    * perceive(during(E), ?Experiencer, Stimulus)
-    * in_reaction_to(E, Stimulus)
+NP[Experiencer] VERB PREP[+spatial] NP[Stimulus]
+NP[Agent] VERB PREP[over through into] NP[Location]
+NP[Agent] VERB PREP[+loc] NP[Location] PREP[for] NP[Theme]
+NP[Theme] VERB PREP[in] NP[Attribute -sentential]
+NP[Stimulus] VERB ADJ
+NP[Stimulus] VERB ADJ PREP[to] NP[Experiencer]
+NP[Stimulus] VERB PREP[like]

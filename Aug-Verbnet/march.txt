@@ -1,38 +1,6 @@
-NP V NP PP.location (NP-PP; Induced Action with accompanied motion, path-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[+spatial] NP[Location]
-  Semantics:
-    * motion(during(E0), Theme)
-    * Prep(E0, Theme, Location)
-    * cause(Agent, E0)
-    * equals(E0, E1)
-    * motion(during(E1), Agent)
-    * Prep(E1, Agent, Location)
-NP V NP PP.location (NP-PP; Induced Action without accompanied motion, path-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[+spatial] NP[Location]
-  Semantics:
-    * motion(during(E), Theme)
-    * Prep(E, Theme, Location)
-    * cause(Agent, E)
-NP V NP (NP; Induced Action with accompanied motion)
-  Syntax: NP[Agent] VERB NP[Theme]
-  Semantics:
-    * motion(during(E0), Theme)
-    * cause(Agent, E0)
-    * equals(E0, E1)
-    * motion(during(E1), Agent)
-NP V NP (NP; Induced Action without accompanied motion)
-  Syntax: NP[Agent] VERB NP[Theme]
-  Semantics:
-    * motion(during(E), Theme)
-    * cause(Agent, E)
-NP V NP PP.result (NP-PP; Result-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[to into] NP[Result +state]
-  Semantics:
-    * motion(during(E), Theme)
-    * cause(Agent, E)
-    * Pred(result(E), Theme)
-NP V NP (Locative Preposition Drop)
-  Syntax: NP[Theme] VERB NP[Location +concrete]
-  Semantics:
-    * motion(during(E), Theme)
-    * via(during(E), Theme, Location)
+NP[Agent] VERB NP[Theme] PREP[+spatial] NP[Location]
+NP[Agent] VERB NP[Theme] PREP[+spatial] NP[Location]
+NP[Agent] VERB NP[Theme]
+NP[Agent] VERB NP[Theme]
+NP[Agent] VERB NP[Theme] PREP[to into] NP[Result +state]
+NP[Theme] VERB NP[Location +concrete]

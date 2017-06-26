@@ -1,25 +1,5 @@
-NP V PP.stimulus what S (P-WHAT-S; about-PP)
-  Syntax: NP[Experiencer] VERB PREP[about] NP[Stimulus +what_extract]
-  Semantics:
-    * emotional_state(result(E), Emotion, Experiencer)
-    * in_reaction_to(E, Stimulus)
-NP V what S (WHAT-S)
-  Syntax: NP[Experiencer] VERB NP[Stimulus +what_extract]
-  Semantics:
-    * emotional_state(result(E), Emotion, Experiencer)
-    * in_reaction_to(E, Stimulus)
-NP V PP.stimulus how/whether S (P-WH-S; about-PP)
-  Syntax: NP[Experiencer] VERB PREP[about] NP[Stimulus +wh_comp]
-  Semantics:
-    * emotional_state(result(E), Emotion, Experiencer)
-    * in_reaction_to(E, Stimulus)
-NP V PP.stimulus (PP; Stimulus-PP)
-  Syntax: NP[Experiencer] VERB PREP[about] NP[Stimulus]
-  Semantics:
-    * emotional_state(result(E), Emotion, Experiencer)
-    * in_reaction_to(E, Stimulus)
-NP V PP.stimulus (PP; Stimulus-PP)
-  Syntax: NP[Experiencer] VERB PREP[for] NP[Stimulus]
-  Semantics:
-    * emotional_state(result(E), Emotion, Experiencer)
-    * in_reaction_to(E, Stimulus)
+NP[Experiencer] VERB PREP[about] NP[Stimulus +what_extract]
+NP[Experiencer] VERB NP[Stimulus +what_extract]
+NP[Experiencer] VERB PREP[about] NP[Stimulus +wh_comp]
+NP[Experiencer] VERB PREP[about] NP[Stimulus]
+NP[Experiencer] VERB PREP[for] NP[Stimulus]

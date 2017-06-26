@@ -1,47 +1,8 @@
-NP V (Basic Intransitive)
-  Syntax: NP[Patient] VERB
-  Semantics:
-    * convert(during(E), Patient, ?Source, ?Goal)
-NP V NP (Basic Transitive)
-  Syntax: NP[Agent] VERB NP[Patient]
-  Semantics:
-    * convert(during(E), Patient, ?Source, ?Goal)
-    * cause(E, Agent)
-NP V NP S_ING (NP-P-ING-OC; to-PP)
-  Syntax: NP[Agent] VERB NP[Patient] PREP[to] NP[Goal +oc_ing]
-  Semantics:
-    * convert(during(E), Patient, ?Source, Goal)
-    * cause(E, Agent)
-NP V NP PP.goal (NP-PP; to-PP)
-  Syntax: NP[Agent] VERB NP[Patient] PREP[to] NP[Goal]
-  Semantics:
-    * convert(during(E), Patient, ?Source, Goal)
-    * cause(E, Agent)
-NP V PP.source PP.goal (PP-PP; from-PP to-PP)
-  Syntax: NP[Patient] VERB PREP[from] NP[Source] PREP[to] NP[Goal]
-  Semantics:
-    * convert(during(E), Patient, Source, Goal)
-NP V PP.result (PP; w/ endstate)
-  Syntax: NP[Agent] VERB PREP[to] NP[Result]
-  Semantics:
-    * state(start(E), ?Material, Agent)
-    * state(result(E), Result, Agent)
-    * state(start(E), Result, Agent)
-    * state(result(E), ?Material, Agent)
-    * cause(Agent, E)
-NP V PP.material PP.result (PP-PP; w/ beginning state w/ end state)
-  Syntax: NP[Agent] VERB PREP[from] NP[Material] PREP[to] NP[Result]
-  Semantics:
-    * state(start(E), Material, ?Patient)
-    * state(start(E), Result, ?Patient)
-    * state(result(E), Result, ?Patient)
-    * state(result(E), Material, ?Patient)
-    * cause(Agent, E)
-NP V                     PP.result  PP.material (PP-PP; w/ end state w/ beginning state)
-  Syntax: NP[Agent] VERB PREP[to] NP[Result] PREP[from] NP[Material]
-  Semantics:
-    * state(start(E), Material, ?Patient)
-    * state(start(E), Result, ?Patient)
-    * state(result(E), Result, ?Patient)
-    * state(result(E), Material, ?Patient)
-    * cause(Agent, E)
+NP[Patient] VERB
+NP[Agent] VERB NP[Patient]
+NP[Agent] VERB NP[Patient] PREP[to] NP[Goal +oc_ing]
+NP[Agent] VERB NP[Patient] PREP[to] NP[Goal]
+NP[Patient] VERB PREP[from] NP[Source] PREP[to] NP[Goal]
+NP[Agent] VERB PREP[to] NP[Result]
+NP[Agent] VERB PREP[from] NP[Material] PREP[to] NP[Result]
+NP[Agent] VERB PREP[to] NP[Result] PREP[from] NP[Material]

@@ -1,69 +1,8 @@
-NP V NP (Basic Transitive)
-  Syntax: NP[Agent] VERB NP[Patient]
-  Semantics:
-    * cause(Agent, E)
-    * manner(during(E), directedmotion, Agent)
-    * contact(during(E), Agent, Patient)
-    * manner(end(E), forceful, Agent)
-    * contact(end(E), Agent, Patient)
-NP V NP PP.instrument (NP-PP; Instrument-PP)
-  Syntax: NP[Agent] VERB NP[Patient] PREP[with] NP[Instrument]
-  Semantics:
-    * cause(Agent, E)
-    * manner(during(E), directedmotion, Instrument)
-    * contact(during(E), Instrument, Patient)
-    * manner(end(E), forceful, Instrument)
-    * contact(end(E), Instrument, Patient)
-    * use(during(E), Agent, Instrument)
-NP V NP ADJP (NP-ADJP; Resultative)
-  Syntax: NP[Agent] VERB NP[Patient] NP[Result]
-  Semantics:
-    * cause(Agent, E)
-    * manner(during(E), directedmotion, Agent)
-    * contact(during(E), Agent, Patient)
-    * manner(end(E), forceful, Agent)
-    * contact(end(E), Agent, Patient)
-    * Pred(result(E), Patient)
-NP V NP PP.result (NP-PP; Result-PP)
-  Syntax: NP[Agent] VERB NP[Patient] PREP[to into] NP[Result +state]
-  Semantics:
-    * cause(Agent, E)
-    * manner(during(E), directedmotion, Agent)
-    * contact(during(E), Agent, Patient)
-    * manner(end(E), forceful, Agent)
-    * contact(end(E), Agent, Patient)
-    * Pred(result(E), Patient)
-NP V NP PP.result PP.instrument (NP-PP-PP; Result-PP, Instrument-PP)
-  Syntax: NP[Agent] VERB NP[Patient] PREP[to into] NP[Result +state] PREP[with] NP[Instrument]
-  Semantics:
-    * cause(Agent, E)
-    * manner(during(E), directedmotion, Instrument)
-    * contact(during(E), Instrument, Patient)
-    * manner(end(E), forceful, Instrument)
-    * contact(end(E), Instrument, Patient)
-    * Pred(result(E), Patient)
-    * use(during(E), Agent, Instrument)
-NP V NP PP.location (NP-PP; Body-part-PP)
-  Syntax: NP[Agent] VERB NP[Patient] PREP[+loc] NP[Location +body_part]
-  Semantics:
-    * cause(Agent, E)
-    * manner(during(E), directedmotion, Agent)
-    * contact(during(E), Agent, Patient)
-    * manner(end(E), forceful, Agent)
-    * contact(end(E), Agent, Patient)
-NP V NP PP PP.instrument (NP-PP-PP; Body-part-PP Instrument-PP)
-  Syntax: NP[Agent] VERB NP[Patient] PREP[+loc] NP[Location +body_part] PREP[with] NP[Instrument]
-  Semantics:
-    * cause(Agent, E)
-    * manner(during(E), directedmotion, Instrument)
-    * contact(during(E), Instrument, Patient)
-    * manner(end(E), forceful, Instrument)
-    * contact(end(E), Instrument, Patient)
-NP V NP (NP-PP; Body Part Object)
-  Syntax: NP[Agent] VERB NP[Patient +genitive +body_part]
-  Semantics:
-    * cause(Agent, E)
-    * manner(during(E), directedmotion, Agent)
-    * contact(during(E), Agent, Patient)
-    * manner(end(E), forceful, Agent)
-    * contact(end(E), Agent, Patient)
+NP[Agent] VERB NP[Patient]
+NP[Agent] VERB NP[Patient] PREP[with] NP[Instrument]
+NP[Agent] VERB NP[Patient] NP[Result]
+NP[Agent] VERB NP[Patient] PREP[to into] NP[Result +state]
+NP[Agent] VERB NP[Patient] PREP[to into] NP[Result +state] PREP[with] NP[Instrument]
+NP[Agent] VERB NP[Patient] PREP[+loc] NP[Location +body_part]
+NP[Agent] VERB NP[Patient] PREP[+loc] NP[Location +body_part] PREP[with] NP[Instrument]
+NP[Agent] VERB NP[Patient +genitive +body_part]

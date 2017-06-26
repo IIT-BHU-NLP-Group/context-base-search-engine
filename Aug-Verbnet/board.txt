@@ -1,24 +1,4 @@
-NP V NP.destination (Transitive; Destination Object)
-  Syntax: NP[Agent] VERB NP[Destination]
-  Semantics:
-    * motion(during(E), Theme)
-    * location(start(E), Theme, Destination)
-    * location(end(E), Theme, Destination)
-    * cause(Agent, E)
-NP V NP PP.theme (NP-PP; Theme-PP)
-  Syntax: NP[Agent] VERB NP[Destination] PREP[with] NP[Theme]
-  Semantics:
-    * motion(during(E), Theme)
-    * location(start(E), Theme, Destination)
-    * location(end(E), Theme, Destination)
-    * cause(Agent, E)
-NP V PP.location (PP; Location-PP)
-  Syntax: NP[Theme] VERB PREP[at in with] NP[Location]
-  Semantics:
-    * location(start(E), Theme, Location)
-    * location(during(E), Theme, Location)
-NP V ADV (ADVP-PRED; here/there)
-  Syntax: NP[Theme] VERB NP[Location +adv_loc]
-  Semantics:
-    * location(start(E), Theme, Location)
-    * location(during(E), Theme, Location)
+NP[Agent] VERB NP[Destination]
+NP[Agent] VERB NP[Destination] PREP[with] NP[Theme]
+NP[Theme] VERB PREP[at in with] NP[Location]
+NP[Theme] VERB NP[Location +adv_loc]

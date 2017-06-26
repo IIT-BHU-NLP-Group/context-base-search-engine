@@ -1,14 +1,3 @@
-NP V NP PP.co-patient (NP-PP; to-PP)
-  Syntax: NP[Agent] VERB NP[Patient] PREP[with] NP[Co-Patient]
-  Semantics:
-    * cause(Agent, E)
-    * together(end(E), physical, Patient, Co-Patient)
-NP V NP (Simple Reciprocal Transitive)
-  Syntax: NP[Agent] VERB NP[Patient +plural]
-  Semantics:
-    * cause(Agent, E)
-    * together(end(E), physical, Patient_i, Patient_j)
-NP V PP (Simple Reciprocal Intransitive)
-  Syntax: NP[Patient] VERB PREP[with] NP[Co-Patient]
-  Semantics:
-    * together(end(E), physical, Patient, Co-Patient)
+NP[Agent] VERB NP[Patient] PREP[with] NP[Co-Patient]
+NP[Agent] VERB NP[Patient +plural]
+NP[Patient] VERB PREP[with] NP[Co-Patient]

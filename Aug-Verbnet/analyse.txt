@@ -1,0 +1,3 @@
+NP[Agent] VERB NP[Theme]
+NP[Agent] VERB NP[Theme] PREP[for] NP[Attribute]
+NP[Agent] VERB NP[Theme +genitive] LEX['s] NP[Attribute]

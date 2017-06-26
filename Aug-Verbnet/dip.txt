@@ -1,38 +1,7 @@
-NP.attribute V (Intransitive; Attribute Subject)
-  Syntax: NP[Patient] LEX['s] NP[Attribute] VERB
-  Semantics:
-    * change_value(during(E), Direction, Attribute, Patient)
-NP V NP PP.destination (NP-PP; locative-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[+dest_conf] NP[Destination]
-  Semantics:
-    * motion(during(E), Theme)
-    * Prep(start(E), Theme, Destination)
-    * Prep(end(E), Theme, Destination)
-    * cause(Agent, E)
-NP V NP ADVP (NP-ADVP-PRED; here/there)
-  Syntax: NP[Agent] VERB NP[Theme] NP[Destination +adv_loc]
-  Semantics:
-    * motion(during(E), Theme)
-    * Prep(start(E), Theme, Destination)
-    * Prep(end(E), Theme, Destination)
-    * cause(Agent, E)
-NP V PP.location (PP; path-PP)
-  Syntax: NP[Theme] VERB PREP[+path] NP[Location]
-  Semantics:
-    * Prep(during(E), Theme, Location)
-    * exist(during(E), Theme)
-PP.location V NP (Locative Inversion)
-  Syntax: PREP[+path] NP[Location] VERB NP[Theme]
-  Semantics:
-    * Prep(during(E), Theme, Location)
-    * exist(during(E), Theme)
-There V PP NP (PP-NP; Expletive-there Subject)
-  Syntax: LEX[there] VERB PREP[+path] NP[Location] NP[Theme]
-  Semantics:
-    * Prep(during(E), Theme, Location)
-    * exist(during(E), Theme)
-There V NP PP (NP-PP; Expletive-there Subject)
-  Syntax: LEX[there] VERB NP[Theme] PREP[+path] NP[Location]
-  Semantics:
-    * Prep(during(E), Theme, Location)
-    * exist(during(E), Theme)
+NP[Patient] LEX['s] NP[Attribute] VERB
+NP[Agent] VERB NP[Theme] PREP[+dest_conf] NP[Destination]
+NP[Agent] VERB NP[Theme] NP[Destination +adv_loc]
+NP[Theme] VERB PREP[+path] NP[Location]
+PREP[+path] NP[Location] VERB NP[Theme]
+LEX[there] VERB PREP[+path] NP[Location] NP[Theme]
+LEX[there] VERB NP[Theme] PREP[+path] NP[Location]

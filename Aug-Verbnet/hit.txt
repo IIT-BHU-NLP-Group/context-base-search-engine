@@ -1,43 +1,6 @@
-NP V PP.location (PP; against-PP)
-  Syntax: NP[Theme] VERB PREP[against into onto] NP[Location]
-  Semantics:
-    * manner(during(E), directedmotion, Theme)
-    * contact(during(E), Theme, Location)
-    * manner(end(E), forceful, Theme)
-    * contact(end(E), Theme, Location)
-NP V (Understood Reciprocal Object)
-  Syntax: NP[Theme] LEX[and] NP[Co-Theme] VERB
-  Semantics:
-    * contact(during(E), Theme, Co-Theme)
-    * exist(during(E), Theme)
-    * exist(during(E), Co-Theme)
-NP V PP (Conative)
-  Syntax: NP[Agent] VERB LEX[at] NP[Patient]
-  Semantics:
-    * cause(Agent, E)
-    * manner(during(E), directedmotion, Agent)
-    * contact(during(E), Agent, Patient)
-NP V PP PP (Conative)
-  Syntax: NP[Agent] VERB LEX[at] NP[Patient] PREP[with] NP[Instrument]
-  Semantics:
-    * cause(Agent, E)
-    * manner(during(E), directedmotion, Instrument)
-    * contact(during(E), Instrument, Patient)
-    * use(during(E), Agent, Instrument)
-NP V NP (Basic Transitive)
-  Syntax: NP[Agent] VERB NP[Destination]
-  Semantics:
-    * motion(during(E), Agent)
-    * location(start(E), Agent, Destination)
-    * location(end(E), Agent, Destination)
-NP V NP-Dative NP (Dative)
-  Syntax: NP[Agent] VERB NP[Destination] NP[Theme]
-  Semantics:
-    * exert_force(during(E0), Agent, Theme)
-    * contact(end(E0), Agent, Theme)
-    * motion(during(E1), Theme)
-    * contact(during(E1), Agent, Theme)
-    * location(start(E1), Theme, Destination)
-    * location(end(E1), Theme, Destination)
-    * cause(Agent, E1)
-    * meets(E0, E1)
+NP[Theme] VERB PREP[against into onto] NP[Location]
+NP[Theme] LEX[and] NP[Co-Theme] VERB
+NP[Agent] VERB LEX[at] NP[Patient]
+NP[Agent] VERB LEX[at] NP[Patient] PREP[with] NP[Instrument]
+NP[Agent] VERB NP[Destination]
+NP[Agent] VERB NP[Destination] NP[Theme]

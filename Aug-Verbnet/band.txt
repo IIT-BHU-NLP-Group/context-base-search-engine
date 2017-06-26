@@ -1,59 +1,10 @@
-NP V NP PP (Simple Reciprocal Alternation Transitive; prepositional variant)
-  Syntax: NP[Agent] VERB NP[Patient] PREP[with into to] NP[Co-Patient]
-  Semantics:
-    * cause(Agent, E)
-    * together(end(E), physical, Patient, Co-Patient)
-NP V NP together (Together Reciprocal Alternation Transitive)
-  Syntax: NP[Agent] VERB NP[Patient +plural] LEX[together]
-  Semantics:
-    * cause(Agent, E)
-    * together(end(E), physical, Patient, Co-Patient)
-NP V NP (Basic Transitive)
-  Syntax: NP[Agent] VERB NP[Patient]
-  Semantics:
-    * cause(Agent, E)
-    * attached(end(E), Patient, Instrument)
-NP V NP PP.co-patient (NP-PP; locative-PP)
-  Syntax: NP[Agent] VERB NP[Patient] PREP[to on onto] NP[Co-Patient]
-  Semantics:
-    * cause(Agent, E)
-    * together(end(E), physical, Patient, Co-Patient)
-    * attached(end(E), Patient, Instrument)
-    * attached(end(E), Co-Patient, Instrument)
-NP V NP together (Together Reciprocal Alternation Transitive)
-  Syntax: NP[Agent] VERB NP[Patient +plural] LEX[together]
-  Semantics:
-    * cause(Agent, E)
-    * together(end(E), physical, Patient_i, Patient_j)
-    * attached(end(E), Patient_i, Instrument)
-    * attached(end(E), Patient_j, Instrument)
-NP V ADV-Middle PP (Middle Construction)
-  Syntax: NP[Patient] VERB ADV PREP[to on onto] NP[Co-Patient]
-  Semantics:
-    * together(end(E), physical, Patient, Co-Patient)
-    * attached(end(E), Patient, Instrument)
-    * attached(end(E), Co-Patient, Instrument)
-NP V ADV-Middle (Middle Construction)
-  Syntax: NP[Patient +plural] VERB ADV
-  Semantics:
-    * together(end(E), physical, Patient_i, Patient_j)
-    * attached(end(E), Patient_i, Instrument)
-    * attached(end(E), Patient_j, Instrument)
-NP V ADV-Middle together (Middle Construction)
-  Syntax: NP[Patient +plural] VERB ADV LEX[together]
-  Semantics:
-    * together(end(E), physical, Patient_i, Patient_j)
-    * attached(end(E), Patient_i, Instrument)
-    * attached(end(E), Patient_j, Instrument)
-NP V together ADV-Middle (Middle Construction)
-  Syntax: NP[Patient +plural] VERB LEX[together] ADV
-  Semantics:
-    * together(end(E), physical, Patient_i, Patient_j)
-    * attached(end(E), Patient_i, Instrument)
-    * attached(end(E), Patient_j, Instrument)
-NP V NP ADJP (NP-ADJP; Resultative)
-  Syntax: NP[Agent] VERB NP[Patient] NP[Result]
-  Semantics:
-    * cause(Agent, E)
-    * attached(end(E), Patient, Instrument)
-    * Pred(result(E), Patient)
+NP[Agent] VERB NP[Patient] PREP[with into to] NP[Co-Patient]
+NP[Agent] VERB NP[Patient +plural] LEX[together]
+NP[Agent] VERB NP[Patient]
+NP[Agent] VERB NP[Patient] PREP[to on onto] NP[Co-Patient]
+NP[Agent] VERB NP[Patient +plural] LEX[together]
+NP[Patient] VERB ADV PREP[to on onto] NP[Co-Patient]
+NP[Patient +plural] VERB ADV
+NP[Patient +plural] VERB ADV LEX[together]
+NP[Patient +plural] VERB LEX[together] ADV
+NP[Agent] VERB NP[Patient] NP[Result]

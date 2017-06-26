@@ -1,25 +1,5 @@
-NP V NP ADJ
-  Syntax: NP[Patient] VERB NP[Result]
-  Semantics:
-    * state(result(E), Result, Patient)
-    * Pred(result(E), Patient)
-NP V S_ING (P-ING-SC; to-PP)
-  Syntax: NP[Patient] VERB PREP[to] NP[Goal +sc_ing]
-  Semantics:
-    * convert(during(E), Patient, ?Source, Goal)
-NP V PP.goal (PP; to-PP)
-  Syntax: NP[Patient] VERB PREP[to] NP[Goal]
-  Semantics:
-    * convert(during(E), Patient, ?Source, Goal)
-NP V NP PP.source (NP-PP; for/on Source (abstract))
-  Syntax: NP[Agent] VERB NP[Theme] PREP[from for on] NP[Source]
-  Semantics:
-    * has_possession(start(E), Source, Theme)
-    * has_possession(end(E), Agent, Theme)
-    * transfer(during(E), Theme)
-    * cause(Agent, E)
-NP V NP S-INF (NP-S)
-  Syntax: NP[Agent] VERB NP[Patient] NP[Result]
-  Semantics:
-    * cause(Agent, E)
-    * state(result(E), Result, Patient)
+NP[Patient] VERB NP[Result]
+NP[Patient] VERB PREP[to] NP[Goal +sc_ing]
+NP[Patient] VERB PREP[to] NP[Goal]
+NP[Agent] VERB NP[Theme] PREP[from for on] NP[Source]
+NP[Agent] VERB NP[Patient] NP[Result]

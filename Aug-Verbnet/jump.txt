@@ -1,9 +1,2 @@
-NP.attribute V (Intransitive; Attribute Subject)
-  Syntax: NP[Patient] LEX['s] NP[Attribute] VERB
-  Semantics:
-    * change_value(during(E), Direction, Attribute, Patient)
-NP V NP (Locative Preposition Drop)
-  Syntax: NP[Theme] VERB NP[Location +concrete]
-  Semantics:
-    * motion(during(E), Theme)
-    * via(during(E), Theme, Location)
+NP[Patient] LEX['s] NP[Attribute] VERB
+NP[Theme] VERB NP[Location +concrete]

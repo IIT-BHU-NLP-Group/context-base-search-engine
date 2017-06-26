@@ -1,11 +1,2 @@
-NP V NP PP.co-patient (NP-PP; to-PP)
-  Syntax: NP[Agent] VERB NP[Patient] PREP[to] NP[Co-Patient]
-  Semantics:
-    * cause(Agent, E)
-    * together(end(E), abstract/physical, Patient, Co-Patient)
-NP V NP PP.instrument (NP-PP; with-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[with] NP[Instrument]
-  Semantics:
-    * begin(E, Theme)
-    * use(during(E), Agent, Instrument)
-    * cause(Agent, E)
+NP[Agent] VERB NP[Patient] PREP[to] NP[Co-Patient]
+NP[Agent] VERB NP[Theme] PREP[with] NP[Instrument]

@@ -1,18 +1,3 @@
-NP V NP PP.theme (NP-PP; of-PP)
-  Syntax: NP[Agent] VERB NP[Source] PREP[of] NP[Theme]
-  Semantics:
-    * cause(Agent, E)
-    * location(start(E), Theme, Source)
-    * location(end(E), Theme, Source)
-NP V NP PP.theme (NP-PP; out_of-PP)
-  Syntax: NP[Agent] VERB NP[Source] PREP[out_of] NP[Theme]
-  Semantics:
-    * cause(Agent, E)
-    * location(start(E), Theme, Source)
-    * location(end(E), Theme, Source)
-NP V NP (Transitive; dropped Theme)
-  Syntax: NP[Agent] VERB NP[Source]
-  Semantics:
-    * cause(Agent, E)
-    * location(start(E), ?Theme, Source)
-    * location(end(E), ?Theme, Source)
+NP[Agent] VERB NP[Source] PREP[of] NP[Theme]
+NP[Agent] VERB NP[Source] PREP[out_of] NP[Theme]
+NP[Agent] VERB NP[Source]

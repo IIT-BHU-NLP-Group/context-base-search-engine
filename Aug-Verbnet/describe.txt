@@ -1,15 +1,3 @@
-NP V S_ING (ING-AC)
-  Syntax: NP[Agent] VERB NP[Theme +ac_ing]
-  Semantics:
-    * describe(during(E), Agent, Theme)
-    * cause(Agent, E)
-NP V what S (WHAT-S)
-  Syntax: NP[Agent] VERB NP[Theme +what_extract]
-  Semantics:
-    * describe(during(E), Agent, Theme)
-    * cause(Agent, E)
-NP V what S_INF (WHAT-TO-INF)
-  Syntax: NP[Agent] VERB NP[Theme +what_inf]
-  Semantics:
-    * describe(during(E), Agent, Theme)
-    * cause(Agent, E)
+NP[Agent] VERB NP[Theme +ac_ing]
+NP[Agent] VERB NP[Theme +what_extract]
+NP[Agent] VERB NP[Theme +what_inf]

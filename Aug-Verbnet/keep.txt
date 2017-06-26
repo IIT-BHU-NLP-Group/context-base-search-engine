@@ -1,31 +1,7 @@
-NP V NP PP.theme             S_ING (NP-P-ING; from-PP)
-  Syntax: NP[Agent] VERB NP[Theme +np_p_ing]
-  Semantics:
-    * forbid(during(E), Agent, Theme)
-NP V NP PP.location (NP-PP; locative-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[+loc] NP[Location]
-  Semantics:
-    * Prep(during(E), Theme, Location)
-    * cause(Agent, E)
-NP V NP (Basic Transitive)
-  Syntax: NP[Agent] VERB NP[Theme]
-  Semantics:
-    * has_possession(during(E), Agent, Theme)
-NP V ADJ (ADJP-PRED-RS)
-  Syntax: NP[Theme] VERB NP[Attribute -sentential]
-  Semantics:
-    * seem(E, Theme, Attribute)
-NP V NP (NP)
-  Syntax: NP[Agent] VERB NP[Theme]
-  Semantics:
-    * continue(during(E), Agent, Theme)
-NP V NP PP.instrument (NP-PP; through-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[through] NP[Instrument -sentential]
-  Semantics:
-    * continue(during(E), Agent, Theme)
-    * use(during(E), Agent, Instrument)
-NP V NP S_ING (NP-P-ING-AC; through-P)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[through] NP[Instrument +ac_ing]
-  Semantics:
-    * continue(during(E), Agent, Theme)
-    * use(during(E), Agent, Instrument)
+NP[Agent] VERB NP[Theme +np_p_ing]
+NP[Agent] VERB NP[Theme] PREP[+loc] NP[Location]
+NP[Agent] VERB NP[Theme]
+NP[Theme] VERB NP[Attribute -sentential]
+NP[Agent] VERB NP[Theme]
+NP[Agent] VERB NP[Theme] PREP[through] NP[Instrument -sentential]
+NP[Agent] VERB NP[Theme] PREP[through] NP[Instrument +ac_ing]

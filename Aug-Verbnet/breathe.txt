@@ -1,5 +1,1 @@
-NP V NP (Transitive; Cognate Object)
-  Syntax: NP[Agent] VERB NP[Theme]
-  Semantics:
-    * body_process(E, Agent)
-    * emit(during(E), Agent, Theme)
+NP[Agent] VERB NP[Theme]

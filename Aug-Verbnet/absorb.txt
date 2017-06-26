@@ -1,8 +1,2 @@
-NP V NP (Basic Transitive)
-  Syntax: NP[Goal] VERB NP[Theme]
-  Semantics:
-    * take_in(during(E), Goal, Theme)
-NP V NP PP.source (NP-PP; Source-PP)
-  Syntax: NP[Goal] VERB NP[Theme] PREP[from] NP[Source]
-  Semantics:
-    * take_in(during(E), Goal, Theme)
+NP[Goal] VERB NP[Theme]
+NP[Goal] VERB NP[Theme] PREP[from] NP[Source]

@@ -1,36 +1,7 @@
-NP V PP.co-agent (NP-PP; to-PP)
-  Syntax: NP[Agent] VERB PREP[to] NP[Co-Agent]
-  Semantics:
-    * yield(during(E), Agent, Co-Agent)
-NP V S_INF (TO_INF; N-SC)
-  Syntax: NP[Agent] VERB NP[Theme +sc_to_inf]
-  Semantics:
-    * yield(during(E), Agent, Theme)
-NP V PP.theme (NP-PP; to-PP)
-  Syntax: NP[Agent] VERB PREP[to] NP[Theme]
-  Semantics:
-    * yield(during(E), Agent, Theme)
-NP V NP PP.goal (NP-PP; Goal-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[to] NP[Goal]
-  Semantics:
-    * has_possession(start(E), Agent, Theme)
-    * future_possession(end(E), Goal, Theme)
-    * cause(Agent, E)
-NP V NP.theme (PP) (Transitive; Theme Object)
-  Syntax: NP[Agent] VERB NP[Theme]
-  Semantics:
-    * has_possession(start(E), Agent, Theme)
-    * future_possession(end(E), ?Goal, Theme)
-    * cause(Agent, E)
-NP V NP-Dative NP (Dative)
-  Syntax: NP[Agent] VERB NP[Goal] NP[Theme]
-  Semantics:
-    * has_possession(start(E), Agent, Theme)
-    * future_possession(end(E), Goal, Theme)
-    * cause(Agent, E)
-NP V NP PP.goal (NP-PP; for-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[for] NP[Goal]
-  Semantics:
-    * has_possession(start(E), Agent, Theme)
-    * future_possession(end(E), Goal, Theme)
-    * cause(Agent, E)
+NP[Agent] VERB PREP[to] NP[Co-Agent]
+NP[Agent] VERB NP[Theme +sc_to_inf]
+NP[Agent] VERB PREP[to] NP[Theme]
+NP[Agent] VERB NP[Theme] PREP[to] NP[Goal]
+NP[Agent] VERB NP[Theme]
+NP[Agent] VERB NP[Goal] NP[Theme]
+NP[Agent] VERB NP[Theme] PREP[for] NP[Goal]

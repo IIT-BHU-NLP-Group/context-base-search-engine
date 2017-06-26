@@ -1,4 +1,1 @@
-NP.attribute V (Intransitive; Attribute Subject)
-  Syntax: NP[Patient] LEX['s] NP[Attribute] VERB
-  Semantics:
-    * change_value(during(E), Direction, Attribute, Patient)
+NP[Patient] LEX['s] NP[Attribute] VERB

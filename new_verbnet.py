@@ -6,7 +6,7 @@ import sys
 lemmatizer = WordNetLemmatizer()
 # verb = raw_input('enter verb')
 
-with open('verb_count_result.csv','r') as f:
+with open('new_verb_count_result.csv','r') as f:
 	for line in f:
 		verb = line.strip().split(',')[1]
 		if('/'in verb):
@@ -17,7 +17,7 @@ with open('verb_count_result.csv','r') as f:
 			for v in vs:
 				frames = v.findall('FRAMES/FRAME')
 				for i in frames:
-					vf.write(vn.pprint_frame(i)+'\n')
+					vf.write(vn.pprint_syntax(i)+'\n')
 					# print vn.pprint_frame(i)
 
 		

@@ -1,38 +1,6 @@
-NP V NP (Basic Transitive)
-  Syntax: NP[Cause] VERB NP[Theme]
-  Semantics:
-    * exist(start(E), Theme)
-    * exist(result(E), Theme)
-    * nonagentive_cause(Cause, E)
-NP V that S (S)
-  Syntax: NP[Cause] VERB NP[Theme] NP[Predicate +that_comp]
-  Semantics:
-    * exist(start(E), Theme)
-    * exist(result(E), Theme)
-    * nonagentive_cause(Cause, E)
-NP.material V PP.product (Material/Product Alternation Intransitive; Material Subject)
-  Syntax: NP[Material] VERB PREP[into] NP[Product]
-  Semantics:
-    * exist(start(E), Product)
-    * exist(result(E), Product)
-    * made_of(result(E), Product, Material)
-NP.product V PP.material (Material/Product Alternation Intransitive; Product Subject)
-  Syntax: NP[Product] VERB PREP[from out_of] NP[Material]
-  Semantics:
-    * exist(start(E), Product)
-    * exist(result(E), Product)
-    * made_of(result(E), Product, Material)
-NP V NP.product PP.material (NP-PP; Causative variant, Material-PP)
-  Syntax: NP[Agent] VERB NP[Product] PREP[from out_of] NP[Material]
-  Semantics:
-    * exist(start(E), Product)
-    * exist(result(E), Product)
-    * made_of(result(E), Product, Material)
-    * cause(Agent, E)
-NP V NP.material PP.product (NP-PP; Causative variant, Product-PP)
-  Syntax: NP[Agent] VERB NP[Material] PREP[into] NP[Product]
-  Semantics:
-    * exist(start(E), Product)
-    * exist(result(E), Product)
-    * made_of(result(E), Product, Material)
-    * cause(Agent, E)
+NP[Cause] VERB NP[Theme]
+NP[Cause] VERB NP[Theme] NP[Predicate +that_comp]
+NP[Material] VERB PREP[into] NP[Product]
+NP[Product] VERB PREP[from out_of] NP[Material]
+NP[Agent] VERB NP[Product] PREP[from out_of] NP[Material]
+NP[Agent] VERB NP[Material] PREP[into] NP[Product]

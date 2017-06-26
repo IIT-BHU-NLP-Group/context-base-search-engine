@@ -1,27 +1,6 @@
-NP.patient V (Intransitive; Inchoative)
-  Syntax: NP[Patient] VERB
-  Semantics:
-    * state(result(E), Endstate, Patient)
-NP V (Basic Intransitive)
-  Syntax: NP[Theme] VERB
-  Semantics:
-    * exist(during(E), Theme)
-NP V PP.location (PP; locative-PP)
-  Syntax: NP[Theme] VERB PREP[+loc] NP[Location]
-  Semantics:
-    * exist(during(E), Theme)
-    * Prep(during(E), Theme, Location)
-There V NP (NP; Expletive-there Subject)
-  Syntax: LEX[there] VERB NP[Theme -definite]
-  Semantics:
-    * exist(during(E), Theme)
-NP.location V NP (Locative Inversion)
-  Syntax: PREP[+loc] NP[Location] VERB NP[Theme]
-  Semantics:
-    * exist(during(E), Theme)
-    * Prep(during(E), Theme, Location)
-NP.location V PP.theme (PP; Location Subject, with-PP)
-  Syntax: NP[Location] VERB PREP[with] NP[Theme]
-  Semantics:
-    * exist(during(E), Theme)
-    * location(during(E), Theme, Location)
+NP[Patient] VERB
+NP[Theme] VERB
+NP[Theme] VERB PREP[+loc] NP[Location]
+LEX[there] VERB NP[Theme -definite]
+PREP[+loc] NP[Location] VERB NP[Theme]
+NP[Location] VERB PREP[with] NP[Theme]

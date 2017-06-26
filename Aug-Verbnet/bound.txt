@@ -1,30 +1,6 @@
-NP V NP (Basic Transitive)
-  Syntax: NP[Theme] VERB NP[Co-Theme]
-  Semantics:
-    * contact(during(E), Theme, Co-Theme)
-    * exist(during(E), Theme)
-    * exist(during(E), Co-Theme)
-NP V (Basic Intransitive; inchoative)
-  Syntax: NP[Theme] VERB
-  Semantics:
-    * motion(during(E), Theme)
-NP V PP.location (PP; over-PP)
-  Syntax: NP[Theme] VERB PREP[+spatial] NP[Location]
-  Semantics:
-    * motion(during(E), Theme)
-    * Prep(E, Theme, Location)
-There V PP NP (PP-NP; Expletive-there Subject)
-  Syntax: LEX[there] VERB PREP[+path] NP[Location +concrete] NP[Theme -definite]
-  Semantics:
-    * motion(during(E), Theme)
-    * Prep(E, Theme, Location)
-There V NP PP (NP-PP; Expletive-there Subject)
-  Syntax: LEX[there] VERB NP[Theme -definite] PREP[+path] NP[Location]
-  Semantics:
-    * motion(during(E), Theme)
-    * Prep(E, Theme, Location)
-PP.location V NP (Locative Inversion)
-  Syntax: PREP[+path] NP[Location] VERB NP[Theme]
-  Semantics:
-    * motion(during(E), Theme)
-    * Prep(E, Theme, Location)
+NP[Theme] VERB NP[Co-Theme]
+NP[Theme] VERB
+NP[Theme] VERB PREP[+spatial] NP[Location]
+LEX[there] VERB PREP[+path] NP[Location +concrete] NP[Theme -definite]
+LEX[there] VERB NP[Theme -definite] PREP[+path] NP[Location]
+PREP[+path] NP[Location] VERB NP[Theme]

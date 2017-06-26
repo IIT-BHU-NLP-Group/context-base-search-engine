@@ -1,5 +1,1 @@
-NP V NP (Simple Reciprocal Transitive)
-  Syntax: NP[Agent] VERB NP[Patient +plural]
-  Semantics:
-    * cause(Agent, E)
-    * together(end(E), abstract/physical, Patient_i, Patient_j)
+NP[Agent] VERB NP[Patient +plural]

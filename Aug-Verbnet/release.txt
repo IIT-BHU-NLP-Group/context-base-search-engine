@@ -1,6 +1,1 @@
-NP V NP S_ING (NP-P-ING-OC; of-PP)
-  Syntax: NP[Cause] VERB NP[Source] PREP[of] NP[Theme +oc_ing]
-  Semantics:
-    * cause(Cause, E)
-    * free(start(E), Theme, Source)
-    * free(end(E), Theme, Source)
+NP[Cause] VERB NP[Source] PREP[of] NP[Theme +oc_ing]

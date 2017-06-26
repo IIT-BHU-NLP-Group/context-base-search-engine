@@ -1,94 +1,15 @@
-NP V NP (Basic Transitive; Causative)
-  Syntax: NP[Agent] VERB NP[Patient]
-  Semantics:
-    * cause(Agent, E)
-    * contact(during(E), ?Instrument, Patient)
-    * degradation_material_integrity(result(E), Patient)
-    * physical_form(result(E), Form, Patient)
-NP V NP PP.instrument (NP-PP; Instrument-PP)
-  Syntax: NP[Agent] VERB NP[Patient] PREP[with] NP[Instrument]
-  Semantics:
-    * cause(Agent, E)
-    * contact(during(E), Instrument, Patient)
-    * degradation_material_integrity(result(E), Patient)
-    * physical_form(result(E), Form, Patient)
-    * use(during(E), Agent, Instrument)
-NP.patient V (Intransitive; Inchoative)
-  Syntax: NP[Patient] VERB
-  Semantics:
-    * degradation_material_integrity(result(E), Patient)
-    * physical_form(result(E), Form, Patient)
-NP V ADV-Middle (Middle Construction)
-  Syntax: NP[Patient] VERB ADV
-  Semantics:
-    * degradation_material_integrity(result(E), Patient)
-    * physical_form(result(E), Form, Patient)
-NP.instrument V NP (Instrument Subject Alternation)
-  Syntax: NP[Instrument] VERB NP[Patient]
-  Semantics:
-    * contact(during(E), Instrument, Patient)
-    * degradation_material_integrity(result(E), Patient)
-    * physical_form(result(E), Form, Patient)
-NP V NP ADJ (NP-ADJP; Resultative)
-  Syntax: NP[Agent] VERB NP[Patient] NP[Result]
-  Semantics:
-    * cause(Agent, E)
-    * contact(during(E), ?Instrument, Patient)
-    * degradation_material_integrity(result(E), Patient)
-    * physical_form(result(E), Form, Patient)
-    * Pred(result(E), Patient)
-NP V NP ADJ PP.instrument (NP-ADJP-PP; Resultative, Instrument-PP)
-  Syntax: NP[Agent] VERB NP[Patient] NP[Result] PREP[with] NP[Instrument]
-  Semantics:
-    * cause(Agent, E)
-    * contact(during(E), Instrument, Patient)
-    * degradation_material_integrity(result(E), Patient)
-    * physical_form(result(E), Form, Patient)
-    * Pred(result(E), Patient)
-    * use(during(E), Agent, Instrument)
-NP V NP PP.result (NP-PP; Result-PP)
-  Syntax: NP[Agent] VERB NP[Patient] PREP[to into] NP[Result +state]
-  Semantics:
-    * cause(Agent, E)
-    * contact(during(E), ?Instrument, Patient)
-    * degradation_material_integrity(result(E), Patient)
-    * physical_form(result(E), Form, Patient)
-    * Pred(result(E), Patient)
-NP V NP PP.result PP.instrument (NP-PP-PP; Result-PP, Instrument-PP)
-  Syntax: NP[Agent] VERB NP[Patient] PREP[to into] NP[Result +state] PREP[with] NP[Instrument]
-  Semantics:
-    * cause(Agent, E)
-    * contact(during(E), Instrument, Patient)
-    * degradation_material_integrity(result(E), Patient)
-    * physical_form(result(E), Form, Patient)
-    * Pred(result(E), Patient)
-    * use(during(E), Agent, Instrument)
-NP V PP.result (PP; Result-PP)
-  Syntax: NP[Patient] VERB PREP[to into] NP[Result +state]
-  Semantics:
-    * degradation_material_integrity(result(E), Patient)
-    * Pred(result(E), Patient)
-NP V NP.patient (Basic Transitive; Causative)
-  Syntax: NP[Agent] VERB NP[Patient]
-  Semantics:
-    * cause(Agent, E)
-    * state(result(E), Endstate, Patient)
-NP V NP PP.instrument (NP-PP; Instrument-PP)
-  Syntax: NP[Agent] VERB NP[Patient] PREP[with] NP[Instrument]
-  Semantics:
-    * cause(Agent, E)
-    * state(result(E), Endstate, Patient)
-    * use(during(E), Agent, Instrument)
-NP.patient V (Intransitive; Inchoative)
-  Syntax: NP[Patient] VERB
-  Semantics:
-    * state(result(E), Endstate, Patient)
-NP V ADV-Middle (Middle Construction)
-  Syntax: NP[Patient] VERB ADV
-  Semantics:
-    * state(result(E), Endstate, Patient)
-NP.instrument V NP (Instrument Subject Alternation)
-  Syntax: NP[Instrument] VERB NP[Patient]
-  Semantics:
-    * use(during(E), ?Agent, Instrument)
-    * state(result(E), Endstate, Patient)
+NP[Agent] VERB NP[Patient]
+NP[Agent] VERB NP[Patient] PREP[with] NP[Instrument]
+NP[Patient] VERB
+NP[Patient] VERB ADV
+NP[Instrument] VERB NP[Patient]
+NP[Agent] VERB NP[Patient] NP[Result]
+NP[Agent] VERB NP[Patient] NP[Result] PREP[with] NP[Instrument]
+NP[Agent] VERB NP[Patient] PREP[to into] NP[Result +state]
+NP[Agent] VERB NP[Patient] PREP[to into] NP[Result +state] PREP[with] NP[Instrument]
+NP[Patient] VERB PREP[to into] NP[Result +state]
+NP[Agent] VERB NP[Patient]
+NP[Agent] VERB NP[Patient] PREP[with] NP[Instrument]
+NP[Patient] VERB
+NP[Patient] VERB ADV
+NP[Instrument] VERB NP[Patient]

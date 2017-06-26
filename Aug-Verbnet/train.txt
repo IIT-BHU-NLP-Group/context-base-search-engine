@@ -1,12 +1,2 @@
-NP V NP (NP)
-  Syntax: NP[Agent] VERB NP[Theme]
-  Semantics:
-    * cause(Agent, E)
-    * location(start(E), Theme)
-    * location(end(E), Theme)
-NP V NP PP.attribute (NP-PP; as-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[as] NP[Attribute -sentential]
-  Semantics:
-    * cause(Agent, E)
-    * location(start(E), Theme, Attribute)
-    * location(end(E), Theme, Attribute)
+NP[Agent] VERB NP[Theme]
+NP[Agent] VERB NP[Theme] PREP[as] NP[Attribute -sentential]

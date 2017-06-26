@@ -1,4 +1,1 @@
-NP V (Basic Intransitive)
-  Syntax: NP[Theme] VERB
-  Semantics:
-    * exist(during(E), Theme)
+NP[Theme] VERB

@@ -1,28 +1,5 @@
-NP V NP (Unintentional Interpretation of ObjectBody_part Object)
-  Syntax: NP[Experiencer] VERB NP[Patient]
-  Semantics:
-    * harmed(during(E), Patient)
-    * experience(E, Experiencer)
-NP V NP (Unintentional Interpretation of ObjectReflexive Object)
-  Syntax: NP[Experiencer] VERB NP[Patient]
-  Semantics:
-    * harmed(during(E), Patient)
-    * experience(E, Experiencer)
-NP V NP PP.source (NP-PP; Source-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[+src] NP[Source]
-  Semantics:
-    * cause(Agent, E)
-    * location(start(E), Theme, Source)
-    * location(end(E), Theme, Source)
-NP V NP.source (Transitive; Source Object)
-  Syntax: NP[Agent] VERB NP[Source]
-  Semantics:
-    * cause(Agent, E)
-    * location(start(E), ?Theme, Source)
-    * location(end(E), ?Theme, Source)
-NP V NP.theme (Transitive; Theme Object)
-  Syntax: NP[Agent] VERB NP[Theme]
-  Semantics:
-    * cause(Agent, E)
-    * location(start(E), Theme, ?Source)
-    * location(end(E), Theme, ?Source)
+NP[Experiencer] VERB NP[Patient]
+NP[Experiencer] VERB NP[Patient]
+NP[Agent] VERB NP[Theme] PREP[+src] NP[Source]
+NP[Agent] VERB NP[Source]
+NP[Agent] VERB NP[Theme]

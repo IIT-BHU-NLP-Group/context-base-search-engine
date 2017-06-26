@@ -1,24 +1,3 @@
-NP V NP PP.asset (NP-PP; Asset-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[for at] NP[Asset]
-  Semantics:
-    * has_possession(start(E), Agent, Theme)
-    * has_possession(end(E), ?Recipient, Theme)
-    * has_possession(start(E), ?Recipient, Asset)
-    * has_possession(end(E), Agent, Asset)
-    * transfer(during(E), Theme)
-NP V NP PP.recipient PP.asset (NP-PP-PP; Recipient-PP Asset-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[to] NP[Recipient] PREP[at for on] NP[Asset]
-  Semantics:
-    * has_possession(start(E), Agent, Theme)
-    * has_possession(end(E), Recipient, Theme)
-    * has_possession(start(E), Recipient, Asset)
-    * has_possession(end(E), Agent, Asset)
-    * transfer(during(E), Theme)
-NP V NP NP PP.asset (NP-PP; Asset-PP)
-  Syntax: NP[Agent] VERB NP[Recipient] NP[Theme] PREP[at for on] NP[Asset]
-  Semantics:
-    * has_possession(start(E), Agent, Theme)
-    * has_possession(end(E), Recipient, Theme)
-    * has_possession(start(E), Recipient, Asset)
-    * has_possession(end(E), Agent, Asset)
-    * transfer(during(E), Theme)
+NP[Agent] VERB NP[Theme] PREP[for at] NP[Asset]
+NP[Agent] VERB NP[Theme] PREP[to] NP[Recipient] PREP[at for on] NP[Asset]
+NP[Agent] VERB NP[Recipient] NP[Theme] PREP[at for on] NP[Asset]

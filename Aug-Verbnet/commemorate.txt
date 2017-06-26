@@ -1,4 +1,0 @@
-NP V NP PP.attribute (NP-PP; as-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[as] NP[Attribute]
-  Semantics:
-    * declare(during(E), Agent, Theme, Attribute)

@@ -1,40 +1,7 @@
-NP V (Basic Intransitive)
-  Syntax: NP[Theme] VERB
-  Semantics:
-    * appear(during(E), Theme)
-NP V PP.location (PP; Location-PP)
-  Syntax: NP[Theme] VERB PREP[+loc] NP[Location]
-  Semantics:
-    * appear(during(E), Theme)
-    * Prep(start(E), Theme, Location)
-    * Prep(end(E), Theme, Location)
-There V NP PP (NP-PP; Expletive-there Subject)
-  Syntax: LEX[there] VERB NP[Theme] PREP[+loc] NP[Location]
-  Semantics:
-    * appear(during(E), Theme)
-    * Prep(start(E), Theme, Location)
-    * Prep(end(E), Theme, Location)
-PP.location V NP (Locative Inversion)
-  Syntax: PREP[+loc] NP[Location] VERB NP[Theme]
-  Semantics:
-    * appear(during(E), Theme)
-    * Prep(start(E), Theme, Location)
-    * Prep(end(E), Theme, Location)
-NP V ADV (ADVP-PRED; here/there)
-  Syntax: NP[Theme] VERB NP[Location +adv_loc]
-  Semantics:
-    * appear(during(E), Theme)
-    * location(start(E), Theme, Location)
-    * location(end(E), Theme, Location)
-NP V PP.destination (PP; locative-PP)
-  Syntax: NP[Theme] VERB PREP[+loc +dir +dest_conf] NP[Destination]
-  Semantics:
-    * motion(during(E), Theme)
-    * Prep(start(E), Theme, Destination)
-    * Prep(end(E), Theme, Destination)
-NP V NP PP.destination-Conative (Conative)
-  Syntax: NP[Agent] VERB NP[Theme] LEX[at] NP[Destination]
-  Semantics:
-    * motion(during(E), Theme)
-    * location(start(E), Theme, Destination)
-    * cause(Agent, E)
+NP[Theme] VERB
+NP[Theme] VERB PREP[+loc] NP[Location]
+LEX[there] VERB NP[Theme] PREP[+loc] NP[Location]
+PREP[+loc] NP[Location] VERB NP[Theme]
+NP[Theme] VERB NP[Location +adv_loc]
+NP[Theme] VERB PREP[+loc +dir +dest_conf] NP[Destination]
+NP[Agent] VERB NP[Theme] LEX[at] NP[Destination]

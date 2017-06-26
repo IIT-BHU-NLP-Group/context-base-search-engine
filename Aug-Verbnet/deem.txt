@@ -1,12 +1,3 @@
-NP V NP PP.attribute (NP-P-ING; as-PP)
-  Syntax: NP[Agent] VERB NP[Theme +np_p_ing]
-  Semantics:
-    * consider(during(E), Agent, Theme)
-NP V NP to be NP (NP-TOBE)
-  Syntax: NP[Agent] VERB NP[Theme +to_be]
-  Semantics:
-    * consider(during(E), Agent, Theme)
-NP V that S (S)
-  Syntax: NP[Agent] VERB NP[Theme +that_comp]
-  Semantics:
-    * consider(during(E), Agent, Theme)
+NP[Agent] VERB NP[Theme +np_p_ing]
+NP[Agent] VERB NP[Theme +to_be]
+NP[Agent] VERB NP[Theme +that_comp]

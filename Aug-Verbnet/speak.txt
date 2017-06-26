@@ -1,63 +1,13 @@
-NP V (Basic Intransitive)
-  Syntax: NP[Agent] VERB
-  Semantics:
-    * transfer_info(during(E), Agent, ?Recipient, ?Topic)
-    * cause(Agent, E)
-NP V PP.topic (PP; about-PP)
-  Syntax: NP[Agent] VERB PREP[about] NP[Topic -sentential]
-  Semantics:
-    * transfer_info(during(E), Agent, ?Recipient, Topic)
-    * cause(Agent, E)
-NP V PP.recipient PP.topic (PP; to-PP)
-  Syntax: NP[Agent] VERB PREP[to] NP[Recipient] PREP[about] NP[Topic -sentential]
-  Semantics:
-    * transfer_info(during(E), Agent, Recipient, Topic)
-    * cause(Agent, E)
-NP V (Basic Intransitive)
-  Syntax: NP[Agent] VERB
-  Semantics:
-    * transfer_info(during(E), Agent, ?Co-Agent, ?Topic)
-    * cause(Agent, E)
-NP V PP.co-agent (PP; to-PP)
-  Syntax: NP[Agent] VERB PREP[to] NP[Co-Agent]
-  Semantics:
-    * transfer_info(during(E), Agent, Co-Agent, ?Topic)
-    * cause(Agent, E)
-NP V PP.co-agent (PP; with-PP)
-  Syntax: NP[Agent] VERB PREP[with] NP[Co-Agent]
-  Semantics:
-    * transfer_info(during(E), Agent, Co-Agent, ?Topic)
-    * cause(Agent, E)
-NP V PP.co-agent PP.topic (PP-PP; to-PP Topic-PP)
-  Syntax: NP[Agent] VERB PREP[to] NP[Co-Agent] PREP[about] NP[Topic]
-  Semantics:
-    * transfer_info(during(E), Agent, Co-Agent, Topic)
-    * cause(Agent, E)
-NP V PP.co-agent PP.topic (PP-PP; with-PP Topic-PP)
-  Syntax: NP[Agent] VERB PREP[with] NP[Co-Agent] PREP[about] NP[Topic]
-  Semantics:
-    * transfer_info(during(E), Agent, Co-Agent, Topic)
-    * cause(Agent, E)
-NP V (Simple Reciprocal Intransitive)
-  Syntax: NP[Agent +plural] VERB
-  Semantics:
-    * transfer_info(during(E), Agent_i, Agent_j, ?Topic)
-NP V together (Together Reciprocal Alternation Intransitive)
-  Syntax: NP[Agent +plural] VERB LEX[together]
-  Semantics:
-    * transfer_info(during(E), Agent_i, Agent_j, ?Topic)
-NP V PP.topic PP.co-agent (PP-PP; Topic-PP to-PP)
-  Syntax: NP[Agent] VERB PREP[about] NP[Topic] PREP[to] NP[Co-Agent]
-  Semantics:
-    * transfer_info(during(E), Agent, Co-Agent, Topic)
-    * cause(Agent, E)
-NP V PP.topic PP.co-agent (PP-PP; Topic-PP with-PP)
-  Syntax: NP[Agent] VERB PREP[about] NP[Topic] PREP[with] NP[Co-Agent]
-  Semantics:
-    * transfer_info(during(E), Agent, Co-Agent, Topic)
-    * cause(Agent, E)
-NP V PP.topic (PP; Topic-PP)
-  Syntax: NP[Agent] VERB PREP[about] NP[Topic]
-  Semantics:
-    * transfer_info(during(E), Agent, ?Co-Agent, Topic)
-    * cause(Agent, E)
+NP[Agent] VERB
+NP[Agent] VERB PREP[about] NP[Topic -sentential]
+NP[Agent] VERB PREP[to] NP[Recipient] PREP[about] NP[Topic -sentential]
+NP[Agent] VERB
+NP[Agent] VERB PREP[to] NP[Co-Agent]
+NP[Agent] VERB PREP[with] NP[Co-Agent]
+NP[Agent] VERB PREP[to] NP[Co-Agent] PREP[about] NP[Topic]
+NP[Agent] VERB PREP[with] NP[Co-Agent] PREP[about] NP[Topic]
+NP[Agent +plural] VERB
+NP[Agent +plural] VERB LEX[together]
+NP[Agent] VERB PREP[about] NP[Topic] PREP[to] NP[Co-Agent]
+NP[Agent] VERB PREP[about] NP[Topic] PREP[with] NP[Co-Agent]
+NP[Agent] VERB PREP[about] NP[Topic]

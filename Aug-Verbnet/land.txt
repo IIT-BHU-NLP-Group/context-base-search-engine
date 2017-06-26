@@ -1,15 +1,3 @@
-NP V PP.destination (PP; locative-PP)
-  Syntax: NP[Theme] VERB PREP[in on under] NP[Destination]
-  Semantics:
-    * motion(during(E), Theme)
-    * Prep(start(E), Theme, Destination)
-    * Prep(end(E), Theme, Destination)
-NP V (Basic Intransitive)
-  Syntax: NP[Theme] VERB
-  Semantics:
-    * motion(during(E), Theme)
-NP V ADVP (ADVPhere/there)
-  Syntax: NP[Theme] VERB NP[Destination]
-  Semantics:
-    * motion(during(E), Theme)
-    * location(end(E), Theme, Destination)
+NP[Theme] VERB PREP[in on under] NP[Destination]
+NP[Theme] VERB
+NP[Theme] VERB NP[Destination]

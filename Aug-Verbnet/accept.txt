@@ -1,49 +1,10 @@
-NP V how S (HOW-S)
-  Syntax: NP[Agent] VERB NP[Theme +how_extract]
-  Semantics:
-    * approve(during(E), Agent, Theme)
-NP V NP (Basic Transitive)
-  Syntax: NP[Agent] VERB NP[Theme -sentential]
-  Semantics:
-    * approve(during(E), Agent, Theme)
-NP V S_ING (POSSING)
-  Syntax: NP[Agent] VERB NP[Theme +poss_ing]
-  Semantics:
-    * approve(during(E), Agent, Theme)
-NP V that S (S)
-  Syntax: NP[Agent] VERB NP[Theme +that_comp]
-  Semantics:
-    * approve(during(E), Agent, Theme)
-NP V what S (WHAT-S)
-  Syntax: NP[Agent] VERB NP[Theme +what_extract]
-  Semantics:
-    * approve(during(E), Agent, Theme)
-NP V S_ING (ING-AC)
-  Syntax: NP[Agent] VERB NP[Theme +ac_ing]
-  Semantics:
-    * describe(during(E), Agent, Theme)
-    * cause(Agent, E)
-NP V what S (WHAT-S)
-  Syntax: NP[Agent] VERB NP[Theme +what_extract]
-  Semantics:
-    * describe(during(E), Agent, Theme)
-    * cause(Agent, E)
-NP V what S_INF (WHAT-TO-INF)
-  Syntax: NP[Agent] VERB NP[Theme +what_inf]
-  Semantics:
-    * describe(during(E), Agent, Theme)
-    * cause(Agent, E)
-NP V NP (Basic Transitive)
-  Syntax: NP[Agent] VERB NP[Theme]
-  Semantics:
-    * has_possession(start(E), ?Source, Theme)
-    * transfer(during(E), Theme)
-    * has_possession(end(E), Agent, Theme)
-    * cause(Agent, E)
-NP V NP PP.source (NP-PP; from-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[from] NP[Source]
-  Semantics:
-    * has_possession(start(E), Source, Theme)
-    * transfer(during(E), Theme)
-    * has_possession(end(E), Agent, Theme)
-    * cause(Agent, E)
+NP[Agent] VERB NP[Theme +how_extract]
+NP[Agent] VERB NP[Theme -sentential]
+NP[Agent] VERB NP[Theme +poss_ing]
+NP[Agent] VERB NP[Theme +that_comp]
+NP[Agent] VERB NP[Theme +what_extract]
+NP[Agent] VERB NP[Theme +ac_ing]
+NP[Agent] VERB NP[Theme +what_extract]
+NP[Agent] VERB NP[Theme +what_inf]
+NP[Agent] VERB NP[Theme]
+NP[Agent] VERB NP[Theme] PREP[from] NP[Source]

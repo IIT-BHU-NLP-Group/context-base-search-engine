@@ -1,75 +1,15 @@
-NP V NP.recipient (Basic Transitive; Recipient Object)
-  Syntax: NP[Agent] VERB NP[Recipient]
-  Semantics:
-    * transfer_info(during(E), Agent, Recipient, ?Topic)
-    * cause(Agent, E)
-NP V NP PP.topic (NP-PP; against/about-PP)
-  Syntax: NP[Agent] VERB NP[Recipient] PREP[against about concerning on regarding respecting] NP[Topic]
-  Semantics:
-    * transfer_info(during(E), Agent, Recipient, Topic)
-    * cause(Agent, E)
-NP V NP.recipient that S (NP-S; Recipient Object)
-  Syntax: NP[Agent] VERB NP[Recipient] NP[Topic +that_comp]
-  Semantics:
-    * transfer_info(during(E), Agent, Recipient, Topic)
-    * cause(Agent, E)
-NP V NP how S_INF (NP-HOW-TO-INF; Recipient Object)
-  Syntax: NP[Agent] VERB NP[Recipient] NP[Topic +wh_inf]
-  Semantics:
-    * transfer_info(during(E), Agent, Recipient, Topic)
-    * cause(Agent, E)
-NP V NP S-Quote (NP-QUOT; Recipient Object)
-  Syntax: NP[Agent] VERB NP[Recipient] NP[Topic +quotation]
-  Semantics:
-    * transfer_info(during(E), Agent, Recipient, Topic)
-    * cause(Agent, E)
-NP V NP PP.topic (NP-PP; of-PP)
-  Syntax: NP[Agent] VERB NP[Recipient] PREP[of] NP[Topic]
-  Semantics:
-    * transfer_info(during(E), Agent, Recipient, Topic)
-    * cause(Agent, E)
-NP V NP (NP)
-  Syntax: NP[Cause] VERB NP[Theme]
-  Semantics:
-    * cause(Cause, E)
-    * ensure(Theme, ?Beneficiary)
-NP V NP NP (NP-NP)
-  Syntax: NP[Cause] VERB NP[Beneficiary] NP[Theme -sentential]
-  Semantics:
-    * cause(Cause, E)
-    * ensure(Theme, Beneficiary)
-NP V NP PP.beneficiary (NP-PP; for-PP)
-  Syntax: NP[Cause] VERB NP[Theme] PREP[for] NP[Beneficiary]
-  Semantics:
-    * cause(Cause, E)
-    * ensure(Theme, Beneficiary)
-NP V that S (S)
-  Syntax: NP[Cause] VERB NP[Theme +oc_to_inf]
-  Semantics:
-    * cause(Cause, E)
-    * ensure(Theme, ?Beneficiary)
-NP V NP NP (NP-NP)
-  Syntax: NP[Agent] VERB NP[Recipient] NP[Topic]
-  Semantics:
-    * transfer_info(during(E), Agent, Recipient, Topic)
-    * cause(Agent, E)
-NP V NP that S (NP-S)
-  Syntax: NP[Agent] VERB NP[Recipient] NP[Topic +that_comp]
-  Semantics:
-    * transfer_info(during(E), Agent, Recipient, Topic)
-    * cause(Agent, E)
-NP V S_ING (POSSING)
-  Syntax: NP[Agent] VERB NP[Topic +poss_ing]
-  Semantics:
-    * transfer_info(during(E), Agent, ?Recipient, Topic)
-    * cause(Agent, E)
-NP V PP.recipient that S (PP-THAT-S; to-PP)
-  Syntax: NP[Agent] VERB PREP[to] NP[Recipient] NP[Topic +that_comp]
-  Semantics:
-    * transfer_info(during(E), Agent, Recipient, Topic)
-    * cause(Agent, E)
-NP V that S (S)
-  Syntax: NP[Agent] VERB NP[Topic +that_comp]
-  Semantics:
-    * transfer_info(during(E), Agent, ?Recipient, Topic)
-    * cause(Agent, E)
+NP[Agent] VERB NP[Recipient]
+NP[Agent] VERB NP[Recipient] PREP[against about concerning on regarding respecting] NP[Topic]
+NP[Agent] VERB NP[Recipient] NP[Topic +that_comp]
+NP[Agent] VERB NP[Recipient] NP[Topic +wh_inf]
+NP[Agent] VERB NP[Recipient] NP[Topic +quotation]
+NP[Agent] VERB NP[Recipient] PREP[of] NP[Topic]
+NP[Cause] VERB NP[Theme]
+NP[Cause] VERB NP[Beneficiary] NP[Theme -sentential]
+NP[Cause] VERB NP[Theme] PREP[for] NP[Beneficiary]
+NP[Cause] VERB NP[Theme +oc_to_inf]
+NP[Agent] VERB NP[Recipient] NP[Topic]
+NP[Agent] VERB NP[Recipient] NP[Topic +that_comp]
+NP[Agent] VERB NP[Topic +poss_ing]
+NP[Agent] VERB PREP[to] NP[Recipient] NP[Topic +that_comp]
+NP[Agent] VERB NP[Topic +that_comp]

@@ -1,30 +1,6 @@
-NP V NP S_ING (NP-P-ING-OC; as-PP)
-  Syntax: NP[Agent] VERB NP[Theme] LEX[as] NP[Attribute +oc_ing]
-  Semantics:
-    * characterize(during(E), Theme, Attribute)
-    * cause(Agent, E)
-NP V NP to be ADJ (NP-TOBE)
-  Syntax: NP[Agent] VERB NP[Theme] LEX[as] NP[Attribute +small_clause]
-  Semantics:
-    * characterize(during(E), Theme, Attribute)
-    * cause(Agent, E)
-NP V NP PP.attribute (NP-PP; as-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[as] NP[Attribute -sentential]
-  Semantics:
-    * characterize(during(E), Theme, Attribute)
-    * cause(Agent, E)
-NP V NP (NP)
-  Syntax: NP[Agent] VERB NP[Theme]
-  Semantics:
-    * group(during(E), Theme)
-    * cause(Agent, E)
-NP V NP PP.goal (NP-PP; as-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[as] NP[Goal -sentential]
-  Semantics:
-    * group(during(E), Theme, Goal)
-    * cause(Agent, E)
-NP V NP PP.location (NP-PP; in-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[in] NP[Goal]
-  Semantics:
-    * group(during(E), Theme, Goal)
-    * cause(Agent, E)
+NP[Agent] VERB NP[Theme] LEX[as] NP[Attribute +oc_ing]
+NP[Agent] VERB NP[Theme] LEX[as] NP[Attribute +small_clause]
+NP[Agent] VERB NP[Theme] PREP[as] NP[Attribute -sentential]
+NP[Agent] VERB NP[Theme]
+NP[Agent] VERB NP[Theme] PREP[as] NP[Goal -sentential]
+NP[Agent] VERB NP[Theme] PREP[in] NP[Goal]

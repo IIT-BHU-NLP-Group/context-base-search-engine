@@ -1,6 +1,6 @@
 import re
 from nltk.stem import WordNetLemmatizer
-from nltk.corpus import verbnet as vn
+# from nltk.corpus import verbnet as vn
 import sys
 
 # verb = sys.argv[1]
@@ -54,18 +54,20 @@ class vdNode:
 
 vd = dict()
 
-with open('verb_count_result.csv','r') as f:
+with open('new_verb_count_result.csv','r') as f:
 	for line in f:
 		verb = line.strip().split(',')[1]
 		if('/'in verb):
 			verb = verb.replace('/','-')
 		print '\n',verb,'*'*50
-		vs = [vn.vnclass(i) for i in vn.classids(verb)]
-		for v in vs:
-			frames = v.findall('FRAMES/FRAME')
+		# vs = [vn.vnclass(i) for i in vn.classids(verb)]
+		# for v in vs:
+		with open('Aug-Verbnet/%s.txt'%verb,'r')as vfile:
+			# frames = v.findall('FRAMES/FRAME')
 			f_LIST = []
-			for i in frames:
-				syn_str = vn.pprint_syntax(i)
+			# for i in frames:
+			for l in vfile:
+				syn_str = l.strip()# vn.pprint_syntax(i)
 				print '*',syn_str
 				# Split the main SYNTAX string
 				lis = [] # holds the tokens in form of String
@@ -136,7 +138,7 @@ with open('verb_count_result.csv','r') as f:
 					LIST.append(n)
 					print n
 				f_LIST.append(vdNode(LIST,syn_str))
-			vd[verb] = f_LIST
+			vd[lemmatizer.lemmatize(verb,'v')] = f_LIST
 
 
 

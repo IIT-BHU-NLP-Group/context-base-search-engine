@@ -1,7 +1,1 @@
-NP V NP PP.source (NP-PP; for/on Source (abstract))
-  Syntax: NP[Agent] VERB NP[Theme] PREP[from for on] NP[Source]
-  Semantics:
-    * has_possession(start(E), Source, Theme)
-    * has_possession(end(E), Agent, Theme)
-    * transfer(during(E), Theme)
-    * cause(Agent, E)
+NP[Agent] VERB NP[Theme] PREP[from for on] NP[Source]

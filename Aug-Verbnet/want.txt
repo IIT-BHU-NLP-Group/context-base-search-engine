@@ -1,28 +1,6 @@
-NP V NP NP (NP-NP)
-  Syntax: NP[Agent] VERB NP[Theme] NP[Result]
-  Semantics:
-    * designated(result(E), Theme, Result)
-    * cause(Agent, E)
-NP V NP PP.result (NP-PP; as-PP)
-  Syntax: NP[Agent] VERB NP[Theme] LEX[as] NP[Result -sentential]
-  Semantics:
-    * designated(result(E), Theme, Result)
-    * cause(Agent, E)
-NP V NP to be NP (Infinitival Copular Clause)
-  Syntax: NP[Agent] VERB NP[Theme] LEX[to] LEX[be] NP[Result -sentential]
-  Semantics:
-    * designated(result(E), Theme, Result)
-    * cause(Agent, E)
-NP V NP (Basic Transitive)
-  Syntax: NP[Agent] VERB NP[Theme]
-  Semantics:
-    * designated(result(E), Theme, Result)
-    * cause(Agent, E)
-NP V NP S_INF (NP-TO-INF)
-  Syntax: NP[Pivot] VERB NP[Theme +np_to_inf]
-  Semantics:
-    * desire(E, Pivot, Theme)
-NP V NP to be ADJ (NP-TOBE)
-  Syntax: NP[Pivot] VERB NP[Theme +to_be]
-  Semantics:
-    * desire(E, Pivot, Theme)
+NP[Agent] VERB NP[Theme] NP[Result]
+NP[Agent] VERB NP[Theme] LEX[as] NP[Result -sentential]
+NP[Agent] VERB NP[Theme] LEX[to] LEX[be] NP[Result -sentential]
+NP[Agent] VERB NP[Theme]
+NP[Pivot] VERB NP[Theme +np_to_inf]
+NP[Pivot] VERB NP[Theme +to_be]

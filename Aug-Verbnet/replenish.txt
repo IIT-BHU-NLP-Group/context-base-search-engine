@@ -1,18 +1,3 @@
-NP V NP PP.theme (NP-PP; with-PP)
-  Syntax: NP[Agent] VERB NP[Destination] PREP[with] NP[Theme]
-  Semantics:
-    * motion(during(E), Theme)
-    * location(start(E), Theme, Destination)
-    * location(end(E), Theme, Destination)
-    * cause(Agent, E)
-NP V NP (Locatum Subject Alternation)
-  Syntax: NP[Theme] VERB NP[Destination]
-  Semantics:
-    * location(E, Theme, Destination)
-NP V NP.destination (Transitive; Destination Object)
-  Syntax: NP[Agent] VERB NP[Destination]
-  Semantics:
-    * motion(during(E), ?Theme)
-    * location(start(E), ?Theme, Destination)
-    * location(end(E), ?Theme, Destination)
-    * cause(Agent, E)
+NP[Agent] VERB NP[Destination] PREP[with] NP[Theme]
+NP[Theme] VERB NP[Destination]
+NP[Agent] VERB NP[Destination]

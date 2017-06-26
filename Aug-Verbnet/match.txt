@@ -1,20 +1,3 @@
-NP V NP PP.co-patient (NP-PP; into/to/with-PP)
-  Syntax: NP[Agent] VERB NP[Patient] PREP[into to with] NP[Co-Patient]
-  Semantics:
-    * cause(Agent, E)
-    * degradation_material_integrity(result(E), Patient)
-    * degradation_material_integrity(result(E), Co-Patient)
-    * mingled(result(E), physical, Patient, Co-Patient)
-NP V NP (Simple Reciprocal Transitive)
-  Syntax: NP[Agent] VERB NP[Patient +plural]
-  Semantics:
-    * cause(Agent, E)
-    * degradation_material_integrity(result(E), Patient_i)
-    * degradation_material_integrity(result(E), Patient_j)
-    * mingled(result(E), physical, Patient_i, Patient_j)
-NP V PP.co-patient (PP; with-PP)
-  Syntax: NP[Patient] VERB PREP[with] NP[Co-Patient]
-  Semantics:
-    * degradation_material_integrity(result(E), Patient)
-    * degradation_material_integrity(result(E), Co-Patient)
-    * mingled(result(E), physical, Patient, Co-Patient)
+NP[Agent] VERB NP[Patient] PREP[into to with] NP[Co-Patient]
+NP[Agent] VERB NP[Patient +plural]
+NP[Patient] VERB PREP[with] NP[Co-Patient]

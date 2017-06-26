@@ -1,0 +1,5 @@
+NP[Agent] VERB NP[Theme] NP[Result]
+NP[Agent] VERB NP[Theme] LEX[as] NP[Result -sentential]
+NP[Agent] VERB NP[Theme] LEX[to] LEX[be] NP[Result -sentential]
+NP[Agent] VERB NP[Theme]
+NP[Agent] VERB NP[Theme]

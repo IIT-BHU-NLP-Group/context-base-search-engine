@@ -1,39 +1,9 @@
-NP V NP S_ING (NP-P-ING-OC; as-PP)
-  Syntax: NP[Agent] VERB NP[Theme] LEX[as] NP[Attribute +oc_ing]
-  Semantics:
-    * characterize(during(E), Theme, Attribute)
-    * cause(Agent, E)
-NP V NP to be ADJ (NP-TOBE)
-  Syntax: NP[Agent] VERB NP[Theme] LEX[as] NP[Attribute +small_clause]
-  Semantics:
-    * characterize(during(E), Theme, Attribute)
-    * cause(Agent, E)
-NP V NP PP.attribute (NP-PP; as-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[as] NP[Attribute -sentential]
-  Semantics:
-    * characterize(during(E), Theme, Attribute)
-    * cause(Agent, E)
-NP V NP to be NP (NP-TOBE)
-  Syntax: NP[Agent] VERB NP[Theme] NP[Attribute +small_clause]
-  Semantics:
-    * declare(during(E), Agent, Theme, Attribute)
-NP V NP (Basic Transitive)
-  Syntax: NP[Agent] VERB NP[Recipient]
-  Semantics:
-    * command(during(E), Agent, Recipient, ?Topic)
-NP V NP S_INF (NP-TO-INF-OC)
-  Syntax: NP[Agent] VERB NP[Recipient] NP[Topic +oc_to_inf]
-  Semantics:
-    * command(during(E), Agent, Recipient, Topic)
-It V (Intransitive; Expletive Subject)
-  Syntax: LEX[it] LEX[[+be]] VERB
-  Semantics:
-    * weather(during(E), Weather_type, ?Theme)
-It V NP.theme (NP; Expletive Subject, Theme Object)
-  Syntax: LEX[it] LEX[[+be]] VERB NP[Theme]
-  Semantics:
-    * weather(during(E), Weather_type, Theme)
-It V PP.theme (PP; Expletive Subject, Theme-PP)
-  Syntax: LEX[it[+be]] VERB PREP[with] NP[Theme]
-  Semantics:
-    * weather(during(E), Weather_type, Theme)
+NP[Agent] VERB NP[Theme] LEX[as] NP[Attribute +oc_ing]
+NP[Agent] VERB NP[Theme] LEX[as] NP[Attribute +small_clause]
+NP[Agent] VERB NP[Theme] PREP[as] NP[Attribute -sentential]
+NP[Agent] VERB NP[Theme] NP[Attribute +small_clause]
+NP[Agent] VERB NP[Recipient]
+NP[Agent] VERB NP[Recipient] NP[Topic +oc_to_inf]
+LEX[it] LEX[[+be]] VERB
+LEX[it] LEX[[+be]] VERB NP[Theme]
+LEX[it[+be]] VERB PREP[with] NP[Theme]

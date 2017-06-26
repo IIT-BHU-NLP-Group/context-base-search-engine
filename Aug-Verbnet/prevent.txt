@@ -1,12 +1,3 @@
-NP V S_ING (POSSING)
-  Syntax: NP[Agent] VERB NP[Theme +poss_ing]
-  Semantics:
-    * forbid(during(E), Agent, Theme)
-NP V S_ING (ING-AC)
-  Syntax: NP[Agent] VERB NP[Theme +ac_ing]
-  Semantics:
-    * forbid(during(E), Agent, Theme)
-NP V NP (Basic Transitive)
-  Syntax: NP[Agent] VERB NP[Theme -sentential]
-  Semantics:
-    * forbid(during(E), Agent, Theme)
+NP[Agent] VERB NP[Theme +poss_ing]
+NP[Agent] VERB NP[Theme +ac_ing]
+NP[Agent] VERB NP[Theme -sentential]
