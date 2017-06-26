@@ -1,0 +1,12 @@
+NP V (Simple Reciprocal Intransitive)
+  Syntax: NP[Patient +plural] VERB
+  Semantics:
+    * degradation_material_integrity(result(E), Patient_i)
+    * degradation_material_integrity(result(E), Patient_j)
+    * mingled(result(E), physical, Patient_i, Patient_j)
+NP NP V together (Together Reciprocal Alternation Intransitive)
+  Syntax: NP[Patient +plural] VERB LEX[together]
+  Semantics:
+    * degradation_material_integrity(result(E), Patient_i)
+    * degradation_material_integrity(result(E), Patient_j)
+    * mingled(result(E), physical, Patient_i, Patient_j)

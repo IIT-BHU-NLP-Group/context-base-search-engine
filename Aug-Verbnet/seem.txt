@@ -1,0 +1,4 @@
+NP V S_INF (TO-INF-RS)
+  Syntax: NP[Theme] VERB NP[Attribute +rs_to_inf]
+  Semantics:
+    * seem(E, Theme, Attribute)

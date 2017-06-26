@@ -1,0 +1,6 @@
+NP V NP (Transitive; Body-part Object)
+  Syntax: NP[Agent] VERB NP[Theme]
+  Semantics:
+    * hold(during(E), Agent, Theme)
+    * contact(during(E), Agent, Theme)
+    * cause(Agent, E)

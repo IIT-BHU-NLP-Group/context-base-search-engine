@@ -1,0 +1,6 @@
+NP V NP PP.source (NP-PP; from-PP)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[from] NP[Source]
+  Semantics:
+    * cause(Agent, E)
+    * location(start(E), Theme, Source)
+    * location(end(E), Theme, Source)

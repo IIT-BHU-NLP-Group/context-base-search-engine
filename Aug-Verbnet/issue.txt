@@ -1,0 +1,73 @@
+NP V (Basic Intransitive)
+  Syntax: NP[Theme] VERB
+  Semantics:
+    * appear(during(E), Theme)
+NP V PP.location (PP; Location-PP)
+  Syntax: NP[Theme] VERB PREP[+loc] NP[Location]
+  Semantics:
+    * appear(during(E), Theme)
+    * Prep(start(E), Theme, Location)
+    * Prep(end(E), Theme, Location)
+There V NP PP (NP-PP; Expletive-there Subject)
+  Syntax: LEX[there] VERB NP[Theme] PREP[+loc] NP[Location]
+  Semantics:
+    * appear(during(E), Theme)
+    * Prep(start(E), Theme, Location)
+    * Prep(end(E), Theme, Location)
+PP.location V NP (Locative Inversion)
+  Syntax: PREP[+loc] NP[Location] VERB NP[Theme]
+  Semantics:
+    * appear(during(E), Theme)
+    * Prep(start(E), Theme, Location)
+    * Prep(end(E), Theme, Location)
+NP V ADV (ADVP-PRED; here/there)
+  Syntax: NP[Theme] VERB NP[Location +adv_loc]
+  Semantics:
+    * appear(during(E), Theme)
+    * location(start(E), Theme, Location)
+    * location(end(E), Theme, Location)
+NP V NP PP.recipient (NP-PP; Recipient-PP)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[to] NP[Recipient]
+  Semantics:
+    * has_possession(start(E), Agent, Theme)
+    * has_possession(end(E), Recipient, Theme)
+    * transfer(during(E), Theme)
+    * cause(Agent, E)
+NP V NP-Fulfilling PP.theme (Fulfilling Alternation)
+  Syntax: NP[Agent] VERB NP[Recipient] PREP[with] NP[Theme]
+  Semantics:
+    * has_possession(start(E), Agent, Theme)
+    * has_possession(end(E), Recipient, Theme)
+    * transfer(during(E), Theme)
+    * cause(Agent, E)
+NP V NP (Transitive)
+  Syntax: NP[Agent] VERB NP[Theme]
+  Semantics:
+    * has_possession(start(E), Agent, Theme)
+    * has_possession(end(E), ?Recipient, Theme)
+    * transfer(during(E), Theme)
+    * cause(Agent, E)
+NP V NP PP.goal (NP-PP; Goal-PP)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[to] NP[Goal]
+  Semantics:
+    * has_possession(start(E), Agent, Theme)
+    * future_possession(end(E), Goal, Theme)
+    * cause(Agent, E)
+NP V NP.theme (PP) (Transitive; Theme Object)
+  Syntax: NP[Agent] VERB NP[Theme]
+  Semantics:
+    * has_possession(start(E), Agent, Theme)
+    * future_possession(end(E), ?Goal, Theme)
+    * cause(Agent, E)
+NP V NP-Dative NP (Dative)
+  Syntax: NP[Agent] VERB NP[Goal] NP[Theme]
+  Semantics:
+    * has_possession(start(E), Agent, Theme)
+    * future_possession(end(E), Goal, Theme)
+    * cause(Agent, E)
+NP V NP PP.goal (NP-PP; for-PP)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[for] NP[Goal]
+  Semantics:
+    * has_possession(start(E), Agent, Theme)
+    * future_possession(end(E), Goal, Theme)
+    * cause(Agent, E)

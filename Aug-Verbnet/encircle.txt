@@ -1,0 +1,24 @@
+NP V NP (Basic Transitive)
+  Syntax: NP[Theme] VERB NP[Co-Theme]
+  Semantics:
+    * contact(during(E), Theme, Co-Theme)
+    * exist(during(E), Theme)
+    * exist(during(E), Co-Theme)
+NP V NP PP.theme (NP-PP; with-PP)
+  Syntax: NP[Agent] VERB NP[Destination] PREP[with] NP[Theme]
+  Semantics:
+    * motion(during(E), Theme)
+    * location(start(E), Theme, Destination)
+    * location(end(E), Theme, Destination)
+    * cause(Agent, E)
+NP V NP (Locatum Subject Alternation)
+  Syntax: NP[Theme] VERB NP[Destination]
+  Semantics:
+    * location(E, Theme, Destination)
+NP V NP.destination (Transitive; Destination Object)
+  Syntax: NP[Agent] VERB NP[Destination]
+  Semantics:
+    * motion(during(E), ?Theme)
+    * location(start(E), ?Theme, Destination)
+    * location(end(E), ?Theme, Destination)
+    * cause(Agent, E)

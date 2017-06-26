@@ -1,0 +1,99 @@
+NP V how S (HOW-S)
+  Syntax: NP[Agent] VERB NP[Theme +how_extract]
+  Semantics:
+    * approve(during(E), Agent, Theme)
+NP V NP (Basic Transitive)
+  Syntax: NP[Agent] VERB NP[Theme -sentential]
+  Semantics:
+    * approve(during(E), Agent, Theme)
+NP V S_ING (POSSING)
+  Syntax: NP[Agent] VERB NP[Theme +poss_ing]
+  Semantics:
+    * approve(during(E), Agent, Theme)
+NP V that S (S)
+  Syntax: NP[Agent] VERB NP[Theme +that_comp]
+  Semantics:
+    * approve(during(E), Agent, Theme)
+NP V what S (WHAT-S)
+  Syntax: NP[Agent] VERB NP[Theme +what_extract]
+  Semantics:
+    * approve(during(E), Agent, Theme)
+NP V NP.recipient (Basic Transitive; Recipient Object)
+  Syntax: NP[Agent] VERB NP[Recipient]
+  Semantics:
+    * transfer_info(during(E), Agent, Recipient, ?Topic)
+    * cause(Agent, E)
+NP V NP PP.topic (NP-PP; against/about-PP)
+  Syntax: NP[Agent] VERB NP[Recipient] PREP[against about concerning on regarding respecting] NP[Topic]
+  Semantics:
+    * transfer_info(during(E), Agent, Recipient, Topic)
+    * cause(Agent, E)
+NP V NP.recipient that S (NP-S; Recipient Object)
+  Syntax: NP[Agent] VERB NP[Recipient] NP[Topic +that_comp]
+  Semantics:
+    * transfer_info(during(E), Agent, Recipient, Topic)
+    * cause(Agent, E)
+NP V NP how S_INF (NP-HOW-TO-INF; Recipient Object)
+  Syntax: NP[Agent] VERB NP[Recipient] NP[Topic +wh_inf]
+  Semantics:
+    * transfer_info(during(E), Agent, Recipient, Topic)
+    * cause(Agent, E)
+NP V NP S-Quote (NP-QUOT; Recipient Object)
+  Syntax: NP[Agent] VERB NP[Recipient] NP[Topic +quotation]
+  Semantics:
+    * transfer_info(during(E), Agent, Recipient, Topic)
+    * cause(Agent, E)
+NP V NP PP.topic (NP-PP; of-PP)
+  Syntax: NP[Agent] VERB NP[Recipient] PREP[of] NP[Topic]
+  Semantics:
+    * transfer_info(during(E), Agent, Recipient, Topic)
+    * cause(Agent, E)
+NP V NP (Basic Transitive)
+  Syntax: NP[Stimulus] VERB NP[Experiencer]
+  Semantics:
+    * cause(Stimulus, E)
+    * emotional_state(result(E), Emotion, Experiencer)
+NP V ADV-Middle (Middle Construction)
+  Syntax: NP[Experiencer] VERB ADV
+  Semantics:
+    * emotional_state(result(E), ?Emotion, Experiencer)
+NP V NP-PRO-ARB (PRO-Arb Object Alternation)
+  Syntax: NP[Stimulus] VERB
+  Semantics:
+    * cause(Stimulus, E)
+    * emotional_state(result(E), Emotion, ?Experiencer)
+NP.cause V NP (NP; Attribute Subject)
+  Syntax: NP[Stimulus +genitive] LEX['s] VERB NP[Experiencer]
+  Semantics:
+    * cause(Stimulus, E)
+    * emotional_state(result(E), Emotion, Experiencer)
+NP V NP ADJ (NP-ADJP; Resultative)
+  Syntax: NP[Stimulus] VERB NP[Experiencer] NP[Result]
+  Semantics:
+    * cause(Stimulus, E)
+    * emotional_state(result(E), Emotion, Experiencer)
+    * Pred(result(E), Experiencer)
+NP V NP (Basic Transitive)
+  Syntax: NP[Agent] VERB NP[Patient]
+  Semantics:
+    * force(during(E), Agent, Patient, ?Result)
+NP V NP S_ING (NP-P-ING-OC; into-PP)
+  Syntax: NP[Agent] VERB NP[Patient] PREP[into] NP[Result +oc_ing]
+  Semantics:
+    * force(during(E), Agent, Patient, Result)
+NP V NP PP.result (NP-PP; into-PP)
+  Syntax: NP[Agent] VERB NP[Patient] PREP[into] NP[Result -sentential]
+  Semantics:
+    * force(during(E), Agent, Patient, Result)
+NP V NP (NP)
+  Syntax: NP[Agent] VERB NP[Theme]
+  Semantics:
+    * promote(during(E), Agent, Theme)
+NP V S_ING (ING-AC)
+  Syntax: NP[Agent] VERB NP[Theme +ac_ing]
+  Semantics:
+    * promote(during(E), Agent, Theme)
+NP V S_ING (POSSING)
+  Syntax: NP[Agent] VERB NP[Theme +poss_ing]
+  Semantics:
+    * promote(during(E), Agent, Theme)

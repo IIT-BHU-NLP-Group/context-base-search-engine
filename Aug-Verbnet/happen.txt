@@ -1,0 +1,22 @@
+NP v (Basic Intransitive)
+  Syntax: NP[Theme] VERB
+  Semantics:
+    * occur(during(E), Theme)
+There V NP (NP; Expletive-there Subject)
+  Syntax: LEX[there] VERB NP[Theme]
+  Semantics:
+    * occur(during(E), Theme)
+NP V PP.location (PP; Location-PP)
+  Syntax: NP[Theme] VERB PREP[+loc] NP[Location]
+  Semantics:
+    * occur(during(E), Theme)
+    * Prep(during(E), Theme, Location)
+PP.location V NP (Locative Inversion)
+  Syntax: PREP[+loc] NP[Location] VERB NP[Theme]
+  Semantics:
+    * occur(during(E), Theme)
+    * Prep(during(E), Theme, Location)
+It V that S (SEEM-S)
+  Syntax: LEX[it] VERB NP[Theme +that_comp]
+  Semantics:
+    * occur(during(E), Theme)

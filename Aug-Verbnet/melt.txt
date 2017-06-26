@@ -1,0 +1,28 @@
+NP.material V PP.product (PP; Inchoative variant, Product-PP)
+  Syntax: NP[Material] VERB PREP[into] NP[Product]
+  Semantics:
+    * exist(start(E), Product)
+    * exist(result(E), Product)
+    * made_of(result(E), Product, Material)
+    * state(start(E), Endstate, Material)
+    * state(result(E), Endstate, Material)
+NP V NP.material PP.product (NP-PP; Causative variant, Product-PP)
+  Syntax: NP[Agent] VERB NP[Material] PREP[into] NP[Product]
+  Semantics:
+    * exist(start(E), Product)
+    * exist(result(E), Product)
+    * made_of(result(E), Product, Material)
+    * state(start(E), Endstate, Material)
+    * state(result(E), Endstate, Material)
+    * cause(Agent, E)
+NP V NP.material (Transitive; Causative variant, Material Object)
+  Syntax: NP[Agent] VERB NP[Material]
+  Semantics:
+    * state(start(E), Endstate, Material)
+    * state(result(E), Endstate, Material)
+    * cause(Agent, E)
+NP V NP ADJ (ADJP; Resultative)
+  Syntax: NP[Patient] VERB NP[Result]
+  Semantics:
+    * state(result(E), Endstate, Patient)
+    * Pred(result(E), Patient)

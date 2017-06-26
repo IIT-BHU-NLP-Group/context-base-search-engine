@@ -1,0 +1,30 @@
+NP V NP (Basic Transitive)
+  Syntax: NP[Experiencer] VERB NP[Stimulus]
+  Semantics:
+    * emotional_state(E, Emotion, Experiencer)
+    * in_reaction_to(E, Stimulus)
+NP V NP PP.attribute (NP-PP; Possessor Object, Attribute-PP)
+  Syntax: NP[Experiencer] VERB NP[Stimulus] PREP[for] NP[Attribute]
+  Semantics:
+    * emotional_state(E, Emotion, Experiencer)
+    * in_reaction_to(E, Stimulus, Attribute)
+NP V NP.stimulus (NP-PP; Attribute Object, Possessor-PP)
+  Syntax: NP[Experiencer] VERB NP[Stimulus]
+  Semantics:
+    * emotional_state(E, Emotion, Experiencer)
+    * in_reaction_to(E, Stimulus)
+NP V that S (S)
+  Syntax: NP[Experiencer] VERB NP[Stimulus +that_comp]
+  Semantics:
+    * emotional_state(E, Emotion, Experiencer)
+    * in_reaction_to(E, Stimulus)
+NP V S_ING (ING-SC/BE-ING)
+  Syntax: NP[Experiencer] VERB NP[Stimulus +be_sc_ing]
+  Semantics:
+    * emotional_state(E, Emotion, Experiencer)
+    * in_reaction_to(E, Stimulus)
+NP V NP S_ING (POSSING)
+  Syntax: NP[Experiencer] VERB NP[Stimulus +poss_ing]
+  Semantics:
+    * emotional_state(E, Emotion, Experiencer)
+    * in_reaction_to(E, Stimulus)

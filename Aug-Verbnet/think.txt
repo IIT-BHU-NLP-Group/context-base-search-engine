@@ -1,0 +1,69 @@
+NP V NP ADJ (NP-ADJP-PRED)
+  Syntax: NP[Agent] VERB NP[Theme] NP[Attribute -sentential]
+  Semantics:
+    * consider(during(E), Agent, Theme)
+NP V NP NP (NP-NP-PRED)
+  Syntax: NP[Agent] VERB NP[Theme] NP[Attribute -sentential]
+  Semantics:
+    * consider(during(E), Agent, Theme)
+NP V NP to be NP (NP-TOBE)
+  Syntax: NP[Agent] VERB NP[Theme +to_be]
+  Semantics:
+    * consider(during(E), Agent, Theme)
+NP V NP ADJ (NP-VEN-NP-OMIT)
+  Syntax: NP[Agent] VERB NP[Theme +np_ppart] NP[Attribute -sentential]
+  Semantics:
+    * consider(during(E), Agent, Theme)
+NP V that S (S)
+  Syntax: NP[Agent] VERB NP[Theme +that_comp]
+  Semantics:
+    * consider(during(E), Agent, Theme)
+NP V (Basic Instransitive)
+  Syntax: NP[Agent] VERB
+  Semantics:
+    * think(during(E), Agent, ?Topic)
+    * cause(E, Agent)
+NP V PP.topic (PP; about-PP)
+  Syntax: NP[Agent] VERB PREP[about] NP[Topic -sentential]
+  Semantics:
+    * think(during(E), Agent, Topic)
+    * cause(E, Agent)
+NP V PP.theme S_ING (P-ING-SC; about-PP)
+  Syntax: NP[Agent] VERB PREP[about] NP[Topic +sc_ing]
+  Semantics:
+    * think(during(E), Agent, Topic)
+    * cause(E, Agent)
+NP V PP.topic what S (P-WHAT-S; about-PP)
+  Syntax: NP[Agent] VERB PREP[about] NP[Topic +what_extract]
+  Semantics:
+    * think(during(E), Agent, Topic)
+    * cause(E, Agent)
+NP V PP.topic what S_INF (P-WHAT-TO-INF; about-PP)
+  Syntax: NP[Agent] VERB PREP[about] NP[Topic +what_inf]
+  Semantics:
+    * think(during(E), Agent, Topic)
+    * cause(E, Agent)
+NP V for NP S_INF (FOR-TO-INF)
+  Syntax: NP[Experiencer] VERB NP[Stimulus +for_comp]
+  Semantics:
+    * desire(E, Experiencer, Stimulus)
+NP V NP (NP)
+  Syntax: NP[Experiencer] VERB NP[Stimulus -sentential]
+  Semantics:
+    * desire(E, Experiencer, Stimulus)
+NP V NP to be ADJ (Infinitival Copular Clause)
+  Syntax: NP[Experiencer] VERB NP[Stimulus +to_be]
+  Semantics:
+    * desire(E, Experiencer, Stimulus)
+NP V NP ADJ (NP-VEN-NP-OMIT)
+  Syntax: NP[Experiencer] VERB NP[Stimulus +np_ppart]
+  Semantics:
+    * desire(E, Experiencer, Stimulus)
+NP V that S (S)
+  Syntax: NP[Experiencer] VERB NP[Stimulus +that_comp]
+  Semantics:
+    * desire(E, Experiencer, Stimulus)
+NP V S_INF (TO-INF-SC)
+  Syntax: NP[Experiencer] VERB NP[Stimulus +sc_to_inf]
+  Semantics:
+    * desire(E, Experiencer, Stimulus)

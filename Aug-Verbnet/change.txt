@@ -1,0 +1,74 @@
+NP V (Intransitive)
+  Syntax: NP[Agent] VERB
+  Semantics:
+    * take_care_of(during(E), Agent, ?Patient)
+NP V NP (Transitive)
+  Syntax: NP[Agent] VERB NP[Patient]
+  Semantics:
+    * take_care_of(during(E), Agent, Patient)
+NP V NP (Unspecified Reflexive ObjectReflexive variant)
+  Syntax: NP[Agent] VERB NP[Patient +refl]
+  Semantics:
+    * take_care_of(during(E), Agent, Patient)
+NP V NP PP.co-theme (NP-PP; with-PP)
+  Syntax: NP[Theme] VERB NP[Location] PREP[with] NP[Co-Theme]
+  Semantics:
+    * location(start(E), Theme, Location_i)
+    * location(end(E), Theme, Location_j)
+    * location(start(E), Co-Theme, Location_j)
+    * location(end(E), Co-Theme, Location_i)
+NP V NP.location (Transitive; Location Object)
+  Syntax: NP[Theme +plural] VERB NP[Location]
+  Semantics:
+    * location(start(E), Theme_i, Location_i)
+    * location(end(E), Theme_i, Location_j)
+    * location(start(E), Theme_j, Location_j)
+    * location(end(E), Theme_j, Location_i)
+NP V NP.patient (Basic Transitive; Causative)
+  Syntax: NP[Agent] VERB NP[Patient]
+  Semantics:
+    * cause(Agent, E)
+    * state(result(E), Endstate, Patient)
+NP V NP PP.instrument (NP-PP; Instrument-PP)
+  Syntax: NP[Agent] VERB NP[Patient] PREP[with] NP[Instrument]
+  Semantics:
+    * cause(Agent, E)
+    * state(result(E), Endstate, Patient)
+    * use(during(E), Agent, Instrument)
+NP.patient V (Intransitive; Inchoative)
+  Syntax: NP[Patient] VERB
+  Semantics:
+    * state(result(E), Endstate, Patient)
+NP V ADV-Middle (Middle Construction)
+  Syntax: NP[Patient] VERB ADV
+  Semantics:
+    * state(result(E), Endstate, Patient)
+NP.instrument V NP (Instrument Subject Alternation)
+  Syntax: NP[Instrument] VERB NP[Patient]
+  Semantics:
+    * use(during(E), ?Agent, Instrument)
+    * state(result(E), Endstate, Patient)
+NP V PP.result (PP; w/ endstate)
+  Syntax: NP[Agent] VERB PREP[to] NP[Result]
+  Semantics:
+    * state(start(E), ?Material, Agent)
+    * state(result(E), Result, Agent)
+    * state(start(E), Result, Agent)
+    * state(result(E), ?Material, Agent)
+    * cause(Agent, E)
+NP V PP.material PP.result (PP-PP; w/ beginning state w/ end state)
+  Syntax: NP[Agent] VERB PREP[from] NP[Material] PREP[to] NP[Result]
+  Semantics:
+    * state(start(E), Material, ?Patient)
+    * state(start(E), Result, ?Patient)
+    * state(result(E), Result, ?Patient)
+    * state(result(E), Material, ?Patient)
+    * cause(Agent, E)
+NP V                     PP.result  PP.material (PP-PP; w/ end state w/ beginning state)
+  Syntax: NP[Agent] VERB PREP[to] NP[Result] PREP[from] NP[Material]
+  Semantics:
+    * state(start(E), Material, ?Patient)
+    * state(start(E), Result, ?Patient)
+    * state(result(E), Result, ?Patient)
+    * state(result(E), Material, ?Patient)
+    * cause(Agent, E)

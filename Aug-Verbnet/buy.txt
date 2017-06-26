@@ -1,0 +1,73 @@
+NP V how S (HOW-S)
+  Syntax: NP[Agent] VERB NP[Theme +how_extract]
+  Semantics:
+    * approve(during(E), Agent, Theme)
+NP V NP (Basic Transitive)
+  Syntax: NP[Agent] VERB NP[Theme -sentential]
+  Semantics:
+    * approve(during(E), Agent, Theme)
+NP V S_ING (POSSING)
+  Syntax: NP[Agent] VERB NP[Theme +poss_ing]
+  Semantics:
+    * approve(during(E), Agent, Theme)
+NP V that S (S)
+  Syntax: NP[Agent] VERB NP[Theme +that_comp]
+  Semantics:
+    * approve(during(E), Agent, Theme)
+NP V what S (WHAT-S)
+  Syntax: NP[Agent] VERB NP[Theme +what_extract]
+  Semantics:
+    * approve(during(E), Agent, Theme)
+NP V NP (Basic Transitive)
+  Syntax: NP[Agent] VERB NP[Theme]
+  Semantics:
+    * has_possession(start(E), ?Source, Theme)
+    * transfer(during(E), Theme)
+    * has_possession(end(E), Agent, Theme)
+    * cause(Agent, E)
+NP V NP PP.source (NP-PP; from-PP)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[from] NP[Source]
+  Semantics:
+    * has_possession(start(E), Source, Theme)
+    * transfer(during(E), Theme)
+    * has_possession(end(E), Agent, Theme)
+    * cause(Agent, E)
+NP V NP PP.beneficiary (NP-PP; Beneficiary Object)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[for] NP[Beneficiary]
+  Semantics:
+    * has_possession(start(E), ?Source, Theme)
+    * transfer(during(E), Theme)
+    * has_possession(end(E), Agent, Theme)
+    * cause(Agent, E)
+    * benefit(E, Beneficiary)
+NP V NP.beneficiary NP (Benefactive Alternation; double object)
+  Syntax: NP[Agent] VERB NP[Beneficiary] NP[Theme]
+  Semantics:
+    * has_possession(start(E), ?Source, Theme)
+    * transfer(during(E), Theme)
+    * has_possession(end(E), Agent, Theme)
+    * cause(Agent, E)
+    * benefit(E, Beneficiary)
+NP V NP PP.asset (NP-PP; Asset Subject)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[for] NP[Asset]
+  Semantics:
+    * has_possession(start(E), ?Source, Theme)
+    * transfer(during(E), Theme)
+    * has_possession(end(E), Agent, Theme)
+    * cause(Agent, E)
+    * cost(E, Asset)
+NP.asset V NP (NP; Asset Subject)
+  Syntax: NP[Asset] VERB NP[Theme]
+  Semantics:
+    * has_possession(start(E), ?Source, Theme)
+    * transfer(during(E), Theme)
+    * has_possession(end(E), ?Agent, Theme)
+    * cause(?Agent, E)
+    * cost(E, Asset)
+NP V NP PP.source NP.asset (NP-PP-PP; Source-PP, Asset-PP)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[from] NP[Source] PREP[at for] NP[Asset]
+  Semantics:
+    * has_possession(start(E), Source, Theme)
+    * has_possession(end(E), Agent, Theme)
+    * transfer(during(E), Theme)
+    * cost(E, Asset)

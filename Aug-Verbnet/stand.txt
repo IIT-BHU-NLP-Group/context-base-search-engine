@@ -1,0 +1,79 @@
+NP V NP (Basic Transitive)
+  Syntax: NP[Experiencer] VERB NP[Stimulus]
+  Semantics:
+    * emotional_state(E, Emotion, Experiencer)
+    * in_reaction_to(E, Stimulus)
+NP V NP PP.attribute (NP-PP; Possessor Object, Attribute-PP)
+  Syntax: NP[Experiencer] VERB NP[Stimulus] PREP[for] NP[Attribute]
+  Semantics:
+    * emotional_state(E, Emotion, Experiencer)
+    * in_reaction_to(E, Stimulus, Attribute)
+NP V NP.stimulus (NP-PP; Attribute Object, Possessor-PP)
+  Syntax: NP[Experiencer] VERB NP[Stimulus]
+  Semantics:
+    * emotional_state(E, Emotion, Experiencer)
+    * in_reaction_to(E, Stimulus)
+NP V that S (S)
+  Syntax: NP[Experiencer] VERB NP[Stimulus +that_comp]
+  Semantics:
+    * emotional_state(E, Emotion, Experiencer)
+    * in_reaction_to(E, Stimulus)
+NP V S_ING (ING-SC/BE-ING)
+  Syntax: NP[Experiencer] VERB NP[Stimulus +be_sc_ing]
+  Semantics:
+    * emotional_state(E, Emotion, Experiencer)
+    * in_reaction_to(E, Stimulus)
+NP V NP S_ING (POSSING)
+  Syntax: NP[Experiencer] VERB NP[Stimulus +poss_ing]
+  Semantics:
+    * emotional_state(E, Emotion, Experiencer)
+    * in_reaction_to(E, Stimulus)
+NP V (Basic Intransitive)
+  Syntax: NP[Agent] VERB
+  Semantics:
+    * position(start(E), Agent, Pos)
+    * motion(during(E), Agent)
+    * position(end(E), Agent, Pos)
+NP V PP.location (PP; locative-PP)
+  Syntax: NP[Agent] VERB PREP[+loc] NP[Location]
+  Semantics:
+    * position(start(E), Agent, Pos)
+    * motion(during(E), Agent)
+    * position(end(E), Agent, Pos)
+    * Prep(E, Agent, Location)
+NP V PP.destination (PP; Destination-PP)
+  Syntax: NP[Theme] VERB PREP[+loc] NP[Destination]
+  Semantics:
+    * Prep(E, Theme, Destination)
+    * position(E, Theme, Pos)
+NP V ADVP (ADVPhere/there)
+  Syntax: NP[Theme] VERB NP[Destination +adv_loc]
+  Semantics:
+    * Prep(E, Theme, Destination)
+    * position(E, Theme, Pos)
+NP V (Basic Intransitive)
+  Syntax: NP[Theme] VERB
+  Semantics:
+    * position(E, Theme, Pos)
+NP V PP.location (PP; locative-PP)
+  Syntax: NP[Theme] VERB PREP[+loc] NP[Location]
+  Semantics:
+    * position(E, Theme, Pos)
+    * Prep(E, Theme, Location)
+There V PP NP (PP-NP; Expletive-there Subject)
+  Syntax: LEX[there] VERB PREP[+loc] NP[Location] NP[Theme -definite]
+  Semantics:
+    * position(E, Theme, Pos)
+    * Prep(E, Theme, Location)
+PP.location V NP (Locative Inversion)
+  Syntax: PREP[+loc] NP[Location] VERB NP[Theme]
+  Semantics:
+    * position(E, Theme, Pos)
+    * Prep(E, Theme, Location)
+NP V NP.theme PP (NP; Causative variant)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[+loc] NP[Location]
+  Semantics:
+    * cause(Agent, E)
+    * position(start(E), Theme, Pos)
+    * position(end(E), Theme, Pos)
+    * Prep(E, Theme, Location)

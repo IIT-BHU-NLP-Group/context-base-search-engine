@@ -1,0 +1,6 @@
+NP V NP (Basic Transitive)
+  Syntax: NP[Agent] VERB NP[Source]
+  Semantics:
+    * cause(Agent, E)
+    * location(start(E), ?Theme, Source)
+    * location(end(E), ?Theme, Source)

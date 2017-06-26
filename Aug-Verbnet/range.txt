@@ -1,0 +1,20 @@
+NP V PP.location (PP; path-PP)
+  Syntax: NP[Theme] VERB PREP[+path] NP[Location]
+  Semantics:
+    * Prep(during(E), Theme, Location)
+    * exist(during(E), Theme)
+PP.location V NP (Locative Inversion)
+  Syntax: PREP[+path] NP[Location] VERB NP[Theme]
+  Semantics:
+    * Prep(during(E), Theme, Location)
+    * exist(during(E), Theme)
+There V PP NP (PP-NP; Expletive-there Subject)
+  Syntax: LEX[there] VERB PREP[+path] NP[Location] NP[Theme]
+  Semantics:
+    * Prep(during(E), Theme, Location)
+    * exist(during(E), Theme)
+There V NP PP (NP-PP; Expletive-there Subject)
+  Syntax: LEX[there] VERB NP[Theme] PREP[+path] NP[Location]
+  Semantics:
+    * Prep(during(E), Theme, Location)
+    * exist(during(E), Theme)

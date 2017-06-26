@@ -1,0 +1,86 @@
+NP V NP (Basic Transitive)
+  Syntax: NP[Agent] VERB NP[Theme]
+  Semantics:
+    * has_possession(start(E), ?Source, Theme)
+    * transfer(during(E), Theme)
+    * has_possession(end(E), Agent, Theme)
+    * cause(Agent, E)
+NP V NP PP.source (NP-PP; from-PP)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[from] NP[Source]
+  Semantics:
+    * has_possession(start(E), Source, Theme)
+    * transfer(during(E), Theme)
+    * has_possession(end(E), Agent, Theme)
+    * cause(Agent, E)
+NP V NP PP.beneficiary (NP-PP; Beneficiary Object)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[for] NP[Beneficiary]
+  Semantics:
+    * has_possession(start(E), ?Source, Theme)
+    * transfer(during(E), Theme)
+    * has_possession(end(E), Agent, Theme)
+    * cause(Agent, E)
+    * benefit(E, Beneficiary)
+NP V NP.beneficiary NP (Benefactive Alternation; double object)
+  Syntax: NP[Agent] VERB NP[Beneficiary] NP[Theme]
+  Semantics:
+    * has_possession(start(E), ?Source, Theme)
+    * transfer(during(E), Theme)
+    * has_possession(end(E), Agent, Theme)
+    * cause(Agent, E)
+    * benefit(E, Beneficiary)
+NP V NP PP.asset (NP-PP; Asset Subject)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[for] NP[Asset]
+  Semantics:
+    * has_possession(start(E), ?Source, Theme)
+    * transfer(during(E), Theme)
+    * has_possession(end(E), Agent, Theme)
+    * cause(Agent, E)
+    * cost(E, Asset)
+NP.asset V NP (NP; Asset Subject)
+  Syntax: NP[Asset] VERB NP[Theme]
+  Semantics:
+    * has_possession(start(E), ?Source, Theme)
+    * transfer(during(E), Theme)
+    * has_possession(end(E), ?Agent, Theme)
+    * cause(?Agent, E)
+    * cost(E, Asset)
+NP V NP PP.source NP.asset (NP-PP-PP; Source-PP, Asset-PP)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[from] NP[Source] PREP[at for] NP[Asset]
+  Semantics:
+    * has_possession(start(E), Source, Theme)
+    * has_possession(end(E), Agent, Theme)
+    * transfer(during(E), Theme)
+    * cost(E, Asset)
+NP V NP (Basic Transitive)
+  Syntax: NP[Agent] VERB NP[Patient]
+  Semantics:
+    * cause(Agent, E)
+    * harmed(during(E), Patient)
+NP V NP ADJ (NP-ADJP; Resultative)
+  Syntax: NP[Agent] VERB NP[Patient] NP[Result]
+  Semantics:
+    * cause(Agent, E)
+    * harmed(during(E), Patient)
+    * Pred(result(E), Patient)
+NP V NP PP.result (NP-PP; Result-PP)
+  Syntax: NP[Agent] VERB NP[Patient] PREP[to into] NP[Result +state]
+  Semantics:
+    * cause(Agent, E)
+    * harmed(during(E), Patient)
+    * Pred(result(E), Patient)
+NP V NP PP.instrument (NP-PP; Instrument-PP)
+  Syntax: NP[Agent] VERB NP[Patient] PREP[with] NP[Instrument]
+  Semantics:
+    * cause(Agent, E)
+    * harmed(during(E), Patient)
+NP V NP-Dative NP (Dative)
+  Syntax: NP[Agent] VERB NP[Destination] NP[Theme]
+  Semantics:
+    * exert_force(during(E0), Agent, Theme)
+    * contact(end(E0), Agent, Theme)
+    * motion(during(E1), Theme)
+    * contact(during(E1), Agent, Theme)
+    * location(start(E1), Theme, Destination)
+    * location(end(E1), Theme, Destination)
+    * cause(Agent, E1)
+    * meets(E0, E1)

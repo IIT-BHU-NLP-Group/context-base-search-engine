@@ -1,0 +1,29 @@
+NP V NP (Locative Preposition Drop)
+  Syntax: NP[Theme] VERB NP[Location +concrete]
+  Semantics:
+    * motion(during(E), Theme)
+    * via(during(E), Theme, Location)
+NP V PP.location (PP; locative-PP)
+  Syntax: NP[Theme] VERB PREP[+loc] NP[Location]
+  Semantics:
+    * exist(during(E), Theme)
+    * Prep(during(E), Theme, Location)
+    * motion(during(E), Theme)
+There V NP PP (NP-PP; Expletive-there Subject)
+  Syntax: LEX[there] VERB NP[Theme -definite] PREP[+loc] NP[Location]
+  Semantics:
+    * exist(during(E), Theme)
+    * motion(during(E), Theme)
+    * Prep(during(E), Theme, Location)
+PP.location V NP (Locative Inversion)
+  Syntax: PREP[+loc] NP[Location] VERB NP[Theme]
+  Semantics:
+    * exist(during(E), Theme)
+    * Prep(during(E), Theme, Location)
+    * motion(during(E), Theme)
+PP.location V PP.theme (PP; Location Subject, with-PP)
+  Syntax: NP[Location] VERB PREP[with] NP[Theme]
+  Semantics:
+    * exist(during(E), Theme)
+    * location(during(E), Theme, Location)
+    * motion(during(E), Theme)

@@ -1,0 +1,12 @@
+NP V (Simple Reciprocal Intransitive)
+  Syntax: NP[Patient +plural] VERB
+  Semantics:
+    * together(end(E), abstract/physical, Patient_i, Patient_j)
+NP V (Intransitive; Plural Subject)
+  Syntax: NP[Agent +plural] VERB
+  Semantics:
+    * social_interaction(during(E), Agent_i, Agent_j)
+NP V NP (Transitive)
+  Syntax: NP[Agent] VERB NP[Co-Agent]
+  Semantics:
+    * social_interaction(during(E), Agent, Co-Agent)

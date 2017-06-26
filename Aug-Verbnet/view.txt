@@ -1,0 +1,27 @@
+NP V how S (HOW-S)
+  Syntax: NP[Agent] VERB NP[Theme +how_extract]
+  Semantics:
+    * describe(during(E), Agent, Theme)
+    * cause(Agent, E)
+NP V how S_INF (HOW-TO-INF)
+  Syntax: NP[Agent] VERB NP[Theme +wh_inf]
+  Semantics:
+    * describe(during(E), Agent, Theme)
+    * cause(Agent, E)
+NP V NP PP.attribute (NP-P-ING; as-PP)
+  Syntax: NP[Agent] VERB NP[Theme +np_p_ing]
+  Semantics:
+    * consider(during(E), Agent, Theme)
+NP V NP to be NP (NP-TOBE)
+  Syntax: NP[Agent] VERB NP[Theme +to_be]
+  Semantics:
+    * consider(during(E), Agent, Theme)
+NP V that S (S)
+  Syntax: NP[Agent] VERB NP[Theme +that_comp]
+  Semantics:
+    * consider(during(E), Agent, Theme)
+NP V NP (Basic Transitive)
+  Syntax: NP[Experiencer] VERB NP[Stimulus]
+  Semantics:
+    * perceive(during(E), Experiencer, Stimulus)
+    * in_reaction_to(E, Stimulus)

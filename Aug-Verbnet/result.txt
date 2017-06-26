@@ -1,0 +1,50 @@
+NP V (Basic Intransitive)
+  Syntax: NP[Theme] VERB
+  Semantics:
+    * appear(during(E), Theme)
+NP V PP.location (PP; Location-PP)
+  Syntax: NP[Theme] VERB PREP[+loc] NP[Location]
+  Semantics:
+    * appear(during(E), Theme)
+    * Prep(start(E), Theme, Location)
+    * Prep(end(E), Theme, Location)
+There V NP PP (NP-PP; Expletive-there Subject)
+  Syntax: LEX[there] VERB NP[Theme] PREP[+loc] NP[Location]
+  Semantics:
+    * appear(during(E), Theme)
+    * Prep(start(E), Theme, Location)
+    * Prep(end(E), Theme, Location)
+PP.location V NP (Locative Inversion)
+  Syntax: PREP[+loc] NP[Location] VERB NP[Theme]
+  Semantics:
+    * appear(during(E), Theme)
+    * Prep(start(E), Theme, Location)
+    * Prep(end(E), Theme, Location)
+NP V ADV (ADVP-PRED; here/there)
+  Syntax: NP[Theme] VERB NP[Location +adv_loc]
+  Semantics:
+    * appear(during(E), Theme)
+    * location(start(E), Theme, Location)
+    * location(end(E), Theme, Location)
+NP v (Basic Intransitive)
+  Syntax: NP[Theme] VERB
+  Semantics:
+    * occur(during(E), Theme)
+There V NP (NP; Expletive-there Subject)
+  Syntax: LEX[there] VERB NP[Theme]
+  Semantics:
+    * occur(during(E), Theme)
+NP V PP.location (PP; Location-PP)
+  Syntax: NP[Theme] VERB PREP[+loc] NP[Location]
+  Semantics:
+    * occur(during(E), Theme)
+    * Prep(during(E), Theme, Location)
+PP.location V NP (Locative Inversion)
+  Syntax: PREP[+loc] NP[Location] VERB NP[Theme]
+  Semantics:
+    * occur(during(E), Theme)
+    * Prep(during(E), Theme, Location)
+It V that S (SEEM-S)
+  Syntax: LEX[it] VERB NP[Theme +that_comp]
+  Semantics:
+    * occur(during(E), Theme)

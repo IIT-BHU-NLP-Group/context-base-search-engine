@@ -1,0 +1,9 @@
+NP V S_INF (TO-INF-SC)
+  Syntax: NP[Experiencer] VERB NP[Stimulus +sc_to_inf]
+  Semantics:
+    * emotional_state(E, Emotion, Experiencer)
+    * in_reaction_to(E, Stimulus)
+NP V NP (Basic Transitive)
+  Syntax: NP[Pivot] VERB NP[Theme]
+  Semantics:
+    * desire(E, Pivot, Theme)

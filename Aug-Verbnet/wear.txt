@@ -1,0 +1,10 @@
+NP V NP (Basic Transitive)
+  Syntax: NP[Agent] VERB NP[Theme]
+  Semantics:
+    * wear(E, Agent, Theme)
+NP V PP-Conative (Conative)
+  Syntax: NP[Agent] VERB LEX[at] NP[Source]
+  Semantics:
+    * cause(Agent, E)
+    * location(start(E), ?Theme, Source)
+    * location(end(E), ?Theme, Source)

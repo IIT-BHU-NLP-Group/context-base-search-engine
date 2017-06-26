@@ -1,0 +1,57 @@
+NP V NP (Basic Transitive)
+  Syntax: NP[Agent] VERB NP[Theme]
+  Semantics:
+    * motion(during(E), Agent)
+    * motion(during(E), Theme)
+NP V NP PP.location (NP-PP; path-PP)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[+spatial] NP[Location]
+  Semantics:
+    * motion(during(E), Agent)
+    * motion(during(E), Theme)
+    * Prep(E, Theme, Location)
+    * Prep(E, Agent, Location)
+NP V PP.theme (PP; after-PP)
+  Syntax: NP[Agent] VERB PREP[after] NP[Theme]
+  Semantics:
+    * motion(during(E), Agent)
+    * motion(during(E), Theme)
+NP V S_ING (ING-AC)
+  Syntax: NP[Experiencer] VERB NP[Stimulus +ac_ing]
+  Semantics:
+    * understand(E, Experiencer, Stimulus, ?Attribute)
+NP V how S_INF (HOW-TO-INF)
+  Syntax: NP[Experiencer] VERB NP[Stimulus +wh_inf]
+  Semantics:
+    * understand(E, Experiencer, Stimulus, ?Attribute)
+NP V NP to be NP (NP-TOBE)
+  Syntax: NP[Experiencer] VERB NP[Stimulus +to_be]
+  Semantics:
+    * understand(E, Experiencer, Stimulus, ?Attribute)
+NP V NP (Basic Transitive)
+  Syntax: NP[Theme] VERB NP[Co-Theme]
+  Semantics:
+    * contact(during(E), Theme, Co-Theme)
+    * exist(during(E), Theme)
+    * exist(during(E), Co-Theme)
+NP v (Basic Intransitive)
+  Syntax: NP[Theme] VERB
+  Semantics:
+    * occur(during(E), Theme)
+There V NP (NP; Expletive-there Subject)
+  Syntax: LEX[there] VERB NP[Theme]
+  Semantics:
+    * occur(during(E), Theme)
+NP V PP.location (PP; Location-PP)
+  Syntax: NP[Theme] VERB PREP[+loc] NP[Location]
+  Semantics:
+    * occur(during(E), Theme)
+    * Prep(during(E), Theme, Location)
+PP.location V NP (Locative Inversion)
+  Syntax: PREP[+loc] NP[Location] VERB NP[Theme]
+  Semantics:
+    * occur(during(E), Theme)
+    * Prep(during(E), Theme, Location)
+It V that S (SEEM-S)
+  Syntax: LEX[it] VERB NP[Theme +that_comp]
+  Semantics:
+    * occur(during(E), Theme)

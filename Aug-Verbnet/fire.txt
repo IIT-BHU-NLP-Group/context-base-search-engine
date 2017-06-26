@@ -1,0 +1,29 @@
+NP V NP (NP)
+  Syntax: NP[Agent] VERB NP[Theme]
+  Semantics:
+    * cause(Agent, E)
+    * location(start(E), Theme, ?Source)
+    * location(end(E), Theme, ?Source)
+NP V NP PP.source (NP-PP; from-PP)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[from] NP[Source]
+  Semantics:
+    * cause(Agent, E)
+    * location(start(E), Theme, Source)
+    * location(end(E), Theme, Source)
+NP V NP PP.attribute (NP-PP; as-PP)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[as] NP[Attribute -sentential]
+  Semantics:
+    * cause(Agent, E)
+    * location(start(E), Theme, ?Source, Attribute)
+    * location(end(E), Theme, ?Source, Attribute)
+NP V NP-Dative NP (Dative)
+  Syntax: NP[Agent] VERB NP[Destination] NP[Theme]
+  Semantics:
+    * exert_force(during(E0), Agent, Theme)
+    * contact(end(E0), Agent, Theme)
+    * motion(during(E1), Theme)
+    * contact(during(E1), Agent, Theme)
+    * location(start(E1), Theme, Destination)
+    * location(end(E1), Theme, Destination)
+    * cause(Agent, E1)
+    * meets(E0, E1)

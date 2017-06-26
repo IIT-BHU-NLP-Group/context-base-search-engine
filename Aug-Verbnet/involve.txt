@@ -1,0 +1,28 @@
+NP V NP (NP)
+  Syntax: NP[Agent] VERB NP[Theme]
+  Semantics:
+    * involve(during(E), Agent, Theme, ?Goal)
+NP V NP PP.goal (NP-PP; in-PP)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[in] NP[Goal]
+  Semantics:
+    * involve(during(E), Agent, Theme, Goal)
+NP V NP (NP)
+  Syntax: NP[Theme] VERB NP[Co-Theme]
+  Semantics:
+    * relate(E, Theme, Co-Theme)
+NP V NP             PP.source (NP-PP; from-PP)
+  Syntax: NP[Pivot] VERB NP[Theme] PREP[from] NP[Source]
+  Semantics:
+    * require(E, Pivot, Theme, Source)
+NP V NP S_INF (NP-ING-SC)
+  Syntax: NP[Pivot] VERB NP[Theme +np_to_inf]
+  Semantics:
+    * require(E, Pivot, Theme, ?Source)
+NP V S_ING (ING-AC)
+  Syntax: NP[Pivot] VERB NP[Theme +ac_ing]
+  Semantics:
+    * require(E, Pivot, Theme, ?Source)
+NP V that S (S-SUBJUNCT)
+  Syntax: NP[Pivot] VERB NP[Theme +that_comp]
+  Semantics:
+    * require(E, Pivot, Theme, ?Source)

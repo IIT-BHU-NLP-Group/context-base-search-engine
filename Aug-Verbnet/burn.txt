@@ -1,0 +1,117 @@
+NP.patient V (Intransitive; Inchoative)
+  Syntax: NP[Patient] VERB
+  Semantics:
+    * state(result(E), Endstate, Patient)
+NP V (Basic Intransitive)
+  Syntax: NP[Theme] VERB
+  Semantics:
+    * exist(during(E), Theme)
+NP V PP.location (PP; locative-PP)
+  Syntax: NP[Theme] VERB PREP[+loc] NP[Location]
+  Semantics:
+    * exist(during(E), Theme)
+    * Prep(during(E), Theme, Location)
+There V NP (NP; Expletive-there Subject)
+  Syntax: LEX[there] VERB NP[Theme -definite]
+  Semantics:
+    * exist(during(E), Theme)
+NP.location V NP (Locative Inversion)
+  Syntax: PREP[+loc] NP[Location] VERB NP[Theme]
+  Semantics:
+    * exist(during(E), Theme)
+    * Prep(during(E), Theme, Location)
+NP.location V PP.theme (PP; Location Subject, with-PP)
+  Syntax: NP[Location] VERB PREP[with] NP[Theme]
+  Semantics:
+    * exist(during(E), Theme)
+    * location(during(E), Theme, Location)
+NP V NP (Unintentional Interpretation of ObjectBody_part Object)
+  Syntax: NP[Experiencer] VERB NP[Patient]
+  Semantics:
+    * harmed(during(E), Patient)
+    * experience(E, Experiencer)
+NP V NP (Unintentional Interpretation of ObjectReflexive Object)
+  Syntax: NP[Experiencer] VERB NP[Patient]
+  Semantics:
+    * harmed(during(E), Patient)
+    * experience(E, Experiencer)
+NP V (Intransitive)
+  Syntax: NP[Theme] VERB
+  Semantics:
+    * emit(during(E), Theme, Prop)
+NP V PP.location (PP; Location-PP)
+  Syntax: NP[Theme] VERB PREP[+loc] NP[Location]
+  Semantics:
+    * emit(during(E), Theme, Prop)
+    * Prep(during(E), Prop, Location)
+NP.location V PP.theme (PP; Location Subject, with-PP)
+  Syntax: NP[Location] VERB PREP[with] NP[Theme]
+  Semantics:
+    * emit(during(E), Theme, Prop)
+    * location(during(E), Prop, Location)
+There V NP PP.location (Locative Inversion)
+  Syntax: LEX[there] VERB NP[Theme] PREP[+loc] NP[Location]
+  Semantics:
+    * emit(during(E), Theme, Prop)
+    * Prep(during(E), Prop, Location)
+PP.location there V NP (There-insertion)
+  Syntax: PREP[+loc] NP[Location] LEX[there] VERB NP[Theme]
+  Semantics:
+    * emit(during(E), Theme, Prop)
+    * Prep(during(E), Prop, Location)
+NP V NP.theme (NP; Causative variant)
+  Syntax: NP[Agent] VERB NP[Theme]
+  Semantics:
+    * emit(during(E), Theme, Prop)
+    * cause(Agent, E)
+NP V NP.patient (Basic Transitive; Causative)
+  Syntax: NP[Agent] VERB NP[Patient]
+  Semantics:
+    * cause(Agent, E)
+    * state(result(E), Endstate, Patient)
+NP V NP PP.instrument (NP-PP; Instrument-PP)
+  Syntax: NP[Agent] VERB NP[Patient] PREP[with] NP[Instrument]
+  Semantics:
+    * cause(Agent, E)
+    * state(result(E), Endstate, Patient)
+    * use(during(E), Agent, Instrument)
+NP.patient V (Intransitive; Inchoative)
+  Syntax: NP[Patient] VERB
+  Semantics:
+    * state(result(E), Endstate, Patient)
+NP V ADV-Middle (Middle Construction)
+  Syntax: NP[Patient] VERB ADV
+  Semantics:
+    * state(result(E), Endstate, Patient)
+NP.instrument V NP (Instrument Subject Alternation)
+  Syntax: NP[Instrument] VERB NP[Patient]
+  Semantics:
+    * use(during(E), ?Agent, Instrument)
+    * state(result(E), Endstate, Patient)
+NP V (Basic Intransitive)
+  Syntax: NP[Patient] VERB
+  Semantics:
+    * discomfort(during(E), Patient)
+    * experience(E, ?Experiencer)
+NP V NP.experiencer (Transitive; Experiencer Object)
+  Syntax: NP[Patient] VERB NP[Experiencer]
+  Semantics:
+    * discomfort(during(E), Patient)
+    * experience(E, Experiencer)
+NP V PP.stimulus (PP; Stimulus-PP)
+  Syntax: NP[Patient] VERB PREP[from] NP[Stimulus]
+  Semantics:
+    * discomfort(during(E), Patient)
+    * experience(E, ?Experiencer)
+    * in_reaction_to(E, Stimulus)
+NP V (Basic Intransitive)
+  Syntax: NP[Patient] VERB
+  Semantics:
+    * discomfort(during(E), Patient)
+    * experience(E, ?Experiencer)
+NP V PP.stimulus (PP; Stimulus-PP)
+  Syntax: NP[Patient] VERB PREP[from at] NP[Stimulus]
+  Semantics:
+    * discomfort(during(E), Patient)
+    * experience(E, ?Experiencer)
+    * in_reaction_to(E, Stimulus)

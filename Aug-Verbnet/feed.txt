@@ -1,0 +1,28 @@
+NP V NP (Basic Transitive)
+  Syntax: NP[Agent] VERB NP[Recipient]
+  Semantics:
+    * take_in(during(E), Recipient, ?Theme)
+    * cause(Agent, E)
+NP V NP PP.recipient (NP-PP; to-PP)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[to] NP[Recipient]
+  Semantics:
+    * take_in(during(E), Recipient, Theme)
+    * cause(Agent, E)
+NP V NP-Dative NP (Dative)
+  Syntax: NP[Agent] VERB NP[Recipient] NP[Theme]
+  Semantics:
+    * take_in(during(E), Recipient, Theme)
+    * cause(Agent, E)
+NP.location V NP (Location Subject Alternation)
+  Syntax: NP[Location] VERB NP[Value]
+  Semantics:
+    * capacity(E, Location, Value)
+NP V NP PP.location (NP-PP; Location-PP)
+  Syntax: NP[Agent] VERB NP[Value] PREP[in] NP[Location]
+  Semantics:
+    * capacity(E, Location, Value)
+    * cause(Agent, E)
+NP V PP.patient (PP; Patient-PP)
+  Syntax: NP[Agent] VERB PREP[on] NP[Patient]
+  Semantics:
+    * take_in(during(E), Agent, Patient)

@@ -1,0 +1,122 @@
+NP V NP (Basic Transitive)
+  Syntax: NP[Agent] VERB NP[Product]
+  Semantics:
+    * exist(start(E), Product)
+    * exist(result(E), Product)
+    * made_of(result(E), Product, ?Material)
+    * cause(Agent, E)
+NP V (Unspecified Object)
+  Syntax: NP[Agent] VERB
+  Semantics:
+    * exist(start(E), ?Product)
+    * exist(result(E), ?Product)
+    * made_of(result(E), ?Product, ?Material)
+    * cause(Agent, E)
+NP V NP.product PP.material (Material/Product Alternation Transitive; Product Object)
+  Syntax: NP[Agent] VERB NP[Product] PREP[from out_of] NP[Material]
+  Semantics:
+    * exist(start(E), Product)
+    * exist(result(E), Product)
+    * made_of(result(E), Product, Material)
+    * cause(Agent, E)
+NP V NP.material PP.product (Material/Product Alternation Transitive; Material Object)
+  Syntax: NP[Agent] VERB NP[Material] PREP[into] NP[Product]
+  Semantics:
+    * exist(start(E), Product)
+    * exist(result(E), Product)
+    * made_of(result(E), Product, Material)
+    * cause(Agent, E)
+NP V NP PP.beneficiary (NP-PP; for-PP)
+  Syntax: NP[Agent] VERB NP[Product] PREP[for] NP[Beneficiary]
+  Semantics:
+    * exist(start(E), Product)
+    * exist(result(E), Product)
+    * made_of(result(E), Product, ?Material)
+    * cause(Agent, E)
+    * benefit(E, Beneficiary)
+NP V NP.beneficiary NP PP (NP-NP; Object Beneficiary)
+  Syntax: NP[Agent] VERB NP[Beneficiary] NP[Product] PREP[from out_of] NP[Material]
+  Semantics:
+    * exist(start(E), Product)
+    * exist(result(E), Product)
+    * made_of(result(E), Product, Material)
+    * cause(Agent, E)
+    * benefit(E, Beneficiary)
+NP V NP PP.material PP.beneficiary (NP-PP-PP; Source-PP Beneficiary-PP)
+  Syntax: NP[Agent] VERB NP[Product] PREP[from out_of] NP[Material] PREP[for] NP[Beneficiary]
+  Semantics:
+    * exist(start(E), Product)
+    * exist(result(E), Product)
+    * made_of(result(E), Product, Material)
+    * cause(Agent, E)
+    * benefit(E, Beneficiary)
+NP V NP PP.beneficiary (NP-PP; for-PP)
+  Syntax: NP[Agent] VERB NP[Material] PREP[for] NP[Beneficiary]
+  Semantics:
+    * exist(start(E), ?Product)
+    * exist(result(E), ?Product)
+    * made_of(result(E), ?Product, Material)
+    * cause(Agent, E)
+    * benefit(E, Beneficiary)
+NP V NP PP.product PP.beneficiary (NP-PP-PP; Product-PP Beneficiary-PP)
+  Syntax: NP[Agent] VERB NP[Material] PREP[into] NP[Product] PREP[for] NP[Beneficiary]
+  Semantics:
+    * exist(start(E), Product)
+    * exist(result(E), Product)
+    * made_of(result(E), Product, Material)
+    * cause(Agent, E)
+    * benefit(E, Beneficiary)
+NP.material V NP (Raw Material Subject)
+  Syntax: NP[Material] VERB NP[Product]
+  Semantics:
+    * exist(start(E), Product)
+    * exist(result(E), Product)
+    * made_of(result(E), Product, Material)
+    * cause(?Agent, E)
+NP V NP NP PP.asset (NP-NP-PP; Asset-PP)
+  Syntax: NP[Agent] VERB NP[Beneficiary] NP[Product] PREP[for] NP[Asset]
+  Semantics:
+    * exist(start(E), Product)
+    * exist(result(E), Product)
+    * made_of(result(E), Product, ?Material)
+    * cause(Agent, E)
+    * benefit(E, Beneficiary)
+    * cost(E, Asset)
+NP V NP PP.material PP.asset (NP-PP-PP; Material-PP, Asset-PP)
+  Syntax: NP[Agent] VERB NP[Product] PREP[from out_of] NP[Material] PREP[for] NP[Asset]
+  Semantics:
+    * exist(start(E), Product)
+    * exist(result(E), Product)
+    * made_of(result(E), Product, Material)
+    * cause(Agent, E)
+    * cost(E, Asset)
+NP V NP (Basic Transitive)
+  Syntax: NP[Agent] VERB NP[Theme]
+  Semantics:
+    * created_image(result(E), Theme)
+    * location(end(E), Theme, ?Destination)
+    * cause(Agent, E)
+NP V NP PP.destination (NP-PP; locative-PP)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[+loc +dest_conf] NP[Destination]
+  Semantics:
+    * created_image(result(E), Theme)
+    * Prep(end(E), Theme, Destination)
+    * cause(Agent, E)
+NP V (Unspecified Object)
+  Syntax: NP[Agent] VERB
+  Semantics:
+    * created_image(result(E), ?Theme)
+    * location(end(E), ?Theme, ?Destination)
+    * cause(Agent, E)
+NP V NP (Basic Transitive)
+  Syntax: NP[Agent] VERB NP[Theme]
+  Semantics:
+    * created_image(result(E), Theme)
+    * location(end(E), Theme, ?Destination)
+    * cause(Agent, E)
+NP V NP PP.destination (NP-PP; locative-PP)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[+loc +dest_conf] NP[Destination]
+  Semantics:
+    * created_image(result(E), Theme)
+    * Prep(end(E), Theme, Destination)
+    * cause(Agent, E)

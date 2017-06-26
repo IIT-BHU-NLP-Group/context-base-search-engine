@@ -1,0 +1,29 @@
+NP V NP (Basic Transitive)
+  Syntax: NP[Agent] VERB NP[Theme]
+  Semantics:
+    * motion(during(E), Agent)
+    * motion(during(E), Theme)
+NP V NP PP.location (NP-PP; path-PP)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[+spatial] NP[Location]
+  Semantics:
+    * motion(during(E), Agent)
+    * motion(during(E), Theme)
+    * Prep(E, Theme, Location)
+    * Prep(E, Agent, Location)
+NP V PP.theme (PP; after-PP)
+  Syntax: NP[Agent] VERB PREP[after] NP[Theme]
+  Semantics:
+    * motion(during(E), Agent)
+    * motion(during(E), Theme)
+NP V NP PP.theme (NP-PP; Theme-PP)
+  Syntax: NP[Agent] VERB NP[Location] PREP[for] NP[Theme]
+  Semantics:
+    * search(during(E), Agent, Location, Theme)
+NP V NP PP.location (NP-PP; Location-PP)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[+loc] NP[Location]
+  Semantics:
+    * search(during(E), Agent, Location, Theme)
+NP V NP (Transitive)
+  Syntax: NP[Agent] VERB NP[Theme]
+  Semantics:
+    * search(during(E), Agent, ?Location, Theme)

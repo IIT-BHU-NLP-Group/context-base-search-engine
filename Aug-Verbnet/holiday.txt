@@ -1,0 +1,4 @@
+NP V PP.location (PP; Location-PP)
+  Syntax: NP[Theme] VERB PREP[+loc] NP[Location]
+  Semantics:
+    * location(during(E), Theme, Location)

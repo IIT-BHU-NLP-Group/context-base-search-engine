@@ -1,0 +1,44 @@
+NP V (Basic Intransitive)
+  Syntax: NP[Theme] VERB
+  Semantics:
+    * exist(during(E), Theme)
+NP V PP.topic (PP; on-PP)
+  Syntax: NP[Agent] VERB PREP[on] NP[Topic -sentential]
+  Semantics:
+    * think(during(E), Agent, Topic)
+    * cause(E, Agent)
+NP V PP.theme S_ING (P-ING-SC; on-PP)
+  Syntax: NP[Agent] VERB PREP[on] NP[Topic +sc_ing]
+  Semantics:
+    * think(during(E), Agent, Topic)
+    * cause(E, Agent)
+NP V PP.topic what S (P-WHAT-S; on-PP)
+  Syntax: NP[Agent] VERB PREP[on] NP[Topic +what_extract]
+  Semantics:
+    * think(during(E), Agent, Topic)
+    * cause(E, Agent)
+NP V PP.topic what S_INF (P-WHAT-TO-INF; on-PP)
+  Syntax: NP[Agent] VERB PREP[on] NP[Topic +what_inf]
+  Semantics:
+    * think(during(E), Agent, Topic)
+    * cause(E, Agent)
+NP V PP.topic (PP; on-PP)
+  Syntax: NP[Agent] VERB PREP[about] NP[Topic -sentential]
+  Semantics:
+    * transfer_info(during(E), Agent, ?Recipient, Topic)
+    * cause(Agent, E)
+NP V PP.topic S_ING (P-POSSING; on-PP)
+  Syntax: NP[Agent] VERB PREP[on] NP[Topic +poss_ing]
+  Semantics:
+    * transfer_info(during(E), Agent, ?Recipient, Topic)
+    * cause(Agent, E)
+NP V PP.location (PP; Location-PP)
+  Syntax: NP[Theme] VERB PREP[at in with] NP[Location]
+  Semantics:
+    * location(start(E), Theme, Location)
+    * location(during(E), Theme, Location)
+NP V ADV (ADVP-PRED; here/there)
+  Syntax: NP[Theme] VERB NP[Location +adv_loc]
+  Semantics:
+    * location(start(E), Theme, Location)
+    * location(during(E), Theme, Location)

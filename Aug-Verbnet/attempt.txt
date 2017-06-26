@@ -1,0 +1,12 @@
+NP V S_ING (ING-NP-OMIT)
+  Syntax: NP[Agent] VERB NP[Theme +np_omit_ing]
+  Semantics:
+    * attempt(during(E), Agent, Theme)
+NP V NP (Basic Transitive)
+  Syntax: NP[Agent] VERB NP[Theme -sentential]
+  Semantics:
+    * attempt(during(E), Agent, Theme)
+NP V S_INF (TO-INF-SC)
+  Syntax: NP[Agent] VERB NP[Theme +sc_to_inf]
+  Semantics:
+    * attempt(during(E), Agent, Theme)

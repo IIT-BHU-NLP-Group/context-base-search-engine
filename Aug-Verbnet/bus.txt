@@ -1,0 +1,74 @@
+NP V NP-Dative NP (Dative; always without accompanied motion)
+  Syntax: NP[Agent] VERB NP[Destination] NP[Theme]
+  Semantics:
+    * motion(during(E), Theme)
+    * location(end(E), Theme, Destination)
+    * cause(Agent, E)
+NP V NP (Basic Transitive; without accompanied motion)
+  Syntax: NP[Agent] VERB NP[Theme]
+  Semantics:
+    * motion(during(E), Theme)
+    * cause(Agent, E)
+NP V NP PP.initial_location (NP-PP; Initial_Location-PP)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[+src] NP[Initial_Location]
+  Semantics:
+    * motion(during(E), Theme)
+    * location(start(E), Theme, Initial_Location)
+    * cause(Agent, E)
+NP V NP PP.destination (NP-PP; Goal-PP)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[to] NP[Destination]
+  Semantics:
+    * motion(during(E), Theme)
+    * location(end(E), Theme, Destination)
+    * cause(Agent, E)
+NP V NP PP.initial_location PP.destination (NP-PP-PP; Initial_Location-PP Goal-PP)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[+src] NP[Initial_Location] PREP[to] NP[Destination]
+  Semantics:
+    * motion(during(E), Theme)
+    * location(start(E), Theme, Initial_Location)
+    * location(end(E), Theme, Destination)
+    * cause(Agent, E)
+NP V NP PP.destination PP.initial_location (NP-PP-PP; Goal-PP Initial_Location-PP)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[to] NP[Destination] PREP[+src] NP[Initial_Location]
+  Semantics:
+    * motion(during(E), Theme)
+    * location(start(E), Theme, Initial_Location)
+    * location(end(E), Theme, Destination)
+    * cause(Agent, E)
+NP.theme V (Basic Intransitive; inchoative)
+  Syntax: NP[Theme] VERB
+  Semantics:
+    * motion(during(E), Theme)
+NP.theme V PP.location (PP; inchoative, locative-PP)
+  Syntax: NP[Theme] VERB PREP[+path] NP[Location]
+  Semantics:
+    * motion(during(E), Theme)
+    * Prep(E, Theme, Location)
+NP V NP PP.location (NP-PP; Induced Action with accompanied motion, path-PP)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[+path] NP[Location]
+  Semantics:
+    * motion(during(E0), Theme)
+    * Prep(E0, Theme, Location)
+    * cause(Agent, E0)
+    * equals(E0, E1)
+    * motion(during(E1), Agent)
+    * Prep(E1, Agent, Location)
+NP V NP (NP; Induced Action with accompanied motion)
+  Syntax: NP[Agent] VERB NP[Theme]
+  Semantics:
+    * motion(during(E0), Theme)
+    * cause(Agent, E0)
+    * equals(E0, E1)
+    * motion(during(E1), Agent)
+NP V NP ADJ (NP-ADJP; Resultative)
+  Syntax: NP[Agent] VERB NP[Theme] NP[Result]
+  Semantics:
+    * motion(during(E), Theme)
+    * cause(Agent, E)
+    * Pred(result(E), Theme)
+NP V NP PP.result (NP-PP; Result-PP)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[to into] NP[Result +state]
+  Semantics:
+    * motion(during(E), Theme)
+    * cause(Agent, E)
+    * Pred(result(E), Theme)

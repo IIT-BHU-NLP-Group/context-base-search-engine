@@ -1,0 +1,14 @@
+NP V NP PP.instrument (NP-PP; with-PP)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[with] NP[Instrument]
+  Semantics:
+    * begin(E, Theme)
+    * use(during(E), Agent, Instrument)
+    * cause(Agent, E)
+NP V NP PP.result (NP-PP; Result-PP)
+  Syntax: NP[Cause] VERB NP[Theme] PREP[into] NP[Result]
+  Semantics:
+    * exert_force(during(E), Cause, Theme)
+NP V PP.result NP (PP-NP; Result-PP)
+  Syntax: NP[Cause] VERB PREP[into] NP[Result] NP[Theme]
+  Semantics:
+    * exert_force(during(E), Cause, Theme)

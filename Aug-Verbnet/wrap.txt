@@ -1,0 +1,12 @@
+NP V PP.destination (PP; locative-PP)
+  Syntax: NP[Theme] VERB PREP[+loc +dir +dest_conf] NP[Destination]
+  Semantics:
+    * motion(during(E), Theme)
+    * Prep(start(E), Theme, Destination)
+    * Prep(end(E), Theme, Destination)
+NP V NP PP.destination-Conative (Conative)
+  Syntax: NP[Agent] VERB NP[Theme] LEX[at] NP[Destination]
+  Semantics:
+    * motion(during(E), Theme)
+    * location(start(E), Theme, Destination)
+    * cause(Agent, E)

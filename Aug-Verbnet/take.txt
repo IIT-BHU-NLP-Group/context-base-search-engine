@@ -1,0 +1,250 @@
+NP V NP (Basic Transitive)
+  Syntax: NP[Agent] VERB NP[Theme]
+  Semantics:
+    * adopt(during(E), Agent, Theme)
+NP V NP (Basic Transitive)
+  Syntax: NP[Agent] VERB NP[Theme]
+  Semantics:
+    * motion(during(E0), Theme)
+    * equals(E0, E1)
+    * motion(during(E1), Agent)
+    * cause(Agent, E0)
+NP V NP PP.destination (NP-PP; Goal-PP)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[against before into on to onto] NP[Destination]
+  Semantics:
+    * motion(during(E0), Theme)
+    * location(end(E0), Theme, Destination)
+    * equals(E0, E1)
+    * motion(during(E1), Agent)
+    * location(end(E1), Agent, Destination)
+    * cause(Agent, E0)
+NP V PP.destination NP (PP-NP; Goal-PP)
+  Syntax: NP[Agent] VERB PREP[against before into on to onto] NP[Destination] NP[Theme]
+  Semantics:
+    * motion(during(E0), Theme)
+    * location(end(E0), Theme, Destination)
+    * equals(E0, E1)
+    * motion(during(E1), Agent)
+    * location(end(E1), Agent, Destination)
+    * cause(Agent, E0)
+NP V NP PP.initial_location (NP-PP; Initial_Location-PP)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[+src] NP[Initial_Location]
+  Semantics:
+    * motion(during(E0), Theme)
+    * location(start(E0), Theme, Initial_Location)
+    * equals(E0, E1)
+    * motion(during(E1), Agent)
+    * location(start(E1), Agent, Initial_Location)
+    * cause(Agent, E0)
+NP V NP PP.initial_location PP.destination (NP-PP-PP; Initial_Location-PP Goal-PP)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[+src] NP[Initial_Location] PREP[to] NP[Destination]
+  Semantics:
+    * motion(during(E0), Theme)
+    * location(start(E0), Theme, Initial_Location)
+    * location(end(E0), Theme, Destination)
+    * equals(E0, E1)
+    * motion(during(E1), Agent)
+    * location(start(E1), Agent, Initial_Location)
+    * location(end(E1), Agent, Destination)
+    * cause(Agent, E0)
+NP V NP ADVP (NP-ADVP-PRED; here/there)
+  Syntax: NP[Instrument] VERB NP[Theme] NP[Destination +adv_loc]
+  Semantics:
+    * motion(during(E0), Theme)
+    * motion(during(E1), Instrument)
+    * location(end(E0), Theme, Destination)
+    * location(end(E1), Instrument, Destination)
+    * equals(E0, E1)
+    * cause(Agent, E0)
+NP V NP S_ING (NP-P-ING-OC; as-PP)
+  Syntax: NP[Agent] VERB NP[Theme] LEX[as] NP[Attribute +oc_ing]
+  Semantics:
+    * characterize(during(E), Theme, Attribute)
+    * cause(Agent, E)
+NP V NP to be ADJ (NP-TOBE)
+  Syntax: NP[Agent] VERB NP[Theme] LEX[as] NP[Attribute +small_clause]
+  Semantics:
+    * characterize(during(E), Theme, Attribute)
+    * cause(Agent, E)
+NP V NP PP.attribute (NP-PP; as-PP)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[as] NP[Attribute -sentential]
+  Semantics:
+    * characterize(during(E), Theme, Attribute)
+    * cause(Agent, E)
+NP V S_ING (P-ING-SC; to-PP)
+  Syntax: NP[Patient] VERB PREP[to] NP[Goal +sc_ing]
+  Semantics:
+    * convert(during(E), Patient, ?Source, Goal)
+NP V PP.goal (PP; to-PP)
+  Syntax: NP[Patient] VERB PREP[to] NP[Goal]
+  Semantics:
+    * convert(during(E), Patient, ?Source, Goal)
+NP V NP.value (Transitive; Attribute Object)
+  Syntax: NP[Theme] VERB NP[Value]
+  Semantics:
+    * value(E, Theme, Value)
+NP V NP NP (NP-NP)
+  Syntax: NP[Theme] VERB NP[Beneficiary] NP[Value]
+  Semantics:
+    * value(E, Theme, Value)
+    * benefit(E, Beneficiary)
+NP V NP (Basic Transitive)
+  Syntax: NP[Agent] VERB NP[Patient]
+  Semantics:
+    * take_in(during(E), Agent, Patient)
+NP.location V NP (Location Subject Alternation)
+  Syntax: NP[Location] VERB NP[Value]
+  Semantics:
+    * capacity(E, Location, Value)
+NP V NP PP.location (NP-PP; Location-PP)
+  Syntax: NP[Agent] VERB NP[Value] PREP[in] NP[Location]
+  Semantics:
+    * capacity(E, Location, Value)
+    * cause(Agent, E)
+NP V NP (NP)
+  Syntax: NP[Agent] VERB NP[Theme]
+  Semantics:
+    * cause(Agent, E)
+    * location(start(E), Theme)
+    * location(end(E), Theme)
+NP V NP PP.attribute (NP-PP; as-PP)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[as] NP[Attribute -sentential]
+  Semantics:
+    * cause(Agent, E)
+    * location(start(E), Theme, Attribute)
+    * location(end(E), Theme, Attribute)
+NP V NP (Basic Transitive)
+  Syntax: NP[Agent] VERB NP[Theme]
+  Semantics:
+    * exist(start(E), Theme)
+    * exist(result(E), Theme)
+    * cause(Agent, E)
+NP V (Unspecified Object)
+  Syntax: NP[Agent] VERB
+  Semantics:
+    * exist(start(E), ?Theme)
+    * exist(result(E), ?Theme)
+    * cause(Agent, E)
+NP V NP PP.beneficiary (NP-PP; for-PP)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[for] NP[Beneficiary]
+  Semantics:
+    * exist(start(E), Theme)
+    * exist(result(E), Theme)
+    * cause(Agent, E)
+    * benefit(E, Beneficiary)
+NP V NP (Basic Transitive)
+  Syntax: NP[Agent] VERB NP[Theme]
+  Semantics:
+    * cause(Agent, E)
+    * location(start(E), Theme, ?Source)
+    * location(end(E), Theme, ?Source)
+NP V NP PP.source (NP-PP; Source-PP)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[+src] NP[Source]
+  Semantics:
+    * cause(Agent, E)
+    * location(start(E), Theme, Source)
+    * location(end(E), Theme, Source)
+NP V NP ADJP (ADJP; Resultative)
+  Syntax: NP[Agent] VERB NP[Patient] NP[Result]
+  Semantics:
+    * cause(Agent, E)
+    * state(result(E), Result, Patient)
+NP V ADJP NP (ADJP; Resultative)
+  Syntax: NP[Agent] VERB NP[Result] NP[Patient]
+  Semantics:
+    * cause(Agent, E)
+    * state(result(E), Result, Patient)
+NP V NP (NP)
+  Syntax: NP[Pivot] VERB NP[Theme]
+  Semantics:
+    * necessitate(E, Pivot, Theme, ?Source)
+NP V for NP S_INF (FOR-TO-INF)
+  Syntax: NP[Pivot] VERB NP[Theme +for_comp]
+  Semantics:
+    * necessitate(E, Pivot, Theme, ?Source)
+NP V that S (S-SUBJUNCT)
+  Syntax: NP[Pivot] VERB NP[Theme +that_comp]
+  Semantics:
+    * necessitate(E, Pivot, Theme, ?Source)
+NP V NP (Basic Transitive)
+  Syntax: NP[Agent] VERB NP[Theme]
+  Semantics:
+    * manner(during(E), illegal, Agent)
+    * has_possession(start(E), ?Source, Theme)
+    * has_possession(end(E), Agent, Theme)
+    * has_possession(end(E), ?Source, Theme)
+    * cause(Agent, E)
+NP V NP PP.source (NP-PP; Source-PP)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[+src] NP[Source]
+  Semantics:
+    * manner(during(E), illegal, Agent)
+    * has_possession(start(E), Source, Theme)
+    * has_possession(end(E), Agent, Theme)
+    * has_possession(end(E), Source, Theme)
+    * cause(Agent, E)
+NP V NP PP.beneficiary (NP-PP; for-PP)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[for] NP[Beneficiary]
+  Semantics:
+    * manner(during(E), illegal, Agent)
+    * has_possession(start(E), ?Source, Theme)
+    * has_possession(end(E), Beneficiary, Theme)
+    * has_possession(end(E), ?Source, Theme)
+    * cause(Agent, E)
+NP V NP PP.source PP.beneficiary (NP-PP-PP; Source-PP Beneficiary-PP)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[+src] NP[Source] PREP[for] NP[Beneficiary]
+  Semantics:
+    * manner(during(E), illegal, Agent)
+    * has_possession(start(E), Source, Theme)
+    * has_possession(end(E), Beneficiary, Theme)
+    * has_possession(end(E), Source, Theme)
+    * cause(Agent, E)
+NP V NP (Basic Transitive; with accompanied motion)
+  Syntax: NP[Agent] VERB NP[Theme]
+  Semantics:
+    * motion(during(E0), Theme)
+    * cause(Agent, E0)
+    * motion(during(E0), Theme)
+    * equals(E0, E1)
+    * motion(during(E1), Agent)
+    * cause(Agent, E0)
+NP V NP PP.destination (NP-PP; Destination-PP)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[to] NP[Destination]
+  Semantics:
+    * motion(during(E0), Theme)
+    * location(end(E0), Theme, Destination)
+    * equals(E0, E1)
+    * motion(during(E1), Agent)
+    * location(end(E1), Agent, Destination)
+    * cause(Agent, E0)
+NP V NP PP.initial_location (NP-PP; Initial_Location-PP)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[from] NP[Initial_Location]
+  Semantics:
+    * motion(during(E0), Theme)
+    * location(start(E0), Theme, Initial_Location)
+    * equals(E0, E1)
+    * motion(during(E1), Agent)
+    * location(start(E1), Agent, Initial_Location)
+    * cause(Agent, E0)
+NP V NP (Basic Transitive; with accompanied motion)
+  Syntax: NP[Agent] VERB NP[Trajectory]
+  Semantics:
+    * motion(during(E), Trajectory)
+    * cause(Agent, E)
+    * motion(during(E), Agent)
+    * via(during(E), Agent, Trajectory)
+    * cause(Agent, E)
+NP V NP PP.destination (NP-PP; Destination-PP)
+  Syntax: NP[Agent] VERB NP[Trajectory] PREP[to] NP[Destination]
+  Semantics:
+    * motion(during(E), Agent)
+    * via(during(E), Agent, Trajectory)
+    * location(end(E), Agent, Destination)
+    * cause(Agent, E)
+NP V NP PP.initial_location (NP-PP; Initial_Location-PP)
+  Syntax: NP[Agent] VERB NP[Trajectory] PREP[from] NP[Initial_Location]
+  Semantics:
+    * motion(during(E), Agent)
+    * via(during(E), Agent, Trajectory)
+    * motion(during(E), Agent)
+    * location(start(E), Agent, Initial_Location)
+    * cause(Agent, E)

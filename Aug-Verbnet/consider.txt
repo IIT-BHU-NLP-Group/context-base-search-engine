@@ -1,0 +1,20 @@
+NP V S_ING (ING-SC/BE-ING-SC)
+  Syntax: NP[Agent] VERB NP[Theme +be_sc_ing]
+  Semantics:
+    * consider(during(E), Agent, Theme)
+NP V NP ADJ (NP-ADJP-PRED)
+  Syntax: NP[Agent] VERB NP[Theme] NP[Attribute -sentential]
+  Semantics:
+    * consider(during(E), Agent, Theme)
+NP V NP NP (NP-NP-PRED)
+  Syntax: NP[Agent] VERB NP[Theme] NP[Attribute -sentential]
+  Semantics:
+    * consider(during(E), Agent, Theme)
+NP V NP PP.attribute (NP-PP-PRED; for-PP)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[for] NP[Attribute -sentential]
+  Semantics:
+    * consider(during(E), Agent, Theme)
+NP V whether S_INF (WH-TO-INF)
+  Syntax: NP[Agent] VERB NP[Theme +wheth_inf]
+  Semantics:
+    * consider(during(E), Agent, Theme)

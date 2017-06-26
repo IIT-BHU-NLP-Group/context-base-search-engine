@@ -1,0 +1,4 @@
+NP V NP S_INF (NP-TO-INF-OC)
+  Syntax: NP[Agent] VERB NP[Patient] NP[Result +oc_to_inf]
+  Semantics:
+    * force(during(E), Agent, Patient, Result)

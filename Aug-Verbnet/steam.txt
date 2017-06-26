@@ -1,0 +1,93 @@
+NP V NP.patient (Basic Transitive; Causative)
+  Syntax: NP[Agent] VERB NP[Patient]
+  Semantics:
+    * cause(Agent, E)
+    * apply_heat(during(E), ?Instrument, Patient)
+    * cooked(result(E), Form, Patient)
+NP V NP PP.instrument (NP-PP; Instrument-PP)
+  Syntax: NP[Agent] VERB NP[Patient] PREP[in on with] NP[Instrument]
+  Semantics:
+    * cause(Agent, E)
+    * apply_heat(during(E), Instrument, Patient)
+    * cooked(result(E), Form, Patient)
+    * use(during(E), Agent, Instrument)
+NP.patient V (Intransitive; Inchoative)
+  Syntax: NP[Patient] VERB
+  Semantics:
+    * cooked(result(E), Form, Patient)
+NP V ADV-Middle (Middle Construction)
+  Syntax: NP[Patient] VERB ADV
+  Semantics:
+    * cooked(result(E), Form, Patient)
+NP.instrument V NP (Instrument Subject Alternation)
+  Syntax: NP[Instrument] VERB NP[Patient]
+  Semantics:
+    * apply_heat(during(E), Instrument, Patient)
+    * cooked(result(E), Form, Patient)
+NP V NP PP.result (NP-PP; Result-PP)
+  Syntax: NP[Agent] VERB NP[Patient] PREP[to into] NP[Result +state]
+  Semantics:
+    * cause(Agent, E)
+    * apply_heat(during(E), ?Instrument, Patient)
+    * cooked(result(E), Form, Patient)
+    * Pred(result(E), Patient)
+NP V NP PP.result PP.instrument (NP-PP-PP; Result-PP, Instrument-PP)
+  Syntax: NP[Agent] VERB NP[Patient] PREP[to into] NP[Result +state] PREP[in on with] NP[Instrument]
+  Semantics:
+    * cause(Agent, E)
+    * apply_heat(during(E), Instrument, Patient)
+    * cooked(result(E), Form, Patient)
+    * Pred(result(E), Patient)
+    * use(during(E), Agent, Instrument)
+NP V PP.result (PP; Result-PP)
+  Syntax: NP[Patient] VERB PREP[to into] NP[Result +state]
+  Semantics:
+    * apply_heat(during(E), ?Instrument, Patient)
+    * cooked(result(E), Form, Patient)
+    * Pred(result(E), Patient)
+NP V PP.result PP.instrument (PP-PP; Result-PP, Instrument-PP)
+  Syntax: NP[Patient] VERB PREP[to into] NP[Result +state] PREP[in on with] NP[Instrument]
+  Semantics:
+    * apply_heat(during(E), Instrument, Patient)
+    * cooked(result(E), Form, Patient)
+    * Pred(result(E), Patient)
+NP V (Basic Intransitive)
+  Syntax: NP[Source] VERB
+  Semantics:
+    * emit(during(E), Source, ?Theme)
+NP V NP (Transitive)
+  Syntax: NP[Source] VERB NP[Theme]
+  Semantics:
+    * emit(during(E), Source, Theme)
+NP.theme V PP.source (PP; Substance Subject, Source-PP)
+  Syntax: NP[Theme] VERB PREP[from out_of] NP[Source]
+  Semantics:
+    * emit(during(E), Source, Theme)
+NP V PP.location (NP-PP; Location-PP)
+  Syntax: NP[Theme] VERB PREP[+path] NP[Location]
+  Semantics:
+    * emit(during(E), ?Source, Theme)
+    * Prep(during(E), Theme, Location)
+NP.location V PP.theme (PP; Location Subject, with-PP)
+  Syntax: NP[Location] VERB PREP[with] NP[Theme]
+  Semantics:
+    * emit(during(E), ?Source, Theme)
+    * location(during(E), Theme, Location)
+PP.location V NP (Locative Inversion)
+  Syntax: PREP[+loc] NP[Location] VERB NP[Theme]
+  Semantics:
+    * emit(during(E), ?Source, Theme)
+    * Prep(during(E), Theme, Location)
+There V NP PP (NP-PP; Expletive-there Subject)
+  Syntax: LEX[there] VERB NP[Theme] PREP[+loc] NP[Location]
+  Semantics:
+    * emit(during(E), ?Source, Theme)
+    * Prep(during(E), Theme, Location)
+NP V out (PARTout)
+  Syntax: NP[Theme] VERB LEX[out]
+  Semantics:
+    * emit(during(E), ?Source, Theme)
+NP V NP (Basic Transitive)
+  Syntax: NP[Source] VERB NP[Theme]
+  Semantics:
+    * emit(during(E), Source, Theme)

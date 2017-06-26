@@ -1,0 +1,39 @@
+NP V S_INF (TO-INF-RS)
+  Syntax: NP[Agent] VERB NP[Theme +rs_to_inf]
+  Semantics:
+    * continue(E, Theme)
+    * cause(Agent, E)
+NP.theme V (Intransitive; Inchoative)
+  Syntax: NP[Theme] VERB
+  Semantics:
+    * continue(E, Theme)
+NP V (Unspecified Object)
+  Syntax: NP[Agent] VERB
+  Semantics:
+    * continue(E, ?Theme)
+    * cause(Agent, E)
+NP V PP.time (PP; Time-PP)
+  Syntax: NP[Theme] VERB PREP[until] NP[Time]
+  Semantics:
+    * continue(E, Theme)
+    * Prep(E, Theme, Time)
+NP V PP.time (PP; Time-PP)
+  Syntax: NP[Agent] VERB PREP[until] NP[Time]
+  Semantics:
+    * continue(E, ?Theme)
+    * cause(Agent, E)
+    * Prep(E, ?Theme, Time)
+NP V NP (NP)
+  Syntax: NP[Agent] VERB NP[Theme]
+  Semantics:
+    * continue(during(E), Agent, Theme)
+NP V NP PP.instrument (NP-PP; through-PP)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[through] NP[Instrument -sentential]
+  Semantics:
+    * continue(during(E), Agent, Theme)
+    * use(during(E), Agent, Instrument)
+NP V NP S_ING (NP-P-ING-AC; through-P)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[through] NP[Instrument +ac_ing]
+  Semantics:
+    * continue(during(E), Agent, Theme)
+    * use(during(E), Agent, Instrument)

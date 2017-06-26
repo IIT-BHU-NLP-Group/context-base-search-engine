@@ -1,0 +1,46 @@
+NP.attribute V (Intransitive; Attribute Subject)
+  Syntax: NP[Patient] LEX['s] NP[Attribute] VERB
+  Semantics:
+    * change_value(during(E), Direction, Attribute, Patient)
+NP.theme V (Basic Intransitive; inchoative)
+  Syntax: NP[Theme] VERB
+  Semantics:
+    * motion(during(E), Theme)
+NP V PP.location (PP; locative-PP)
+  Syntax: NP[Theme] VERB PREP[+spatial] NP[Location]
+  Semantics:
+    * motion(during(E), Theme)
+    * Prep(E, Theme, Location)
+NP V NP.theme (Transitive; Causative)
+  Syntax: NP[Agent] VERB NP[Theme]
+  Semantics:
+    * motion(during(E), Theme)
+    * cause(Agent, E)
+NP V NP PP.location (NP-PP; path-PP)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[+path] NP[Location]
+  Semantics:
+    * motion(during(E), Theme)
+    * Prep(E, Theme, Location)
+    * cause(Agent, E)
+NP V ADJ (ADJP; Resultative)
+  Syntax: NP[Theme] VERB NP[Result]
+  Semantics:
+    * motion(during(E), Theme)
+    * Pred(result(E), Theme)
+NP V PP.result (PP; Result-PP)
+  Syntax: NP[Theme] VERB PREP[to into] NP[Result +state]
+  Semantics:
+    * motion(during(E), Theme)
+    * Pred(result(E), Theme)
+NP V NP ADJ (NP-ADJP; Resultative)
+  Syntax: NP[Agent] VERB NP[Theme] NP[Result]
+  Semantics:
+    * motion(during(E), Theme)
+    * cause(Agent, E)
+    * Pred(result(E), Theme)
+NP V NP PP.result (NP-PP; Result-PP)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[to into] NP[Result +state]
+  Semantics:
+    * motion(during(E), Theme)
+    * cause(Agent, E)
+    * Pred(result(E), Theme)

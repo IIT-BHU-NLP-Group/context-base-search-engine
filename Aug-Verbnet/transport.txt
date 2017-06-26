@@ -1,0 +1,56 @@
+NP V NP (Basic Transitive)
+  Syntax: NP[Stimulus] VERB NP[Experiencer]
+  Semantics:
+    * cause(Stimulus, E)
+    * emotional_state(result(E), Emotion, Experiencer)
+NP V ADV-Middle (Middle Construction)
+  Syntax: NP[Experiencer] VERB ADV
+  Semantics:
+    * emotional_state(result(E), ?Emotion, Experiencer)
+NP V NP-PRO-ARB (PRO-Arb Object Alternation)
+  Syntax: NP[Stimulus] VERB
+  Semantics:
+    * cause(Stimulus, E)
+    * emotional_state(result(E), Emotion, ?Experiencer)
+NP.cause V NP (NP; Attribute Subject)
+  Syntax: NP[Stimulus +genitive] LEX['s] VERB NP[Experiencer]
+  Semantics:
+    * cause(Stimulus, E)
+    * emotional_state(result(E), Emotion, Experiencer)
+NP V NP ADJ (NP-ADJP; Resultative)
+  Syntax: NP[Stimulus] VERB NP[Experiencer] NP[Result]
+  Semantics:
+    * cause(Stimulus, E)
+    * emotional_state(result(E), Emotion, Experiencer)
+    * Pred(result(E), Experiencer)
+NP V NP (Basic Transitive)
+  Syntax: NP[Agent] VERB NP[Theme]
+  Semantics:
+    * motion(during(E), Theme)
+    * cause(Agent, E)
+NP V NP PP.initial_location (NP-PP; Initial_Location-PP)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[+src] NP[Initial_Location]
+  Semantics:
+    * motion(during(E), Theme)
+    * location(start(E), Theme, Initial_Location)
+    * cause(Agent, E)
+NP V NP PP.destination (NP-PP; Goal-PP)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[to] NP[Destination]
+  Semantics:
+    * motion(during(E), Theme)
+    * location(end(E), Theme, Destination)
+    * cause(Agent, E)
+NP V NP PP.initial_location PP.destination (NP-PP-PP; Initial_Location-PP Goal-PP)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[+src] NP[Initial_Location] PREP[to] NP[Destination]
+  Semantics:
+    * motion(during(E), Theme)
+    * location(start(E), Theme, Initial_Location)
+    * location(end(E), Theme, Destination)
+    * cause(Agent, E)
+NP V NP PP.destination PP.initial_location (NP-PP-PP; Goal-PP Initial_Location-PP)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[to] NP[Destination] PREP[+src] NP[Initial_Location]
+  Semantics:
+    * motion(during(E), Theme)
+    * location(start(E), Theme, Initial_Location)
+    * location(end(E), Theme, Destination)
+    * cause(Agent, E)

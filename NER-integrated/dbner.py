@@ -39,7 +39,9 @@ tf = open('/media/krishnkant/ACCC5095CC505BA0/Users/Krishnakanth/Desktop/DIH/PHA
 text = (tf.read())# .encode('utf-8')
 tf.close()
 
+text = 'Bharatendu Harishchandra was born in Varanasi on the occasion of Maha Shivaratri, but still Mughal emperor Akbar, Girija Devi and Taansen were still dancing on Dashwamedh Ghat.'
 text = text.replace('\"','\'')# .decode('utf-8')
+
 
 req = 'curl http://model.dbpedia-spotlight.org/en/annotate --data-urlencode \"text=%s\" --data \"confidence=0.1\" -H \"Accept: application/json"'%(text)
 status = os.system(req+'> temp.txt')

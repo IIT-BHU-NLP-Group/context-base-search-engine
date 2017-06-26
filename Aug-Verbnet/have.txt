@@ -1,0 +1,8 @@
+NP V NP (Basic Transitive)
+  Syntax: NP[Agent] VERB NP[Patient]
+  Semantics:
+    * take_in(during(E), Agent, Patient)
+NP V NP (NP)
+  Syntax: NP[Pivot] VERB NP[Theme]
+  Semantics:
+    * has_possession(E, Pivot, Theme)

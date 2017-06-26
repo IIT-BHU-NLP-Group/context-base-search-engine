@@ -1,0 +1,5 @@
+NP V S_INF (TO-INF-SC)
+  Syntax: NP[Agent] VERB NP[Theme +sc_to_inf]
+  Semantics:
+    * begin(E, Theme)
+    * cause(Agent, E)

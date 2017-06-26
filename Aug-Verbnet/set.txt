@@ -1,0 +1,65 @@
+NP V NP (Transitive)
+  Syntax: NP[Agent] VERB NP[Patient]
+  Semantics:
+    * take_care_of(during(E), Agent, Patient)
+NP V NP S_INF (NP-TO-INF-OC)
+  Syntax: NP[Agent] VERB NP[Patient] NP[Result +oc_to_inf]
+  Semantics:
+    * force(during(E), Agent, Patient, Result)
+NP V NP.theme PP.destination (NP-PP; Theme Object, on-PP)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[+loc +dest_conf] NP[Destination]
+  Semantics:
+    * created_image(result(E), Theme)
+    * Prep(end(E), Theme, Destination)
+    * cause(Agent, E)
+NP V NP.destination PP.theme (NP-PP; Destination Object, Theme-PP)
+  Syntax: NP[Agent] VERB NP[Destination] PREP[with] NP[Theme]
+  Semantics:
+    * created_image(result(E), Theme)
+    * location(end(E), Theme, Destination)
+    * cause(Agent, E)
+NP V NP.destination (Transitive; Destination Object)
+  Syntax: NP[Agent] VERB NP[Destination]
+  Semantics:
+    * created_image(result(E), ?Theme)
+    * location(end(E), ?Theme, Destination)
+    * cause(Agent, E)
+NP V NP.theme (Transitive; Theme Object)
+  Syntax: NP[Agent] VERB NP[Theme]
+  Semantics:
+    * created_image(result(E), Theme)
+    * location(end(E), Theme, ?Destination)
+    * cause(Agent, E)
+NP V (Unspecified Object)
+  Syntax: NP[Agent] VERB
+  Semantics:
+    * created_image(result(E), ?Theme)
+    * location(end(E), ?Theme, ?Destination)
+    * cause(Agent, E)
+NP V NP (Basic Transitive)
+  Syntax: NP[Agent] VERB NP[Patient]
+  Semantics:
+    * state(start(E), Endstate, Patient)
+    * state(result(E), Endstate, Patient)
+    * cause(Agent, E)
+NP V NP.beneficiary NP (NP-NP; Beneficiary Object)
+  Syntax: NP[Agent] VERB NP[Beneficiary] NP[Patient]
+  Semantics:
+    * state(start(E), Endstate, Patient)
+    * state(result(E), Endstate, Patient)
+    * cause(Agent, E)
+    * benefit(E, Beneficiary)
+NP V NP PP.beneficiary (NP-PP; for-PP)
+  Syntax: NP[Agent] VERB NP[Patient] PREP[for] NP[Beneficiary]
+  Semantics:
+    * state(start(E), Endstate, Patient)
+    * state(result(E), Endstate, Patient)
+    * cause(Agent, E)
+    * benefit(E, Beneficiary)
+NP V PP.destination NP (PP-NP; upon/on-PP)
+  Syntax: NP[Agent] VERB PREP[on upon] NP[Destination] NP[Theme]
+  Semantics:
+    * motion(during(E), Theme)
+    * Prep(start(E), Theme, Destination)
+    * Prep(end(E), Theme, Destination)
+    * cause(Agent, E)

@@ -1,0 +1,50 @@
+NP V (Simple Reciprocal Intransitive)
+  Syntax: NP[Patient +plural] VERB
+  Semantics:
+    * degradation_material_integrity(result(E), Patient_i)
+    * degradation_material_integrity(result(E), Patient_j)
+    * mingled(result(E), physical, Patient_i, Patient_j)
+NP V (Simple Reciprocal Intransitive)
+  Syntax: NP[Patient +plural] VERB
+  Semantics:
+    * together(end(E), physical, Patient_i, Patient_j)
+NP V (Basic Intransitive)
+  Syntax: NP[Theme] VERB
+  Semantics:
+    * appear(during(E), Theme)
+NP V PP.location (PP; Location-PP)
+  Syntax: NP[Theme] VERB PREP[+loc] NP[Location]
+  Semantics:
+    * appear(during(E), Theme)
+    * Prep(start(E), Theme, Location)
+    * Prep(end(E), Theme, Location)
+There V NP PP (NP-PP; Expletive-there Subject)
+  Syntax: LEX[there] VERB NP[Theme] PREP[+loc] NP[Location]
+  Semantics:
+    * appear(during(E), Theme)
+    * Prep(start(E), Theme, Location)
+    * Prep(end(E), Theme, Location)
+PP.location V NP (Locative Inversion)
+  Syntax: PREP[+loc] NP[Location] VERB NP[Theme]
+  Semantics:
+    * appear(during(E), Theme)
+    * Prep(start(E), Theme, Location)
+    * Prep(end(E), Theme, Location)
+NP V ADV (ADVP-PRED; here/there)
+  Syntax: NP[Theme] VERB NP[Location +adv_loc]
+  Semantics:
+    * appear(during(E), Theme)
+    * location(start(E), Theme, Location)
+    * location(end(E), Theme, Location)
+NP V (Simple Reciprocal Intransitive)
+  Syntax: NP[Patient +plural] VERB
+  Semantics:
+    * degradation_material_integrity(result(E), Patient_i)
+    * degradation_material_integrity(result(E), Patient_j)
+    * mingled(result(E), physical, Patient_i, Patient_j)
+NP NP V together (Together Reciprocal Alternation Intransitive)
+  Syntax: NP[Patient +plural] VERB LEX[together]
+  Semantics:
+    * degradation_material_integrity(result(E), Patient_i)
+    * degradation_material_integrity(result(E), Patient_j)
+    * mingled(result(E), physical, Patient_i, Patient_j)

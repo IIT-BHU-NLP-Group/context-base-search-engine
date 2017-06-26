@@ -1,0 +1,35 @@
+NP V NP (Basic Transitive)
+  Syntax: NP[Agent] VERB NP[Patient]
+  Semantics:
+    * cause(Agent, E)
+    * transfer_info(during(E), Agent, ?Recipient, ?Theme)
+NP V NP PP.recipient (NP-PP; Recipient-PP)
+  Syntax: NP[Agent] VERB NP[Patient] PREP[+dest_dir] NP[Recipient]
+  Semantics:
+    * cause(Agent, E)
+    * transfer_info(during(E), Agent, Recipient, ?Theme)
+NP V NP PP.recipient PP.theme (NP-PP-PP; Recipient-PP Theme-PP)
+  Syntax: NP[Agent] VERB NP[Patient] PREP[+dest_dir] NP[Recipient] PREP[in] NP[Theme]
+  Semantics:
+    * cause(Agent, E)
+    * transfer_info(during(E), Agent, Recipient, Theme)
+NP V NP (Basic Transitive)
+  Syntax: NP[Agent] VERB NP[Theme]
+  Semantics:
+    * motion(during(E), Theme)
+    * exert_force(during(E), Agent, Theme, Direction)
+    * cause(Agent, E)
+NP V NP PP.destination (NP-PP; locative-PP)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[+spatial] NP[Destination]
+  Semantics:
+    * motion(during(E), Theme)
+    * Prep(E, Theme, Destination)
+    * exert_force(during(E), Agent, Theme, Direction)
+    * cause(Agent, E)
+NP V NP ADVP (NP-ADVP-PRED; here/there)
+  Syntax: NP[Agent] VERB NP[Theme] NP[Destination +adv_loc]
+  Semantics:
+    * motion(during(E), Theme)
+    * Prep(E, Theme, Destination)
+    * exert_force(during(E), Agent, Theme, Direction)
+    * cause(Agent, E)

@@ -1,0 +1,23 @@
+NP V PP.destination (NP-PP; to-PP)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[to] NP[Destination]
+  Semantics:
+    * location(start(E), Theme, Destination)
+    * location(end(E), Theme, Destination)
+    * confined(result(E), Theme)
+    * cause(Agent, E)
+NP V NP (Basic Transitive)
+  Syntax: NP[Cause] VERB NP[Patient]
+  Semantics:
+    * limit(during(E), Cause, Patient, ?Goal)
+NP V NP S_ING (NP-P-ING-OC; to-PP)
+  Syntax: NP[Cause] VERB NP[Patient] PREP[to] NP[Goal +oc_ing]
+  Semantics:
+    * limit(during(E), Cause, Patient, Goal)
+NP V NP PP.goal (NP-PP; to-PP)
+  Syntax: NP[Cause] VERB NP[Patient] PREP[to] NP[Goal]
+  Semantics:
+    * limit(during(E), Cause, Patient, Goal)
+NP V NP S_INF (NP-TO-INF-OC)
+  Syntax: NP[Cause] VERB NP[Patient] NP[Goal +oc_to_inf]
+  Semantics:
+    * limit(during(E), Cause, Patient, Goal)

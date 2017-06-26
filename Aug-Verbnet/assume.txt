@@ -1,0 +1,4 @@
+NP V NP (Basic Transitive)
+  Syntax: NP[Agent] VERB NP[Theme]
+  Semantics:
+    * adopt(during(E), Agent, Theme)

@@ -1,0 +1,24 @@
+NP V that S (S-SUBJUNCT)
+  Syntax: NP[Agent] VERB NP[Topic +that_comp -tensed_that]
+  Semantics:
+    * command(during(E), Agent, ?Recipient, Topic)
+NP V that S (THAT-S)
+  Syntax: NP[Agent] VERB NP[Topic +that_comp]
+  Semantics:
+    * command(during(E), Agent, ?Recipient, Topic)
+NP V NP             PP.source (NP-PP; from-PP)
+  Syntax: NP[Pivot] VERB NP[Theme] PREP[from] NP[Source]
+  Semantics:
+    * require(E, Pivot, Theme, Source)
+NP V NP S_INF (NP-ING-SC)
+  Syntax: NP[Pivot] VERB NP[Theme +np_to_inf]
+  Semantics:
+    * require(E, Pivot, Theme, ?Source)
+NP V S_ING (ING-AC)
+  Syntax: NP[Pivot] VERB NP[Theme +ac_ing]
+  Semantics:
+    * require(E, Pivot, Theme, ?Source)
+NP V that S (S-SUBJUNCT)
+  Syntax: NP[Pivot] VERB NP[Theme +that_comp]
+  Semantics:
+    * require(E, Pivot, Theme, ?Source)

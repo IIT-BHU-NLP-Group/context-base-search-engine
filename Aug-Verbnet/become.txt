@@ -1,0 +1,5 @@
+NP V NP
+  Syntax: NP[Patient] VERB NP[Result -sentential]
+  Semantics:
+    * state(result(E), Result, Patient)
+    * Pred(result(E), Patient)

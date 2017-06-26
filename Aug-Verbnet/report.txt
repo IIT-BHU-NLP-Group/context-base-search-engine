@@ -1,0 +1,42 @@
+NP V NP ADJ (NP-VEN-NP-OMIT)
+  Syntax: NP[Agent] VERB NP[Theme +np_ppart]
+  Semantics:
+    * describe(during(E), Agent, Theme)
+    * cause(Agent, E)
+NP V whether/if S (WH-S)
+  Syntax: NP[Agent] VERB NP[Theme +wh_comp]
+  Semantics:
+    * describe(during(E), Agent, Theme)
+    * cause(Agent, E)
+NP V what S (WHAT-S)
+  Syntax: NP[Agent] VERB NP[Theme +what_extract]
+  Semantics:
+    * describe(during(E), Agent, Theme)
+    * cause(Agent, E)
+NP V what S_INF (WHAT-TO-INF)
+  Syntax: NP[Agent] VERB NP[Theme +what_inf]
+  Semantics:
+    * describe(during(E), Agent, Theme)
+    * cause(Agent, E)
+NP V NP PP.attribute (NP-P-ING; as-PP)
+  Syntax: NP[Agent] VERB NP[Theme +np_p_ing]
+  Semantics:
+    * consider(during(E), Agent, Theme)
+NP V NP to be NP (NP-TOBE)
+  Syntax: NP[Agent] VERB NP[Theme +to_be]
+  Semantics:
+    * consider(during(E), Agent, Theme)
+NP V that S (S)
+  Syntax: NP[Agent] VERB NP[Theme +that_comp]
+  Semantics:
+    * consider(during(E), Agent, Theme)
+NP V that S (S)
+  Syntax: NP[Agent] VERB NP[Topic +that_comp]
+  Semantics:
+    * transfer_info(during(E), Agent, ?Recipient, Topic)
+    * cause(Agent, E)
+NP V that S (S-SUBJUNCT)
+  Syntax: NP[Agent] VERB NP[Topic +that_comp -tensed_that]
+  Semantics:
+    * transfer_info(during(E), Agent, ?Recipient, Topic)
+    * cause(Agent, E)

@@ -1,0 +1,27 @@
+NP V NP (Basic Transitive)
+  Syntax: NP[Agent] VERB NP[Theme]
+  Semantics:
+    * assess(during(E), Agent, Theme, ?Attribute)
+NP V NP PP.attribute (NP-PP; Attribute-PP)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[for] NP[Attribute]
+  Semantics:
+    * assess(during(E), Agent, Theme, Attribute)
+NP V NP.attribute (NP; Attribute Object)
+  Syntax: NP[Agent] VERB NP[Theme +genitive] LEX['s] NP[Attribute]
+  Semantics:
+    * assess(during(E), Agent, Theme, Attribute)
+NP V NP S_ING (NP-P-ING-OC; as-PP)
+  Syntax: NP[Agent] VERB NP[Theme] LEX[as] NP[Attribute +oc_ing]
+  Semantics:
+    * characterize(during(E), Theme, Attribute)
+    * cause(Agent, E)
+NP V NP to be ADJ (NP-TOBE)
+  Syntax: NP[Agent] VERB NP[Theme] LEX[as] NP[Attribute +small_clause]
+  Semantics:
+    * characterize(during(E), Theme, Attribute)
+    * cause(Agent, E)
+NP V NP PP.attribute (NP-PP; as-PP)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[as] NP[Attribute -sentential]
+  Semantics:
+    * characterize(during(E), Theme, Attribute)
+    * cause(Agent, E)

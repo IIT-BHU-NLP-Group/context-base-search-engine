@@ -1,0 +1,139 @@
+NP V NP (Basic Transitive)
+  Syntax: NP[Stimulus] VERB NP[Experiencer]
+  Semantics:
+    * cause(Stimulus, E)
+    * emotional_state(result(E), Emotion, Experiencer)
+NP V ADV-Middle (Middle Construction)
+  Syntax: NP[Experiencer] VERB ADV
+  Semantics:
+    * emotional_state(result(E), ?Emotion, Experiencer)
+NP V NP-PRO-ARB (PRO-Arb Object Alternation)
+  Syntax: NP[Stimulus] VERB
+  Semantics:
+    * cause(Stimulus, E)
+    * emotional_state(result(E), Emotion, ?Experiencer)
+NP.cause V NP (NP; Attribute Subject)
+  Syntax: NP[Stimulus +genitive] LEX['s] VERB NP[Experiencer]
+  Semantics:
+    * cause(Stimulus, E)
+    * emotional_state(result(E), Emotion, Experiencer)
+NP V NP ADJ (NP-ADJP; Resultative)
+  Syntax: NP[Stimulus] VERB NP[Experiencer] NP[Result]
+  Semantics:
+    * cause(Stimulus, E)
+    * emotional_state(result(E), Emotion, Experiencer)
+    * Pred(result(E), Experiencer)
+NP V NP (Transitive)
+  Syntax: NP[Agent] VERB NP[Patient]
+  Semantics:
+    * take_care_of(during(E), Agent, Patient)
+NP V NP P.asset (NP-PP; Asset-PP)
+  Syntax: NP[Agent] VERB NP[Product] PREP[for] NP[Asset]
+  Semantics:
+    * exist(start(E), Product)
+    * exist(result(E), Product)
+    * made_of(result(E), Product, ?Material)
+    * cause(Agent, E)
+    * cost(E, Asset)
+NP.asset V NP (NP; Asset Subject)
+  Syntax: NP[Asset] VERB NP[Product]
+  Semantics:
+    * exist(start(E), Product)
+    * exist(result(E), Product)
+    * made_of(result(E), Product, ?Material)
+    * cause(?Agent, E)
+    * cost(E, Asset)
+NP.asset V NP NP (NP-NP; Asset Subject)
+  Syntax: NP[Asset] VERB NP[Beneficiary] NP[Product]
+  Semantics:
+    * exist(start(E), Product)
+    * exist(result(E), Product)
+    * made_of(result(E), Product, ?Material)
+    * cause(?Agent, E)
+    * benefit(E, Beneficiary)
+    * cost(E, Asset)
+NP.asset V PP (NP-PP; Asset Subject)
+  Syntax: NP[Asset] VERB NP[Product] PREP[from out_of] NP[Material]
+  Semantics:
+    * exist(start(E), Product)
+    * exist(result(E), Product)
+    * made_of(result(E), Product, Material)
+    * cause(?Agent, E)
+    * cost(E, Asset)
+NP.asset V NP PP (NP-NP-PP; Asset Subject)
+  Syntax: NP[Asset] VERB NP[Beneficiary] NP[Product] PREP[from out_of] NP[Material]
+  Semantics:
+    * exist(start(E), Product)
+    * exist(result(E), Product)
+    * made_of(result(E), Product, Material)
+    * cause(?Agent, E)
+    * benefit(E, Beneficiary)
+    * cost(E, Asset)
+NP V NP (Transitive; Body-part or reflexive Object)
+  Syntax: NP[Agent] VERB NP[Patient]
+  Semantics:
+    * manner(during(E), Motion, Agent)
+    * contact(during(E), ?Instrument, Patient)
+    * degradation_material_integrity(result(E), Patient)
+NP V NP (Unintentional Interpretation of ObjectBody_part Object)
+  Syntax: NP[Experiencer] VERB NP[Patient]
+  Semantics:
+    * harmed(during(E), Patient)
+    * experience(E, Experiencer)
+NP V NP (Unintentional Interpretation of ObjectReflexive Object)
+  Syntax: NP[Experiencer] VERB NP[Patient]
+  Semantics:
+    * harmed(during(E), Patient)
+    * experience(E, Experiencer)
+NP V PP.location (PP; path-PP)
+  Syntax: NP[Theme] VERB PREP[+path] NP[Location]
+  Semantics:
+    * Prep(during(E), Theme, Location)
+    * exist(during(E), Theme)
+PP.location V NP (Locative Inversion)
+  Syntax: PREP[+path] NP[Location] VERB NP[Theme]
+  Semantics:
+    * Prep(during(E), Theme, Location)
+    * exist(during(E), Theme)
+There V PP NP (PP-NP; Expletive-there Subject)
+  Syntax: LEX[there] VERB PREP[+path] NP[Location] NP[Theme]
+  Semantics:
+    * Prep(during(E), Theme, Location)
+    * exist(during(E), Theme)
+There V NP PP (NP-PP; Expletive-there Subject)
+  Syntax: LEX[there] VERB NP[Theme] PREP[+path] NP[Location]
+  Semantics:
+    * Prep(during(E), Theme, Location)
+    * exist(during(E), Theme)
+NP V NP PP.co-patient (NP-PP; Source-PP)
+  Syntax: NP[Agent] VERB NP[Patient] PREP[off off of from] NP[Co-Patient]
+  Semantics:
+    * cause(Agent, E)
+    * together(start(E), physical, Patient, Co-Patient)
+    * apart(result(E), physical, Patient, Co-Patient)
+NP V NP apart (Apart Reciprocal Alternation Transitive)
+  Syntax: NP[Agent] VERB NP[Patient +plural] LEX[apart]
+  Semantics:
+    * cause(Agent, E)
+    * together(start(E), physical, Patient_i, Patient_j)
+    * apart(result(E), physical, Patient_i, Patient_j)
+NP V PP.co-patient (PP; Source-PP)
+  Syntax: NP[Patient] VERB PREP[off off of from] NP[Co-Patient]
+  Semantics:
+    * together(start(E), physical, Patient, Co-Patient)
+    * apart(result(E), physical, Patient, Co-Patient)
+NP V apart (Apart Reciprocal Alternation Intransitive)
+  Syntax: NP[Patient +plural] VERB LEX[apart]
+  Semantics:
+    * together(start(E), physical, Patient_i, Patient_j)
+    * apart(result(E), physical, Patient_i, Patient_j)
+NP V PP ADV-Middle (Middle Construction)
+  Syntax: NP[Patient] VERB PREP[off off of from] NP[Co-Patient] ADV
+  Semantics:
+    * together(start(E), physical, Patient, Co-Patient)
+    * apart(result(E), physical, Patient, Co-Patient)
+NP V ADV-Middle (Middle Construction)
+  Syntax: NP[Patient +plural] VERB LEX[apart] ADV
+  Semantics:
+    * together(start(E), physical, Patient_i, Patient_j)
+    * apart(result(E), physical, Patient_i, Patient_j)

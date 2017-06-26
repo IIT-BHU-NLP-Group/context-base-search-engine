@@ -1,0 +1,55 @@
+NP V (Simple Reciprocal Intransitive)
+  Syntax: NP[Patient +plural] VERB
+  Semantics:
+    * degradation_material_integrity(result(E), Patient_i)
+    * degradation_material_integrity(result(E), Patient_j)
+    * mingled(result(E), physical, Patient_i, Patient_j)
+NP V (Simple Reciprocal Intransitive)
+  Syntax: NP[Patient +plural] VERB
+  Semantics:
+    * together(end(E), physical, Patient_i, Patient_j)
+NP V NP PP.co-patient (NP-PP; with-PP)
+  Syntax: NP[Agent] VERB NP[Patient] PREP[with into to] NP[Co-Patient]
+  Semantics:
+    * cause(Agent, E)
+    * degradation_material_integrity(result(E), Patient)
+    * degradation_material_integrity(result(E), Co-Patient)
+    * mingled(result(E), physical, Patient, Co-Patient)
+NP V NP (Simple Reciprocal Transitive)
+  Syntax: NP[Agent] VERB NP[Patient +plural]
+  Semantics:
+    * cause(Agent, E)
+    * degradation_material_integrity(result(E), Patient_i)
+    * degradation_material_integrity(result(E), Patient_j)
+    * mingled(result(E), physical, Patient_i, Patient_j)
+NP V NP NP together (Together Reciprocal Alternation Transitive)
+  Syntax: NP[Agent] VERB NP[Patient +plural] LEX[together]
+  Semantics:
+    * cause(Agent, E)
+    * degradation_material_integrity(result(E), Patient_i)
+    * degradation_material_integrity(result(E), Patient_j)
+    * mingled(result(E), physical, Patient_i, Patient_j)
+NP V PP.co-patient (PP; with-PP)
+  Syntax: NP[Patient] VERB PREP[with into to] NP[Co-Patient]
+  Semantics:
+    * degradation_material_integrity(result(E), Patient)
+    * degradation_material_integrity(result(E), Co-Patient)
+    * mingled(result(E), physical, Patient, Co-Patient)
+NP V ADVP-Middle PP (Middle Construction)
+  Syntax: NP[Patient] VERB ADV PREP[with into to] NP[Co-Patient]
+  Semantics:
+    * degradation_material_integrity(result(E), Patient)
+    * degradation_material_integrity(result(E), Co-Patient)
+    * mingled(result(E), physical, Patient, Co-Patient)
+NP V ADVP-Middle (Middle Construction)
+  Syntax: NP[Patient +plural] VERB ADV
+  Semantics:
+    * degradation_material_integrity(result(E), Patient)
+    * degradation_material_integrity(result(E), Co-Patient)
+    * mingled(result(E), physical, Patient, Co-Patient)
+NP NP V ADVP-Middle together (Middle Construction)
+  Syntax: NP[Patient +plural] VERB ADV LEX[together]
+  Semantics:
+    * degradation_material_integrity(result(E), Patient)
+    * degradation_material_integrity(result(E), Co-Patient)
+    * mingled(result(E), physical, Patient, Co-Patient)

@@ -1,0 +1,165 @@
+NP V NP (Basic Transitive)
+  Syntax: NP[Agent] VERB NP[Product]
+  Semantics:
+    * exist(start(E), Product)
+    * exist(result(E), Product)
+    * made_of(result(E), Product, ?Material)
+    * cause(Agent, E)
+NP V (Unspecified Object)
+  Syntax: NP[Agent] VERB
+  Semantics:
+    * exist(start(E), ?Product)
+    * exist(result(E), ?Product)
+    * made_of(result(E), ?Product, ?Material)
+    * cause(Agent, E)
+NP V NP.product PP.material (Material/Product Alternation Transitive; Product Object)
+  Syntax: NP[Agent] VERB NP[Product] PREP[from out_of] NP[Material]
+  Semantics:
+    * exist(start(E), Product)
+    * exist(result(E), Product)
+    * made_of(result(E), Product, Material)
+    * cause(Agent, E)
+NP V NP.material PP.product (Material/Product Alternation Transitive; Material Object)
+  Syntax: NP[Agent] VERB NP[Material] PREP[into] NP[Product]
+  Semantics:
+    * exist(start(E), Product)
+    * exist(result(E), Product)
+    * made_of(result(E), Product, Material)
+    * cause(Agent, E)
+NP V NP PP.beneficiary (NP-PP; for-PP)
+  Syntax: NP[Agent] VERB NP[Product] PREP[for] NP[Beneficiary]
+  Semantics:
+    * exist(start(E), Product)
+    * exist(result(E), Product)
+    * made_of(result(E), Product, ?Material)
+    * cause(Agent, E)
+    * benefit(E, Beneficiary)
+NP V NP.beneficiary NP PP (NP-NP; Object Beneficiary)
+  Syntax: NP[Agent] VERB NP[Beneficiary] NP[Product] PREP[from out_of] NP[Material]
+  Semantics:
+    * exist(start(E), Product)
+    * exist(result(E), Product)
+    * made_of(result(E), Product, Material)
+    * cause(Agent, E)
+    * benefit(E, Beneficiary)
+NP V NP PP.material PP.beneficiary (NP-PP-PP; Source-PP Beneficiary-PP)
+  Syntax: NP[Agent] VERB NP[Product] PREP[from out_of] NP[Material] PREP[for] NP[Beneficiary]
+  Semantics:
+    * exist(start(E), Product)
+    * exist(result(E), Product)
+    * made_of(result(E), Product, Material)
+    * cause(Agent, E)
+    * benefit(E, Beneficiary)
+NP V NP PP.beneficiary (NP-PP; for-PP)
+  Syntax: NP[Agent] VERB NP[Material] PREP[for] NP[Beneficiary]
+  Semantics:
+    * exist(start(E), ?Product)
+    * exist(result(E), ?Product)
+    * made_of(result(E), ?Product, Material)
+    * cause(Agent, E)
+    * benefit(E, Beneficiary)
+NP V NP PP.product PP.beneficiary (NP-PP-PP; Product-PP Beneficiary-PP)
+  Syntax: NP[Agent] VERB NP[Material] PREP[into] NP[Product] PREP[for] NP[Beneficiary]
+  Semantics:
+    * exist(start(E), Product)
+    * exist(result(E), Product)
+    * made_of(result(E), Product, Material)
+    * cause(Agent, E)
+    * benefit(E, Beneficiary)
+NP.material V NP (Raw Material Subject)
+  Syntax: NP[Material] VERB NP[Product]
+  Semantics:
+    * exist(start(E), Product)
+    * exist(result(E), Product)
+    * made_of(result(E), Product, Material)
+    * cause(?Agent, E)
+NP V NP NP PP.asset (NP-NP-PP; Asset-PP)
+  Syntax: NP[Agent] VERB NP[Beneficiary] NP[Product] PREP[for] NP[Asset]
+  Semantics:
+    * exist(start(E), Product)
+    * exist(result(E), Product)
+    * made_of(result(E), Product, ?Material)
+    * cause(Agent, E)
+    * benefit(E, Beneficiary)
+    * cost(E, Asset)
+NP V NP PP.material PP.asset (NP-PP-PP; Material-PP, Asset-PP)
+  Syntax: NP[Agent] VERB NP[Product] PREP[from out_of] NP[Material] PREP[for] NP[Asset]
+  Semantics:
+    * exist(start(E), Product)
+    * exist(result(E), Product)
+    * made_of(result(E), Product, Material)
+    * cause(Agent, E)
+    * cost(E, Asset)
+NP V NP.patient (Basic Transitive; Causative)
+  Syntax: NP[Agent] VERB NP[Patient]
+  Semantics:
+    * cause(Agent, E)
+    * apply_heat(during(E), ?Instrument, Patient)
+    * cooked(result(E), Form, Patient)
+NP V NP PP.instrument (NP-PP; Instrument-PP)
+  Syntax: NP[Agent] VERB NP[Patient] PREP[in on with] NP[Instrument]
+  Semantics:
+    * cause(Agent, E)
+    * apply_heat(during(E), Instrument, Patient)
+    * cooked(result(E), Form, Patient)
+    * use(during(E), Agent, Instrument)
+NP.patient V (Intransitive; Inchoative)
+  Syntax: NP[Patient] VERB
+  Semantics:
+    * cooked(result(E), Form, Patient)
+NP V ADV-Middle (Middle Construction)
+  Syntax: NP[Patient] VERB ADV
+  Semantics:
+    * cooked(result(E), Form, Patient)
+NP.instrument V NP (Instrument Subject Alternation)
+  Syntax: NP[Instrument] VERB NP[Patient]
+  Semantics:
+    * apply_heat(during(E), Instrument, Patient)
+    * cooked(result(E), Form, Patient)
+NP V NP PP.result (NP-PP; Result-PP)
+  Syntax: NP[Agent] VERB NP[Patient] PREP[to into] NP[Result +state]
+  Semantics:
+    * cause(Agent, E)
+    * apply_heat(during(E), ?Instrument, Patient)
+    * cooked(result(E), Form, Patient)
+    * Pred(result(E), Patient)
+NP V NP PP.result PP.instrument (NP-PP-PP; Result-PP, Instrument-PP)
+  Syntax: NP[Agent] VERB NP[Patient] PREP[to into] NP[Result +state] PREP[in on with] NP[Instrument]
+  Semantics:
+    * cause(Agent, E)
+    * apply_heat(during(E), Instrument, Patient)
+    * cooked(result(E), Form, Patient)
+    * Pred(result(E), Patient)
+    * use(during(E), Agent, Instrument)
+NP V PP.result (PP; Result-PP)
+  Syntax: NP[Patient] VERB PREP[to into] NP[Result +state]
+  Semantics:
+    * apply_heat(during(E), ?Instrument, Patient)
+    * cooked(result(E), Form, Patient)
+    * Pred(result(E), Patient)
+NP V PP.result PP.instrument (PP-PP; Result-PP, Instrument-PP)
+  Syntax: NP[Patient] VERB PREP[to into] NP[Result +state] PREP[in on with] NP[Instrument]
+  Semantics:
+    * apply_heat(during(E), Instrument, Patient)
+    * cooked(result(E), Form, Patient)
+    * Pred(result(E), Patient)
+NP V NP (Basic Transitive)
+  Syntax: NP[Agent] VERB NP[Product]
+  Semantics:
+    * exist(start(E), Product)
+    * exist(result(E), Product)
+    * cause(Agent, E)
+NP V NP.beneficiary NP (NP-NP; Beneficiary Object)
+  Syntax: NP[Agent] VERB NP[Beneficiary] NP[Product]
+  Semantics:
+    * exist(start(E), Product)
+    * exist(result(E), Product)
+    * cause(Agent, E)
+    * benefit(E, Beneficiary)
+NP V NP PP.beneficiary (NP-PP; for-PP)
+  Syntax: NP[Agent] VERB NP[Product] PREP[for] NP[Beneficiary]
+  Semantics:
+    * exist(start(E), Product)
+    * exist(result(E), Product)
+    * cause(Agent, E)
+    * benefit(E, Beneficiary)

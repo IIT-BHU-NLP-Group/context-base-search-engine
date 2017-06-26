@@ -1,0 +1,37 @@
+NP V S_INF (TO-INF-SC)
+  Syntax: NP[Experiencer] VERB NP[Stimulus +sc_to_inf]
+  Semantics:
+    * emotional_state(E, Emotion, Experiencer)
+    * in_reaction_to(E, Stimulus)
+NP V for NP S_INF (FOR-TO-INF)
+  Syntax: NP[Pivot] VERB NP[Theme +for_comp]
+  Semantics:
+    * desire(E, Pivot, Theme)
+NP V S_ING (ING-NP-OMIT)
+  Syntax: NP[Pivot] VERB NP[Theme +np_omit_ing]
+  Semantics:
+    * desire(E, Pivot, Theme)
+NP V NP ADJ (NP-ADJP-PRED)
+  Syntax: NP[Pivot] VERB NP[Theme] ADJ
+  Semantics:
+    * desire(E, Pivot, Theme)
+NP V NP ADV (NP-ADVP-PRED)
+  Syntax: NP[Pivot] VERB NP[Theme]
+  Semantics:
+    * desire(E, Pivot, Theme)
+NP V S_ING (NP-ING)
+  Syntax: NP[Pivot] VERB NP[Theme +acc_ing]
+  Semantics:
+    * desire(E, Pivot, Theme)
+NP V NP ADJ (NP-VEN-NP-OMIT)
+  Syntax: NP[Pivot] VERB NP[Theme +np_ppart]
+  Semantics:
+    * desire(E, Pivot, Theme)
+NP V NP S_ING (POSSING)
+  Syntax: NP[Pivot] VERB NP[Theme +poss_ing]
+  Semantics:
+    * desire(E, Pivot, Theme)
+NP V S_INF (TO-INF-SC)
+  Syntax: NP[Pivot] VERB NP[Theme +sc_to_inf]
+  Semantics:
+    * desire(E, Pivot, Theme)

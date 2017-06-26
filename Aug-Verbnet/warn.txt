@@ -1,0 +1,20 @@
+NP V PP.topic (PP; against/about-PP)
+  Syntax: NP[Agent] VERB PREP[against about concerning on regarding respecting] NP[Topic]
+  Semantics:
+    * transfer_info(during(E), Agent, ?Recipient, Topic)
+    * cause(Agent, E)
+NP V that S (S)
+  Syntax: NP[Agent] VERB NP[Topic +that_comp]
+  Semantics:
+    * transfer_info(during(E), Agent, ?Recipient, Topic)
+    * cause(Agent, E)
+NP V how S_INF (HOW-TO-INF)
+  Syntax: NP[Agent] VERB NP[Topic +wh_inf]
+  Semantics:
+    * transfer_info(during(E), Agent, ?Recipient, Topic)
+    * cause(Agent, E)
+NP V S-Quote (QUOT)
+  Syntax: NP[Agent] VERB NP[Topic +quotation]
+  Semantics:
+    * transfer_info(during(E), Agent, ?Recipient, Topic)
+    * cause(Agent, E)

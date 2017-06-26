@@ -1,0 +1,8 @@
+NP V (Basic Intransitive)
+  Syntax: NP[Theme] VERB
+  Semantics:
+    * exist(during(E), Theme)
+NP V PP.attribute (PP-PRED-RSin-PP)
+  Syntax: NP[Theme] VERB PREP[in] NP[Attribute -sentential]
+  Semantics:
+    * seem(E, Theme, Attribute)

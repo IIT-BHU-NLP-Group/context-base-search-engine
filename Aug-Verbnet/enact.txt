@@ -1,0 +1,13 @@
+NP V NP (Basic Transitive)
+  Syntax: NP[Agent] VERB NP[Theme]
+  Semantics:
+    * perform(during(E), Agent, Theme)
+NP V (Unspecified Object)
+  Syntax: NP[Agent] VERB
+  Semantics:
+    * perform(during(E), Agent, ?Theme)
+NP V NP PP.beneficiary (NP-PP; for-PP)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[for] NP[Beneficiary]
+  Semantics:
+    * perform(during(E), Agent, Theme)
+    * benefit(E, Beneficiary)

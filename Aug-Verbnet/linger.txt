@@ -1,0 +1,13 @@
+NP V (Basic Intransitive)
+  Syntax: NP[Theme] VERB
+  Semantics:
+    * exist(during(E), Theme)
+NP V PP.location (PP; Location-PP)
+  Syntax: NP[Agent] VERB PREP[+loc] NP[Location]
+  Semantics:
+    * linger(during(E), Agent, ?Theme)
+    * Prep(E, Agent, Location)
+NP V PP.theme (PP; over-PP)
+  Syntax: NP[Agent] VERB PREP[over] NP[Theme]
+  Semantics:
+    * linger(during(E), Agent, Theme)

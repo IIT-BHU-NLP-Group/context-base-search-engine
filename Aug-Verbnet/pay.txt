@@ -1,0 +1,20 @@
+NP V NP NP PP.theme (NP-NP-PP; for-PP)
+  Syntax: NP[Agent] VERB NP[Recipient] NP[Asset] PREP[for] NP[Theme]
+  Semantics:
+    * transfer(during(E), Theme)
+    * transfer(during(E), Asset)
+    * has_possession(start(E), Agent, Asset)
+    * has_possession(start(E), Agent, Theme)
+    * has_possession(end(E), Agent, Theme)
+    * has_possession(end(E), Agent, Asset)
+    * value(E, Theme, Asset)
+NP V NP NP (NP-NP)
+  Syntax: NP[Agent] VERB NP[Recipient] NP[Asset]
+  Semantics:
+    * transfer(during(E), ?Theme)
+    * transfer(during(E), Asset)
+    * has_possession(start(E), Agent, Asset)
+    * has_possession(start(E), Agent, ?Theme)
+    * has_possession(end(E), Agent, ?Theme)
+    * has_possession(end(E), Agent, Asset)
+    * value(E, ?Theme, Asset)

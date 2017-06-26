@@ -1,0 +1,37 @@
+NP V (Basic Intransitive)
+  Syntax: NP[Patient] VERB
+  Semantics:
+    * convert(during(E), Patient, ?Source, ?Goal)
+NP V NP (Basic Transitive)
+  Syntax: NP[Agent] VERB NP[Patient]
+  Semantics:
+    * convert(during(E), Patient, ?Source, ?Goal)
+    * cause(E, Agent)
+NP V NP S_ING (NP-P-ING-OC; to-PP)
+  Syntax: NP[Agent] VERB NP[Patient] PREP[to] NP[Goal +oc_ing]
+  Semantics:
+    * convert(during(E), Patient, ?Source, Goal)
+    * cause(E, Agent)
+NP V NP PP.goal (NP-PP; to-PP)
+  Syntax: NP[Agent] VERB NP[Patient] PREP[to] NP[Goal]
+  Semantics:
+    * convert(during(E), Patient, ?Source, Goal)
+    * cause(E, Agent)
+NP V PP.source PP.goal (PP-PP; from-PP to-PP)
+  Syntax: NP[Patient] VERB PREP[from] NP[Source] PREP[to] NP[Goal]
+  Semantics:
+    * convert(during(E), Patient, Source, Goal)
+NP V NP PP.co-theme (NP-PP; with-PP)
+  Syntax: NP[Theme] VERB NP[Location] PREP[with] NP[Co-Theme]
+  Semantics:
+    * location(start(E), Theme, Location_i)
+    * location(end(E), Theme, Location_j)
+    * location(start(E), Co-Theme, Location_j)
+    * location(end(E), Co-Theme, Location_i)
+NP V NP.location (Transitive; Location Object)
+  Syntax: NP[Theme +plural] VERB NP[Location]
+  Semantics:
+    * location(start(E), Theme_i, Location_i)
+    * location(end(E), Theme_i, Location_j)
+    * location(start(E), Theme_j, Location_j)
+    * location(end(E), Theme_j, Location_i)

@@ -1,0 +1,58 @@
+NP V (Basic Intransitive)
+  Syntax: NP[Theme] VERB
+  Semantics:
+    * appear(during(E), Theme)
+NP V PP.location (PP; Location-PP)
+  Syntax: NP[Theme] VERB PREP[+loc] NP[Location]
+  Semantics:
+    * appear(during(E), Theme)
+    * Prep(start(E), Theme, Location)
+    * Prep(end(E), Theme, Location)
+There V NP PP (NP-PP; Expletive-there Subject)
+  Syntax: LEX[there] VERB NP[Theme] PREP[+loc] NP[Location]
+  Semantics:
+    * appear(during(E), Theme)
+    * Prep(start(E), Theme, Location)
+    * Prep(end(E), Theme, Location)
+PP.location V NP (Locative Inversion)
+  Syntax: PREP[+loc] NP[Location] VERB NP[Theme]
+  Semantics:
+    * appear(during(E), Theme)
+    * Prep(start(E), Theme, Location)
+    * Prep(end(E), Theme, Location)
+NP V ADV (ADVP-PRED; here/there)
+  Syntax: NP[Theme] VERB NP[Location +adv_loc]
+  Semantics:
+    * appear(during(E), Theme)
+    * location(start(E), Theme, Location)
+    * location(end(E), Theme, Location)
+NP V NP ADJ
+  Syntax: NP[Patient] VERB NP[Result]
+  Semantics:
+    * state(result(E), Result, Patient)
+    * Pred(result(E), Patient)
+NP V (Basic Intransitive)
+  Syntax: NP[Theme] VERB
+  Semantics:
+    * motion(during(E), Theme)
+    * path(during(E), Theme, ?Initial_Location, ?Trajectory, ?Destination)
+NP V PP.initial_loc (PP; initial_loc-PP)
+  Syntax: NP[Theme] VERB PREP[+path] NP[Initial_Location]
+  Semantics:
+    * motion(during(E), Theme)
+    * path(during(E), Theme, Initial_Location, ?Trajectory, ?Destination)
+NP V PP.destination (PP; destination-PP)
+  Syntax: NP[Theme] VERB PREP[+path] NP[Destination]
+  Semantics:
+    * motion(during(E), Theme)
+    * path(during(E), Theme, ?Initial_Location, ?Trajectory, Destination)
+NP V PP.trajectory (PP; trajectory-PP)
+  Syntax: NP[Theme] VERB PREP[+path] NP[Trajectory]
+  Semantics:
+    * motion(during(E), Theme)
+    * path(during(E), Theme, ?Initial_Location, Trajectory, ?Destination)
+NP V PP.initial_loc PP.destination (PP-PP; source-PP destination-PP)
+  Syntax: NP[Theme] VERB PREP[+path] NP[Initial_Location] PREP[+path] NP[Destination]
+  Semantics:
+    * motion(during(E), Theme)
+    * path(during(E), Theme, Initial_Location, ?Trajectory, Destination)

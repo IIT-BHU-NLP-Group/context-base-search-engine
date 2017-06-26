@@ -1,0 +1,14 @@
+NP V NP NP (Dative)
+  Syntax: NP[Agent] VERB NP[Destination] NP[Theme]
+  Semantics:
+    * motion(during(E), Theme)
+    * direction(during(E), toward, Theme, Destination)
+    * location(end(E), Theme, Destination)
+    * cause(Agent, E)
+NP V NP together (Together Reciprocal Alternation Transitive)
+  Syntax: NP[Agent] VERB NP[Theme +plural] LEX[together]
+  Semantics:
+    * motion(during(E), Theme)
+    * cause(Agent, E)
+    * together(start(E), abstract/physical, Theme_i, Theme_j)
+    * together(end(E), abstract/physical, Theme_i, Theme_j)

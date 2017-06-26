@@ -1,0 +1,39 @@
+NP V PP.theme (PP; on-PP)
+  Syntax: NP[Agent +plural] VERB PREP[on] NP[Theme -sentential]
+  Semantics:
+    * cooperate(during(E), Agent_i, Agent_j, Theme)
+NP V PP.co-agent PP.theme (PP-PP; with-PP on-PP)
+  Syntax: NP[Agent] VERB PREP[with] NP[Co-Agent] PREP[on] NP[Theme -sentential]
+  Semantics:
+    * cooperate(during(E), Agent, Co-Agent, Theme)
+NP V PP.theme S_ING (P-ING-SC; at-PP)
+  Syntax: NP[Agent +plural] VERB PREP[at] NP[Theme +sc_ing]
+  Semantics:
+    * cooperate(during(E), Agent_i, Agent_j, Theme)
+NP V PP.co-agent PP.theme S_ING (P-ING-SC; with-PP at-PP)
+  Syntax: NP[Agent +plural] VERB PREP[with] NP[Co-Agent] PREP[at] NP[Theme +sc_ing]
+  Semantics:
+    * cooperate(during(E), Agent, Co-Agent, Theme)
+NP.material V PP.product (PP; Inchoative variant, Product-PP)
+  Syntax: NP[Material] VERB PREP[into] NP[Product]
+  Semantics:
+    * exist(start(E), Product)
+    * exist(result(E), Product)
+    * made_of(result(E), Product, Material)
+    * state(start(E), Endstate, Material)
+    * state(result(E), Endstate, Material)
+NP V NP.material PP.product (NP-PP; Causative variant, Product-PP)
+  Syntax: NP[Agent] VERB NP[Material] PREP[into] NP[Product]
+  Semantics:
+    * exist(start(E), Product)
+    * exist(result(E), Product)
+    * made_of(result(E), Product, Material)
+    * state(start(E), Endstate, Material)
+    * state(result(E), Endstate, Material)
+    * cause(Agent, E)
+NP V NP.material (Transitive; Causative variant, Material Object)
+  Syntax: NP[Agent] VERB NP[Material]
+  Semantics:
+    * state(start(E), Endstate, Material)
+    * state(result(E), Endstate, Material)
+    * cause(Agent, E)

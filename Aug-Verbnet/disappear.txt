@@ -1,0 +1,9 @@
+NP V (Basic Intransitive)
+  Syntax: NP[Patient] VERB
+  Semantics:
+    * disappear(during(E), Patient)
+There V PP NP (PP-NP; Expletive-there Subject)
+  Syntax: NP[Patient] VERB PREP[from] NP[Initial_Location]
+  Semantics:
+    * disappear(during(E), Patient)
+    * Prep(end(E), Patient, Initial_Location)

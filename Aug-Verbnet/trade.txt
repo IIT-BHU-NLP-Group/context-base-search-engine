@@ -1,0 +1,14 @@
+NP V NP PP.co-theme (NP-PP; with-PP)
+  Syntax: NP[Theme] VERB NP[Location] PREP[with] NP[Co-Theme]
+  Semantics:
+    * location(start(E), Theme, Location_i)
+    * location(end(E), Theme, Location_j)
+    * location(start(E), Co-Theme, Location_j)
+    * location(end(E), Co-Theme, Location_i)
+NP V NP.location (Transitive; Location Object)
+  Syntax: NP[Theme +plural] VERB NP[Location]
+  Semantics:
+    * location(start(E), Theme_i, Location_i)
+    * location(end(E), Theme_i, Location_j)
+    * location(start(E), Theme_j, Location_j)
+    * location(end(E), Theme_j, Location_i)

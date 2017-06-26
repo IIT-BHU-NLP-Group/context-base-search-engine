@@ -1,0 +1,20 @@
+NP V NP (Basic Transitive)
+  Syntax: NP[Agent] VERB NP[Theme]
+  Semantics:
+    * assess(during(E), Agent, Theme, ?Attribute)
+NP V NP PP.attribute (NP-PP; Attribute-PP)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[for] NP[Attribute]
+  Semantics:
+    * assess(during(E), Agent, Theme, Attribute)
+NP V NP.attribute (NP; Attribute Object)
+  Syntax: NP[Agent] VERB NP[Theme +genitive] LEX['s] NP[Attribute]
+  Semantics:
+    * assess(during(E), Agent, Theme, Attribute)
+NP V NP.location PP.theme (NP-PP; Location Object, Theme-PP)
+  Syntax: NP[Agent] VERB NP[Location] PREP[for] NP[Theme]
+  Semantics:
+    * search(during(E), Agent, Location, Theme)
+NP V NP.location (Transitive; Location Object)
+  Syntax: NP[Agent] VERB NP[Location]
+  Semantics:
+    * search(during(E), Agent, Location, ?Theme)

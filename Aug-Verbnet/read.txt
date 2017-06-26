@@ -1,0 +1,37 @@
+NP v (Basic Intransitive)
+  Syntax: NP[Agent] VERB
+  Semantics:
+    * discover(during(E), Agent, ?Theme, ?Source)
+NP V PP.theme S_ING (P-POSSING; about-PP)
+  Syntax: NP[Agent] VERB PREP[about] NP[Theme +poss_ing]
+  Semantics:
+    * discover(during(E), Agent, Theme, ?Source)
+NP V PP.theme what S (P-WHAT-S; about-PP)
+  Syntax: NP[Agent] VERB PREP[about] NP[Theme +what_extract]
+  Semantics:
+    * discover(during(E), Agent, Theme, ?Source)
+NP V PP.theme (PP; about-PP)
+  Syntax: NP[Agent] VERB PREP[about] NP[Theme -sentential]
+  Semantics:
+    * discover(during(E), Agent, Theme, ?Source)
+NP V PP.theme PP.source (PP-PP; about-PP from-PP)
+  Syntax: NP[Agent] VERB PREP[about] NP[Theme -sentential] PREP[from] NP[Source]
+  Semantics:
+    * discover(during(E), Agent, Theme, Source)
+NP V (Basic Intransitive)
+  Syntax: NP[Agent] VERB
+  Semantics:
+    * transfer_info(during(E), ?Source, Agent, ?Topic)
+NP V PP.topic (PP; of-PP)
+  Syntax: NP[Agent] VERB PREP[of about] NP[Topic]
+  Semantics:
+    * transfer_info(during(E), ?Source, Agent, Topic)
+NP V NP.value (Transitive; Attribute Object)
+  Syntax: NP[Theme] VERB NP[Value]
+  Semantics:
+    * value(E, Agent, Theme, Value)
+NP V NP-Dative NP (Dative)
+  Syntax: NP[Agent] VERB NP[Recipient] NP[Topic -sentential]
+  Semantics:
+    * transfer_info(during(E), Agent, Recipient, Topic)
+    * cause(Agent, E)

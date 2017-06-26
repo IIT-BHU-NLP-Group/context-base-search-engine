@@ -1,0 +1,20 @@
+NP V NP NP (NP-NP)
+  Syntax: NP[Agent] VERB NP[Theme] NP[Result]
+  Semantics:
+    * designated(result(E), Theme, Result)
+    * cause(Agent, E)
+NP V NP PP.result (NP-PP; as-PP)
+  Syntax: NP[Agent] VERB NP[Theme] LEX[as] NP[Result -sentential]
+  Semantics:
+    * designated(result(E), Theme, Result)
+    * cause(Agent, E)
+NP V NP to be NP (Infinitival Copular Clause)
+  Syntax: NP[Agent] VERB NP[Theme] LEX[to] LEX[be] NP[Result -sentential]
+  Semantics:
+    * designated(result(E), Theme, Result)
+    * cause(Agent, E)
+NP V NP (Basic Transitive)
+  Syntax: NP[Agent] VERB NP[Theme]
+  Semantics:
+    * designated(result(E), Theme, Result)
+    * cause(Agent, E)

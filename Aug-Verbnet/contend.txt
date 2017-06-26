@@ -1,0 +1,42 @@
+NP V PP.co-agent PP.topic whether/if S (PP-P-WH-S; with-PP about-PP)
+  Syntax: NP[Agent] VERB PREP[with] NP[Co-Agent] PREP[about] NP[Topic +wh_comp]
+  Semantics:
+    * social_interaction(during(E), Agent, Co-Agent)
+    * conflict(during(E), Agent, Co-Agent)
+    * about(E, Topic)
+NP V PP.co-agent PP.topic what S (PP-P-WHAT-S; with-PP about-PP)
+  Syntax: NP[Agent] VERB PREP[with] NP[Co-Agent] PREP[about] NP[Topic +what_extract]
+  Semantics:
+    * social_interaction(during(E), Agent, Co-Agent)
+    * conflict(during(E), Agent, Co-Agent)
+    * about(E, Topic)
+NP V PP.co-agent PP.topic what S_INF (PP-P-WHAT-TO-INF; with-PP about-PP)
+  Syntax: NP[Agent] VERB PREP[with] NP[Co-Agent] PREP[about] NP[Topic +what_inf]
+  Semantics:
+    * social_interaction(during(E), Agent, Co-Agent)
+    * conflict(during(E), Agent, Co-Agent)
+    * about(E, Topic)
+NP V PP.co-agent PP.topic whether S_INF (PP-P-WH-TO-INF; with-PP about-PP)
+  Syntax: NP[Agent] VERB PREP[with] NP[Co-Agent] PREP[about] NP[Topic +wheth_inf]
+  Semantics:
+    * social_interaction(during(E), Agent, Co-Agent)
+    * conflict(during(E), Agent, Co-Agent)
+    * about(E, Topic)
+NP V PP.co-agent PP.topic (PP-PP; with-PP about-PP)
+  Syntax: NP[Agent] VERB PREP[with] NP[Co-Agent] PREP[about] NP[Topic -sentential]
+  Semantics:
+    * social_interaction(during(E), Agent, Co-Agent)
+    * conflict(during(E), Agent, Co-Agent)
+    * about(E, Topic)
+NP V NP to be NP (Infinitival Copular Clause)
+  Syntax: NP[Agent] VERB NP[Theme] NP[Predicate]
+  Semantics:
+    * declare(during(E), Agent, Theme, Predicate)
+NP V that S (S)
+  Syntax: NP[Agent] VERB NP[Theme +that_comp]
+  Semantics:
+    * declare(during(E), Agent, Theme, ?Predicate)
+NP V NP (Basic Transitive)
+  Syntax: NP[Agent] VERB NP[Theme -sentential]
+  Semantics:
+    * declare(during(E), Agent, Theme, ?Predicate)

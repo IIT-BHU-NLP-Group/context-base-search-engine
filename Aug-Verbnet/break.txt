@@ -1,0 +1,153 @@
+NP V (Basic Intransitive)
+  Syntax: NP[Theme] VERB
+  Semantics:
+    * appear(during(E), Theme)
+NP V PP.location (PP; Location-PP)
+  Syntax: NP[Theme] VERB PREP[+loc] NP[Location]
+  Semantics:
+    * appear(during(E), Theme)
+    * Prep(start(E), Theme, Location)
+    * Prep(end(E), Theme, Location)
+There V NP PP (NP-PP; Expletive-there Subject)
+  Syntax: LEX[there] VERB NP[Theme] PREP[+loc] NP[Location]
+  Semantics:
+    * appear(during(E), Theme)
+    * Prep(start(E), Theme, Location)
+    * Prep(end(E), Theme, Location)
+PP.location V NP (Locative Inversion)
+  Syntax: PREP[+loc] NP[Location] VERB NP[Theme]
+  Semantics:
+    * appear(during(E), Theme)
+    * Prep(start(E), Theme, Location)
+    * Prep(end(E), Theme, Location)
+NP V ADV (ADVP-PRED; here/there)
+  Syntax: NP[Theme] VERB NP[Location +adv_loc]
+  Semantics:
+    * appear(during(E), Theme)
+    * location(start(E), Theme, Location)
+    * location(end(E), Theme, Location)
+NP V NP (Basic Transitive; Causative)
+  Syntax: NP[Agent] VERB NP[Patient]
+  Semantics:
+    * cause(Agent, E)
+    * contact(during(E), ?Instrument, Patient)
+    * degradation_material_integrity(result(E), Patient)
+    * physical_form(result(E), Form, Patient)
+NP V NP PP.instrument (NP-PP; Instrument-PP)
+  Syntax: NP[Agent] VERB NP[Patient] PREP[with] NP[Instrument]
+  Semantics:
+    * cause(Agent, E)
+    * contact(during(E), Instrument, Patient)
+    * degradation_material_integrity(result(E), Patient)
+    * physical_form(result(E), Form, Patient)
+    * use(during(E), Agent, Instrument)
+NP.patient V (Intransitive; Inchoative)
+  Syntax: NP[Patient] VERB
+  Semantics:
+    * degradation_material_integrity(result(E), Patient)
+    * physical_form(result(E), Form, Patient)
+NP V ADV-Middle (Middle Construction)
+  Syntax: NP[Patient] VERB ADV
+  Semantics:
+    * degradation_material_integrity(result(E), Patient)
+    * physical_form(result(E), Form, Patient)
+NP.instrument V NP (Instrument Subject Alternation)
+  Syntax: NP[Instrument] VERB NP[Patient]
+  Semantics:
+    * contact(during(E), Instrument, Patient)
+    * degradation_material_integrity(result(E), Patient)
+    * physical_form(result(E), Form, Patient)
+NP V NP ADJ (NP-ADJP; Resultative)
+  Syntax: NP[Agent] VERB NP[Patient] NP[Result]
+  Semantics:
+    * cause(Agent, E)
+    * contact(during(E), ?Instrument, Patient)
+    * degradation_material_integrity(result(E), Patient)
+    * physical_form(result(E), Form, Patient)
+    * Pred(result(E), Patient)
+NP V NP ADJ PP.instrument (NP-ADJP-PP; Resultative, Instrument-PP)
+  Syntax: NP[Agent] VERB NP[Patient] NP[Result] PREP[with] NP[Instrument]
+  Semantics:
+    * cause(Agent, E)
+    * contact(during(E), Instrument, Patient)
+    * degradation_material_integrity(result(E), Patient)
+    * physical_form(result(E), Form, Patient)
+    * Pred(result(E), Patient)
+    * use(during(E), Agent, Instrument)
+NP V NP PP.result (NP-PP; Result-PP)
+  Syntax: NP[Agent] VERB NP[Patient] PREP[to into] NP[Result +state]
+  Semantics:
+    * cause(Agent, E)
+    * contact(during(E), ?Instrument, Patient)
+    * degradation_material_integrity(result(E), Patient)
+    * physical_form(result(E), Form, Patient)
+    * Pred(result(E), Patient)
+NP V NP PP.result PP.instrument (NP-PP-PP; Result-PP, Instrument-PP)
+  Syntax: NP[Agent] VERB NP[Patient] PREP[to into] NP[Result +state] PREP[with] NP[Instrument]
+  Semantics:
+    * cause(Agent, E)
+    * contact(during(E), Instrument, Patient)
+    * degradation_material_integrity(result(E), Patient)
+    * physical_form(result(E), Form, Patient)
+    * Pred(result(E), Patient)
+    * use(during(E), Agent, Instrument)
+NP V PP.result (PP; Result-PP)
+  Syntax: NP[Patient] VERB PREP[to into] NP[Result +state]
+  Semantics:
+    * degradation_material_integrity(result(E), Patient)
+    * Pred(result(E), Patient)
+NP V NP PP.theme (NP-PP; of-PP)
+  Syntax: NP[Agent] VERB NP[Source] PREP[of] NP[Theme]
+  Semantics:
+    * cause(Agent, E)
+    * location(start(E), Theme, Source)
+    * location(end(E), Theme, Source)
+NP V NP PP.theme (NP-PP; out_of-PP)
+  Syntax: NP[Agent] VERB NP[Source] PREP[out_of] NP[Theme]
+  Semantics:
+    * cause(Agent, E)
+    * location(start(E), Theme, Source)
+    * location(end(E), Theme, Source)
+NP V NP (Transitive; dropped Theme)
+  Syntax: NP[Agent] VERB NP[Source]
+  Semantics:
+    * cause(Agent, E)
+    * location(start(E), ?Theme, Source)
+    * location(end(E), ?Theme, Source)
+NP V (Intransitive)
+  Syntax: NP[Patient] VERB
+  Semantics:
+    * harmed(during(E), Patient)
+    * experience(E, ?Experiencer)
+NP V NP PP.co-patient (NP-PP; Source-PP)
+  Syntax: NP[Agent] VERB NP[Patient] PREP[off off of from] NP[Co-Patient]
+  Semantics:
+    * cause(Agent, E)
+    * together(start(E), physical, Patient, Co-Patient)
+    * apart(result(E), physical, Patient, Co-Patient)
+NP V NP apart (Apart Reciprocal Alternation Transitive)
+  Syntax: NP[Agent] VERB NP[Patient +plural] LEX[apart]
+  Semantics:
+    * cause(Agent, E)
+    * together(start(E), physical, Patient_i, Patient_j)
+    * apart(result(E), physical, Patient_i, Patient_j)
+NP V PP.co-patient (PP; Source-PP)
+  Syntax: NP[Patient] VERB PREP[off off of from] NP[Co-Patient]
+  Semantics:
+    * together(start(E), physical, Patient, Co-Patient)
+    * apart(result(E), physical, Patient, Co-Patient)
+NP V apart (Apart Reciprocal Alternation Intransitive)
+  Syntax: NP[Patient +plural] VERB LEX[apart]
+  Semantics:
+    * together(start(E), physical, Patient_i, Patient_j)
+    * apart(result(E), physical, Patient_i, Patient_j)
+NP V PP ADV-Middle (Middle Construction)
+  Syntax: NP[Patient] VERB PREP[off off of from] NP[Co-Patient] ADV
+  Semantics:
+    * together(start(E), physical, Patient, Co-Patient)
+    * apart(result(E), physical, Patient, Co-Patient)
+NP V ADV-Middle (Middle Construction)
+  Syntax: NP[Patient +plural] VERB LEX[apart] ADV
+  Semantics:
+    * together(start(E), physical, Patient_i, Patient_j)
+    * apart(result(E), physical, Patient_i, Patient_j)

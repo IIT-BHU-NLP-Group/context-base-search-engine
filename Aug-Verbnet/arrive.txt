@@ -1,0 +1,25 @@
+NP V (Basic Intransitive)
+  Syntax: NP[Theme] VERB
+  Semantics:
+    * motion(during(E), Theme)
+    * path(during(E), Theme, ?Initial_Location, ?Trajectory, ?Destination)
+NP V PP.initial_loc (PP; initial_loc-PP)
+  Syntax: NP[Theme] VERB PREP[+path] NP[Initial_Location]
+  Semantics:
+    * motion(during(E), Theme)
+    * path(during(E), Theme, Initial_Location, ?Trajectory, ?Destination)
+NP V PP.destination (PP; destination-PP)
+  Syntax: NP[Theme] VERB PREP[+path] NP[Destination]
+  Semantics:
+    * motion(during(E), Theme)
+    * path(during(E), Theme, ?Initial_Location, ?Trajectory, Destination)
+NP V PP.trajectory (PP; trajectory-PP)
+  Syntax: NP[Theme] VERB PREP[+path] NP[Trajectory]
+  Semantics:
+    * motion(during(E), Theme)
+    * path(during(E), Theme, ?Initial_Location, Trajectory, ?Destination)
+NP V PP.initial_loc PP.destination (PP-PP; source-PP destination-PP)
+  Syntax: NP[Theme] VERB PREP[+path] NP[Initial_Location] PREP[+path] NP[Destination]
+  Semantics:
+    * motion(during(E), Theme)
+    * path(during(E), Theme, Initial_Location, ?Trajectory, Destination)

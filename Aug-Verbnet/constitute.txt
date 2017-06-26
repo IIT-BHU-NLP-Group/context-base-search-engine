@@ -1,0 +1,9 @@
+NP V NP (Transitive)
+  Syntax: NP[Attribute] VERB NP[Theme]
+  Semantics:
+    * set_member(E, Theme, Attribute)
+NP V NP (NP)
+  Syntax: NP[Agent] VERB NP[Theme]
+  Semantics:
+    * begin(E, Theme)
+    * cause(Agent, E)

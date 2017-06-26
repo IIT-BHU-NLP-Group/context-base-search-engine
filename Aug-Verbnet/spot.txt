@@ -1,0 +1,24 @@
+NP V NP PP.theme (NP-PP; Theme-PP)
+  Syntax: NP[Agent] VERB NP[Destination] PREP[in] NP[Theme]
+  Semantics:
+    * motion(during(E), Theme)
+    * location(start(E), Theme, Destination)
+    * location(end(E), Theme, Destination)
+    * cause(Agent, E)
+NP V NP (Basic Transitive)
+  Syntax: NP[Experiencer] VERB NP[Stimulus]
+  Semantics:
+    * perceive(during(E), Experiencer, Stimulus)
+    * in_reaction_to(E, Stimulus)
+It V (Intransitive; Expletive Subject)
+  Syntax: LEX[it] LEX[[+be]] VERB
+  Semantics:
+    * weather(during(E), Weather_type, ?Theme)
+It V NP.theme (NP; Expletive Subject, Theme Object)
+  Syntax: LEX[it] LEX[[+be]] VERB NP[Theme]
+  Semantics:
+    * weather(during(E), Weather_type, Theme)
+It V PP.theme (PP; Expletive Subject, Theme-PP)
+  Syntax: LEX[it[+be]] VERB PREP[with] NP[Theme]
+  Semantics:
+    * weather(during(E), Weather_type, Theme)

@@ -1,0 +1,22 @@
+NP V PP.location (PP; Location-PP)
+  Syntax: NP[Theme] VERB PREP[at in with] NP[Location]
+  Semantics:
+    * location(start(E), Theme, Location)
+    * location(during(E), Theme, Location)
+NP V ADV (ADVP-PRED; here/there)
+  Syntax: NP[Theme] VERB NP[Location +adv_loc]
+  Semantics:
+    * location(start(E), Theme, Location)
+    * location(during(E), Theme, Location)
+NP V (Basic Intransitive)
+  Syntax: NP[Agent +plural] VERB
+  Semantics:
+    * agree(result(E), Agent, ?Goal)
+NP V PP.goal what S_INF (P-WHAT-TO-INF; on-PP)
+  Syntax: NP[Agent +plural] VERB PREP[on] NP[Goal +what_inf]
+  Semantics:
+    * agree(result(E), Agent, Goal)
+NP V PP.co-agent PP.goal (PP-PP; with-PP on-PP)
+  Syntax: NP[Agent] VERB PREP[with] NP[Co-Agent] PREP[on] NP[Goal -sentential]
+  Semantics:
+    * agree(result(E), Agent, Co-Agent, Goal)

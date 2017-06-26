@@ -1,0 +1,50 @@
+NP V how S (HOW-S)
+  Syntax: NP[Agent] VERB NP[Topic +how_extract]
+  Semantics:
+    * transfer_info(during(E), Agent, ?Recipient, Topic)
+    * cause(Agent, E)
+NP V how S_INF (HOW-TO-INF)
+  Syntax: NP[Agent] VERB NP[Topic +wh_inf]
+  Semantics:
+    * transfer_info(during(E), Agent, ?Recipient, Topic)
+    * cause(Agent, E)
+NP V PP.recipient how S (PP-HOW-S; to-PP)
+  Syntax: NP[Agent] VERB PREP[to] NP[Recipient] NP[Topic +how_extract]
+  Semantics:
+    * transfer_info(during(E), Agent, Recipient, Topic)
+    * cause(Agent, E)
+NP V PP.recipient how S_INF (PP-HOW-TO-INF; to-PP)
+  Syntax: NP[Agent] VERB PREP[to] NP[Recipient] NP[Topic +wh_inf]
+  Semantics:
+    * transfer_info(during(E), Agent, Recipient, Topic)
+    * cause(Agent, E)
+NP V what S (WHAT-S)
+  Syntax: NP[Agent] VERB NP[Topic +what_extract]
+  Semantics:
+    * transfer_info(during(E), Agent, ?Recipient, Topic)
+    * cause(Agent, E)
+NP V what S_INF (WHAT-TO-INF)
+  Syntax: NP[Agent] VERB NP[Topic +what_inf]
+  Semantics:
+    * transfer_info(during(E), Agent, ?Recipient, Topic)
+    * cause(Agent, E)
+NP V NP (Basic Transitive; Topic Object)
+  Syntax: NP[Agent] VERB NP[Topic -sentential]
+  Semantics:
+    * transfer_info(during(E), Agent, ?Recipient, Topic)
+    * cause(Agent, E)
+NP V NP PP.recipient (NP-PP; to-PP)
+  Syntax: NP[Agent] VERB NP[Topic -sentential] PREP[to] NP[Recipient]
+  Semantics:
+    * transfer_info(during(E), Agent, Recipient, Topic)
+    * cause(Agent, E)
+NP V PP.source (PP; Topic-PP)
+  Syntax: NP[Agent] VERB PREP[from] NP[Source]
+  Semantics:
+    * transfer_info(during(E), Agent, ?Recipient, ?Topic)
+    * cause(Agent, E)
+NP v (Basic Intransitive)
+  Syntax: NP[Agent] VERB
+  Semantics:
+    * transfer_info(during(E), Agent, ?Recipient, ?Topic)
+    * cause(Agent, E)

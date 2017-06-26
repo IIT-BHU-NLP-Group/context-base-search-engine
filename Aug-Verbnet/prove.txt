@@ -1,0 +1,28 @@
+NP V how S (HOW-S)
+  Syntax: NP[Agent] VERB NP[Theme +how_extract]
+  Semantics:
+    * declare(during(E), Agent, Theme, ?Result)
+NP V NP (NP)
+  Syntax: NP[Agent] VERB NP[Theme]
+  Semantics:
+    * conclude(during(E), Agent, Theme, ?Source)
+NP V NP PP.source (NP-PP; from-PP)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[from] NP[Source]
+  Semantics:
+    * conclude(during(E), Agent, Theme, Source)
+NP V that S PP.theme (PP-THAT-S; from-PP)
+  Syntax: NP[Agent] VERB PREP[from] NP[Theme +that_comp] NP[Source]
+  Semantics:
+    * conclude(during(E), Agent, Theme, Source)
+NP V that S (S)
+  Syntax: NP[Agent] VERB NP[Theme +that_comp]
+  Semantics:
+    * conclude(during(E), Agent, Theme, ?Source)
+NP V NP to be NP (NP-TOBE)
+  Syntax: NP[Cause] VERB NP[Topic +to_be]
+  Semantics:
+    * indicate(during(E), Cause, ?Recipient, Topic)
+NP V S_INF (TO-INF-RS)
+  Syntax: NP[Theme] VERB NP[Attribute +rs_to_inf]
+  Semantics:
+    * seem(E, Theme, Attribute)

@@ -1,0 +1,20 @@
+NP V how S (HOW-S)
+  Syntax: NP[Cause] VERB NP[Topic +how_extract]
+  Semantics:
+    * indicate(during(E), Cause, ?Recipient, Topic)
+NP V how S_INF (HOW-TO-INF)
+  Syntax: NP[Cause] VERB NP[Topic +wh_inf]
+  Semantics:
+    * indicate(during(E), Cause, ?Recipient, Topic)
+NP V NP (Basic Transitive)
+  Syntax: NP[Cause] VERB NP[Topic -sentential]
+  Semantics:
+    * indicate(during(E), Cause, ?Recipient, Topic)
+NP V whether/if S (WH-S)
+  Syntax: NP[Cause] VERB NP[Topic +wh_comp]
+  Semantics:
+    * indicate(during(E), Cause, ?Recipient, Topic)
+NP V what S (WHAT-S)
+  Syntax: NP[Cause] VERB NP[Topic +what_extract]
+  Semantics:
+    * indicate(during(E), Cause, ?Recipient, Topic)

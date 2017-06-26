@@ -1,0 +1,73 @@
+NP V NP (Basic Transitive)
+  Syntax: NP[Agent] VERB NP[Patient]
+  Semantics:
+    * cause(Agent, E)
+    * manner(during(E), Motion, Agent)
+    * contact(during(E), Agent, Patient)
+    * degradation_material_integrity(result(E), Patient)
+NP V NP PP.instrument (NP-PP; Instrument-PP)
+  Syntax: NP[Agent] VERB NP[Patient] PREP[with] NP[Instrument]
+  Semantics:
+    * cause(Agent, E)
+    * manner(during(E), Motion, Agent)
+    * contact(during(E), Instrument, Patient)
+    * degradation_material_integrity(result(E), Patient)
+    * use(during(E), Agent, Instrument)
+NP V ADVP-Middle (Middle Construction)
+  Syntax: NP[Patient] VERB ADV
+  Semantics:
+    * degradation_material_integrity(result(E), Patient)
+NP.instrument V NP (Instrument Subject Alternation)
+  Syntax: NP[Instrument] VERB NP[Patient]
+  Semantics:
+    * contact(during(E), Instrument, Patient)
+    * degradation_material_integrity(result(E), Patient)
+NP.instrument V ADVP (Characteristic Property of Instrument)
+  Syntax: NP[Instrument] VERB ADV
+  Semantics:
+    * property(Instrument, Prop)
+    * Adv(Prop)
+NP V NP.patient (Basic Transitive; Causative)
+  Syntax: NP[Agent] VERB NP[Patient]
+  Semantics:
+    * cause(Agent, E)
+    * state(result(E), Endstate, Patient)
+NP V NP PP.instrument (NP-PP; Instrument-PP)
+  Syntax: NP[Agent] VERB NP[Patient] PREP[with] NP[Instrument]
+  Semantics:
+    * cause(Agent, E)
+    * state(result(E), Endstate, Patient)
+    * use(during(E), Agent, Instrument)
+NP V ADV-Middle (Middle Construction)
+  Syntax: NP[Patient] VERB ADV
+  Semantics:
+    * state(result(E), Endstate, Patient)
+NP V (Basic Intransitive)
+  Syntax: NP[Theme] VERB
+  Semantics:
+    * emit(during(E), Theme, Sound)
+NP V PP.location (PP; Location-PP)
+  Syntax: NP[Theme] VERB PREP[+loc] NP[Location]
+  Semantics:
+    * emit(during(E), Theme, Sound)
+    * Prep(during(E), Sound, Location)
+NP.location V PP.theme (PP; Location Subject, with-PP)
+  Syntax: NP[Location] VERB PREP[with] NP[Theme]
+  Semantics:
+    * emit(during(E), Theme, Sound)
+    * location(during(E), Sound, Location)
+PP.location V NP (Locative Inversion)
+  Syntax: PREP[+loc] NP[Location] VERB NP[Theme]
+  Semantics:
+    * emit(during(E), Theme, Sound)
+    * Prep(during(E), Sound, Location)
+There V NP PP (There-insertion)
+  Syntax: LEX[there] VERB NP[Theme] PREP[+loc] NP[Location]
+  Semantics:
+    * emit(during(E), Theme, Sound)
+    * Prep(during(E), Sound, Location)
+NP V NP.theme (NP; Causative variant)
+  Syntax: NP[Agent] VERB NP[Theme]
+  Semantics:
+    * emit(during(E), Theme, Sound)
+    * cause(Agent, E)

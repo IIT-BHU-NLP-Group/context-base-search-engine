@@ -1,0 +1,17 @@
+NP V (Basic Intransitive)
+  Syntax: NP[Agent] VERB
+  Semantics:
+    * visible(start(E), Agent)
+    * visible(end(E), Agent)
+NP V PP.beneficiary (PP; Beneficiary-PP)
+  Syntax: NP[Agent] VERB PREP[from] NP[Beneficiary]
+  Semantics:
+    * visible(start(E), Agent)
+    * visible(end(E), Agent)
+    * Prep(E, Agent, Beneficiary)
+NP V PP.location (PP; Location-PP)
+  Syntax: NP[Agent] VERB PREP[+loc] NP[Location]
+  Semantics:
+    * visible(start(E), Agent)
+    * visible(end(E), Agent)
+    * location(during(E), Agent, Location)

@@ -1,0 +1,52 @@
+NP V NP (Transitive; Body-part Object)
+  Syntax: NP[Agent] VERB NP[Theme]
+  Semantics:
+    * hold(during(E), Agent, Theme)
+    * contact(during(E), Agent, Theme)
+    * cause(Agent, E)
+NP V NP (Basic Transitive)
+  Syntax: NP[Agent] VERB NP[Theme]
+  Semantics:
+    * has_possession(start(E), ?Source, Theme)
+    * transfer(during(E), Theme)
+    * has_possession(end(E), Agent, Theme)
+    * cause(Agent, E)
+NP V NP PP.source (NP-PP; from-PP)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[from] NP[Source]
+  Semantics:
+    * has_possession(start(E), Source, Theme)
+    * transfer(during(E), Theme)
+    * has_possession(end(E), Agent, Theme)
+    * cause(Agent, E)
+NP V NP (Basic Transitive)
+  Syntax: NP[Agent] VERB NP[Theme]
+  Semantics:
+    * manner(during(E), illegal, Agent)
+    * has_possession(start(E), ?Source, Theme)
+    * has_possession(end(E), Agent, Theme)
+    * has_possession(end(E), ?Source, Theme)
+    * cause(Agent, E)
+NP V NP PP.source (NP-PP; Source-PP)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[+src] NP[Source]
+  Semantics:
+    * manner(during(E), illegal, Agent)
+    * has_possession(start(E), Source, Theme)
+    * has_possession(end(E), Agent, Theme)
+    * has_possession(end(E), Source, Theme)
+    * cause(Agent, E)
+NP V NP PP.beneficiary (NP-PP; for-PP)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[for] NP[Beneficiary]
+  Semantics:
+    * manner(during(E), illegal, Agent)
+    * has_possession(start(E), ?Source, Theme)
+    * has_possession(end(E), Beneficiary, Theme)
+    * has_possession(end(E), ?Source, Theme)
+    * cause(Agent, E)
+NP V NP PP.source PP.beneficiary (NP-PP-PP; Source-PP Beneficiary-PP)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[+src] NP[Source] PREP[for] NP[Beneficiary]
+  Semantics:
+    * manner(during(E), illegal, Agent)
+    * has_possession(start(E), Source, Theme)
+    * has_possession(end(E), Beneficiary, Theme)
+    * has_possession(end(E), Source, Theme)
+    * cause(Agent, E)

@@ -49,7 +49,7 @@ tup = freqDict.items()
 #print tup
 def comps(info1):
     return info1[1]
-result = codecs.open("result_wiki_only.csv","w",'utf-8-sig')
+result = codecs.open("verb_count_result.csv","w",'utf-8-sig')
 tup = sorted(tup,key = comps,reverse = True)
 for x in tup:
     #print unicode(x[1])+","+x[0]+"\n"

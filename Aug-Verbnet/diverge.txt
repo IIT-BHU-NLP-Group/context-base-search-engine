@@ -1,0 +1,8 @@
+NP V PP.co-theme (PP; from/with-PP)
+  Syntax: NP[Theme] VERB PREP[from with] NP[Co-Theme]
+  Semantics:
+    * different(Theme, Co-Theme)
+NP V (Simple Reciprocal Intransitive)
+  Syntax: NP[Theme +plural] VERB
+  Semantics:
+    * different(Theme, Co-Theme)

@@ -1,0 +1,104 @@
+NP.attribute V (Intransitive; Attribute Subject)
+  Syntax: NP[Patient] LEX['s] NP[Attribute] VERB
+  Semantics:
+    * change_value(during(E), Direction, Attribute, Patient)
+NP V NP (NP)
+  Syntax: NP[Agent] VERB NP[Theme]
+  Semantics:
+    * cause(Agent, E)
+    * location(start(E), Theme, ?Source)
+    * location(end(E), Theme, ?Source)
+NP V NP PP.source (NP-PP; from-PP)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[from] NP[Source]
+  Semantics:
+    * cause(Agent, E)
+    * location(start(E), Theme, Source)
+    * location(end(E), Theme, Source)
+NP V NP PP.attribute (NP-PP; as-PP)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[as] NP[Attribute -sentential]
+  Semantics:
+    * cause(Agent, E)
+    * location(start(E), Theme, ?Source, Attribute)
+    * location(end(E), Theme, ?Source, Attribute)
+NP V PP.location (PP; path-PP)
+  Syntax: NP[Theme] VERB PREP[+path] NP[Location]
+  Semantics:
+    * Prep(during(E), Theme, Location)
+    * exist(during(E), Theme)
+PP.location V NP (Locative Inversion)
+  Syntax: PREP[+path] NP[Location] VERB NP[Theme]
+  Semantics:
+    * Prep(during(E), Theme, Location)
+    * exist(during(E), Theme)
+There V PP NP (PP-NP; Expletive-there Subject)
+  Syntax: LEX[there] VERB PREP[+path] NP[Location] NP[Theme]
+  Semantics:
+    * Prep(during(E), Theme, Location)
+    * exist(during(E), Theme)
+There V NP PP (NP-PP; Expletive-there Subject)
+  Syntax: LEX[there] VERB NP[Theme] PREP[+path] NP[Location]
+  Semantics:
+    * Prep(during(E), Theme, Location)
+    * exist(during(E), Theme)
+NP V NP (Basic Transitive)
+  Syntax: NP[Agent] VERB NP[Theme]
+  Semantics:
+    * motion(during(E), Theme)
+    * exert_force(during(E), Agent, Theme, Direction)
+    * cause(Agent, E)
+NP V NP PP.destination (NP-PP; locative-PP)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[+spatial] NP[Destination]
+  Semantics:
+    * motion(during(E), Theme)
+    * Prep(E, Theme, Destination)
+    * exert_force(during(E), Agent, Theme, Direction)
+    * cause(Agent, E)
+NP V NP ADVP (NP-ADVP-PRED; here/there)
+  Syntax: NP[Agent] VERB NP[Theme] NP[Destination +adv_loc]
+  Semantics:
+    * motion(during(E), Theme)
+    * Prep(E, Theme, Destination)
+    * exert_force(during(E), Agent, Theme, Direction)
+    * cause(Agent, E)
+NP.theme V (Basic Intransitive; inchoative)
+  Syntax: NP[Theme] VERB
+  Semantics:
+    * motion(during(E), Theme)
+NP V PP.location (PP; locative-PP)
+  Syntax: NP[Theme] VERB PREP[+spatial] NP[Location]
+  Semantics:
+    * motion(during(E), Theme)
+    * Prep(E, Theme, Location)
+NP V NP.theme (Transitive; Causative)
+  Syntax: NP[Agent] VERB NP[Theme]
+  Semantics:
+    * motion(during(E), Theme)
+    * cause(Agent, E)
+NP V NP PP.location (NP-PP; path-PP)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[+path] NP[Location]
+  Semantics:
+    * motion(during(E), Theme)
+    * Prep(E, Theme, Location)
+    * cause(Agent, E)
+NP V ADJ (ADJP; Resultative)
+  Syntax: NP[Theme] VERB NP[Result]
+  Semantics:
+    * motion(during(E), Theme)
+    * Pred(result(E), Theme)
+NP V PP.result (PP; Result-PP)
+  Syntax: NP[Theme] VERB PREP[to into] NP[Result +state]
+  Semantics:
+    * motion(during(E), Theme)
+    * Pred(result(E), Theme)
+NP V NP ADJ (NP-ADJP; Resultative)
+  Syntax: NP[Agent] VERB NP[Theme] NP[Result]
+  Semantics:
+    * motion(during(E), Theme)
+    * cause(Agent, E)
+    * Pred(result(E), Theme)
+NP V NP PP.result (NP-PP; Result-PP)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[to into] NP[Result +state]
+  Semantics:
+    * motion(during(E), Theme)
+    * cause(Agent, E)
+    * Pred(result(E), Theme)

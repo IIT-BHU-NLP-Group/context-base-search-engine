@@ -1,0 +1,42 @@
+NP V NP (Basic Transitive)
+  Syntax: NP[Stimulus] VERB NP[Experiencer]
+  Semantics:
+    * cause(Stimulus, E)
+    * emotional_state(result(E), Emotion, Experiencer)
+NP V ADV-Middle (Middle Construction)
+  Syntax: NP[Experiencer] VERB ADV
+  Semantics:
+    * emotional_state(result(E), ?Emotion, Experiencer)
+NP V NP-PRO-ARB (PRO-Arb Object Alternation)
+  Syntax: NP[Stimulus] VERB
+  Semantics:
+    * cause(Stimulus, E)
+    * emotional_state(result(E), Emotion, ?Experiencer)
+NP.cause V NP (NP; Attribute Subject)
+  Syntax: NP[Stimulus +genitive] LEX['s] VERB NP[Experiencer]
+  Semantics:
+    * cause(Stimulus, E)
+    * emotional_state(result(E), Emotion, Experiencer)
+NP V NP ADJ (NP-ADJP; Resultative)
+  Syntax: NP[Stimulus] VERB NP[Experiencer] NP[Result]
+  Semantics:
+    * cause(Stimulus, E)
+    * emotional_state(result(E), Emotion, Experiencer)
+    * Pred(result(E), Experiencer)
+NP V NP (Basic Transitive)
+  Syntax: NP[Agent] VERB NP[Patient]
+  Semantics:
+    * cause(Agent, E)
+    * destroyed(result(E), Patient)
+NP V NP PP.instrument (NP-PP; Instrument-PP)
+  Syntax: NP[Agent] VERB NP[Patient] PREP[with] NP[Instrument]
+  Semantics:
+    * cause(Agent, E)
+    * use(during(E), Agent, Instrument)
+    * destroyed(result(E), Patient)
+NP.instrument V NP (Instrument Subject Alternation)
+  Syntax: NP[Instrument] VERB NP[Patient]
+  Semantics:
+    * cause(?Agent, E)
+    * use(during(E), ?Agent, Instrument)
+    * destroyed(result(E), Patient)

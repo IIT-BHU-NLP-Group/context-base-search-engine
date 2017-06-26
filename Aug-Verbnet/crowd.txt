@@ -1,0 +1,4 @@
+NP.theme V NP (Transitive; Theme Subject)
+  Syntax: NP[Theme] VERB NP[Destination]
+  Semantics:
+    * location(during(E), Theme, Destination)

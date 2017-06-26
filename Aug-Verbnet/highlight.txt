@@ -1,0 +1,4 @@
+NP V NP (Transitive)
+  Syntax: NP[Agent] VERB NP[Patient]
+  Semantics:
+    * take_care_of(during(E), Agent, Patient)

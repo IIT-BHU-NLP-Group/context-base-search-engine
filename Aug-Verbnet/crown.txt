@@ -1,0 +1,44 @@
+NP V NP NP (NP-NP)
+  Syntax: NP[Agent] VERB NP[Theme] NP[Result]
+  Semantics:
+    * designated(result(E), Theme, Result)
+    * cause(Agent, E)
+NP V NP PP.result (NP-PP; as-PP)
+  Syntax: NP[Agent] VERB NP[Theme] LEX[as] NP[Result -sentential]
+  Semantics:
+    * designated(result(E), Theme, Result)
+    * cause(Agent, E)
+NP V NP to be NP (Infinitival Copular Clause)
+  Syntax: NP[Agent] VERB NP[Theme] LEX[to] LEX[be] NP[Result -sentential]
+  Semantics:
+    * designated(result(E), Theme, Result)
+    * cause(Agent, E)
+NP V NP (Basic Transitive)
+  Syntax: NP[Agent] VERB NP[Theme]
+  Semantics:
+    * designated(result(E), Theme, Result)
+    * cause(Agent, E)
+NP V NP.destination (Transitive; Destination Object)
+  Syntax: NP[Agent] VERB NP[Destination]
+  Semantics:
+    * motion(during(E), Theme)
+    * location(start(E), Theme, Destination)
+    * location(end(E), Theme, Destination)
+    * cause(Agent, E)
+NP V NP PP.theme (NP-PP; Theme-PP)
+  Syntax: NP[Agent] VERB NP[Destination] PREP[with] NP[Theme]
+  Semantics:
+    * motion(during(E), Theme)
+    * location(start(E), Theme, Destination)
+    * location(end(E), Theme, Destination)
+    * cause(Agent, E)
+NP V NP NP (NP-NP)
+  Syntax: NP[Agent] VERB NP[Theme] NP[Result]
+  Semantics:
+    * designated(result(E), Theme, Result)
+    * cause(Agent, E)
+NP V NP (Basic Transitive)
+  Syntax: NP[Agent] VERB NP[Theme]
+  Semantics:
+    * cause(Agent, E)
+    * designated(result(E), Theme, ?Result)

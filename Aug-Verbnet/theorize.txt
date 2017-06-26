@@ -1,0 +1,15 @@
+NP V (Basic Intransitive)
+  Syntax: NP[Agent] VERB
+  Semantics:
+    * transfer_info(during(E), Agent, ?Recipient, ?Topic)
+    * cause(Agent, E)
+NP V PP.topic (PP; about-PP)
+  Syntax: NP[Agent] VERB PREP[about] NP[Topic -sentential]
+  Semantics:
+    * transfer_info(during(E), Agent, ?Recipient, Topic)
+    * cause(Agent, E)
+NP V PP.recipient PP.topic (PP; to-PP)
+  Syntax: NP[Agent] VERB PREP[to] NP[Recipient] PREP[about] NP[Topic -sentential]
+  Semantics:
+    * transfer_info(during(E), Agent, Recipient, Topic)
+    * cause(Agent, E)

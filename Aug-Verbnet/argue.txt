@@ -1,0 +1,72 @@
+NP V (Intransitive; Plural Subject)
+  Syntax: NP[Agent +plural] VERB
+  Semantics:
+    * social_interaction(during(E), Agent_i, Agent_j)
+    * conflict(during(E), Agent_i, Agent_j)
+    * about(E, ?Topic)
+NP V PP.topic NP S_ING (P-POSSING; about-PP)
+  Syntax: NP[Agent +plural] VERB PREP[about] NP[Topic +poss_ing]
+  Semantics:
+    * social_interaction(during(E), Agent_i, Agent_j)
+    * conflict(during(E), Agent_i, Agent_j)
+    * about(E, Topic)
+NP V PP.topic whether S (P-WH-S; about-PP)
+  Syntax: NP[Agent +plural] VERB PREP[about] NP[Topic +wh_comp]
+  Semantics:
+    * social_interaction(during(E), Agent_i, Agent_j)
+    * conflict(during(E), Agent_i, Agent_j)
+    * about(E, Topic)
+NP V PP.topic what S (P-WHAT-S; about-PP)
+  Syntax: NP[Agent +plural] VERB PREP[about] NP[Topic +what_extract]
+  Semantics:
+    * social_interaction(during(E), Agent_i, Agent_j)
+    * conflict(during(E), Agent_i, Agent_j)
+    * about(E, Topic)
+NP V PP.topic whether S_INF (P-WH-TO-INF; about-PP)
+  Syntax: NP[Agent +plural] VERB PREP[about] NP[Topic +wheth_inf]
+  Semantics:
+    * social_interaction(during(E), Agent_i, Agent_j)
+    * conflict(during(E), Agent_i, Agent_j)
+    * about(E, Topic)
+NP V PP.topic what S_INF (P-WHAT-TO-INF; about-PP)
+  Syntax: NP[Agent +plural] VERB PREP[about] NP[Topic +what_inf]
+  Semantics:
+    * social_interaction(during(E), Agent_i, Agent_j)
+    * conflict(during(E), Agent_i, Agent_j)
+    * about(E, Topic)
+NP V PP.topic (PP; about-PP)
+  Syntax: NP[Agent +plural] VERB PREP[about] NP[Topic -sentential]
+  Semantics:
+    * social_interaction(during(E), Agent_i, Agent_j)
+    * conflict(during(E), Agent_i, Agent_j)
+    * about(E, Topic)
+NP V how S (HOW-S)
+  Syntax: NP[Agent] VERB NP[Topic +wh_extract]
+  Semantics:
+    * transfer_info(during(E), Agent, ?Co-Agent, ?Topic)
+    * cause(Agent, E)
+NP V how S_INF (HOW-TO-INF)
+  Syntax: NP[Agent] VERB NP[Topic +wh_ing]
+  Semantics:
+    * transfer_info(during(E), Agent, ?Co-Agent, ?Topic)
+    * cause(Agent, E)
+NP V NP (Basic Transitive)
+  Syntax: NP[Agent] VERB NP[Topic]
+  Semantics:
+    * transfer_info(during(E), Agent, ?Co-Agent, ?Topic)
+    * cause(Agent, E)
+NP V NP PP.co-agent (NP-PP; with-PP)
+  Syntax: NP[Agent] VERB NP[Topic] PREP[with] NP[Co-Agent]
+  Semantics:
+    * transfer_info(during(E), Agent, Co-Agent, ?Topic)
+    * cause(Agent, E)
+NP V whether/if S (WH-S)
+  Syntax: NP[Agent +plural] VERB NP[Theme +wh_comp]
+  Semantics:
+    * social_interaction(during(E), Agent_i, Agent_j)
+    * about(E, Theme)
+NP V whether S_INF (WH-TO-INF)
+  Syntax: NP[Agent +plural] VERB NP[Theme +wheth_inf]
+  Semantics:
+    * social_interaction(during(E), Agent_i, Agent_j)
+    * about(E, Theme)

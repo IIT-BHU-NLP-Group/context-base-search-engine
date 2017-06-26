@@ -1,0 +1,10 @@
+NP V NP (Basic Transitive)
+  Syntax: NP[Agent] VERB NP[Beneficiary]
+  Semantics:
+    * masquerade(during(E), Agent, Role)
+    * benefit(E, Beneficiary)
+NP V NP (NP)
+  Syntax: NP[Agent] VERB NP[Theme]
+  Semantics:
+    * begin(E, Theme)
+    * cause(Agent, E)

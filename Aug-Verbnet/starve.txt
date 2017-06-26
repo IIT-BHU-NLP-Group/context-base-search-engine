@@ -1,0 +1,20 @@
+NP V NP.theme (Transitive; Causative variant)
+  Syntax: NP[Agent] VERB NP[Theme]
+  Semantics:
+    * cause(Agent, E)
+    * suffocate(during(E), Theme)
+NP.theme V (Intransitive; Inchoative)
+  Syntax: NP[Theme] VERB
+  Semantics:
+    * suffocate(during(E), Theme)
+NP V PP.result (PP; Result-PP)
+  Syntax: NP[Theme] VERB PREP[to] NP[Result +state]
+  Semantics:
+    * suffocate(during(E), Theme)
+    * Pred(result(E), Theme)
+NP V NP PP.result (NP-PP; Result-PP)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[to] NP[Result +state]
+  Semantics:
+    * cause(Agent, E)
+    * suffocate(during(E), Theme)
+    * Pred(result(E), Theme)

@@ -1,0 +1,55 @@
+NP V how S (HOW-S)
+  Syntax: NP[Agent] VERB NP[Theme +how_extract]
+  Semantics:
+    * describe(during(E), Agent, Theme)
+    * cause(Agent, E)
+NP V how S_INF (HOW-TO-INF)
+  Syntax: NP[Agent] VERB NP[Theme +wh_inf]
+  Semantics:
+    * describe(during(E), Agent, Theme)
+    * cause(Agent, E)
+NP V S_ING (ING-AC)
+  Syntax: NP[Experiencer] VERB NP[Stimulus +ac_ing]
+  Semantics:
+    * understand(E, Experiencer, Stimulus, ?Attribute)
+NP V how S_INF (HOW-TO-INF)
+  Syntax: NP[Experiencer] VERB NP[Stimulus +wh_inf]
+  Semantics:
+    * understand(E, Experiencer, Stimulus, ?Attribute)
+NP V NP to be NP (NP-TOBE)
+  Syntax: NP[Experiencer] VERB NP[Stimulus +to_be]
+  Semantics:
+    * understand(E, Experiencer, Stimulus, ?Attribute)
+NP V NP to be NP (Infinitival Copular Clause)
+  Syntax: NP[Agent] VERB NP[Theme] LEX[to] LEX[be] NP[Predicate]
+  Semantics:
+    * believe(during(E), Agent, Theme, Predicate)
+NP V that S (S)
+  Syntax: NP[Agent] VERB NP[Theme +that_comp]
+  Semantics:
+    * believe(during(E), Agent, Theme, ?Predicate)
+NP V NP (Basic Transitive)
+  Syntax: NP[Agent] VERB NP[Theme -sentential]
+  Semantics:
+    * believe(during(E), Agent, Theme, ?Predicate)
+NP V NP ADJ (NP-VEN-NP-OMIT)
+  Syntax: NP[Agent] VERB NP[Theme +np_ppart] NP[Attribute -sentential]
+  Semantics:
+    * consider(during(E), Agent, Theme)
+NP V whether/if S (WH-S)
+  Syntax: NP[Agent] VERB NP[Theme +wh_comp]
+  Semantics:
+    * consider(during(E), Agent, Theme)
+NP V what S (WHAT-S)
+  Syntax: NP[Agent] VERB NP[Theme +what_extract]
+  Semantics:
+    * consider(during(E), Agent, Theme)
+NP V what S_INF (WHAT-TO-INF)
+  Syntax: NP[Agent] VERB NP[Theme +what_inf]
+  Semantics:
+    * consider(during(E), Agent, Theme)
+NP V NP (Basic Transitive)
+  Syntax: NP[Experiencer] VERB NP[Stimulus]
+  Semantics:
+    * perceive(during(E), Experiencer, Stimulus)
+    * in_reaction_to(E, Stimulus)

@@ -1,0 +1,53 @@
+NP.attribute V (Intransitive; Attribute Subject)
+  Syntax: NP[Patient] LEX['s] NP[Attribute] VERB
+  Semantics:
+    * change_value(during(E), Direction, Attribute, Patient)
+NP V NP (Locative Preposition Drop)
+  Syntax: NP[Theme] VERB NP[Trajectory]
+  Semantics:
+    * motion(during(E), Theme)
+    * path(during(E), Theme, ?Initial_Location, Trajectory, ?Destination)
+NP V PP.location (PP; path-PP)
+  Syntax: NP[Theme] VERB PREP[+path] NP[Location]
+  Semantics:
+    * Prep(during(E), Theme, Location)
+    * exist(during(E), Theme)
+PP.location V NP (Locative Inversion)
+  Syntax: PREP[+path] NP[Location] VERB NP[Theme]
+  Semantics:
+    * Prep(during(E), Theme, Location)
+    * exist(during(E), Theme)
+There V PP NP (PP-NP; Expletive-there Subject)
+  Syntax: LEX[there] VERB PREP[+path] NP[Location] NP[Theme]
+  Semantics:
+    * Prep(during(E), Theme, Location)
+    * exist(during(E), Theme)
+There V NP PP (NP-PP; Expletive-there Subject)
+  Syntax: LEX[there] VERB NP[Theme] PREP[+path] NP[Location]
+  Semantics:
+    * Prep(during(E), Theme, Location)
+    * exist(during(E), Theme)
+NP V (Basic Intransitive; inchoative)
+  Syntax: NP[Theme] VERB
+  Semantics:
+    * motion(during(E), Theme)
+NP V PP.location (PP; over-PP)
+  Syntax: NP[Theme] VERB PREP[+spatial] NP[Location]
+  Semantics:
+    * motion(during(E), Theme)
+    * Prep(E, Theme, Location)
+There V PP NP (PP-NP; Expletive-there Subject)
+  Syntax: LEX[there] VERB PREP[+path] NP[Location +concrete] NP[Theme -definite]
+  Semantics:
+    * motion(during(E), Theme)
+    * Prep(E, Theme, Location)
+There V NP PP (NP-PP; Expletive-there Subject)
+  Syntax: LEX[there] VERB NP[Theme -definite] PREP[+path] NP[Location]
+  Semantics:
+    * motion(during(E), Theme)
+    * Prep(E, Theme, Location)
+PP.location V NP (Locative Inversion)
+  Syntax: PREP[+path] NP[Location] VERB NP[Theme]
+  Semantics:
+    * motion(during(E), Theme)
+    * Prep(E, Theme, Location)

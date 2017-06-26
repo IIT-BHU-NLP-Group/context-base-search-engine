@@ -1,0 +1,370 @@
+NP V NP.patient (Basic Transitive; Causative)
+  Syntax: NP[Agent] VERB NP[Patient]
+  Semantics:
+    * cause(Agent, E)
+    * contact(during(E), ?Instrument, Patient)
+    * physical_form(result(E), Form, Patient)
+NP V NP PP.instrument (NP-PP; Instrument-PP)
+  Syntax: NP[Agent] VERB NP[Patient] PREP[with] NP[Instrument]
+  Semantics:
+    * cause(Agent, E)
+    * contact(during(E), Instrument, Patient)
+    * physical_form(result(E), Form, Patient)
+    * use(during(E), Agent, Instrument)
+NP.patient V (Intransitive; Inchoative)
+  Syntax: NP[Patient] VERB
+  Semantics:
+    * physical_form(result(E), Form, Patient)
+NP V ADV-Middle (Middle Construction)
+  Syntax: NP[Patient] VERB ADV
+  Semantics:
+    * physical_form(result(E), Form, Patient)
+NP.instrument V NP (Instrument Subject Alternation)
+  Syntax: NP[Instrument] VERB NP[Patient]
+  Semantics:
+    * contact(during(E), Instrument, Patient)
+    * physical_form(result(E), Form, Patient)
+NP V NP ADJ (NP-ADJP; Resultative)
+  Syntax: NP[Agent] VERB NP[Patient] NP[Result]
+  Semantics:
+    * cause(Agent, E)
+    * contact(during(E), ?Instrument, Patient)
+    * physical_form(result(E), Form, Patient)
+    * Pred(result(E), Patient)
+NP V NP PP.result (NP-PP; Result-PP)
+  Syntax: NP[Agent] VERB NP[Patient] PREP[to into] NP[Result +state]
+  Semantics:
+    * cause(Agent, E)
+    * contact(during(E), ?Instrument, Patient)
+    * physical_form(result(E), Form, Patient)
+    * Pred(result(E), Patient)
+NP V NP PP.result PP.instrument (NP-PP-PP; Result-PP, Instrument-PP)
+  Syntax: NP[Agent] VERB NP[Patient] PREP[to into] NP[Result +state] PREP[with] NP[Instrument]
+  Semantics:
+    * cause(Agent, E)
+    * contact(during(E), Instrument, Patient)
+    * physical_form(result(E), Form, Patient)
+    * Pred(result(E), Patient)
+    * use(during(E), Agent, Instrument)
+NP V NP (Basic Transitive)
+  Syntax: NP[Agent] VERB NP[Product]
+  Semantics:
+    * exist(start(E), Product)
+    * exist(result(E), Product)
+    * made_of(result(E), Product, ?Material)
+    * cause(Agent, E)
+NP V (Unspecified Object)
+  Syntax: NP[Agent] VERB
+  Semantics:
+    * exist(start(E), ?Product)
+    * exist(result(E), ?Product)
+    * made_of(result(E), ?Product, ?Material)
+    * cause(Agent, E)
+NP V NP.product PP.material (Material/Product Alternation Transitive; Product Object)
+  Syntax: NP[Agent] VERB NP[Product] PREP[from out_of] NP[Material]
+  Semantics:
+    * exist(start(E), Product)
+    * exist(result(E), Product)
+    * made_of(result(E), Product, Material)
+    * cause(Agent, E)
+NP V NP.material PP.product (Material/Product Alternation Transitive; Material Object)
+  Syntax: NP[Agent] VERB NP[Material] PREP[into] NP[Product]
+  Semantics:
+    * exist(start(E), Product)
+    * exist(result(E), Product)
+    * made_of(result(E), Product, Material)
+    * cause(Agent, E)
+NP V NP PP.beneficiary (NP-PP; for-PP)
+  Syntax: NP[Agent] VERB NP[Product] PREP[for] NP[Beneficiary]
+  Semantics:
+    * exist(start(E), Product)
+    * exist(result(E), Product)
+    * made_of(result(E), Product, ?Material)
+    * cause(Agent, E)
+    * benefit(E, Beneficiary)
+NP V NP.beneficiary NP PP (NP-NP; Object Beneficiary)
+  Syntax: NP[Agent] VERB NP[Beneficiary] NP[Product] PREP[from out_of] NP[Material]
+  Semantics:
+    * exist(start(E), Product)
+    * exist(result(E), Product)
+    * made_of(result(E), Product, Material)
+    * cause(Agent, E)
+    * benefit(E, Beneficiary)
+NP V NP PP.material PP.beneficiary (NP-PP-PP; Source-PP Beneficiary-PP)
+  Syntax: NP[Agent] VERB NP[Product] PREP[from out_of] NP[Material] PREP[for] NP[Beneficiary]
+  Semantics:
+    * exist(start(E), Product)
+    * exist(result(E), Product)
+    * made_of(result(E), Product, Material)
+    * cause(Agent, E)
+    * benefit(E, Beneficiary)
+NP V NP PP.beneficiary (NP-PP; for-PP)
+  Syntax: NP[Agent] VERB NP[Material] PREP[for] NP[Beneficiary]
+  Semantics:
+    * exist(start(E), ?Product)
+    * exist(result(E), ?Product)
+    * made_of(result(E), ?Product, Material)
+    * cause(Agent, E)
+    * benefit(E, Beneficiary)
+NP V NP PP.product PP.beneficiary (NP-PP-PP; Product-PP Beneficiary-PP)
+  Syntax: NP[Agent] VERB NP[Material] PREP[into] NP[Product] PREP[for] NP[Beneficiary]
+  Semantics:
+    * exist(start(E), Product)
+    * exist(result(E), Product)
+    * made_of(result(E), Product, Material)
+    * cause(Agent, E)
+    * benefit(E, Beneficiary)
+NP.material V NP (Raw Material Subject)
+  Syntax: NP[Material] VERB NP[Product]
+  Semantics:
+    * exist(start(E), Product)
+    * exist(result(E), Product)
+    * made_of(result(E), Product, Material)
+    * cause(?Agent, E)
+NP V NP NP PP.asset (NP-NP-PP; Asset-PP)
+  Syntax: NP[Agent] VERB NP[Beneficiary] NP[Product] PREP[for] NP[Asset]
+  Semantics:
+    * exist(start(E), Product)
+    * exist(result(E), Product)
+    * made_of(result(E), Product, ?Material)
+    * cause(Agent, E)
+    * benefit(E, Beneficiary)
+    * cost(E, Asset)
+NP V NP PP.material PP.asset (NP-PP-PP; Material-PP, Asset-PP)
+  Syntax: NP[Agent] VERB NP[Product] PREP[from out_of] NP[Material] PREP[for] NP[Asset]
+  Semantics:
+    * exist(start(E), Product)
+    * exist(result(E), Product)
+    * made_of(result(E), Product, Material)
+    * cause(Agent, E)
+    * cost(E, Asset)
+NP V NP PP.location (NP-PP; path-PP)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[+path] NP[Location]
+  Semantics:
+    * rotational_motion(during(E), Theme)
+    * Prep(start(E), Theme, Location)
+    * Prep(E, Theme, Location)
+    * cause(Agent, E)
+NP V PP.location (PP; path-PP)
+  Syntax: NP[Theme] VERB PREP[+path] NP[Location]
+  Semantics:
+    * rotational_motion(during(E), Theme)
+    * Prep(start(E), Theme, Location)
+    * Prep(E, Theme, Location)
+NP V ADV-Middle PP.location (Middle Construction)
+  Syntax: NP[Theme] VERB ADV PREP[+path] NP[Location]
+  Semantics:
+    * rotational_motion(during(E), Theme)
+    * Prep(start(E), Theme, Location)
+    * Prep(E, Theme, Location)
+NP V NP (Basic Transitive)
+  Syntax: NP[Agent] VERB NP[Patient]
+  Semantics:
+    * cause(Agent, E)
+    * transfer_info(during(E), Agent, ?Recipient, ?Theme)
+NP V NP PP.recipient (NP-PP; Recipient-PP)
+  Syntax: NP[Agent] VERB NP[Patient] PREP[+dest_dir] NP[Recipient]
+  Semantics:
+    * cause(Agent, E)
+    * transfer_info(during(E), Agent, Recipient, ?Theme)
+NP V NP PP.recipient PP.theme (NP-PP-PP; Recipient-PP Theme-PP)
+  Syntax: NP[Agent] VERB NP[Patient] PREP[+dest_dir] NP[Recipient] PREP[in] NP[Theme]
+  Semantics:
+    * cause(Agent, E)
+    * transfer_info(during(E), Agent, Recipient, Theme)
+NP V NP (Basic Transitive)
+  Syntax: NP[Agent] VERB NP[Product]
+  Semantics:
+    * exist(start(E), Product)
+    * exist(result(E), Product)
+    * cause(Agent, E)
+NP V NP.beneficiary NP (NP-NP; Beneficiary Object)
+  Syntax: NP[Agent] VERB NP[Beneficiary] NP[Product]
+  Semantics:
+    * exist(start(E), Product)
+    * exist(result(E), Product)
+    * cause(Agent, E)
+    * benefit(E, Beneficiary)
+NP V NP PP.beneficiary (NP-PP; for-PP)
+  Syntax: NP[Agent] VERB NP[Product] PREP[for] NP[Beneficiary]
+  Semantics:
+    * exist(start(E), Product)
+    * exist(result(E), Product)
+    * cause(Agent, E)
+    * benefit(E, Beneficiary)
+NP.theme V (Basic Intransitive; inchoative)
+  Syntax: NP[Theme] VERB
+  Semantics:
+    * motion(during(E), Theme)
+NP V PP.location (PP; locative-PP)
+  Syntax: NP[Theme] VERB PREP[+spatial] NP[Location]
+  Semantics:
+    * motion(during(E), Theme)
+    * Prep(E, Theme, Location)
+NP V NP.theme (Transitive; Causative)
+  Syntax: NP[Agent] VERB NP[Theme]
+  Semantics:
+    * motion(during(E), Theme)
+    * cause(Agent, E)
+NP V NP PP.location (NP-PP; path-PP)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[+path] NP[Location]
+  Semantics:
+    * motion(during(E), Theme)
+    * Prep(E, Theme, Location)
+    * cause(Agent, E)
+NP V ADJ (ADJP; Resultative)
+  Syntax: NP[Theme] VERB NP[Result]
+  Semantics:
+    * motion(during(E), Theme)
+    * Pred(result(E), Theme)
+NP V PP.result (PP; Result-PP)
+  Syntax: NP[Theme] VERB PREP[to into] NP[Result +state]
+  Semantics:
+    * motion(during(E), Theme)
+    * Pred(result(E), Theme)
+NP V NP ADJ (NP-ADJP; Resultative)
+  Syntax: NP[Agent] VERB NP[Theme] NP[Result]
+  Semantics:
+    * motion(during(E), Theme)
+    * cause(Agent, E)
+    * Pred(result(E), Theme)
+NP V NP PP.result (NP-PP; Result-PP)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[to into] NP[Result +state]
+  Semantics:
+    * motion(during(E), Theme)
+    * cause(Agent, E)
+    * Pred(result(E), Theme)
+NP V NP PP.location (NP-PP; Induced Action with accompanied motion, path-PP)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[+spatial] NP[Location]
+  Semantics:
+    * motion(during(E0), Theme)
+    * Prep(E0, Theme, Location)
+    * cause(Agent, E0)
+    * equals(E0, E1)
+    * motion(during(E1), Agent)
+    * Prep(E1, Agent, Location)
+NP V NP PP.location (NP-PP; Induced Action without accompanied motion, path-PP)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[+spatial] NP[Location]
+  Semantics:
+    * motion(during(E), Theme)
+    * Prep(E, Theme, Location)
+    * cause(Agent, E)
+NP V NP (NP; Induced Action with accompanied motion)
+  Syntax: NP[Agent] VERB NP[Theme]
+  Semantics:
+    * motion(during(E0), Theme)
+    * cause(Agent, E0)
+    * equals(E0, E1)
+    * motion(during(E1), Agent)
+NP V NP (NP; Induced Action without accompanied motion)
+  Syntax: NP[Agent] VERB NP[Theme]
+  Semantics:
+    * motion(during(E), Theme)
+    * cause(Agent, E)
+NP V NP PP.result (NP-PP; Result-PP)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[to into] NP[Result +state]
+  Semantics:
+    * motion(during(E), Theme)
+    * cause(Agent, E)
+    * Pred(result(E), Theme)
+NP V NP PP (Simple Reciprocal Alternation Transitive; prepositional variant)
+  Syntax: NP[Agent] VERB NP[Patient] PREP[with into to] NP[Co-Patient]
+  Semantics:
+    * cause(Agent, E)
+    * together(end(E), physical, Patient, Co-Patient)
+NP V NP together (Together Reciprocal Alternation Transitive)
+  Syntax: NP[Agent] VERB NP[Patient +plural] LEX[together]
+  Semantics:
+    * cause(Agent, E)
+    * together(end(E), physical, Patient, Co-Patient)
+NP V NP-dative NP (Dative)
+  Syntax: NP[Agent] VERB NP[Destination] NP[Theme]
+  Semantics:
+    * motion(during(E), Theme)
+    * direction(during(E), toward, Theme, Destination)
+    * location(end(E), Theme, Destination)
+    * cause(Agent, E)
+NP V (Basic Intransitive)
+  Syntax: NP[Theme] VERB
+  Semantics:
+    * emit(during(E), Theme, Sound)
+NP V PP.location (PP; Location-PP)
+  Syntax: NP[Theme] VERB PREP[+loc] NP[Location]
+  Semantics:
+    * emit(during(E), Theme, Sound)
+    * Prep(during(E), Sound, Location)
+NP.location V PP.theme (PP; Location Subject, with-PP)
+  Syntax: NP[Location] VERB PREP[with] NP[Theme]
+  Semantics:
+    * emit(during(E), Theme, Sound)
+    * location(during(E), Sound, Location)
+PP.location V NP (Locative Inversion)
+  Syntax: PREP[+loc] NP[Location] VERB NP[Theme]
+  Semantics:
+    * emit(during(E), Theme, Sound)
+    * Prep(during(E), Sound, Location)
+There V NP PP (There-insertion)
+  Syntax: LEX[there] VERB NP[Theme] PREP[+loc] NP[Location]
+  Semantics:
+    * emit(during(E), Theme, Sound)
+    * Prep(during(E), Sound, Location)
+NP V NP.theme (NP; Causative variant)
+  Syntax: NP[Agent] VERB NP[Theme]
+  Semantics:
+    * emit(during(E), Theme, Sound)
+    * cause(Agent, E)
+NP V (Basic Intransitive)
+  Syntax: NP[Theme] VERB
+  Semantics:
+    * exist(during(E), Theme)
+NP V PP.location (PP; locative-PP)
+  Syntax: NP[Theme] VERB PREP[+loc] NP[Location]
+  Semantics:
+    * exist(during(E), Theme)
+    * Prep(during(E), Theme, Location)
+There V NP (NP-PP; Expletive-there Subject)
+  Syntax: LEX[there] VERB NP[Theme -definite]
+  Semantics:
+    * exist(during(E), Theme)
+PP.location V NP (Locative Inversion)
+  Syntax: PREP[+loc] NP[Location] VERB NP[Theme]
+  Semantics:
+    * exist(during(E), Theme)
+    * Prep(during(E), Theme, Location)
+NP.location V NP.theme (PP; Location Subject, with-PP)
+  Syntax: NP[Location] VERB PREP[with] NP[Theme]
+  Semantics:
+    * exist(during(E), Theme)
+    * location(during(E), Theme, Location)
+NP V NP PP.co-patient (NP-PP; Source-PP)
+  Syntax: NP[Agent] VERB NP[Patient] PREP[off off of from] NP[Co-Patient]
+  Semantics:
+    * cause(Agent, E)
+    * together(start(E), physical, Patient, Co-Patient)
+    * apart(result(E), physical, Patient, Co-Patient)
+NP V NP apart (Apart Reciprocal Alternation Transitive)
+  Syntax: NP[Agent] VERB NP[Patient +plural] LEX[apart]
+  Semantics:
+    * cause(Agent, E)
+    * together(start(E), physical, Patient_i, Patient_j)
+    * apart(result(E), physical, Patient_i, Patient_j)
+NP V PP.co-patient (PP; Source-PP)
+  Syntax: NP[Patient] VERB PREP[off off of from] NP[Co-Patient]
+  Semantics:
+    * together(start(E), physical, Patient, Co-Patient)
+    * apart(result(E), physical, Patient, Co-Patient)
+NP V apart (Apart Reciprocal Alternation Intransitive)
+  Syntax: NP[Patient +plural] VERB LEX[apart]
+  Semantics:
+    * together(start(E), physical, Patient_i, Patient_j)
+    * apart(result(E), physical, Patient_i, Patient_j)
+NP V PP ADV-Middle (Middle Construction)
+  Syntax: NP[Patient] VERB PREP[off off of from] NP[Co-Patient] ADV
+  Semantics:
+    * together(start(E), physical, Patient, Co-Patient)
+    * apart(result(E), physical, Patient, Co-Patient)
+NP V ADV-Middle (Middle Construction)
+  Syntax: NP[Patient +plural] VERB LEX[apart] ADV
+  Semantics:
+    * together(start(E), physical, Patient_i, Patient_j)
+    * apart(result(E), physical, Patient_i, Patient_j)

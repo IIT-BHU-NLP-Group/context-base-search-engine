@@ -1,0 +1,8 @@
+NP V PP.theme (PP; in-PP)
+  Syntax: NP[Agent +plural] VERB PREP[in] NP[Theme -sentential]
+  Semantics:
+    * cooperate(during(E), Agent_i, Agent_j, Theme)
+NP V PP.theme S_ING (P-ING-SC; in-PP)
+  Syntax: NP[Agent +plural] VERB PREP[in] NP[Theme +sc_ing]
+  Semantics:
+    * cooperate(during(E), Agent_i, Agent_j, Theme)

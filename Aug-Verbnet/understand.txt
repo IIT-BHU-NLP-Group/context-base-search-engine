@@ -1,0 +1,32 @@
+NP V how S (HOW-S)
+  Syntax: NP[Agent] VERB NP[Theme +how_extract]
+  Semantics:
+    * approve(during(E), Agent, Theme)
+NP V NP (Basic Transitive)
+  Syntax: NP[Agent] VERB NP[Theme -sentential]
+  Semantics:
+    * approve(during(E), Agent, Theme)
+NP V S_ING (POSSING)
+  Syntax: NP[Agent] VERB NP[Theme +poss_ing]
+  Semantics:
+    * approve(during(E), Agent, Theme)
+NP V that S (S)
+  Syntax: NP[Agent] VERB NP[Theme +that_comp]
+  Semantics:
+    * approve(during(E), Agent, Theme)
+NP V what S (WHAT-S)
+  Syntax: NP[Agent] VERB NP[Theme +what_extract]
+  Semantics:
+    * approve(during(E), Agent, Theme)
+NP V S_ING (ING-AC)
+  Syntax: NP[Experiencer] VERB NP[Stimulus +ac_ing]
+  Semantics:
+    * understand(E, Experiencer, Stimulus, ?Attribute)
+NP V how S_INF (HOW-TO-INF)
+  Syntax: NP[Experiencer] VERB NP[Stimulus +wh_inf]
+  Semantics:
+    * understand(E, Experiencer, Stimulus, ?Attribute)
+NP V NP to be NP (NP-TOBE)
+  Syntax: NP[Experiencer] VERB NP[Stimulus +to_be]
+  Semantics:
+    * understand(E, Experiencer, Stimulus, ?Attribute)

@@ -1,0 +1,30 @@
+NP V S_ING (ING-SC/BE-ING-SC)
+  Syntax: NP[Agent] VERB NP[Theme +be_sc_ing]
+  Semantics:
+    * begin(E, Theme)
+    * cause(Agent, E)
+NP.theme V (Intransitive; Inchoative)
+  Syntax: NP[Theme] VERB
+  Semantics:
+    * begin(E, Theme)
+NP V NP (Basic Transitive)
+  Syntax: NP[Agent] VERB NP[Theme]
+  Semantics:
+    * begin(E, Theme)
+    * cause(Agent, E)
+NP V PP.instrument (PP; with-PP)
+  Syntax: NP[Theme] VERB PREP[with] NP[Instrument]
+  Semantics:
+    * begin(E, Theme)
+    * use(during(E), ?Agent, Instrument)
+NP V NP PP.instrument (NP-PP; with-PP)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[with] NP[Instrument]
+  Semantics:
+    * begin(E, Theme)
+    * use(during(E), Agent, Instrument)
+    * cause(Agent, E)
+NP.instrument V NP (Intransitive; Instrument Subject)
+  Syntax: NP[Instrument] VERB NP[Theme]
+  Semantics:
+    * begin(E, Theme)
+    * use(during(E), ?Agent, Instrument)

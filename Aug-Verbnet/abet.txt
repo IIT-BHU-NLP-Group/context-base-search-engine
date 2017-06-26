@@ -1,0 +1,4 @@
+NP V PP.theme (PP; with-PP)
+  Syntax: NP[Agent] VERB PREP[with] NP[Theme -sentential]
+  Semantics:
+    * help(during(E), Agent, ?Beneficiary, Theme)

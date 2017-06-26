@@ -1,0 +1,34 @@
+NP V NP (NP)
+  Syntax: NP[Agent] VERB NP[Theme]
+  Semantics:
+    * assess(during(E), Agent, Theme, ?Value)
+NP V NP PP.value (NP-PP; at-PP)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[at] NP[Value]
+  Semantics:
+    * assess(during(E), Agent, Theme, Value)
+NP V how S (HOW-S)
+  Syntax: NP[Agent] VERB NP[Value +how_extract]
+  Semantics:
+    * assess(during(E), Agent, ?Theme, Value)
+NP V NP to be ADJ (NP-TOBE)
+  Syntax: NP[Agent] VERB NP[Theme +to_be]
+  Semantics:
+    * assess(during(E), Agent, Theme, ?Value)
+NP V that S (S)
+  Syntax: NP[Agent] VERB NP[Theme +that_comp]
+  Semantics:
+    * assess(during(E), Agent, Theme, ?Value)
+NP V what S (WHAT-S)
+  Syntax: NP[Agent] VERB NP[Theme +what_extract]
+  Semantics:
+    * assess(during(E), Agent, Theme, ?Value)
+NP V NP (Basic Transitive)
+  Syntax: NP[Agent] VERB NP[Theme]
+  Semantics:
+    * value(result(E), Theme, ?Value)
+    * cause(Agent, E)
+NP V NP PP.value (NP-PP; at-PP)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[at] NP[Value]
+  Semantics:
+    * value(result(E), Theme, Value)
+    * cause(Agent, E)

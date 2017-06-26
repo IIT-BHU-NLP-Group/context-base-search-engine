@@ -1,0 +1,7 @@
+NP V NP (Basic Transitive)
+  Syntax: NP[Agent] VERB NP[Recipient]
+  Semantics:
+    * has_possession(start(E), Agent, ?Theme)
+    * has_possession(end(E), Recipient, ?Theme)
+    * transfer(during(E), ?Theme)
+    * cause(Agent, E)

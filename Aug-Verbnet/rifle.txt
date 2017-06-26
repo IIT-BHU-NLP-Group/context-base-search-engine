@@ -1,0 +1,38 @@
+NP V NP PP.theme (NP-PP; of-PP)
+  Syntax: NP[Agent] VERB NP[Source] PREP[of] NP[Theme]
+  Semantics:
+    * cause(Agent, E)
+    * location(start(E), Theme, Source)
+    * location(end(E), Theme, Source)
+NP V NP PP.theme (NP-PP; out_of-PP)
+  Syntax: NP[Agent] VERB NP[Source] PREP[out_of] NP[Theme]
+  Semantics:
+    * cause(Agent, E)
+    * location(start(E), Theme, Source)
+    * location(end(E), Theme, Source)
+NP V NP (Transitive; dropped Theme)
+  Syntax: NP[Agent] VERB NP[Source]
+  Semantics:
+    * cause(Agent, E)
+    * location(start(E), ?Theme, Source)
+    * location(end(E), ?Theme, Source)
+NP V NP PP.theme (NP-PP; Theme-PP)
+  Syntax: NP[Agent] VERB NP[Location] PREP[for] NP[Theme]
+  Semantics:
+    * search(during(E), Agent, Location, Theme)
+NP V NP PP.theme (NP-PP; Theme-PP)
+  Syntax: NP[Agent] VERB NP[Location] PREP[for] NP[Theme]
+  Semantics:
+    * search(during(E), Agent, Location, Theme)
+NP V PP.theme NP.location (PP-PP; Theme-PP Location-PP)
+  Syntax: NP[Agent] VERB PREP[for] NP[Theme] PREP[+loc] NP[Location]
+  Semantics:
+    * search(during(E), Agent, Location, Theme)
+NP V PP.location PP.theme (PP-PP; Location-PP Theme-PP)
+  Syntax: NP[Agent] VERB PREP[+loc] NP[Location] PREP[for] NP[Theme]
+  Semantics:
+    * search(during(E), Agent, Location, Theme)
+NP V PP.location (PP; Location-PP)
+  Syntax: NP[Agent] VERB PREP[+loc] NP[Location]
+  Semantics:
+    * search(during(E), Agent, Location, ?Theme)

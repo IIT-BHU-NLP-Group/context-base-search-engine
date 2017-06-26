@@ -1,0 +1,7 @@
+NP V NP.beneficiary NP (NP-NP; Beneficiary Object)
+  Syntax: NP[Agent] VERB NP[Beneficiary] NP[Result]
+  Semantics:
+    * exist(start(E), Result)
+    * exist(result(E), Result)
+    * cause(Agent, E)
+    * benefit(E, Beneficiary)

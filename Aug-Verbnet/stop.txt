@@ -1,0 +1,27 @@
+NP V S_ING (POSSING)
+  Syntax: NP[Agent] VERB NP[Theme +poss_ing]
+  Semantics:
+    * forbid(during(E), Agent, Theme)
+NP V S_ING (ING-AC)
+  Syntax: NP[Agent] VERB NP[Theme +ac_ing]
+  Semantics:
+    * forbid(during(E), Agent, Theme)
+NP V NP (Basic Transitive)
+  Syntax: NP[Agent] VERB NP[Theme -sentential]
+  Semantics:
+    * forbid(during(E), Agent, Theme)
+NP V PP.location (PP; Location-PP)
+  Syntax: NP[Theme] VERB PREP[at in with] NP[Location]
+  Semantics:
+    * location(start(E), Theme, Location)
+    * location(during(E), Theme, Location)
+NP V ADV (ADVP-PRED; here/there)
+  Syntax: NP[Theme] VERB NP[Location +adv_loc]
+  Semantics:
+    * location(start(E), Theme, Location)
+    * location(during(E), Theme, Location)
+NP V S_ING (ING-SC/BE-ING-SC)
+  Syntax: NP[Agent] VERB NP[Theme +be_sc_ing]
+  Semantics:
+    * end(E, Theme)
+    * cause(Agent, E)

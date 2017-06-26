@@ -1,0 +1,42 @@
+NP V (Intransitive; Plural Subject)
+  Syntax: NP[Agent +plural] VERB
+  Semantics:
+    * social_interaction(during(E), Agent_i, Agent_j)
+    * conflict(during(E), Agent_i, Agent_j)
+    * about(E, ?Topic)
+NP V PP.topic NP S_ING (P-POSSING; about-PP)
+  Syntax: NP[Agent +plural] VERB PREP[about] NP[Topic +poss_ing]
+  Semantics:
+    * social_interaction(during(E), Agent_i, Agent_j)
+    * conflict(during(E), Agent_i, Agent_j)
+    * about(E, Topic)
+NP V PP.topic whether S (P-WH-S; about-PP)
+  Syntax: NP[Agent +plural] VERB PREP[about] NP[Topic +wh_comp]
+  Semantics:
+    * social_interaction(during(E), Agent_i, Agent_j)
+    * conflict(during(E), Agent_i, Agent_j)
+    * about(E, Topic)
+NP V PP.topic what S (P-WHAT-S; about-PP)
+  Syntax: NP[Agent +plural] VERB PREP[about] NP[Topic +what_extract]
+  Semantics:
+    * social_interaction(during(E), Agent_i, Agent_j)
+    * conflict(during(E), Agent_i, Agent_j)
+    * about(E, Topic)
+NP V PP.topic whether S_INF (P-WH-TO-INF; about-PP)
+  Syntax: NP[Agent +plural] VERB PREP[about] NP[Topic +wheth_inf]
+  Semantics:
+    * social_interaction(during(E), Agent_i, Agent_j)
+    * conflict(during(E), Agent_i, Agent_j)
+    * about(E, Topic)
+NP V PP.topic what S_INF (P-WHAT-TO-INF; about-PP)
+  Syntax: NP[Agent +plural] VERB PREP[about] NP[Topic +what_inf]
+  Semantics:
+    * social_interaction(during(E), Agent_i, Agent_j)
+    * conflict(during(E), Agent_i, Agent_j)
+    * about(E, Topic)
+NP V PP.topic (PP; about-PP)
+  Syntax: NP[Agent +plural] VERB PREP[about] NP[Topic -sentential]
+  Semantics:
+    * social_interaction(during(E), Agent_i, Agent_j)
+    * conflict(during(E), Agent_i, Agent_j)
+    * about(E, Topic)

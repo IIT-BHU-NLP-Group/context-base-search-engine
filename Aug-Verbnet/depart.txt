@@ -1,0 +1,23 @@
+NP V NP (Locative Preposition Drop)
+  Syntax: NP[Theme] VERB NP[Initial_Location]
+  Semantics:
+    * motion(during(E), Theme)
+    * path(during(E), Theme, Initial_Location, ?Trajectory, ?Destination)
+NP V (Intransitive)
+  Syntax: NP[Agent] VERB
+  Semantics:
+    * cause(Agent, E)
+    * location(start(E), ?Source)
+    * location(end(E), ?Source)
+NP V NP (NP)
+  Syntax: NP[Agent] VERB NP[Source]
+  Semantics:
+    * cause(Agent, E)
+    * location(start(E), Source)
+    * location(end(E), Source)
+NP V PP.source (PP; from-PP)
+  Syntax: NP[Agent] VERB PREP[from] NP[Source -sentential]
+  Semantics:
+    * cause(Agent, E)
+    * location(start(E), Source)
+    * location(end(E), Source)

@@ -1,0 +1,15 @@
+NP V NP (NP)
+  Syntax: NP[Agent] VERB NP[Theme]
+  Semantics:
+    * confront(during(E), Agent, Theme, ?Instrument)
+NP V NP PP.instrument (NP-PP; with-PP)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[with] NP[Instrument -sentential]
+  Semantics:
+    * confront(during(E), Agent, Theme, Instrument)
+NP V NP PP.theme (NP-PP; Theme-PP)
+  Syntax: NP[Agent] VERB NP[Destination] PREP[in] NP[Theme]
+  Semantics:
+    * motion(during(E), Theme)
+    * location(start(E), Theme, Destination)
+    * location(end(E), Theme, Destination)
+    * cause(Agent, E)

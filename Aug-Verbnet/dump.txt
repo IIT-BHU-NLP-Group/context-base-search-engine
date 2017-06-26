@@ -1,0 +1,6 @@
+NP V PP.destination (PP; locative-PP)
+  Syntax: NP[Theme] VERB PREP[into] NP[Destination]
+  Semantics:
+    * motion(during(E), Theme)
+    * Prep(start(E), Theme, Destination)
+    * Prep(end(E), Theme, Destination)

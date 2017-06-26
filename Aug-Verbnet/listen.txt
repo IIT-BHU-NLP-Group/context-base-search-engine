@@ -1,0 +1,13 @@
+NP V PP.stimulus (PP; Theme-PP)
+  Syntax: NP[Experiencer] VERB PREP[+spatial] NP[Stimulus]
+  Semantics:
+    * perceive(during(E), Experiencer, Stimulus)
+    * in_reaction_to(E, Stimulus)
+NP V PP.location (PP; Location-PP)
+  Syntax: NP[Agent] VERB PREP[over through into] NP[Location]
+  Semantics:
+    * search(during(E), Agent, Location, ?Theme)
+NP V PP.location PP.theme (PP-PP; Location-PP Theme-PP)
+  Syntax: NP[Agent] VERB PREP[+loc] NP[Location] PREP[for] NP[Theme]
+  Semantics:
+    * search(during(E), Agent, Location, Theme)

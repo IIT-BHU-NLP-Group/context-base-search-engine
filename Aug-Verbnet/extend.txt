@@ -1,0 +1,35 @@
+NP V NP PP.theme (NP-PP; Theme-PP)
+  Syntax: NP[Agent] VERB NP[Recipient] NP[Theme]
+  Semantics:
+    * has_possession(start(E), Agent, Theme)
+    * has_possession(end(E), Recipient, Theme)
+    * transfer(during(E), Theme)
+    * cause(Agent, E)
+NP V (Basic Intransitive)
+  Syntax: NP[Theme] VERB
+  Semantics:
+    * exist(during(E), Theme)
+NP V NP PP.goal (NP-PP; Goal-PP)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[to] NP[Goal]
+  Semantics:
+    * has_possession(start(E), Agent, Theme)
+    * future_possession(end(E), Goal, Theme)
+    * cause(Agent, E)
+NP V NP.theme (PP) (Transitive; Theme Object)
+  Syntax: NP[Agent] VERB NP[Theme]
+  Semantics:
+    * has_possession(start(E), Agent, Theme)
+    * future_possession(end(E), ?Goal, Theme)
+    * cause(Agent, E)
+NP V NP-Dative NP (Dative)
+  Syntax: NP[Agent] VERB NP[Goal] NP[Theme]
+  Semantics:
+    * has_possession(start(E), Agent, Theme)
+    * future_possession(end(E), Goal, Theme)
+    * cause(Agent, E)
+NP V NP PP.goal (NP-PP; for-PP)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[for] NP[Goal]
+  Semantics:
+    * has_possession(start(E), Agent, Theme)
+    * future_possession(end(E), Goal, Theme)
+    * cause(Agent, E)

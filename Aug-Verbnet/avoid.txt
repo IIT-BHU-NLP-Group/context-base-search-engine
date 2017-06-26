@@ -1,0 +1,22 @@
+NP V NP.location (Basic Transitive; Location Object)
+  Syntax: NP[Agent] VERB NP[Location]
+  Semantics:
+    * avoid(during(E), Agent, Location)
+NP V NP.theme (Basic Transitive; Theme Object)
+  Syntax: NP[Agent] VERB NP[Theme]
+  Semantics:
+    * avoid(during(E), Agent, Theme)
+NP V S_ING (ING-SC/BE-ING-SC)
+  Syntax: NP[Agent] VERB NP[Theme +be_sc_ing]
+  Semantics:
+    * avoid(during(E), Agent, Theme)
+NP V S_ING (POSSING)
+  Syntax: NP[Agent] VERB NP[Theme +poss_ing]
+  Semantics:
+    * avoid(during(E), Agent, Theme)
+NP V NP (NP)
+  Syntax: NP[Agent] VERB NP[Patient]
+  Semantics:
+    * cause(Agent, E)
+    * designated(start(E), Patient)
+    * designated(end(E), Patient)

@@ -1,0 +1,14 @@
+NP V PP.recipient (PP; Recipient-PP)
+  Syntax: NP[Agent] VERB PREP[to] NP[Recipient]
+  Semantics:
+    * has_possession(start(E), Agent, ?Theme)
+    * has_possession(end(E), Recipient, ?Theme)
+    * transfer(during(E), ?Theme)
+    * cause(Agent, E)
+NP V NP PP.recipient (NP-PP; among-PP)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[among] NP[Recipient +plural]
+  Semantics:
+    * has_possession(start(E), Agent, Theme)
+    * has_possession(end(E), Recipient, Theme)
+    * transfer(during(E), Theme)
+    * cause(Agent, E)

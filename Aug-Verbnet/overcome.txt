@@ -1,0 +1,8 @@
+NP V NP (Basic Transitive)
+  Syntax: NP[Theme] VERB NP[Co-Theme]
+  Semantics:
+    * exceed(during(E), Theme, Co-Theme, ?Attribute)
+NP V NP PP.attribute (NP-PP; in-PP)
+  Syntax: NP[Theme] VERB NP[Co-Theme] PREP[in] NP[Attribute]
+  Semantics:
+    * exceed(during(E), Theme, Co-Theme, Attribute)

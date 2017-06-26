@@ -1,0 +1,16 @@
+NP V NP (Basic Transitive)
+  Syntax: NP[Agent] VERB NP[Patient]
+  Semantics:
+    * take_in(during(E), Agent, Patient)
+NP V (Unspecified Object)
+  Syntax: NP[Agent] VERB
+  Semantics:
+    * take_in(during(E), Agent, ?Patient)
+NP V PP-Conative (Conative)
+  Syntax: NP[Agent] VERB PREP[at] NP[Patient]
+  Semantics:
+    * take_in(during(E), Agent, Patient)
+NP V PP.patient (PP; Patient-PP)
+  Syntax: NP[Agent] VERB PREP[on] NP[Patient]
+  Semantics:
+    * take_in(during(E), Agent, Patient)

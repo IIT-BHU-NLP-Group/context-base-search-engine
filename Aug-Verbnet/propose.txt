@@ -1,0 +1,48 @@
+NP V NP (Basic Transitive)
+  Syntax: NP[Agent] VERB NP[Theme]
+  Semantics:
+    * appear(during(E), Theme)
+    * cause(Agent, E)
+NP V NP PP.recipient (NP-PP; Recipient-PP)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[to] NP[Recipient]
+  Semantics:
+    * appear(during(E), Theme)
+    * cause(Agent, E)
+NP V NP (Reflexive of Appearance)
+  Syntax: NP[Theme] VERB NP[Reflexive +refl]
+  Semantics:
+    * appear(during(E), Theme)
+NP V that S (S)
+  Syntax: NP[Agent] VERB NP[Topic +that_comp]
+  Semantics:
+    * transfer_info(during(E), Agent, ?Recipient, Topic)
+    * cause(Agent, E)
+NP V that S (S-SUBJUNCT)
+  Syntax: NP[Agent] VERB NP[Topic +that_comp -tensed_that]
+  Semantics:
+    * transfer_info(during(E), Agent, ?Recipient, Topic)
+    * cause(Agent, E)
+NP V for NP S_INF (FOR-TO-INF)
+  Syntax: NP[Experiencer] VERB NP[Stimulus +for_comp]
+  Semantics:
+    * desire(E, Experiencer, Stimulus)
+NP V NP (NP)
+  Syntax: NP[Experiencer] VERB NP[Stimulus -sentential]
+  Semantics:
+    * desire(E, Experiencer, Stimulus)
+NP V NP to be ADJ (Infinitival Copular Clause)
+  Syntax: NP[Experiencer] VERB NP[Stimulus +to_be]
+  Semantics:
+    * desire(E, Experiencer, Stimulus)
+NP V NP ADJ (NP-VEN-NP-OMIT)
+  Syntax: NP[Experiencer] VERB NP[Stimulus +np_ppart]
+  Semantics:
+    * desire(E, Experiencer, Stimulus)
+NP V that S (S)
+  Syntax: NP[Experiencer] VERB NP[Stimulus +that_comp]
+  Semantics:
+    * desire(E, Experiencer, Stimulus)
+NP V S_INF (TO-INF-SC)
+  Syntax: NP[Experiencer] VERB NP[Stimulus +sc_to_inf]
+  Semantics:
+    * desire(E, Experiencer, Stimulus)

@@ -1,0 +1,37 @@
+NP V NP (Basic Transitive)
+  Syntax: NP[Stimulus] VERB NP[Experiencer]
+  Semantics:
+    * cause(Stimulus, E)
+    * emotional_state(result(E), Emotion, Experiencer)
+NP V ADV-Middle (Middle Construction)
+  Syntax: NP[Experiencer] VERB ADV
+  Semantics:
+    * emotional_state(result(E), ?Emotion, Experiencer)
+NP V NP-PRO-ARB (PRO-Arb Object Alternation)
+  Syntax: NP[Stimulus] VERB
+  Semantics:
+    * cause(Stimulus, E)
+    * emotional_state(result(E), Emotion, ?Experiencer)
+NP.cause V NP (NP; Attribute Subject)
+  Syntax: NP[Stimulus +genitive] LEX['s] VERB NP[Experiencer]
+  Semantics:
+    * cause(Stimulus, E)
+    * emotional_state(result(E), Emotion, Experiencer)
+NP V NP ADJ (NP-ADJP; Resultative)
+  Syntax: NP[Stimulus] VERB NP[Experiencer] NP[Result]
+  Semantics:
+    * cause(Stimulus, E)
+    * emotional_state(result(E), Emotion, Experiencer)
+    * Pred(result(E), Experiencer)
+NP V S_ING (ING-NP-OMIT)
+  Syntax: NP[Agent] VERB NP[Theme +np_omit_ing]
+  Semantics:
+    * attempt(during(E), Agent, Theme)
+NP V NP (Basic Transitive)
+  Syntax: NP[Agent] VERB NP[Theme -sentential]
+  Semantics:
+    * attempt(during(E), Agent, Theme)
+NP V S_INF (TO-INF-SC)
+  Syntax: NP[Agent] VERB NP[Theme +sc_to_inf]
+  Semantics:
+    * attempt(during(E), Agent, Theme)

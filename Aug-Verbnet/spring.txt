@@ -1,0 +1,24 @@
+NP V (Basic Intransitive; inchoative)
+  Syntax: NP[Theme] VERB
+  Semantics:
+    * motion(during(E), Theme)
+NP V PP.location (PP; over-PP)
+  Syntax: NP[Theme] VERB PREP[+spatial] NP[Location]
+  Semantics:
+    * motion(during(E), Theme)
+    * Prep(E, Theme, Location)
+There V PP NP (PP-NP; Expletive-there Subject)
+  Syntax: LEX[there] VERB PREP[+path] NP[Location +concrete] NP[Theme -definite]
+  Semantics:
+    * motion(during(E), Theme)
+    * Prep(E, Theme, Location)
+There V NP PP (NP-PP; Expletive-there Subject)
+  Syntax: LEX[there] VERB NP[Theme -definite] PREP[+path] NP[Location]
+  Semantics:
+    * motion(during(E), Theme)
+    * Prep(E, Theme, Location)
+PP.location V NP (Locative Inversion)
+  Syntax: PREP[+path] NP[Location] VERB NP[Theme]
+  Semantics:
+    * motion(during(E), Theme)
+    * Prep(E, Theme, Location)

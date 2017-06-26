@@ -1,0 +1,8 @@
+NP V NP (NP)
+  Syntax: NP[Agent] VERB NP[Theme]
+  Semantics:
+    * involve(during(E), Agent, Theme, ?Goal)
+NP V NP PP.goal (NP-PP; in-PP)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[in] NP[Goal]
+  Semantics:
+    * involve(during(E), Agent, Theme, Goal)

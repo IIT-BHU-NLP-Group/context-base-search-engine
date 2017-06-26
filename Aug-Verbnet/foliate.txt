@@ -1,0 +1,4 @@
+NP.patient V (Intransitive; Inchoative)
+  Syntax: NP[Patient] VERB
+  Semantics:
+    * state(result(E), Endstate, Patient)

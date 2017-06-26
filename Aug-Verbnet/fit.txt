@@ -1,0 +1,37 @@
+NP V NP (NP)
+  Syntax: NP[Agent] VERB NP[Patient]
+  Semantics:
+    * cause(Agent, E)
+    * adjust(during(E), Patient, ?Goal)
+NP V NP PP (NP-PP; to-PP)
+  Syntax: NP[Agent] VERB NP[Patient] PREP[to] NP[Goal -sentential]
+  Semantics:
+    * adjust(during(E), Patient, Goal)
+NP V NP S_ING (NP-P-ING-OC; to-PP)
+  Syntax: NP[Agent] VERB NP[Patient] PREP[to] NP[Goal +oc_ing]
+  Semantics:
+    * adjust(during(E), Patient, Goal)
+NP V S_ING (P-ING-SC; to-PP)
+  Syntax: NP[Agent] VERB PREP[to] NP[Goal +sc_ing]
+  Semantics:
+    * adjust(during(E), ?Patient, Goal)
+NP V PP (PP)
+  Syntax: NP[Agent] VERB PREP[to] NP[Goal]
+  Semantics:
+    * adjust(during(E), ?Patient, Goal)
+NP.location V NP (Location Subject Alternation)
+  Syntax: NP[Location] VERB NP[Value]
+  Semantics:
+    * capacity(E, Location, Value)
+NP V NP PP.location (NP-PP; Location-PP)
+  Syntax: NP[Agent] VERB NP[Value] PREP[in] NP[Location]
+  Semantics:
+    * capacity(E, Location, Value)
+    * cause(Agent, E)
+NP V NP PP.destination (NP-PP; between-PP)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[between in_between] NP[Destination +plural]
+  Semantics:
+    * motion(during(E), Theme)
+    * Prep(start(E), Theme, Destination)
+    * Prep(end(E), Theme, Destination)
+    * cause(Agent, E)

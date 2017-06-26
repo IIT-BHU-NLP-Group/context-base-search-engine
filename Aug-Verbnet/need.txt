@@ -1,0 +1,12 @@
+NP V S_ING
+  Syntax: NP[Pivot] VERB NP[Theme +sc_to_inf]
+  Semantics:
+    * require(E, Pivot, Theme, ?Source)
+NP V NP S_INF (NP-TO-INF)
+  Syntax: NP[Pivot] VERB NP[Theme +np_to_inf]
+  Semantics:
+    * desire(E, Pivot, Theme)
+NP V NP to be ADJ (NP-TOBE)
+  Syntax: NP[Pivot] VERB NP[Theme +to_be]
+  Semantics:
+    * desire(E, Pivot, Theme)

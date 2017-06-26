@@ -1,0 +1,12 @@
+NP V NP (Basic Transitive)
+  Syntax: NP[Agent] VERB NP[Theme]
+  Semantics:
+    * motion(during(E), Agent)
+    * motion(during(E), Theme)
+NP V NP PP.destination (NP-PP; path-PP)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[+spatial] NP[Destination]
+  Semantics:
+    * motion(during(E), Agent)
+    * motion(during(E), Theme)
+    * Prep(E, Theme, Destination)
+    * Prep(E, Agent, Destination)

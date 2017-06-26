@@ -1,0 +1,26 @@
+NP V NP (Basic Transitive)
+  Syntax: NP[Agent] VERB NP[Result]
+  Semantics:
+    * exist(start(E), Result)
+    * exist(result(E), Result)
+    * cause(Agent, E)
+NP V NP PP.material (NP-PP; Material-PP)
+  Syntax: NP[Agent] VERB NP[Result] PREP[from out_of] NP[Material]
+  Semantics:
+    * exist(start(E), Result)
+    * exist(result(E), Result)
+    * made_of(result(E), Result, Material)
+    * cause(Agent, E)
+NP V NP PP.beneficiary (NP-PP; for-PP)
+  Syntax: NP[Agent] VERB NP[Result] PREP[for] NP[Beneficiary]
+  Semantics:
+    * exist(start(E), Result)
+    * exist(result(E), Result)
+    * cause(Agent, E)
+    * benefit(E, Beneficiary)
+NP V NP PP.attribute (NP-PP; as-PP)
+  Syntax: NP[Agent] VERB NP[Result] LEX[as] NP[Attribute]
+  Semantics:
+    * exist(start(E), Result)
+    * exist(result(E), Result)
+    * cause(E, Agent)

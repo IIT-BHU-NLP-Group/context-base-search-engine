@@ -1,0 +1,5 @@
+NP V NP (NP)
+  Syntax: NP[Agent] VERB NP[Theme]
+  Semantics:
+    * license(result(E), Theme)
+    * cause(Agent, E)

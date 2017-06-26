@@ -1,0 +1,57 @@
+NP V PP.topic (PP; against/about-PP)
+  Syntax: NP[Agent] VERB PREP[against about concerning on regarding respecting] NP[Topic]
+  Semantics:
+    * transfer_info(during(E), Agent, ?Recipient, Topic)
+    * cause(Agent, E)
+NP V that S (S)
+  Syntax: NP[Agent] VERB NP[Topic +that_comp]
+  Semantics:
+    * transfer_info(during(E), Agent, ?Recipient, Topic)
+    * cause(Agent, E)
+NP V how S_INF (HOW-TO-INF)
+  Syntax: NP[Agent] VERB NP[Topic +wh_inf]
+  Semantics:
+    * transfer_info(during(E), Agent, ?Recipient, Topic)
+    * cause(Agent, E)
+NP V S-Quote (QUOT)
+  Syntax: NP[Agent] VERB NP[Topic +quotation]
+  Semantics:
+    * transfer_info(during(E), Agent, ?Recipient, Topic)
+    * cause(Agent, E)
+NP V that S (S)
+  Syntax: NP[Agent] VERB NP[Topic +that_comp]
+  Semantics:
+    * transfer_info(during(E), Agent, ?Recipient, Topic)
+    * cause(Agent, E)
+NP V that S (S-SUBJUNCT)
+  Syntax: NP[Agent] VERB NP[Topic +that_comp -tensed_that]
+  Semantics:
+    * transfer_info(during(E), Agent, ?Recipient, Topic)
+    * cause(Agent, E)
+NP V NP (NP)
+  Syntax: NP[Agent] VERB NP[Recipient]
+  Semantics:
+    * transfer_info(during(E), Agent, Recipient, ?Topic)
+    * cause(Agent, E)
+NP V NP PP.topic (NP-PP; of-PP)
+  Syntax: NP[Agent] VERB NP[Recipient] PREP[of] NP[Topic -sentential]
+  Semantics:
+    * transfer_info(during(E), Agent, Recipient, Topic)
+    * cause(Agent, E)
+NP V NP S (NP-S)
+  Syntax: NP[Agent] VERB NP[Recipient] NP[Topic +that_comp]
+  Semantics:
+    * transfer_info(during(E), Agent, Recipient, Topic)
+    * cause(Agent, E)
+NP V NP (Basic Transitive)
+  Syntax: NP[Agent] VERB NP[Recipient]
+  Semantics:
+    * urge(during(E), Agent, Recipient, ?Topic)
+NP V NP S_ING (NP-TO-INF-OC)
+  Syntax: NP[Agent] VERB NP[Recipient] NP[Topic +oc_to_inf]
+  Semantics:
+    * urge(during(E), Agent, Recipient, Topic)
+NP V NP that S (NP-S)
+  Syntax: NP[Agent] VERB NP[Recipient] NP[Topic +that_comp]
+  Semantics:
+    * urge(during(E), Agent, Recipient, Topic)

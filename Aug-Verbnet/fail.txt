@@ -1,0 +1,24 @@
+NP V NP (Basic Transitive)
+  Syntax: NP[Agent] VERB NP[Theme]
+  Semantics:
+    * neglect(E, Agent, Theme)
+NP V (Basic Intransitive)
+  Syntax: NP[Agent] VERB
+  Semantics:
+    * successful_in(E, Agent, ?Theme)
+NP V NP (Basic Transitive)
+  Syntax: NP[Agent] VERB NP[Theme -sentential]
+  Semantics:
+    * successful_in(E, Agent, Theme)
+NP V PP.theme S_ING (P-ING-SC; in-PP)
+  Syntax: NP[Agent] VERB PREP[in] NP[Theme +sc_ing]
+  Semantics:
+    * successful_in(E, Agent, Theme)
+NP V PP.theme (PP; in-PP)
+  Syntax: NP[Agent] VERB PREP[in] NP[Theme -sentential]
+  Semantics:
+    * successful_in(E, Agent, Theme)
+NP V S_INF (TO-INF-SC)
+  Syntax: NP[Agent] VERB NP[Theme +sc_to_inf]
+  Semantics:
+    * successful_in(E, Agent, Theme)

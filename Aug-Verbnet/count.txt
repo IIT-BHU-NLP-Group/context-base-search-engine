@@ -1,0 +1,92 @@
+NP V NP S_ING (NP-P-ING-OC; as-PP)
+  Syntax: NP[Agent] VERB NP[Theme] LEX[as] NP[Attribute +oc_ing]
+  Semantics:
+    * characterize(during(E), Theme, Attribute)
+    * cause(Agent, E)
+NP V NP to be ADJ (NP-TOBE)
+  Syntax: NP[Agent] VERB NP[Theme] LEX[as] NP[Attribute +small_clause]
+  Semantics:
+    * characterize(during(E), Theme, Attribute)
+    * cause(Agent, E)
+NP V NP PP.attribute (NP-PP; as-PP)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[as] NP[Attribute -sentential]
+  Semantics:
+    * characterize(during(E), Theme, Attribute)
+    * cause(Agent, E)
+NP V NP (NP)
+  Syntax: NP[Agent] VERB NP[Theme]
+  Semantics:
+    * assess(during(E), Agent, Theme, ?Value)
+NP V NP PP.value (NP-PP; at-PP)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[at] NP[Value]
+  Semantics:
+    * assess(during(E), Agent, Theme, Value)
+NP V how S (HOW-S)
+  Syntax: NP[Agent] VERB NP[Value +how_extract]
+  Semantics:
+    * assess(during(E), Agent, ?Theme, Value)
+NP V NP to be ADJ (NP-TOBE)
+  Syntax: NP[Agent] VERB NP[Theme +to_be]
+  Semantics:
+    * assess(during(E), Agent, Theme, ?Value)
+NP V that S (S)
+  Syntax: NP[Agent] VERB NP[Theme +that_comp]
+  Semantics:
+    * assess(during(E), Agent, Theme, ?Value)
+NP V what S (WHAT-S)
+  Syntax: NP[Agent] VERB NP[Theme +what_extract]
+  Semantics:
+    * assess(during(E), Agent, Theme, ?Value)
+NP V PP.attribute (PP; as-PP)
+  Syntax: NP[Agent] VERB LEX[as] NP[Attribute]
+  Semantics:
+    * masquerade(during(E), Agent, Attribute)
+NP V (Basic Intransitive)
+  Syntax: NP[Stimulus] VERB
+  Semantics:
+    * emotional_state(E, Emotion, ?Experiencer)
+    * in_reaction_to(E, Stimulus)
+NP V PP.experiencer (PP; to-PP)
+  Syntax: NP[Stimulus] VERB PREP[to] NP[Experiencer]
+  Semantics:
+    * emotional_state(E, Emotion, Experiencer)
+    * in_reaction_to(E, Stimulus)
+It V PP.experiencer that S (SEEM-TO-NP-S; to-PP)
+  Syntax: LEX[it] VERB PREP[to] NP[Experiencer] NP[Stimulus +that_comp]
+  Semantics:
+    * emotional_state(E, Emotion, Experiencer)
+    * in_reaction_to(E, Stimulus)
+It V that S (SEEM-S)
+  Syntax: LEX[it] VERB NP[Stimulus +that_comp]
+  Semantics:
+    * emotional_state(E, Emotion, ?Experiencer)
+    * in_reaction_to(E, Stimulus)
+That S.stimulus V ((SUBCAT SFIN, AGR S[FIN +], SUBTYPE EXTRAP))
+  Syntax: NP[Stimulus +that_comp] VERB
+  Semantics:
+    * emotional_state(E, Emotion, ?Experiencer)
+    * in_reaction_to(E, Stimulus)
+NP V NP (NP; Plural object)
+  Syntax: NP[Agent] VERB NP[Theme +plural]
+  Semantics:
+    * calculate(during(E), Agent, Theme)
+NP V PP.theme S_ING (P-ING-SC; on-PP)
+  Syntax: NP[Agent] VERB PREP[on] NP[Theme +sc_ing]
+  Semantics:
+    * depend(during(E), Agent, Theme)
+NP V PP.theme NP S_ING (P-NP-ING; on-PP)
+  Syntax: NP[Agent] VERB PREP[on] NP[Theme +np_ing]
+  Semantics:
+    * depend(during(E), Agent, Theme)
+NP V PP.theme S_INF (P-NP-TO-INF; on-PP)
+  Syntax: NP[Agent] VERB PREP[on] NP[Theme +np_to_inf]
+  Semantics:
+    * depend(during(E), Agent, Theme)
+NP V PP.theme S_ING (P-POSSING; on-PP)
+  Syntax: NP[Agent] VERB PREP[on] NP[Theme +poss_ing]
+  Semantics:
+    * depend(during(E), Agent, Theme)
+NP V PP.theme (PP; on-PP)
+  Syntax: NP[Agent] VERB PREP[on] NP[Theme -sentential]
+  Semantics:
+    * depend(during(E), Agent, Theme)

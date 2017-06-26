@@ -1,0 +1,5 @@
+NP V NP (Locative Preposition Drop)
+  Syntax: NP[Theme] VERB NP[Destination]
+  Semantics:
+    * motion(during(E), Theme)
+    * path(during(E), Theme, ?Initial_Location, ?Trajectory, Destination)

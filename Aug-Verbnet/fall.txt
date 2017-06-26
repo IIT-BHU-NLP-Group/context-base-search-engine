@@ -1,0 +1,46 @@
+NP V NP ADJ
+  Syntax: NP[Patient] VERB NP[Result]
+  Semantics:
+    * state(result(E), Result, Patient)
+    * Pred(result(E), Patient)
+NP.attribute V (Intransitive; Attribute Subject)
+  Syntax: NP[Patient] LEX['s] NP[Attribute] VERB
+  Semantics:
+    * change_value(during(E), Direction, Attribute, Patient)
+NP V S_ING (P-ING-SC; to-PP)
+  Syntax: NP[Patient] VERB PREP[to] NP[Goal +sc_ing]
+  Semantics:
+    * convert(during(E), Patient, ?Source, Goal)
+NP V PP.goal (PP; to-PP)
+  Syntax: NP[Patient] VERB PREP[to] NP[Goal]
+  Semantics:
+    * convert(during(E), Patient, ?Source, Goal)
+NP V (Basic Intransitive)
+  Syntax: NP[Theme] VERB
+  Semantics:
+    * motion(during(E), Theme)
+    * path(during(E), Theme, ?Initial_Location, ?Trajectory, ?Destination)
+NP V PP.initial_loc (PP; initial_loc-PP)
+  Syntax: NP[Theme] VERB PREP[+path] NP[Initial_Location]
+  Semantics:
+    * motion(during(E), Theme)
+    * path(during(E), Theme, Initial_Location, ?Trajectory, ?Destination)
+NP V PP.destination (PP; destination-PP)
+  Syntax: NP[Theme] VERB PREP[+path] NP[Destination]
+  Semantics:
+    * motion(during(E), Theme)
+    * path(during(E), Theme, ?Initial_Location, ?Trajectory, Destination)
+NP V PP.trajectory (PP; trajectory-PP)
+  Syntax: NP[Theme] VERB PREP[+path] NP[Trajectory]
+  Semantics:
+    * motion(during(E), Theme)
+    * path(during(E), Theme, ?Initial_Location, Trajectory, ?Destination)
+NP V PP.initial_loc PP.destination (PP-PP; source-PP destination-PP)
+  Syntax: NP[Theme] VERB PREP[+path] NP[Initial_Location] PREP[+path] NP[Destination]
+  Semantics:
+    * motion(during(E), Theme)
+    * path(during(E), Theme, Initial_Location, ?Trajectory, Destination)
+NP V PP.theme (PP; for-PP)
+  Syntax: NP[Pivot] VERB PREP[for] NP[Theme]
+  Semantics:
+    * desire(E, Pivot, Theme)

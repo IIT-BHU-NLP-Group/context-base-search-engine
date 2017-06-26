@@ -1,0 +1,12 @@
+NP V NP
+  Syntax: NP[Cause] VERB NP[Beneficiary]
+  Semantics:
+    * help(during(E), Cause, Beneficiary)
+NP V
+  Syntax: NP[Beneficiary] VERB
+  Semantics:
+    * help(during(E), ?Cause, Beneficiary)
+NP V PP
+  Syntax: NP[Beneficiary] VERB PREP[from by] NP[Cause]
+  Semantics:
+    * help(during(E), Cause, Beneficiary)

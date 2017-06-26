@@ -1,0 +1,44 @@
+NP.location V NP (Location Subject Alternation)
+  Syntax: NP[Location] VERB NP[Value]
+  Semantics:
+    * capacity(E, Location, Value)
+NP V NP PP.location (NP-PP; Location-PP)
+  Syntax: NP[Agent] VERB NP[Value] PREP[in] NP[Location]
+  Semantics:
+    * capacity(E, Location, Value)
+    * cause(Agent, E)
+NP V NP (Basic Transitive)
+  Syntax: NP[Agent] VERB NP[Recipient]
+  Semantics:
+    * has_possession(start(E), Agent, ?Theme)
+    * has_possession(end(E), Recipient, ?Theme)
+    * transfer(during(E), ?Theme)
+    * cause(Agent, E)
+NP V NP (Basic Transitive)
+  Syntax: NP[Agent] VERB NP[Attribute]
+  Semantics:
+    * masquerade(during(E), Agent, Attribute)
+NP V PP.attribute (PP; in-PP)
+  Syntax: NP[Agent] VERB PREP[in] NP[Attribute]
+  Semantics:
+    * masquerade(during(E), Agent, Attribute)
+NP V NP PP.theme (NP-PP; for-PP)
+  Syntax: NP[Agent] VERB NP[Asset] PREP[for] NP[Theme]
+  Semantics:
+    * transfer(during(E), Theme)
+    * has_possession(start(E), Agent, Asset)
+    * has_possession(end(E), Agent, Theme)
+    * value(E, Theme, Asset)
+NP V NP ((SUBCAT MP))
+  Syntax: NP[Agent] VERB NP[Asset]
+  Semantics:
+    * transfer(during(E), ?Theme)
+    * has_possession(start(E), Agent, Asset)
+    * has_possession(end(E), Agent, ?Theme)
+    * value(E, ?Theme, Asset)
+NP V NP (NP)
+  Syntax: NP[Agent] VERB NP[Theme]
+  Semantics:
+    * exist(start(E), Theme)
+    * exist(end(E), Theme)
+    * spend(during(E), Agent, Theme)

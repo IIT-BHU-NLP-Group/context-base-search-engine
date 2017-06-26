@@ -1,0 +1,88 @@
+NP V NP NP (NP-NP)
+  Syntax: NP[Agent] VERB NP[Theme] NP[Result]
+  Semantics:
+    * designated(result(E), Theme, Result)
+    * cause(Agent, E)
+NP V NP PP.result (NP-PP; as-PP)
+  Syntax: NP[Agent] VERB NP[Theme] LEX[as] NP[Result -sentential]
+  Semantics:
+    * designated(result(E), Theme, Result)
+    * cause(Agent, E)
+NP V NP to be NP (Infinitival Copular Clause)
+  Syntax: NP[Agent] VERB NP[Theme] LEX[to] LEX[be] NP[Result -sentential]
+  Semantics:
+    * designated(result(E), Theme, Result)
+    * cause(Agent, E)
+NP V NP (Basic Transitive)
+  Syntax: NP[Agent] VERB NP[Theme]
+  Semantics:
+    * designated(result(E), Theme, Result)
+    * cause(Agent, E)
+NP V how S (HOW-S)
+  Syntax: NP[Agent] VERB NP[Topic +how_extract]
+  Semantics:
+    * transfer_info(during(E), Agent, ?Recipient, Topic)
+    * cause(Agent, E)
+NP V NP to be NP (NP-TOBE)
+  Syntax: NP[Agent] VERB NP[Topic +to_be]
+  Semantics:
+    * transfer_info(during(E), Agent, ?Recipient, Topic)
+    * cause(Agent, E)
+NP V NP ADJ (NP-VEN-NP-OMIT)
+  Syntax: NP[Agent] VERB NP[Topic +np_ppart]
+  Semantics:
+    * transfer_info(during(E), Agent, ?Recipient, Topic)
+    * cause(Agent, E)
+NP V S_ING (ING-SC/BE-ING-SC)
+  Syntax: NP[Agent] VERB NP[Topic +be_sc_ing]
+  Semantics:
+    * transfer_info(during(E), Agent, ?Recipient, Topic)
+    * cause(Agent, E)
+NP V NP (Basic Transitive)
+  Syntax: NP[Agent] VERB NP[Topic -sentential]
+  Semantics:
+    * transfer_info(during(E), Agent, ?Recipient, Topic)
+    * cause(Agent, E)
+NP V NP PP.recipient (NP-PP; to-PP)
+  Syntax: NP[Agent] VERB NP[Topic -sentential] PREP[to] NP[Recipient]
+  Semantics:
+    * transfer_info(during(E), Agent, Recipient, Topic)
+    * cause(Agent, E)
+NP V S_ING (POSSING)
+  Syntax: NP[Agent] VERB NP[Topic +poss_ing]
+  Semantics:
+    * transfer_info(during(E), Agent, ?Recipient, Topic)
+    * cause(Agent, E)
+NP V PP.recipient (PP; to-PP)
+  Syntax: NP[Agent] VERB PREP[to] NP[Recipient]
+  Semantics:
+    * transfer_info(during(E), Agent, Recipient, ?Topic)
+    * cause(Agent, E)
+NP V PP.recipient how S (PP-HOW-S; to-PP)
+  Syntax: NP[Agent] VERB PREP[to] NP[Recipient] NP[Topic +how_extract]
+  Semantics:
+    * transfer_info(during(E), Agent, Recipient, Topic)
+    * cause(Agent, E)
+NP V that S (S)
+  Syntax: NP[Agent] VERB NP[Topic +that_comp]
+  Semantics:
+    * transfer_info(during(E), Agent, ?Recipient, Topic)
+    * cause(Agent, E)
+NP V how S (HOW-S)
+  Syntax: NP[Agent] VERB NP[Theme +how_extract]
+  Semantics:
+    * declare(during(E), Agent, Theme, ?Result)
+NP V how S_INF (HOW-TO-INF)
+  Syntax: NP[Agent] VERB NP[Theme +wh_inf]
+  Semantics:
+    * declare(during(E), Agent, Theme, ?Result)
+NP V that S (S)
+  Syntax: NP[Agent] VERB NP[Topic +that_comp]
+  Semantics:
+    * transfer_info(during(E), Agent, ?Recipient, Topic)
+    * cause(Agent, E)
+NP V that S (S-SUBJUNCT)
+  Syntax: NP[Agent] VERB NP[Topic +that_comp -tensed_that]
+  Semantics:
+    * transfer_info(during(E), Agent, ?Recipient, Topic)
+    * cause(Agent, E)

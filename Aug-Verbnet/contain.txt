@@ -1,0 +1,13 @@
+NP V NP (Transitive)
+  Syntax: NP[Theme] VERB NP[Attribute]
+  Semantics:
+    * set_member(E, Theme, Attribute)
+NP.location V NP (Location Subject Alternation)
+  Syntax: NP[Location] VERB NP[Value]
+  Semantics:
+    * capacity(E, Location, Value)
+NP V NP PP.location (NP-PP; Location-PP)
+  Syntax: NP[Agent] VERB NP[Value] PREP[in] NP[Location]
+  Semantics:
+    * capacity(E, Location, Value)
+    * cause(Agent, E)

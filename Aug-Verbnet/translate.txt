@@ -1,0 +1,39 @@
+NP V NP.patient PP.material PP.result (NP-PP-PP; Causative variant, Material-PP Result-PP)
+  Syntax: NP[Agent] VERB NP[Patient] PREP[from] NP[Material] PREP[into] NP[Result]
+  Semantics:
+    * state(start(E), Material, Patient)
+    * state(start(E), Result, Patient)
+    * state(result(E), Result, Patient)
+    * state(result(E), Material, Patient)
+    * cause(Agent, E)
+NP.patient V PP.material PP.result (PP-PP; Inchoative variant, Material-PP Result-PP)
+  Syntax: NP[Patient] VERB PREP[from] NP[Material] PREP[into] NP[Result]
+  Semantics:
+    * state(start(E), Material, Patient)
+    * state(start(E), Result, Patient)
+    * state(result(E), Result, Patient)
+    * state(result(E), Material, Patient)
+NP V NP.patient PP.result (Total Transformation Alternation Transitive)
+  Syntax: NP[Agent] VERB NP[Patient] PREP[into] NP[Result]
+  Semantics:
+    * state(start(E), Result, Patient)
+    * state(result(E), Result, Patient)
+    * cause(Agent, E)
+NP.patient V PP.result (Total Transformation Alternation Intransitive)
+  Syntax: NP[Patient] VERB PREP[into] NP[Result]
+  Semantics:
+    * state(start(E), Result, Patient)
+    * state(result(E), Result, Patient)
+NP V (Basic Intransitive)
+  Syntax: NP[Patient] VERB
+  Semantics:
+    * state(start(E), Material, Patient)
+    * state(result(E), Material, Patient)
+NP V NP (Basic Transitive)
+  Syntax: NP[Agent] VERB NP[Patient]
+  Semantics:
+    * state(start(E), ?Material, Patient)
+    * state(start(E), ?Result, Patient)
+    * state(result(E), ?Result, Patient)
+    * state(result(E), ?Material, Patient)
+    * cause(Agent, E)

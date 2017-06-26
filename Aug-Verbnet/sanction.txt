@@ -1,0 +1,24 @@
+NP V NP (Basic Transitive)
+  Syntax: NP[Agent] VERB NP[Theme]
+  Semantics:
+    * allow(during(E), Agent, Theme)
+NP V S_ING (ING-AC)
+  Syntax: NP[Agent] VERB NP[Theme +ac_ing]
+  Semantics:
+    * allow(during(E), Agent, Theme)
+NP V NP to be NP (NP-TOBE)
+  Syntax: NP[Agent] VERB NP[Theme +np_tobe]
+  Semantics:
+    * allow(during(E), Agent, Theme)
+NP V S_ING (POSSING)
+  Syntax: NP[Agent] VERB NP[Theme +poss_ing]
+  Semantics:
+    * allow(during(E), Agent, Theme)
+NP V that S (S)
+  Syntax: NP[Agent] VERB NP[Theme +that_comp]
+  Semantics:
+    * allow(during(E), Agent, Theme)
+NP V NP PP.attribute (NP-PP; as-PP)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[as] NP[Attribute]
+  Semantics:
+    * declare(during(E), Agent, Theme, Attribute)

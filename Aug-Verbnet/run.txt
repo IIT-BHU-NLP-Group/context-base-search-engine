@@ -1,0 +1,123 @@
+NP V PP.location (PP; against-PP)
+  Syntax: NP[Theme] VERB PREP[against into onto] NP[Location]
+  Semantics:
+    * manner(during(E), directedmotion, Theme)
+    * contact(during(E), Theme, Location)
+    * manner(end(E), forceful, Theme)
+    * contact(end(E), Theme, Location)
+NP V NP (Basic Transitive; with accompanied motion)
+  Syntax: NP[Agent] VERB NP[Theme]
+  Semantics:
+    * motion(during(E0), Theme)
+    * equals(E0, E1)
+    * motion(during(E1), Agent)
+    * cause(Agent, E0)
+NP V NP PP.destination (NP-PP; Goal-PP)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[to towards] NP[Destination]
+  Semantics:
+    * motion(during(E0), Theme)
+    * location(end(E0), Theme, Destination)
+    * equals(E0, E1)
+    * motion(during(E1), Agent)
+    * location(end(E1), Agent, Destination)
+    * cause(Agent, E0)
+NP V NP PP.initial_location (NP-PP; Initial_Location-PP)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[+src] NP[Initial_Location]
+  Semantics:
+    * motion(during(E0), Theme)
+    * location(start(E0), Theme, Initial_Location)
+    * equals(E0, E1)
+    * motion(during(E1), Agent)
+    * location(start(E1), Agent, Initial_Location)
+    * cause(Agent, E0)
+NP V NP PP.initial_location PP.destination (NP-PP-PP; Initial_Location-PP Goal-PP)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[+src] NP[Initial_Location] PREP[to towards] NP[Destination]
+  Semantics:
+    * motion(during(E0), Theme)
+    * location(start(E0), Theme, Initial_Location)
+    * location(end(E0), Theme, Destination)
+    * equals(E0, E1)
+    * motion(during(E1), Agent)
+    * location(start(E1), Agent, Initial_Location)
+    * location(end(E1), Agent, Destination)
+    * cause(Agent, E0)
+NP V NP PP.destination PP.initial_location (NP-PP-PP; Goal-PP Initial_Location-PP)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[to towards] NP[Destination] PREP[+src] NP[Initial_Location]
+  Semantics:
+    * motion(during(E0), Theme)
+    * location(start(E0), Theme, Initial_Location)
+    * location(end(E0), Theme, Destination)
+    * equals(E0, E1)
+    * motion(during(E1), Agent)
+    * location(start(E1), Agent, Initial_Location)
+    * location(end(E1), Agent, Destination)
+    * cause(Agent, E0)
+NP V PP.location (PP; path-PP)
+  Syntax: NP[Theme] VERB PREP[+path] NP[Location]
+  Semantics:
+    * Prep(during(E), Theme, Location)
+    * exist(during(E), Theme)
+PP.location V NP (Locative Inversion)
+  Syntax: PREP[+path] NP[Location] VERB NP[Theme]
+  Semantics:
+    * Prep(during(E), Theme, Location)
+    * exist(during(E), Theme)
+There V PP NP (PP-NP; Expletive-there Subject)
+  Syntax: LEX[there] VERB PREP[+path] NP[Location] NP[Theme]
+  Semantics:
+    * Prep(during(E), Theme, Location)
+    * exist(during(E), Theme)
+There V NP PP (NP-PP; Expletive-there Subject)
+  Syntax: LEX[there] VERB NP[Theme] PREP[+path] NP[Location]
+  Semantics:
+    * Prep(during(E), Theme, Location)
+    * exist(during(E), Theme)
+NP V NP (Basic Transitive)
+  Syntax: NP[Agent] VERB NP[Product]
+  Semantics:
+    * exist(start(E), Product)
+    * exist(result(E), Product)
+    * cause(Agent, E)
+NP V NP.beneficiary NP (NP-NP; Beneficiary Object)
+  Syntax: NP[Agent] VERB NP[Beneficiary] NP[Product]
+  Semantics:
+    * exist(start(E), Product)
+    * exist(result(E), Product)
+    * cause(Agent, E)
+    * benefit(E, Beneficiary)
+NP V NP PP.beneficiary (NP-PP; for-PP)
+  Syntax: NP[Agent] VERB NP[Product] PREP[for] NP[Beneficiary]
+  Semantics:
+    * exist(start(E), Product)
+    * exist(result(E), Product)
+    * cause(Agent, E)
+    * benefit(E, Beneficiary)
+NP V NP (Locative Preposition Drop)
+  Syntax: NP[Theme] VERB NP[Location +concrete]
+  Semantics:
+    * motion(during(E), Theme)
+    * via(during(E), Theme, Location)
+NP V PP.location (PP; locative-PP)
+  Syntax: NP[Theme] VERB PREP[+loc] NP[Location]
+  Semantics:
+    * exist(during(E), Theme)
+    * Prep(during(E), Theme, Location)
+    * motion(during(E), Theme)
+There V NP PP (NP-PP; Expletive-there Subject)
+  Syntax: LEX[there] VERB NP[Theme -definite] PREP[+loc] NP[Location]
+  Semantics:
+    * exist(during(E), Theme)
+    * motion(during(E), Theme)
+    * Prep(during(E), Theme, Location)
+PP.location V NP (Locative Inversion)
+  Syntax: PREP[+loc] NP[Location] VERB NP[Theme]
+  Semantics:
+    * exist(during(E), Theme)
+    * Prep(during(E), Theme, Location)
+    * motion(during(E), Theme)
+PP.location V PP.theme (PP; Location Subject, with-PP)
+  Syntax: NP[Location] VERB PREP[with] NP[Theme]
+  Semantics:
+    * exist(during(E), Theme)
+    * location(during(E), Theme, Location)
+    * motion(during(E), Theme)

@@ -1,0 +1,31 @@
+NP V (Basic Intransitive)
+  Syntax: NP[Agent] VERB
+  Semantics:
+    * body_motion(during(E), Agent)
+NP V (Basic Intransitive)
+  Syntax: NP[Theme] VERB
+  Semantics:
+    * exist(during(E), Theme)
+    * motion(during(E), Theme)
+NP V PP.location (PP; locative-PP)
+  Syntax: NP[Theme] VERB PREP[+loc] NP[Location]
+  Semantics:
+    * exist(during(E), Theme)
+    * Prep(during(E), Theme, Location)
+    * motion(during(E), Theme)
+There V NP (NP; Expletive-there Subject)
+  Syntax: LEX[there] VERB NP[Theme -definite]
+  Semantics:
+    * exist(during(E), Theme)
+    * motion(during(E), Theme)
+PP.location V NP (Locative Inversion)
+  Syntax: PREP[+loc] NP[Location] VERB NP[Theme]
+  Semantics:
+    * exist(during(E), Theme)
+    * Prep(during(E), Theme, Location)
+    * motion(during(E), Theme)
+NP V NP.theme (NP; Causative variant)
+  Syntax: NP[Agent] VERB NP[Theme]
+  Semantics:
+    * cause(Agent, E)
+    * motion(during(E), Theme)

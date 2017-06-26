@@ -1,0 +1,16 @@
+NP V NP (NP)
+  Syntax: NP[Agent] VERB NP[Theme]
+  Semantics:
+    * admit(during(E), Agent, Theme, ?Location)
+NP V NP ADV (NP-ADVP-PRED)
+  Syntax: NP[Agent] VERB NP[Theme] NP[Location +adv_loc]
+  Semantics:
+    * admit(during(E), Agent, Theme, Location)
+NP V NP PP.location (NP-PP; locative-PP)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[+loc] NP[Location +location -region]
+  Semantics:
+    * admit(during(E), Agent, Theme, Location)
+NP V NP PP.attribute (NP-PP; as-PP)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[as] NP[Attribute]
+  Semantics:
+    * declare(during(E), Agent, Theme, Attribute)

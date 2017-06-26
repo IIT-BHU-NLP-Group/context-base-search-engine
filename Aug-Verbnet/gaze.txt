@@ -1,0 +1,5 @@
+NP V PP.stimulus (PP; Theme-PP)
+  Syntax: NP[Experiencer] VERB PREP[+spatial] NP[Stimulus]
+  Semantics:
+    * perceive(during(E), Experiencer, Stimulus)
+    * in_reaction_to(E, Stimulus)

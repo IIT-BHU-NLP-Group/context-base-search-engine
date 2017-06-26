@@ -1,0 +1,13 @@
+NP V NP PP.instrument (NP-PP; with-PP)
+  Syntax: NP[Agent] VERB NP[Theme] PREP[with] NP[Instrument]
+  Semantics:
+    * begin(E, Theme)
+    * use(during(E), Agent, Instrument)
+    * cause(Agent, E)
+NP V NP (Transitive; without Destination)
+  Syntax: NP[Agent] VERB NP[Theme]
+  Semantics:
+    * motion(during(E), Theme)
+    * Prep(start(E), Theme, ?Destination)
+    * Prep(end(E), Theme, ?Destination)
+    * cause(Agent, E)

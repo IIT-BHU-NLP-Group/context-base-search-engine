@@ -1,0 +1,5 @@
+NP V NP (Locative Preposition Drop)
+  Syntax: NP[Theme] VERB NP[Location +concrete]
+  Semantics:
+    * motion(during(E), Theme)
+    * via(during(E), Theme, Location)

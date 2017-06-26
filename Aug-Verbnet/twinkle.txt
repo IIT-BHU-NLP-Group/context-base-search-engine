@@ -1,0 +1,29 @@
+NP V (Intransitive)
+  Syntax: NP[Theme] VERB
+  Semantics:
+    * emit(during(E), Theme, Prop)
+NP V PP.location (PP; Location-PP)
+  Syntax: NP[Theme] VERB PREP[+loc] NP[Location]
+  Semantics:
+    * emit(during(E), Theme, Prop)
+    * Prep(during(E), Prop, Location)
+NP.location V PP.theme (PP; Location Subject, with-PP)
+  Syntax: NP[Location] VERB PREP[with] NP[Theme]
+  Semantics:
+    * emit(during(E), Theme, Prop)
+    * location(during(E), Prop, Location)
+There V NP PP.location (Locative Inversion)
+  Syntax: LEX[there] VERB NP[Theme] PREP[+loc] NP[Location]
+  Semantics:
+    * emit(during(E), Theme, Prop)
+    * Prep(during(E), Prop, Location)
+PP.location there V NP (There-insertion)
+  Syntax: PREP[+loc] NP[Location] LEX[there] VERB NP[Theme]
+  Semantics:
+    * emit(during(E), Theme, Prop)
+    * Prep(during(E), Prop, Location)
+NP V NP.theme (NP; Causative variant)
+  Syntax: NP[Agent] VERB NP[Theme]
+  Semantics:
+    * emit(during(E), Theme, Prop)
+    * cause(Agent, E)
