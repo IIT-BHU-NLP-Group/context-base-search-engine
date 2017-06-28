@@ -4,3 +4,8 @@ NP[Experiencer] VERB NP[Stimulus]
 NP[Experiencer] VERB NP[Stimulus +that_comp]
 NP[Experiencer] VERB NP[Stimulus +be_sc_ing]
 NP[Experiencer] VERB NP[Stimulus +poss_ing]
+
+NP[Theme] VERB PREP[in] NP[Location]
+NP[Theme] VERB PREP[on at] NP[Time] PREP[in at] NP[Location]
+NP[Theme] VERB PREP[on at] NP[Time]
+

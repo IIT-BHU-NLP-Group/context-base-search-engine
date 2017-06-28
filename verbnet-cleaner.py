@@ -7,6 +7,7 @@ import sys
 lemmatizer = WordNetLemmatizer()
 # verb = raw_input('enter verb')
 Them_Roles = ['Actor','Agent','Asset','Attribute','Beneficiary','Cause','Location','Destination','Source','Experiencer','Extent','Instrument','Material','Product','Material','Product','Patient','Predicate','Recipient','Stimulus','Theme','Time','Topic']
+print len(Them_Roles)
 # tha following list contains all those syntactic restrictions which make a phrase a sentence (many more restrictions yet to be added).
 SENT = ['THAT_COMP','WH_COMP','FOR_COMP','WHAT_EXTRACT','HOW_EXTRACT','WH_EXTRACT','WH_INF','WHAT_INF','SC_TO_INF','WHETH_INF','RS_TO_INF','NP_PPART','BE_SC_ING','POSS_ING','SC_TO_ING','NP_P_ING','TO_BE','QUOTATION']
 

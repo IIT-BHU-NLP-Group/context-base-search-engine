@@ -6,3 +6,6 @@ NP[Agent] VERB PREP[until] NP[Time]
 NP[Agent] VERB NP[Theme]
 NP[Agent] VERB NP[Theme] PREP[through] NP[Instrument -sentential]
 NP[Agent] VERB NP[Theme] PREP[through] NP[Instrument +ac_ing]
+
+NP[Agent] VERB PREP[to] NP[About]
+NP[Theme] VERB PREP[to] NP[About] 
