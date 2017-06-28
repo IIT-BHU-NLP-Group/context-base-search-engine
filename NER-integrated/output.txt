@@ -1,0 +1,8 @@
+Central	ORGANIZATION
+Hindu	ORGANIZATION
+School	ORGANIZATION
+is	O
+located	O
+near	O
+BHU	O
+.	O
