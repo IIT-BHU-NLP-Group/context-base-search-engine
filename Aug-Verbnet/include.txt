@@ -3,3 +3,5 @@ NP[Agent] VERB NP[Theme] NP[Location +adv_loc]
 NP[Agent] VERB NP[Theme] PREP[+loc] NP[Location +location -region]
 NP[Agent] VERB NP[Theme]
 NP[Agent] VERB NP[Theme] PREP[in] NP[Goal]
+
+

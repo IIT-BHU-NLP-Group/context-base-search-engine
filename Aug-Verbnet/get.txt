@@ -1,4 +1,4 @@
-NP[Patient] VERB NP[Result]
+6+NP[Patient] VERB NP[Result]
 NP[Patient] VERB PREP[to] NP[Goal +sc_ing]
 NP[Patient] VERB PREP[to] NP[Goal]
 NP[Agent] VERB NP[Theme] PREP[from for on] NP[Source]

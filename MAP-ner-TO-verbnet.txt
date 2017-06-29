@@ -1,5 +1,5 @@
 Thing
-    TEMPLES
+    TEMPLES: 
     DAM
     LAKE
     DARGAHS

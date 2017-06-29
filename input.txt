@@ -1,0 +1,8 @@
+(ROOT
+  (S
+    (NP (NNP Ram))
+    (VP (VBD built)
+      (NP (DT a) (NN temple))
+      (PP (IN for)
+        (NP (NNP Hanuman))))
+    (. .)))

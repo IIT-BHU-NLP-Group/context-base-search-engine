@@ -8,11 +8,10 @@ lemmatizer = WordNetLemmatizer()
 # verb = raw_input('enter verb')
 Them_Roles =['Participant','Actor','Agent','Co-Agent','Cause','Stimulus','Undergoer','Beneficiary','Attribute','Pivot','Instrument','Theme','Co-Theme','Topic','Patient','Co-Patient','Experiencer','Material','Result','Product','Place','Source','Initial_Location','Material','Goal','Result','Product','Destination','Recipient','Location','Initial_Location','Destination','Recipient','Value','Asset','Extent','Trajectory','Time','Duration','Initial_Time','Final_Time','Frequency']
  #['Actor','Agent','Asset','Attribute','Beneficiary','Cause','Location','Destination','Source','Experiencer','Extent','Instrument','Material','Product','Material','Product','Patient','Predicate','Recipient','Stimulus','Theme','Time','Topic']
-print len(Them_Roles)
 # tha following list contains all those syntactic restrictions which make a phrase a sentence (many more restrictions yet to be added).
 SENT = ['THAT_COMP','WH_COMP','FOR_COMP','WHAT_EXTRACT','HOW_EXTRACT','WH_EXTRACT','WH_INF','WHAT_INF','SC_TO_INF','WHETH_INF','RS_TO_INF','NP_PPART','BE_SC_ING','POSS_ING','SC_TO_ING','NP_P_ING','TO_BE','QUOTATION']
 
-print len(SENT)
+#print len(SENT)
 
 
 class Node:
@@ -24,29 +23,20 @@ class Node:
 		self.is_sentence = False
 
 	def __str__(self):
-		# ret = '< HEAD:%-10s TAG : %-10s, CHILDREN: '%(self.head,self.tag)
-		# for c in self.children:
-		# 	ret += c+', '  
-		if(self.is_sentence):
-			ret = '< HEAD:%-10s TAG : %-10s, SENTENCE'%(self.head,self.tag)
-			if(self.head=='PP'):
-				ret += '['
-				for c in self.children:
-					ret+=c+', '
-				ret += ']['
-				for c in self.spec_children:
-					ret+=c+', '
-				ret+=']'
-		else:
-			ret = '< HEAD:%-10s TAG : %-10s'%(self.head,self.tag)
-			if(self.head=='PP'):
-				ret += '['
-				for c in self.children:
-					ret+=c+', '
-				ret += ']['
-				for c in self.spec_children:
-					ret+=c+', '
-				ret+=']'
+		ret=''
+		ret=ret+"\n Head : "+str(self.head)	
+		ret=ret+"\n Tag : "+str(self.tag)
+		ret=ret+"\n Sentence : "+str(self.is_sentence)+"\n"	 
+		ret=ret+' Children : [ '
+		for u in self.children:
+			ret=ret+str(u)+", "
+		ret=ret+" ] "
+		ret=ret+"\n Spec-children : [ "
+		for u in self.spec_children:
+			ret=ret+str(u)+", "
+		ret=ret+" ] "
+
+		
 		return ret
 
 class vdNode:
@@ -59,9 +49,10 @@ vd = dict()
 with open('new_verb_count_result.csv','r') as f:
 	for line in f:
 		verb = line.strip().split(',')[1]
+		if(verb == 'build'):print verb
 		if('/'in verb):
 			verb = verb.replace('/','-')
-		print '\n',verb,'*'*50
+		#print '\n',verb,'*'*50
 		# vs = [vn.vnclass(i) for i in vn.classids(verb)]
 		# for v in vs:
 		with open('Aug-Verbnet/%s.txt'%verb,'r')as vfile:
@@ -70,7 +61,7 @@ with open('new_verb_count_result.csv','r') as f:
 			# for i in frames:
 			for l in vfile:
 				syn_str = l.strip()# vn.pprint_syntax(i)
-				print '*',syn_str
+				# if(verb == 'build'):print '*',syn_str
 				# Split the main SYNTAX string
 				lis = [] # holds the tokens in form of String
 				LIST = [] # holds the tokens in original form
@@ -130,24 +121,28 @@ with open('new_verb_count_result.csv','r') as f:
 							n.is_sentence = True
 							break
 					if(prev_head == 'PREP'):
-						print '-'*10
+						#print '-'*10
 						prev_n = LIST.pop()
 						prev_n.head = 'PP'
-						prev_n.spec_children = n.children 
+						prev_n.spec_children = n.children
+						prev_n.tag = n.tag 
 						n = prev_n
 					if(n.tag == 'ADV'):n.tag = 'ADVP'
 					if(n.children == []):n.children = ''
 					LIST.append(n)
-					print n
+					# if(verb == 'build'):print n
 				f_LIST.append(vdNode(LIST,syn_str))
+			# if(verb == 'build'): print f_LIST# print lemmatizer.lemmatize(verb,'v')
 			vd[lemmatizer.lemmatize(verb,'v')] = f_LIST
-
-
-
-for syn in vd['marry']:
-	print syn.synstr
-	for i in syn.synlis:
-		print i,'\n'
-					
-
+			if(verb == 'build'): print vd['build'] 
+# print 'build' in vd.keys()
+print vd['build']
+for j in vd['build']:
+	print 'here2'
+	print j.synstr
+	for y in j.synlis:
+		print "************\n"
+		print y ,
+		print "\n************\n"
+	print " "
 						
