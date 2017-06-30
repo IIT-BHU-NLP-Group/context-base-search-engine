@@ -1,12 +1,12 @@
 Thing
-    TEMPLES: 
-    DAM
-    LAKE
-    DARGAHS
-    CHURCHES
-    PERSON
-    ORGANIZATION
-    TIME
+    TEMPLES:1,21,22,23,25,(Agent)
+    DAM:
+    LAKE:
+    DARGAHS:
+    CHURCHES:
+    PERSON:
+    ORGANIZATION:
+    TIME:
     DATE
     LOCATION
     MONEY

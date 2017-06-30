@@ -34,12 +34,11 @@ head_Node={'DT':['DT'],'SBAR':['S','VP','NP','PP'],'SBARQ':['S','VP','NP','PP'],
 
 class GraphNode:
     def __init__(self,data): # label is an int, data is DT,VB etc.
-        self.data = data
-        self.children = None
+        self.data = data # POS Tags
+        self.children = [] # CHANGE BY KRISHNKANT
         self.head = None #to update the head based on rules
-        self.phrase=None
-        self.tag=None
-
+        self.phrase=None 
+        self.tag=None # Relation 
     def add_child(self,child): # Child is an object of type GraphNode
         if not self.children:  # No Child
             self.children = list()
@@ -54,7 +53,11 @@ class GraphNode:
 def prepcfg(root,t):
 	for j in xrange(t):
 		print '\t',
-	print root.data,root.head
+	print root.data+'{'+root.phrase+'}'
+	if root.tag!=None:
+		for j in xrange(t):
+			print '\t',
+		print "[",root.tag,"]"
 
 	if root.children==None:
 		return
@@ -132,12 +135,12 @@ def search(root,find_list,flag,u=-1,score_level=5):
 	# u is not in use
 	# score_level decide in which level we are searching upward have high value and down have low
 
-	global sco_cur, root_list
+	global sco_cur,root_list
 	if len(root)==0 or len(find_list)==0 :
 		#print "jaypee eyes :",stack,sco_cur
 		if len(stack) >0:
 			#print stack,sco_cur
-			a = Result(deepcopy(stack),deepcopy(sco_cur))
+			a=Result(deepcopy(stack),deepcopy(sco_cur))
 			if u==1:
 				result_list.append(a)
 			else: 
@@ -162,7 +165,7 @@ def search(root,find_list,flag,u=-1,score_level=5):
 							flag=1
 							with_verb=with_verb+i.children[1].children[1].children
 					except:
-						pass
+						print "error verb.1.1.1"
 					if len(i.children[1].children) > 2 and flag==1:	
 						with_verb=with_verb+i.children[1].children[3:]	
 					if flag==0:	
@@ -175,7 +178,8 @@ def search(root,find_list,flag,u=-1,score_level=5):
 			elif is_verb_occur==0 :
 				bef_verb.append(i)	
 			elif i.data !='.':
-				after_verb.append(i)		
+				after_verb.append(i)
+
 		befo_verb=list()
 		afte_verb=list()
 		flag1=0
@@ -276,6 +280,7 @@ def search(root,find_list,flag,u=-1,score_level=5):
 					sco_cur-=bonus	
 					
 				if 	root[0].data == 'S' and find_list[0].head == 'NP':
+					print " root data S"
 					root_list.append(root[0])
 					#start matching preposition from list (may be mistake)
 					flag3=0
@@ -347,105 +352,117 @@ def DictionaryMake(lst):
 					s[str(u[0])]=set()	
 					s[str(u[0])].add(u[1])
 			except:
-				pass		
+				print "DictionaryMake error"	
 	return s				
 
 
+def TreeTag(root,dic):
+	if(root.phrase!=None and root.tag==None):
+		try:
+			for j in dic.keys():
+				if j==root.phrase :
+					root.tag=dic[j]
+					break 
+		except:
+			print "error 101"	
+	if root.children==None:
+		return				
+	for i in root.children:
+		TreeTag(i,dic)
 
-def search_call(root):
+
+def search_call(sent):
 	global result_list , result_list_before
-	# root is the root of pcfg tree
-	for sent in root.children:
-		if sent.data=='S' :
-			flag_for_verb=0
-			verb_temp_name=''
-			for  u in sent.children:
-				if u.data=='VP':
-					flag_for_verb=1
-					verb_temp_name=u.head
+	
+	if sent.data=='S' :
+		flag_for_verb=0
+		verb_temp_name=''
+		for  u in sent.children:
+			if u.data=='VP':
+				flag_for_verb=1
+				verb_temp_name=u.head
 
-			if flag_for_verb==1:
-				max_score_list=list() 
-				verb_name=lemmatizer.lemmatize(verb_temp_name,'v')
-				print 'HI KING:',verb_name
-				print verb_name
-				list_result=list()
-				score=0
-				for syn in verbnet_cleaner.vd[verb_name]:
-
-					x,y=search([sent],syn.synlis,0) 
-					if y > score :
-						score=y
-						list_result=deepcopy(x)
-					# this time global variable result_list give
-					# the all possible match for predicates
-					# and result_list_before gives the all possible 
-					# match with subject
-					# I am going to find the list of maximum score list for all sentences
-					"""print " ----------result by syntex---------------"
-					print syn.synstr
-					for u in result_list_before:
-						print u	
-					print "after verb "	
-					for u in result_list:
-						print u
-					result_list=[]
-					result_list_before=[]
-					print "------------------------------------------"
-					print "\n\n\n"	"""
-
-					# Finding the maximum of every sentences 
-					mx=0
-					cur_lst=list()
-					for u in result_list_before:
-						if u.data_score >mx:
-							mx=u.data_score
-					for u in result_list_before:
-						if u.data_score == mx:
-							cur_lst+=deepcopy(u.data_list)
-							
-					mxx=0
-					for u in result_list:
-						if u.data_score >mxx:
-							mxx=u.data_score
-					for u in result_list:
-						if u.data_score == mxx:
-							cur_lst+=deepcopy(u.data_list)
-
-					#append in list
-					a=Result(deepcopy(cur_lst),mx+mxx)
-					max_score_list.append(a)
-					#empty the whole thing
-					result_list=[]
-					result_list_before=[]
+		if flag_for_verb==1:
+			max_score_list=list() 
+			verb_name=lemmatizer.lemmatize(verb_temp_name,'v')
+			print verb_name
+			list_result=list()
+			score=0
+			for syn in verbnet_cleaner.vd[verb_name]:
+				x,y=search([sent],syn.synlis,0) 
+				if y > score :
+					score=y
+					list_result=deepcopy(x)
+				# this time global variable result_list give
+				# the all possible match for predicates
+				# and result_list_before gives the all possible 
+				# match with subject
+				# I am going to find the list of maximum score list for all sentences
 				"""print " ----------result by syntex---------------"
-				for u in max_score_list:
+				print syn.synstr
+				for u in result_list_before:
 					print u	
+				print "after verb "	
+				for u in result_list:
+					print u
+				result_list=[]
+				result_list_before=[]
 				print "------------------------------------------"
-				print list_result,score 
-				# greedy result """
-				print ">>>"
-				s=DictionaryMake(max_score_list)
-				for u in s.keys():
-					print u,":",s[u]
-				
-			else:
-				
-				search_call(sent)	
+				print "\n\n\n"	"""
+
+				# Finding the maximum of every sentences 
+				mx=0
+				cur_lst=list()
+				for u in result_list_before:
+					if u.data_score >mx:
+						mx=u.data_score
+				for u in result_list_before:
+					if u.data_score == mx:
+						cur_lst+=deepcopy(u.data_list)
+						
+				mxx=0
+				for u in result_list:
+					if u.data_score >mxx:
+						mxx=u.data_score
+				for u in result_list:
+					if u.data_score == mxx:
+						cur_lst+=deepcopy(u.data_list)
+
+				#append in list
+				a=Result(deepcopy(cur_lst),mx+mxx)
+				max_score_list.append(a)
+				#empty the whole thing
+				result_list=[]
+				result_list_before=[]
+			"""print " ----------result by syntex---------------"
+			for u in max_score_list:
+				print u	
+			print "------------------------------------------"
+			print list_result,score 
+			# greedy result """
+			print ">>>"
+			s=DictionaryMake(max_score_list)
+			TreeTag(sent,s)
+			for u in s.keys():
+				print u,":",s[u]
+			
+		else:
+			
+			search_call(sent)		
 
 
 root=treebuild(pcfglist)
 prepcfg(root,0)
-root_list.append(root)
+root_list.append(root.children[0])
 while len(root_list) >0:
 	t=root_list.pop()
 	y=len(root_list)
 	for u in range(y-1,-1,-1):
 		if id(root_list[u])==id(t):
-			root_list.remove(root_list[u])				
+			root_list.remove(root_list[u])						
 	search_call(t)
 
-
+prepcfg(root,0)
 
 
 

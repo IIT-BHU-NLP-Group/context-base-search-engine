@@ -132,17 +132,14 @@ with open('new_verb_count_result.csv','r') as f:
 					LIST.append(n)
 					# if(verb == 'build'):print n
 				f_LIST.append(vdNode(LIST,syn_str))
-			# if(verb == 'build'): print f_LIST# print lemmatizer.lemmatize(verb,'v')
 			vd[lemmatizer.lemmatize(verb,'v')] = f_LIST
-			if(verb == 'build'): print vd['build'] 
-# print 'build' in vd.keys()
-print vd['build']
-for j in vd['build']:
-	print 'here2'
-	print j.synstr
-	for y in j.synlis:
-		print "************\n"
-		print y ,
-		print "\n************\n"
-	print " "
+
+# for j in vd['build']:
+# 	print 'here2'
+#	print j.synstr
+#	for y in j.synlis:
+#		print "************\n"
+#		print y ,
+#		print "\n************\n"
+#	print " "
 						
