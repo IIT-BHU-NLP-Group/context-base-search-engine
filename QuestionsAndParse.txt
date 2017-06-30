@@ -1,0 +1,104 @@
+Wh Type Questions
+Where is Kashi Vishwanath Temple ?
+(ROOT
+  (SBARQ
+    (WHADVP (WRB Where))
+    (SQ (VBZ is)
+      (NP (NNP Kashi) (NNP Vishwanath) (NNP Temple)))
+    (. ?)))
+
+In case of where we have to assume we have to find location tag
+-location - [Kashi Vishwanath Temple]
+
+When was Kashi Vishwanath Temple built?
+(ROOT
+  (SBARQ
+    (WHADVP (WRB When))
+    (SQ (VBD was)
+      (NP (NNP Kashi) (NNP Vishwanath) (NNP Temple))
+      (VP (VBN built)))
+    (. ?)))
+-built-[Kashi Vishwanath Temple]
+
+Who built the Kashi Vishwanath Temple?
+(ROOT
+  (SBARQ
+    (WHNP (WP Who))
+    (SQ
+      (VP (VBD did)
+        (VP (VB build)
+          (NP (DT the) (NNP Kashi) (NNP Vishwanath) (NNP Temple)))))
+    (. .)))
+There needs to be a check wether the wh word is who or when
+if it's who we have to check in person's,Agents tags
+-built-[Kashi Vishwanath Temple]
+
+
+
+Which type of museum is King's memorial?
+(ROOT
+  (SBARQ
+    (WHNP
+      (WHNP (WDT Which) (NN type))
+      (PP (IN of)
+        (NP (NN museum))))
+    (SQ (VBZ is)
+      (NP
+        (NP (NNP King) (POS 's))
+        (NN memorial)))
+    (. ?)))
+-type-[King's memorial]-is-[museum]
+Find the object about which question is being asked in the sentence
+The main object and then apply relations to it
+
+What type of food is available at Assi Ghat?
+(ROOT
+  (SBARQ
+    (WHNP
+      (WHNP (WDT What) (NN type))
+      (PP (IN of)
+        (NP (NN food))))
+    (SQ (VBZ is)
+      (ADJP (JJ available)
+        (PP (IN at)
+          (NP (NNP Assi) (NNP Ghat)))))
+    (. ?)))
+-type-[food]
+	- is - [available]
+	- at - [Assi Ghat]
+How far is Assi Ghat from Lanka ?
+(ROOT
+  (SBARQ
+    (WHADVP (WRB How) (RB far))
+    (SQ (VBZ is)
+      (NP
+        (NP (NNP Assi) (NNP Ghat))
+        (PP (IN from)
+          (NP (NNP Lanka)))))
+    (. ?)))
+-distance - loc - AssiGhat
+		  - loc - Lanka
+A mechanism for conversion to synonmous things is needed to be present in the system 
+in which far is coverted to distance in the system
+
+What is time of opening and closing of Ramnagar Fort?
+(ROOT
+  (SBARQ
+    (WHNP (WP What))
+    (SQ (VBZ is)
+      (NP
+        (NP (NN time))
+        (PP (IN of)
+          (NP
+            (NP (NN opening)
+              (CC and)
+              (NN closing))
+            (PP (IN of)
+              (NP (NNP Ramnagar) (NNP Fort)))))))
+    (. ?)))
+- opening - [Ramnagar Fort]
+- closing - [Ramnagar Fort]
+
+What all are the places to visit at Varanasi?
+
+

@@ -1,0 +1,82 @@
+Methods To Handle Different Type Of Questions
+What 
+Examples
+What is available at Assi Ghat?
+What is the gland that regulates sugar ?
+What is the best time to visit Assi Ghat?
+
+
+Who 
+Examples 
+Who was defeated by Akbar?
+Who did build the Ramnagar Fort?  ==> Who did build the Ramnagar Fort at Varanasi?
+Who did go to Akbar for seeking grant ?
+To whom does this car belong
+
+Methods-
+We can replace who by either a person or an organization tag or even an object tag
+And do guess which semantic role it wants for example Agent or Patient by doing something like find if
+the rest part has an agent then we will look for patient else we will look for agent
+
+When 
+Examples
+When is the Kumbh Mela organized in Varanasi?
+When was Kashi Vishwanath Temple built?
+When was the Swatantra Bhawan inaugrated ?
+
+
+Methods
+It can be seen that When comes at the place of time or date .
+So we can say that we will find a preposition at,on,in preposition relation with the entity tag being date or time
+
+Where
+Where is Vishwanath Temple located?
+Where we can find elephents in Varanasi?
+Where is the Capsicum Food joint located?
+
+
+Methods 
+Where comes in place of location 
+So go in sentence find at,in,on and search for entity tagged as location
+
+Whose
+Whose minar is this?
+Whose tomb is this?
+Whose worship is done at Vishwanath Temple?
+
+
+
+
+
+Questions with How
+How long is the Qutub Minar?
+How far is Assi ghat from Dashwamedh Ghat?
+How tall is the peak of Vishwanath Temple?
+How old is the BHU building?
+How heavy is the gold at Vishwanath temple?
+
+
+For How we can have the following set of rules
+Tall/Short - find a relation with prep is,    and find the entity with type meters or type object
+Long - find a relation with prep is, or only a mod with the entity of type distance,find a prep around,almost, and if the entity is of type year then return 
+
+
+
+Similiarly for 
+wide - preposition is is, or mod and find entity of type area
+
+
+heavy - preposition is is, or mod entity to be found of type gram,pound
+
+Hot - preposition is is, or mod entity to be found is temp
+
+
+
+
+
+
+
+
+
+
+
