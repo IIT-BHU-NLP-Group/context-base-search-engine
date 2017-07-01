@@ -12,3 +12,73 @@
 		(NP (NNP Garden) 
 			(PP (IN in) (NP (NNP Varanasi))) ))))
     (. .)))
+
+
+
+
+(ROOT
+  (S
+    (NP (NNP Ram))
+    (VP (VBZ is)
+      (ADJP
+        (ADJP
+          (NP (DT a) (RB bit))
+          (JJR slower))
+        (CC but)
+        (ADJP (JJ accurate)
+          (CC and)
+          (JJ good))))
+    (. .)))
+
+
+(ROOT
+  (S
+    (NP (PRP He))
+    (VP (VBZ is)
+      (ADJP (RBR more) (JJ dedicated)
+        (PP (TO to)
+          (NP (NNP Ram)))))
+    (. .)))
+
+
+
+(ROOT
+  (S
+    (NP (PRP He))
+    (VP (VBZ is)
+      (ADJP (JJ cuter)
+        (PP (TO to)
+          (NP (PRP him)))))
+    (. .)))
+
+
+
+(ROOT
+  (S
+    (NP (NNP Ram))
+    (VP (VBZ is)
+      (NP (DT a)
+        (ADJP (JJ good) (, ,) (JJ smart)
+          (CC and)
+          (JJ cool))
+        (NN boy)))
+    (. .)))
+
+
+
+
+(ROOT
+  (S
+    (NP (DT The) (NNP Alamgiri) (NNP Mosque))
+    (VP (VBD was)
+      (VP (VBN built)
+        (PP (IN in)
+          (NP (DT the) (JJ 17th) (NN century)))
+        (PP (IN by)
+          (NP (NNP Aurangzeb)))
+        (PP (IN over)
+          (NP
+            (NP (DT the) (NNS ruins))
+            (PP (IN of)
+              (NP (DT a) (NNP Hindu) (NN temple)))))))
+    (. .)))

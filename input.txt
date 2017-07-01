@@ -1,14 +1,7 @@
 (ROOT
   (S
-    (NP
-      (NP (DT The) (JJS greatest) (NN man))
-      (VP (VBG wearing)
-        (NP (DT a)
-          (ADJP (RB very) (JJ beautiful))
-          (NNP Black) (NN Suit))))
-    (VP (VBD went)
-      (PP (TO to)
-        (NP (DT the) (NNP Garden)))
-      (PP (IN in)
-        (NP (NNP Varanasi))))
+    (VP (VBZ is)
+      (ADJP (JJ available)
+        (PP (IN at)
+          (NP (NNP Assi) (NNP Ghat)))))
     (. .)))

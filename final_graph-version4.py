@@ -325,32 +325,23 @@ def augment_NP(root):
 	
 	# RULE ADJP in NP
 	elif(root.data == 'NP') and ADJP and NP:
-		is_NP = False
-		ac,at,nc,nt =  None, None, [], []
+		ac,at,nc,nt =  None, None, None, None
 	 	for c in root.children:
-	 		if(c.data == 'NP'):
-	 			is_NP = True
 	 		if(c.data in nouns):
-	 			nc.append(deepcopy(c))
-	 			nt.append(c)
+	 			nc,nt = deepcopy(c),c
 	 		if(c.data == 'ADJP'):
 	 			ac,at = deepcopy(c),c
 	 	root.children.remove(at)
-	 	for n in nt:
-	 		if not(n.data == 'NP'):
-	 			root.children.remove(n)
-	 	phrase = ' ' 
-	 	for c in nc:
-	 		c = augment_NP(c)
-	 		phrase += c.phrase+' ' 
+	 	root.children.remove(nt)
 
+	 	nc = augment_NP(nc)
 	 	ac = augment_ADJP(ac)
 	 	Children = []
 	 	for a in ac.children:
 	 		a.relation = 'modifier'
 	 		Children.append(a)
 	 	root.children = Children
-	 	root.phrase = phrase 
+	 	root.phrase = nc.phrase 
 	 	return root 
 
 	# RULE NP <- DT ADJ* Noun
@@ -365,8 +356,7 @@ def augment_NP(root):
 	 		if(c.data in nouns ):#(c.data == 'NP'):
 	 			nc.append(deepcopy(c))
 	 			nt.append(c)
-	 	if(dt is not None):
-	 		root.children.remove(dt)
+	 	root.children.remove(dt)
 	 	for n in nt:
 	 		root.children.remove(n)
 	 	for j in JJt:

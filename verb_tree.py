@@ -36,9 +36,10 @@ class GraphNode:
     def __init__(self,data): # label is an int, data is DT,VB etc.
         self.data = data # POS Tags
         self.children = [] # CHANGE BY KRISHNKANT
-        self.head = None #to update the head based on rules
+        self.head = None # to update the head based on rules
         self.phrase=None 
         self.tag=None # Relation 
+        self.relation=None # CHANGE BY KRISHNKANT
     def add_child(self,child): # Child is an object of type GraphNode
         if not self.children:  # No Child
             self.children = list()

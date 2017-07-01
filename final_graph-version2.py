@@ -13,7 +13,7 @@ class GraphNode:
         self.children = None
         self.head = None #to update the head based on rules
         self.phrase=None
-        self.relation=None
+        self.tag=None
     def add_child(self,child): # Child is an object of type GraphNode
         if not self.children:  # No Child
             self.children = list()
@@ -52,15 +52,12 @@ def prepcfg(root,t):
 	 		root.phrase = vc.phrase
 	 	root.children = Children
 
-	print root.data+'{'+root.phrase+'}' 
-	if root.relation!=None:
-		for j in xrange(t):
-			print '\t',
-		print "<",root.relation,">"
+	print root.data+'{'+root.phrase+'}'
 	if root.tag!=None:
 		for j in xrange(t):
 			print '\t',
 		print "[",root.tag,"]"
+
 	if root.children==None:
 		return
 	t=t+1	
@@ -81,13 +78,12 @@ def augment_PP(root):
 			NP_child, NP_temp= deepcopy(c),c
 	root.children.remove(NP_temp)
 	root.children.remove(P_temp)
-	if(root.relation is not None): # and (IN_child is not None):
+	if(root.tag is not None): # and (IN_child is not None):
 		root.data, root.children, root.phrase, root.head = 'NP', NP_child.children, NP_child.phrase, NP_child.head
-		root.relation.add( PREP_child.phrase) 
+		root.tag.add( PREP_child.phrase) 
 	else:
-		root.data, root.children, root.phrase, root.relation ,root.head = 'NP', NP_child.children, NP_child.phrase, [PREP_child.phrase], NP_child.head 
+		root.data, root.children, root.phrase, root.tag ,root.head = 'NP', NP_child.children, NP_child.phrase, PREP_child.phrase, NP_child.head 
 	
-	# print '{{',root.data,root.phrase,root.relation,'}}'
 	root = augment_NP(root)
 	return root
 
@@ -122,7 +118,7 @@ def augment_NP_VBG(root):
 
 		root.children.remove(N_temp)
 		root.children.remove(V_temp)
-		root.data, root.children, root.phrase, root.relation ,root.head = 'NP', NP_child.children, NP_child.phrase, VBG_child.phrase, NP_child.head 
+		root.data, root.children, root.phrase, root.tag ,root.head = 'NP', NP_child.children, NP_child.phrase, VBG_child.phrase, NP_child.head 
 		
 		root = augment_NP(root)
 
@@ -165,11 +161,11 @@ def augment_ADJP(root):
 	 		root.children.remove(j)
 
 	 	root.children = []
-	 	jc.relation = 'modifier'
+	 	jc.tag = 'modifier'
 	 	jc.children = []
 	 	jc.children.append(augment_PP(pc))
 	 	for r in rbc:
-	 		r.relation = 'adjectival-modifier'
+	 		r.tag = 'adjectival-modifier'
 	 		jc.children.append(r)
 	 	root.children.append(jc)
 	 	return root
@@ -189,7 +185,7 @@ def augment_ADJP(root):
 	 		root.children.remove(j)
 
 	 	root.children = []
-	 	jc.relation = 'modifier'
+	 	jc.tag = 'modifier'
 	 	jc.children = []
 	 	for r in rbc:
 	 		r.rag = 'adjectival-modifier'
@@ -211,7 +207,7 @@ def augment_ADJP(root):
 	 	root.children.remove(jt)
 
 	 	root.children = []
-	 	jc.relation = 'modifier'
+	 	jc.tag = 'modifier'
 	 	jc.children = [augment_PP(pc)]
 	 	root.children.append(jc)
 	 	return root
@@ -236,7 +232,7 @@ def augment_ADJP(root):
 	 		root.children.remove(j)
 	 	Children = []
 	 	for j in jc:
-	 		j.relation='modifier'
+	 		j.tag='modifier'
 	 		Children.append(j)
 	 	for a in ac:
 	 		Children.append(augment_ADJP(a))
@@ -258,7 +254,7 @@ def augment_ADJP(root):
 	 		root.children.remove(j)
 	 	Children = []
 	 	for j in jc:
-	 		j.relation='modifier'
+	 		j.tag='modifier'
 	 		Children.append(j)
 	 	root.children = Children
 	 	return root
@@ -269,7 +265,7 @@ def augment_ADJP(root):
 
 def augment_NP(root):
 	# print '*'*30
-	# print '#'*20,root.data,root.phrase,'#'*20
+	# print '*'*20,root.data,root.phrase,'*'*20
 	if(root.children == None):
 		return None
 
@@ -289,7 +285,6 @@ def augment_NP(root):
 
 	# RULE NP <- NP PP
 	if(root.data == 'NP') and NP and ('PP'in [c.data for c in root.children]):
-		# print 'HERERERERERE ',root.data,root.phrase
 	 	pc,nc,pt,nt = None, None, None, None
 	 	for c in root.children:
 	 		if(c.data == 'PP'):
@@ -300,58 +295,49 @@ def augment_NP(root):
 		root.children.remove(pt)
 
 		parent = root
-		nc = augment_NP(nc)
-		nc.children+=[augment_PP(pc)]
+		nc.children=[augment_PP(pc)]
 
-		if(parent.relation is not None):
+		if(parent.tag is not None):
 			parent.data, parent.children, parent.phrase, parent.head = nc.data, nc.children, nc.phrase, nc.head 
-			# parent.relation = pc.relation
+			parent.tag.add(pc.tag)
 		else:
-			parent.data, parent.children, parent.phrase,   parent.head = nc.data, nc.children, nc.phrase, nc.head 
+			parent.data, parent.children, parent.phrase, parent.tag , parent.head = nc.data, nc.children, nc.phrase, pc.phrase, nc.head 
 		# print '#'*20,nc.phrase
 
-		# print '\\\\',parent.data,parent.phrase,parent.relation,'//'
 		return parent
 	
 	# Rule NP <- NP (VP) <- NP (VBG NP) 
 	if(root.data == 'NP') and NP and ('VP'in [c.data for c in root.children]):
 		nc = augment_NP_VBG(root)
-		if(root.relation is not None): # and (IN_child is not None):
+		if(root.tag is not None): # and (IN_child is not None):
 			root.data, root.children, root.phrase, root.head = nc.data, nc.children, nc.phrase, nc.head
-			# print '#'*20,nc.relation
-			# root.relation.add(nc.relation) 
+			# print '#'*20,nc.tag
+			# root.tag.add(nc.tag) 
 		else:
-			root.data, root.children, root.phrase, root.relation ,root.head = nc.data, nc.children, nc.phrase, nc.relation, nc.head 
+			root.data, root.children, root.phrase, root.tag ,root.head = nc.data, nc.children, nc.phrase, nc.phrase, nc.head 
 	
 	# RULE ADJP in NP
 	elif(root.data == 'NP') and ADJP and NP:
-		is_NP = False
-		ac,at,nc,nt =  None, None, [], []
+		ac,at,nc,nt =  None, None, None, None
 	 	for c in root.children:
-	 		if(c.data == 'NP'):
-	 			is_NP = True
 	 		if(c.data in nouns):
-	 			nc.append(deepcopy(c))
-	 			nt.append(c)
+	 			nc,nt = deepcopy(c),c
 	 		if(c.data == 'ADJP'):
 	 			ac,at = deepcopy(c),c
 	 	root.children.remove(at)
-	 	for n in nt:
-	 		if not(n.data == 'NP'):
-	 			root.children.remove(n)
-	 	phrase = ' ' 
-	 	for c in nc:
-	 		c = augment_NP(c)
-	 		phrase += c.phrase+' ' 
+	 	root.children.remove(nt)
 
+	 	nc = augment_NP(nc)
 	 	ac = augment_ADJP(ac)
 	 	Children = []
 	 	for a in ac.children:
-	 		a.relation = 'modifier'
+	 		a.tag = 'modifier'
 	 		Children.append(a)
 	 	root.children = Children
-	 	root.phrase = phrase 
+	 	root.phrase = nc.phrase 
 	 	return root 
+
+
 
 	# RULE NP <- DT ADJ* Noun
 	elif(root.data == 'NP') and NP and ADJ:
@@ -365,8 +351,7 @@ def augment_NP(root):
 	 		if(c.data in nouns ):#(c.data == 'NP'):
 	 			nc.append(deepcopy(c))
 	 			nt.append(c)
-	 	if(dt is not None):
-	 		root.children.remove(dt)
+	 	root.children.remove(dt)
 	 	for n in nt:
 	 		root.children.remove(n)
 	 	for j in JJt:
@@ -376,33 +361,15 @@ def augment_NP(root):
 	 	phrase = '' 
 	 	for n in nc:
 		 	nn = augment_NP(n)
-		 	phrase+= nn.phrase+' '
+		 	phrase+= nn.phrase
 	 	for j in JJc:
-	 		j.relation = 'modifier'
+	 		j.tag = 'modifier'
 		 	Children.append(j)
 
 		root.data, root.children, root.phrase, root.head = 'NP', Children, phrase, None
 		# print '#'*20
 		# for i in root.children:
-		# 	print i.phrase,i.data, i.relation 
-		return root
-	
-	# RULE NP <- only_nouns
-	elif(root.data == 'NP') and only_nouns:
-		# print '3'*20, root.data, root.phrase
-		nc,nt = [],[]
-		for c in root.children:
-	 		if(c.data in nouns):# (c.data == 'NP'):
-	 			nc.append(deepcopy(c))
-	 			nt.append(c)
-		phrase = ''
-		for c in nc:
-			phrase += c.phrase+' '
-		if not(phrase == ''):
-			root.phrase = phrase
-
-		# print '{{{',root.data,phrase,'}}}'
-		root.children = []
+		# 	print i.phrase,i.data, i.tag 
 		return root
 
 	# RULE NP <- SOMETHING NP
@@ -412,35 +379,28 @@ def augment_NP(root):
 	 		if(c.data == 'NP'):
 	 			nc = c
 		nc = augment_NP(nc)		
-		# Keep the relation of the root and update all other things # root.relation not <- nc.relation
+		# Keep the tag of the root and update all other things # root.tag not <- nc.tag
 		root.data, root.children, root.phrase,root.head = nc.data, nc.children, nc.phrase, nc.head 
-		# print '//',root.children[0].data,root.children[0].phrase,root.children[0].relation,'\\\\'
+		return root
+	
+	# RULE NP <- only_nouns
+	elif(root.data == 'NP') and only_nouns:
+		root.children = []
 		return root
 
 	# RULE NP <- SOMETHING(DT) noun
 	elif(root.data == 'NP') and NP:
-		# print '*'*20, root.data, root.phrase
-		nc,nt = [],[]
+		nc,nt = None,None
 		for c in root.children:
 	 		if(c.data in nouns):# (c.data == 'NP'):
-	 			nc.append(deepcopy(c))
-	 			nt.append(c)
-	 	is_NP = ('NP' in [c.data for c in root.children])
-	 	
-		root.children = []
-		phrase = ''
-		for c in nc:
-			phrase += c.phrase+' '
-		root.phrase = phrase
-		if(is_NP):
-			for c in nc:
-				if(c.data == 'NP'):
-					c = augment_NP(c)
-					root.children.append(c)
-			# print "<><>",root.children[0].children[0].phrase,"<><>"
-		return root
+	 			nc,nt = deepcopy(c),c
+	 	root.children.remove(nt)
+	 	# Keep the tag of the root and update all other things # root.tag not <- nc.tag
+	 	root.data, root.children, root.phrase,root.head = nc.data, nc.children, nc.phrase, nc.head
+	 	return root
 	# Default
 	return root
+
 
 def augment_VP(root):
 	if(root.children is None):
@@ -462,7 +422,7 @@ def augment_VP(root):
 	 			vpc,vpt = deepcopy(c),c
 	 		if(c.data in verbs):
 	 			vc,vt = deepcopy(c),c
-	 	# root.children.remove(vt)
+	 	root.children.remove(vt)
 	 	if(vpt is not None):
 	 		root.children.remove(vpt)
 	 		vpc = augment_VP(vpc)
@@ -473,7 +433,6 @@ def augment_VP(root):
 	 		root.phrase = vpc.phrase
 	 	else:
 		 	root.phrase = vc.phrase
-		 	root.children.remove(vt)
 
 	 	return root
 	return root
@@ -486,3 +445,9 @@ root = vt.root
 
 prepcfg(root,0)
 # vt.prepcfg(root,0)
+
+
+
+
+
+
