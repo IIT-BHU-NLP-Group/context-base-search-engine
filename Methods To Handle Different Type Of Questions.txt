@@ -71,6 +71,24 @@ heavy - preposition is is, or mod entity to be found of type gram,pound
 Hot - preposition is is, or mod entity to be found is temp
 
 
+# EDITS BY KRISHNKANT
+*How followed by a Quantifier
+How many Temples are there in Varanasi?
+How many rivers in Varanasi?
+>Method
+You can easily chop off how many using stanford parser. then see the first word of the remaining fragment, it always the thing whoes quantity is to be known. Find the nearest similar NER tag. That is the Tag whoes occurance needs to be counted.
+(Also answer the entities along with the count.)
+
+
+
+*Which followed by an entity
+Which Malls are there in Varanasi?
+...
+>Method
+Stanford Parser Chops 'Which Thing' together so get the thing from the first phrase and do same as above.
+
+
+
 
 
 
