@@ -49,7 +49,7 @@ vd = dict()
 with open('new_verb_count_result.csv','r') as f:
 	for line in f:
 		verb = line.strip().split(',')[1]
-		if(verb == 'build'):print verb
+		# if(verb == 'build'):print verb
 		if('/'in verb):
 			verb = verb.replace('/','-')
 		#print '\n',verb,'*'*50

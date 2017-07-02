@@ -33,13 +33,14 @@ root_list=list()
 head_Node={'DT':['DT'],'SBAR':['S','VP','NP','PP'],'SBARQ':['S','VP','NP','PP'],'SQ':['S','VP','NP','PP'],'SINV':['S','VP','NP','PP'],'NP':['NP','NN','PRP','NNS','NNP','CD','VBG'],'S':['VP'],'VP':[ 'VP','VB','VBG','VBD','VBZ','VBN','VBP'],'ADJP':['JJ','PP'],'PP':['NP'],'ROOT':['S'],'PRT':['RP']}
 
 class GraphNode:
-    def __init__(self,data): # label is an int, data is DT,VB etc.
+	# EDITS BY KRISHNKANT(arguments of __init__)
+    def __init__(self,data=''): # label is an int, data is DT,VB etc.
         self.data = data # POS Tags
-        self.children = [] # CHANGE BY KRISHNKANT
+        self.children = [] # EDITS BY KRISHNKANT
         self.head = None # to update the head based on rules
         self.phrase=None 
-        self.tag=None # Relation 
-        self.relation=None # CHANGE BY KRISHNKANT
+        self.tag=None
+        self.relation=[] # EDITS BY KRISHNKANT
     def add_child(self,child): # Child is an object of type GraphNode
         if not self.children:  # No Child
             self.children = list()
@@ -386,7 +387,8 @@ def search_call(sent):
 		if flag_for_verb==1:
 			max_score_list=list() 
 			verb_name=lemmatizer.lemmatize(verb_temp_name,'v')
-			print verb_name
+			# EDITS BY KRISHNKANT (commented)
+			# print verb_name
 			list_result=list()
 			score=0
 			for syn in verbnet_cleaner.vd[verb_name]:
@@ -440,12 +442,15 @@ def search_call(sent):
 				print u	
 			print "------------------------------------------"
 			print list_result,score 
-			# greedy result """
-			print ">>>"
+			greedy result """
+			
+			# EDITS BY KRISHNKANT (comments)
+			# print ">>>"
 			s=DictionaryMake(max_score_list)
 			TreeTag(sent,s)
 			for u in s.keys():
-				print u,":",s[u]
+				pass
+			#	print u,":",s[u]
 			
 		else:
 			
@@ -453,7 +458,7 @@ def search_call(sent):
 
 
 root=treebuild(pcfglist)
-prepcfg(root,0)
+# prepcfg(root,0)
 root_list.append(root.children[0])
 while len(root_list) >0:
 	t=root_list.pop()
@@ -463,7 +468,7 @@ while len(root_list) >0:
 			root_list.remove(root_list[u])						
 	search_call(t)
 
-prepcfg(root,0)
+# prepcfg(root,0)
 
 
 

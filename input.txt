@@ -1,7 +1,11 @@
 (ROOT
   (S
-    (VP (VBZ is)
-      (ADJP (JJ available)
-        (PP (IN at)
-          (NP (NNP Assi) (NNP Ghat)))))
+    (NP (NNP Shah))
+    (VP (VBD built)
+      (NP (NNP Taj))
+      (PP (IN in)
+        (NP
+          (NP (NN memory))
+          (PP (IN of)
+            (NP (PRP$ his) (JJ beloved) (NN wife) (NN Mumtaz))))))
     (. .)))
