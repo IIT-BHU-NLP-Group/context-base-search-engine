@@ -1,18 +1,4 @@
-NP V (Basic Intransitive)
-  Syntax: NP[Theme] VERB
-  Semantics:
-    * exist(during(E), Theme)
-NP V PP.location (PP; Location-PP)
-  Syntax: NP[Theme] VERB PREP[at in with] NP[Location]
-  Semantics:
-    * location(start(E), Theme, Location)
-    * location(during(E), Theme, Location)
-NP V ADV (ADVP-PRED; here/there)
-  Syntax: NP[Theme] VERB NP[Location +adv_loc]
-  Semantics:
-    * location(start(E), Theme, Location)
-    * location(during(E), Theme, Location)
-NP V PP.attribute (PP-PRED-RSin-PP)
-  Syntax: NP[Theme] VERB PREP[in] NP[Attribute -sentential]
-  Semantics:
-    * seem(E, Theme, Attribute)
+NP[Theme] VERB
+NP[Theme] VERB PREP[at in with] NP[Location]
+NP[Theme] VERB NP[Location +adv_loc]
+NP[Theme] VERB PREP[in] NP[Attribute -sentential]

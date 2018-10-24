@@ -1,35 +1,6 @@
-NP V NP PP.recipient (NP-PP; Recipient-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[to] NP[Recipient]
-  Semantics:
-    * has_possession(start(E), Agent, Theme)
-    * has_possession(end(E), Recipient, Theme)
-    * transfer(during(E), Theme)
-    * cause(Agent, E)
-NP V NP-Fulfilling PP.theme (Fulfilling Alternation)
-  Syntax: NP[Agent] VERB NP[Recipient] PREP[with] NP[Theme]
-  Semantics:
-    * has_possession(start(E), Agent, Theme)
-    * has_possession(end(E), Recipient, Theme)
-    * transfer(during(E), Theme)
-    * cause(Agent, E)
-NP V NP (Transitive)
-  Syntax: NP[Agent] VERB NP[Theme]
-  Semantics:
-    * has_possession(start(E), Agent, Theme)
-    * has_possession(end(E), ?Recipient, Theme)
-    * transfer(during(E), Theme)
-    * cause(Agent, E)
-NP V NP (Basic Transitive)
-  Syntax: NP[Agent] VERB NP[Theme]
-  Semantics:
-    * appear(during(E), Theme)
-    * cause(Agent, E)
-NP V NP PP.recipient (NP-PP; Recipient-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[to] NP[Recipient]
-  Semantics:
-    * appear(during(E), Theme)
-    * cause(Agent, E)
-NP V NP (Reflexive of Appearance)
-  Syntax: NP[Theme] VERB NP[Reflexive +refl]
-  Semantics:
-    * appear(during(E), Theme)
+NP[Agent] VERB NP[Theme] PREP[to] NP[Recipient]
+NP[Agent] VERB NP[Recipient] PREP[with] NP[Theme]
+NP[Agent] VERB NP[Theme]
+NP[Agent] VERB NP[Theme]
+NP[Agent] VERB NP[Theme] PREP[to] NP[Recipient]
+NP[Theme] VERB NP[Reflexive +refl]

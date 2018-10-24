@@ -1,26 +1,6 @@
-NP V PP.recipient that S (PP-THAT-S-SUBJUNCT; to-PP)
-  Syntax: NP[Cause] VERB PREP[to] NP[Recipient] NP[Topic +that_comp -tensed_that]
-  Semantics:
-    * indicate(during(E), Cause, Recipient, Topic)
-NP V PP.recipient whether/if S (PP-WH-S; to-PP)
-  Syntax: NP[Cause] VERB PREP[to] NP[Recipient] NP[Topic +wh_comp]
-  Semantics:
-    * indicate(during(E), Cause, Recipient, Topic)
-NP V PP.recipient what S (PP-WHAT-S; to-PP)
-  Syntax: NP[Cause] VERB PREP[to] NP[Recipient] NP[Topic +what_extract]
-  Semantics:
-    * indicate(during(E), Cause, Recipient, Topic)
-NP V PP.recipient how S (PP-HOW-S; to-PP)
-  Syntax: NP[Cause] VERB PREP[to] NP[Recipient] NP[Topic +how_extract]
-  Semantics:
-    * indicate(during(E), Cause, Recipient, Topic)
-NP V that S (S)
-  Syntax: NP[Agent] VERB NP[Topic +that_comp]
-  Semantics:
-    * transfer_info(during(E), Agent, ?Recipient, Topic)
-    * cause(Agent, E)
-NP V that S (S-SUBJUNCT)
-  Syntax: NP[Agent] VERB NP[Topic +that_comp -tensed_that]
-  Semantics:
-    * transfer_info(during(E), Agent, ?Recipient, Topic)
-    * cause(Agent, E)
+NP[Cause] VERB PREP[to] NP[Recipient] NP[Topic +that_comp -tensed_that]
+NP[Cause] VERB PREP[to] NP[Recipient] NP[Topic +wh_comp]
+NP[Cause] VERB PREP[to] NP[Recipient] NP[Topic +what_extract]
+NP[Cause] VERB PREP[to] NP[Recipient] NP[Topic +how_extract]
+NP[Agent] VERB NP[Topic +that_comp]
+NP[Agent] VERB NP[Topic +that_comp -tensed_that]

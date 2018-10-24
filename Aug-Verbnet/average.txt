@@ -1,4 +1,1 @@
-NP V NP PP.co-theme (NP-PP; over-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[over] NP[Co-Theme]
-  Semantics:
-    * calculate(during(E), Agent, Theme, Co-Theme)
+NP[Agent] VERB NP[Theme] PREP[over] NP[Co-Theme]

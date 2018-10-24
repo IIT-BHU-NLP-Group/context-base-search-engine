@@ -1,26 +1,5 @@
-NP V NP (NP)
-  Syntax: NP[Agent] VERB NP[Theme]
-  Semantics:
-    * admit(during(E), Agent, Theme, ?Location)
-NP V NP ADV (NP-ADVP-PRED)
-  Syntax: NP[Agent] VERB NP[Theme] NP[Location +adv_loc]
-  Semantics:
-    * admit(during(E), Agent, Theme, Location)
-NP V NP PP.location (NP-PP; locative-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[+loc] NP[Location +location -region]
-  Semantics:
-    * admit(during(E), Agent, Theme, Location)
-NP V NP (Basic Transitive)
-  Syntax: NP[Agent] VERB NP[Theme]
-  Semantics:
-    * has_possession(start(E), ?Source, Theme)
-    * transfer(during(E), Theme)
-    * has_possession(end(E), Agent, Theme)
-    * cause(Agent, E)
-NP V NP PP.source (NP-PP; from-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[from] NP[Source]
-  Semantics:
-    * has_possession(start(E), Source, Theme)
-    * transfer(during(E), Theme)
-    * has_possession(end(E), Agent, Theme)
-    * cause(Agent, E)
+NP[Agent] VERB NP[Theme]
+NP[Agent] VERB NP[Theme] NP[Location +adv_loc]
+NP[Agent] VERB NP[Theme] PREP[+loc] NP[Location +location -region]
+NP[Agent] VERB NP[Theme]
+NP[Agent] VERB NP[Theme] PREP[from] NP[Source]

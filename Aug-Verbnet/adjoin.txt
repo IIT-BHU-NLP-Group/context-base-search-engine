@@ -1,6 +1,1 @@
-NP V (Understood Reciprocal Object)
-  Syntax: NP[Theme] LEX[and] NP[Co-Theme] VERB
-  Semantics:
-    * contact(during(E), Theme, Co-Theme)
-    * exist(during(E), Theme)
-    * exist(during(E), Co-Theme)
+NP[Theme] LEX[and] NP[Co-Theme] VERB

@@ -1,108 +1,18 @@
-NP V NP (Transitive)
-  Syntax: NP[Agent] VERB NP[Patient]
-  Semantics:
-    * take_care_of(during(E), Agent, Patient)
-NP V NP.destination (Transitive; Destination Object)
-  Syntax: NP[Agent] VERB NP[Destination]
-  Semantics:
-    * motion(during(E), Theme)
-    * location(start(E), Theme, Destination)
-    * location(end(E), Theme, Destination)
-    * cause(Agent, E)
-NP V NP PP.theme (NP-PP; Theme-PP)
-  Syntax: NP[Agent] VERB NP[Destination] PREP[with] NP[Theme]
-  Semantics:
-    * motion(during(E), Theme)
-    * location(start(E), Theme, Destination)
-    * location(end(E), Theme, Destination)
-    * cause(Agent, E)
-NP V NP S_ING (NP-P-ING-OC; as-PP)
-  Syntax: NP[Agent] VERB NP[Theme] LEX[as] NP[Attribute +oc_ing]
-  Semantics:
-    * characterize(during(E), Theme, Attribute)
-    * cause(Agent, E)
-NP V NP to be ADJ (NP-TOBE)
-  Syntax: NP[Agent] VERB NP[Theme] LEX[as] NP[Attribute +small_clause]
-  Semantics:
-    * characterize(during(E), Theme, Attribute)
-    * cause(Agent, E)
-NP V NP PP.attribute (NP-PP; as-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[as] NP[Attribute -sentential]
-  Semantics:
-    * characterize(during(E), Theme, Attribute)
-    * cause(Agent, E)
-NP V NP (Basic Transitive)
-  Syntax: NP[Agent] VERB NP[Patient]
-  Semantics:
-    * cause(Agent, E)
-    * apply_material(during(E), Material, Patient)
-    * covered(result(E), Material, Patient)
-NP V NP ADJP (NP-ADJP; Resultative)
-  Syntax: NP[Agent] VERB NP[Patient] NP[Result]
-  Semantics:
-    * cause(Agent, E)
-    * apply_material(during(E), Material, Patient)
-    * covered(result(E), Material, Patient)
-    * Pred(result(E), Patient)
-NP V NP PP.result (NP-PP; Result-PP)
-  Syntax: NP[Agent] VERB NP[Patient] PREP[to into] NP[Result +state]
-  Semantics:
-    * cause(Agent, E)
-    * apply_material(during(E), Material, Patient)
-    * covered(result(E), Material, Patient)
-    * Pred(result(E), Patient)
-NP V NP.theme PP.destination (NP-PP; Theme Object, on-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[+loc +dest_conf] NP[Destination]
-  Semantics:
-    * created_image(result(E), Theme)
-    * Prep(end(E), Theme, Destination)
-    * cause(Agent, E)
-NP V NP.destination PP.theme (NP-PP; Destination Object, Theme-PP)
-  Syntax: NP[Agent] VERB NP[Destination] PREP[with] NP[Theme]
-  Semantics:
-    * created_image(result(E), Theme)
-    * location(end(E), Theme, Destination)
-    * cause(Agent, E)
-NP V NP.destination (Transitive; Destination Object)
-  Syntax: NP[Agent] VERB NP[Destination]
-  Semantics:
-    * created_image(result(E), ?Theme)
-    * location(end(E), ?Theme, Destination)
-    * cause(Agent, E)
-NP V NP.theme (Transitive; Theme Object)
-  Syntax: NP[Agent] VERB NP[Theme]
-  Semantics:
-    * created_image(result(E), Theme)
-    * location(end(E), Theme, ?Destination)
-    * cause(Agent, E)
-NP V (Unspecified Object)
-  Syntax: NP[Agent] VERB
-  Semantics:
-    * created_image(result(E), ?Theme)
-    * location(end(E), ?Theme, ?Destination)
-    * cause(Agent, E)
-NP V NP.beneficiary NP (NP-NP; Beneficiary Object)
-  Syntax: NP[Agent] VERB NP[Beneficiary] NP[Theme]
-  Semantics:
-    * exist(start(E), Theme)
-    * exist(result(E), Theme)
-    * cause(Agent, E)
-    * benefit(E, Beneficiary)
-NP V NP (Basic Transitive)
-  Syntax: NP[Agent] VERB NP[Theme]
-  Semantics:
-    * created_image(result(E), Theme)
-    * location(end(E), Theme, ?Destination)
-    * cause(Agent, E)
-NP V NP PP.destination (NP-PP; locative-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[+loc +dest_conf] NP[Destination]
-  Semantics:
-    * created_image(result(E), Theme)
-    * Prep(end(E), Theme, Destination)
-    * cause(Agent, E)
-NP V (Unspecified Object)
-  Syntax: NP[Agent] VERB
-  Semantics:
-    * created_image(result(E), ?Theme)
-    * location(end(E), ?Theme, ?Destination)
-    * cause(Agent, E)
+NP[Agent] VERB NP[Patient]
+NP[Agent] VERB NP[Destination]
+NP[Agent] VERB NP[Destination] PREP[with] NP[Theme]
+NP[Agent] VERB NP[Theme] LEX[as] NP[Attribute +oc_ing]
+NP[Agent] VERB NP[Theme] LEX[as] NP[Attribute +small_clause]
+NP[Agent] VERB NP[Theme] PREP[as] NP[Attribute -sentential]
+NP[Agent] VERB NP[Patient]
+NP[Agent] VERB NP[Patient] NP[Result]
+NP[Agent] VERB NP[Patient] PREP[to into] NP[Result +state]
+NP[Agent] VERB NP[Theme] PREP[+loc +dest_conf] NP[Destination]
+NP[Agent] VERB NP[Destination] PREP[with] NP[Theme]
+NP[Agent] VERB NP[Destination]
+NP[Agent] VERB NP[Theme]
+NP[Agent] VERB
+NP[Agent] VERB NP[Beneficiary] NP[Theme]
+NP[Agent] VERB NP[Theme]
+NP[Agent] VERB NP[Theme] PREP[+loc +dest_conf] NP[Destination]
+NP[Agent] VERB

@@ -1,106 +1,16 @@
-NP V NP P.asset (NP-PP; Asset-PP)
-  Syntax: NP[Agent] VERB NP[Product] PREP[for] NP[Asset]
-  Semantics:
-    * exist(start(E), Product)
-    * exist(result(E), Product)
-    * made_of(result(E), Product, ?Material)
-    * cause(Agent, E)
-    * cost(E, Asset)
-NP.asset V NP (NP; Asset Subject)
-  Syntax: NP[Asset] VERB NP[Product]
-  Semantics:
-    * exist(start(E), Product)
-    * exist(result(E), Product)
-    * made_of(result(E), Product, ?Material)
-    * cause(?Agent, E)
-    * cost(E, Asset)
-NP.asset V NP NP (NP-NP; Asset Subject)
-  Syntax: NP[Asset] VERB NP[Beneficiary] NP[Product]
-  Semantics:
-    * exist(start(E), Product)
-    * exist(result(E), Product)
-    * made_of(result(E), Product, ?Material)
-    * cause(?Agent, E)
-    * benefit(E, Beneficiary)
-    * cost(E, Asset)
-NP.asset V PP (NP-PP; Asset Subject)
-  Syntax: NP[Asset] VERB NP[Product] PREP[from out_of] NP[Material]
-  Semantics:
-    * exist(start(E), Product)
-    * exist(result(E), Product)
-    * made_of(result(E), Product, Material)
-    * cause(?Agent, E)
-    * cost(E, Asset)
-NP.asset V NP PP (NP-NP-PP; Asset Subject)
-  Syntax: NP[Asset] VERB NP[Beneficiary] NP[Product] PREP[from out_of] NP[Material]
-  Semantics:
-    * exist(start(E), Product)
-    * exist(result(E), Product)
-    * made_of(result(E), Product, Material)
-    * cause(?Agent, E)
-    * benefit(E, Beneficiary)
-    * cost(E, Asset)
-NP V NP (Basic Transitive)
-  Syntax: NP[Agent] VERB NP[Patient]
-  Semantics:
-    * cause(Agent, E)
-    * manner(during(E), Motion, Agent)
-    * contact(during(E), Agent, Patient)
-    * degradation_material_integrity(result(E), Patient)
-NP V NP PP.instrument (NP-PP; Instrument-PP)
-  Syntax: NP[Agent] VERB NP[Patient] PREP[with] NP[Instrument]
-  Semantics:
-    * cause(Agent, E)
-    * manner(during(E), Motion, Agent)
-    * contact(during(E), Instrument, Patient)
-    * degradation_material_integrity(result(E), Patient)
-    * use(during(E), Agent, Instrument)
-NP V ADVP-Middle (Middle Construction)
-  Syntax: NP[Patient] VERB ADV
-  Semantics:
-    * degradation_material_integrity(result(E), Patient)
-NP.instrument V NP (Instrument Subject Alternation)
-  Syntax: NP[Instrument] VERB NP[Patient]
-  Semantics:
-    * contact(during(E), Instrument, Patient)
-    * degradation_material_integrity(result(E), Patient)
-NP.instrument V ADVP (Characteristic Property of Instrument)
-  Syntax: NP[Instrument] VERB ADV
-  Semantics:
-    * property(Instrument, Prop)
-    * Adv(Prop)
-NP V NP (Basic Transitive)
-  Syntax: NP[Agent] VERB NP[Patient]
-  Semantics:
-    * cause(Agent, E)
-    * together(start(E), physical, Patient, ?Co-Patient)
-    * apart(result(E), physical, Patient, ?Co-Patient)
-NP V NP PP.co-patient (NP-PP; Source-PP)
-  Syntax: NP[Agent] VERB NP[Patient] PREP[from] NP[Co-Patient]
-  Semantics:
-    * cause(Agent, E)
-    * together(start(E), physical, Patient, Co-Patient)
-    * apart(result(E), physical, Patient, Co-Patient)
-NP V ADV-Middle (Middle Construction)
-  Syntax: NP[Patient +plural] VERB ADV
-  Semantics:
-    * together(start(E), physical, Patient, ?Co-Patient)
-    * apart(result(E), physical, Patient, ?Co-Patient)
-NP V NP (Basic Transitive)
-  Syntax: NP[Agent] VERB NP[Theme]
-  Semantics:
-    * created_image(result(E), Theme)
-    * location(end(E), Theme, ?Destination)
-    * cause(Agent, E)
-NP V NP PP.destination (NP-PP; locative-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[+loc +dest_conf] NP[Destination]
-  Semantics:
-    * created_image(result(E), Theme)
-    * Prep(end(E), Theme, Destination)
-    * cause(Agent, E)
-NP V (Unspecified Object)
-  Syntax: NP[Agent] VERB
-  Semantics:
-    * created_image(result(E), ?Theme)
-    * location(end(E), ?Theme, ?Destination)
-    * cause(Agent, E)
+NP[Agent] VERB NP[Product] PREP[for] NP[Asset]
+NP[Asset] VERB NP[Product]
+NP[Asset] VERB NP[Beneficiary] NP[Product]
+NP[Asset] VERB NP[Product] PREP[from out_of] NP[Material]
+NP[Asset] VERB NP[Beneficiary] NP[Product] PREP[from out_of] NP[Material]
+NP[Agent] VERB NP[Patient]
+NP[Agent] VERB NP[Patient] PREP[with] NP[Instrument]
+NP[Patient] VERB ADV
+NP[Instrument] VERB NP[Patient]
+NP[Instrument] VERB ADV
+NP[Agent] VERB NP[Patient]
+NP[Agent] VERB NP[Patient] PREP[from] NP[Co-Patient]
+NP[Patient +plural] VERB ADV
+NP[Agent] VERB NP[Theme]
+NP[Agent] VERB NP[Theme] PREP[+loc +dest_conf] NP[Destination]
+NP[Agent] VERB

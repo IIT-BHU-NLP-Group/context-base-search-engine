@@ -1,4 +1,1 @@
-NP V PP.attribute (PP-PRED-RSin-PP)
-  Syntax: NP[Theme] VERB PREP[in] NP[Attribute -sentential]
-  Semantics:
-    * seem(E, Theme, Attribute)
+NP[Theme] VERB PREP[in] NP[Attribute -sentential]

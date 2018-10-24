@@ -1,53 +1,11 @@
-NP V NP PP.attribute (NP-PP; as-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[as] NP[Attribute]
-  Semantics:
-    * declare(during(E), Agent, Theme, Attribute)
-NP V NP (Basic Transitive)
-  Syntax: NP[Agent] VERB NP[Theme]
-  Semantics:
-    * appear(during(E), Theme)
-    * cause(Agent, E)
-NP V NP PP.recipient (NP-PP; Recipient-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[to] NP[Recipient]
-  Semantics:
-    * appear(during(E), Theme)
-    * cause(Agent, E)
-NP V NP (Reflexive of Appearance)
-  Syntax: NP[Theme] VERB NP[Reflexive +refl]
-  Semantics:
-    * appear(during(E), Theme)
-NP V NP PP.recipient (NP-PP; to-PP)
-  Syntax: NP[Agent] VERB NP[Topic -sentential] PREP[to] NP[Recipient]
-  Semantics:
-    * transfer_info(during(E), Agent, Recipient, Topic)
-    * cause(Agent, E)
-NP V PP.recipient how S (PP-HOW-S; to-PP)
-  Syntax: NP[Agent] VERB PREP[to] NP[Recipient] NP[Topic +how_extract]
-  Semantics:
-    * transfer_info(during(E), Agent, Recipient, Topic)
-    * cause(Agent, E)
-NP V PP.recipient how S_INF (PP-HOW-TO-INF; to-PP)
-  Syntax: NP[Agent] VERB PREP[to] NP[Recipient] NP[Topic +wh_inf]
-  Semantics:
-    * transfer_info(during(E), Agent, Recipient, Topic)
-    * cause(Agent, E)
-NP V PP.recipient that S (PP-THAT-S; to-PP)
-  Syntax: NP[Agent] VERB PREP[to] NP[Recipient] NP[Topic +that_comp]
-  Semantics:
-    * transfer_info(during(E), Agent, Recipient, Topic)
-    * cause(Agent, E)
-NP V PP.recipient that S (PP-THAT-S-SUBJUNCT; to-PP)
-  Syntax: NP[Agent] VERB PREP[to] NP[Recipient] NP[Topic +that_comp -tensed_that]
-  Semantics:
-    * transfer_info(during(E), Agent, Recipient, Topic)
-    * cause(Agent, E)
-NP V PP.recipient what S (PP-WHAT-S; to-PP)
-  Syntax: NP[Agent] VERB PREP[to] NP[Recipient] NP[Topic +what_extract]
-  Semantics:
-    * transfer_info(during(E), Agent, Recipient, Topic)
-    * cause(Agent, E)
-NP V PP.recipient what S_INF (PP-WHAT-TO-INF; to-PP)
-  Syntax: NP[Agent] VERB PREP[to] NP[Recipient] NP[Topic +what_inf]
-  Semantics:
-    * transfer_info(during(E), Agent, Recipient, Topic)
-    * cause(Agent, E)
+NP[Agent] VERB NP[Theme] PREP[as] NP[Attribute]
+NP[Agent] VERB NP[Theme]
+NP[Agent] VERB NP[Theme] PREP[to] NP[Recipient]
+NP[Theme] VERB NP[Reflexive +refl]
+NP[Agent] VERB NP[Topic -sentential] PREP[to] NP[Recipient]
+NP[Agent] VERB PREP[to] NP[Recipient] NP[Topic +how_extract]
+NP[Agent] VERB PREP[to] NP[Recipient] NP[Topic +wh_inf]
+NP[Agent] VERB PREP[to] NP[Recipient] NP[Topic +that_comp]
+NP[Agent] VERB PREP[to] NP[Recipient] NP[Topic +that_comp -tensed_that]
+NP[Agent] VERB PREP[to] NP[Recipient] NP[Topic +what_extract]
+NP[Agent] VERB PREP[to] NP[Recipient] NP[Topic +what_inf]

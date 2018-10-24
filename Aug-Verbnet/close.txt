@@ -1,81 +1,16 @@
-NP V NP (Basic Transitive)
-  Syntax: NP[Agent] VERB NP[Patient]
-  Semantics:
-    * cause(Agent, E)
-    * transfer_info(during(E), Agent, ?Recipient, ?Theme)
-NP V NP PP.recipient (NP-PP; Recipient-PP)
-  Syntax: NP[Agent] VERB NP[Patient] PREP[+dest_dir] NP[Recipient]
-  Semantics:
-    * cause(Agent, E)
-    * transfer_info(during(E), Agent, Recipient, ?Theme)
-NP V NP PP.recipient PP.theme (NP-PP-PP; Recipient-PP Theme-PP)
-  Syntax: NP[Agent] VERB NP[Patient] PREP[+dest_dir] NP[Recipient] PREP[in] NP[Theme]
-  Semantics:
-    * cause(Agent, E)
-    * transfer_info(during(E), Agent, Recipient, Theme)
-NP V NP PP.theme (NP-PP; with-PP)
-  Syntax: NP[Agent] VERB NP[Destination] PREP[with] NP[Theme]
-  Semantics:
-    * motion(during(E), Theme)
-    * location(start(E), Theme, Destination)
-    * location(end(E), Theme, Destination)
-    * cause(Agent, E)
-NP V NP (Locatum Subject Alternation)
-  Syntax: NP[Theme] VERB NP[Destination]
-  Semantics:
-    * location(E, Theme, Destination)
-NP V NP.destination (Transitive; Destination Object)
-  Syntax: NP[Agent] VERB NP[Destination]
-  Semantics:
-    * motion(during(E), ?Theme)
-    * location(start(E), ?Theme, Destination)
-    * location(end(E), ?Theme, Destination)
-    * cause(Agent, E)
-NP V NP.patient (Basic Transitive; Causative)
-  Syntax: NP[Agent] VERB NP[Patient]
-  Semantics:
-    * cause(Agent, E)
-    * state(result(E), Endstate, Patient)
-NP V NP PP.instrument (NP-PP; Instrument-PP)
-  Syntax: NP[Agent] VERB NP[Patient] PREP[with] NP[Instrument]
-  Semantics:
-    * cause(Agent, E)
-    * state(result(E), Endstate, Patient)
-    * use(during(E), Agent, Instrument)
-NP.patient V (Intransitive; Inchoative)
-  Syntax: NP[Patient] VERB
-  Semantics:
-    * state(result(E), Endstate, Patient)
-NP V ADV-Middle (Middle Construction)
-  Syntax: NP[Patient] VERB ADV
-  Semantics:
-    * state(result(E), Endstate, Patient)
-NP.instrument V NP (Instrument Subject Alternation)
-  Syntax: NP[Instrument] VERB NP[Patient]
-  Semantics:
-    * use(during(E), ?Agent, Instrument)
-    * state(result(E), Endstate, Patient)
-NP.theme V (Intransitive; Inchoative)
-  Syntax: NP[Theme] VERB
-  Semantics:
-    * end(E, Theme)
-NP V NP.theme (NP; Causative variant)
-  Syntax: NP[Agent] VERB NP[Theme]
-  Semantics:
-    * end(E, Theme)
-    * cause(Agent, E)
-NP V PP.instrument (PP; with-PP)
-  Syntax: NP[Theme] VERB PREP[with] NP[Instrument]
-  Semantics:
-    * end(E, Theme)
-    * use(during(E), ?Agent, Instrument)
-NP V NP.theme PP.instrument (NP-PP; Causative variant)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[with] NP[Instrument]
-  Semantics:
-    * end(E, Theme)
-    * use(during(E), Agent, Instrument)
-    * cause(Agent, E)
-NP V ADJ-Middle ((SUBCAT ADL))
-  Syntax: NP[Theme] VERB ADV
-  Semantics:
-    * end(E, Theme)
+NP[Agent] VERB NP[Patient]
+NP[Agent] VERB NP[Patient] PREP[+dest_dir] NP[Recipient]
+NP[Agent] VERB NP[Patient] PREP[+dest_dir] NP[Recipient] PREP[in] NP[Theme]
+NP[Agent] VERB NP[Destination] PREP[with] NP[Theme]
+NP[Theme] VERB NP[Destination]
+NP[Agent] VERB NP[Destination]
+NP[Agent] VERB NP[Patient]
+NP[Agent] VERB NP[Patient] PREP[with] NP[Instrument]
+NP[Patient] VERB
+NP[Patient] VERB ADV
+NP[Instrument] VERB NP[Patient]
+NP[Theme] VERB
+NP[Agent] VERB NP[Theme]
+NP[Theme] VERB PREP[with] NP[Instrument]
+NP[Agent] VERB NP[Theme] PREP[with] NP[Instrument]
+NP[Theme] VERB ADV

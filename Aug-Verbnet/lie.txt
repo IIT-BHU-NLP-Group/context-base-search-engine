@@ -1,39 +1,7 @@
-NP V (Basic Intransitive)
-  Syntax: NP[Agent] VERB
-  Semantics:
-    * position(start(E), Agent, Pos)
-    * motion(during(E), Agent)
-    * position(end(E), Agent, Pos)
-NP V PP.location (PP; locative-PP)
-  Syntax: NP[Agent] VERB PREP[+loc] NP[Location]
-  Semantics:
-    * position(start(E), Agent, Pos)
-    * motion(during(E), Agent)
-    * position(end(E), Agent, Pos)
-    * Prep(E, Agent, Location)
-NP V (Basic Intransitive)
-  Syntax: NP[Theme] VERB
-  Semantics:
-    * position(E, Theme, Pos)
-NP V PP.location (PP; locative-PP)
-  Syntax: NP[Theme] VERB PREP[+loc] NP[Location]
-  Semantics:
-    * position(E, Theme, Pos)
-    * Prep(E, Theme, Location)
-There V PP NP (PP-NP; Expletive-there Subject)
-  Syntax: LEX[there] VERB PREP[+loc] NP[Location] NP[Theme -definite]
-  Semantics:
-    * position(E, Theme, Pos)
-    * Prep(E, Theme, Location)
-PP.location V NP (Locative Inversion)
-  Syntax: PREP[+loc] NP[Location] VERB NP[Theme]
-  Semantics:
-    * position(E, Theme, Pos)
-    * Prep(E, Theme, Location)
-NP V NP.theme PP (NP; Causative variant)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[+loc] NP[Location]
-  Semantics:
-    * cause(Agent, E)
-    * position(start(E), Theme, Pos)
-    * position(end(E), Theme, Pos)
-    * Prep(E, Theme, Location)
+NP[Agent] VERB
+NP[Agent] VERB PREP[+loc] NP[Location]
+NP[Theme] VERB
+NP[Theme] VERB PREP[+loc] NP[Location]
+LEX[there] VERB PREP[+loc] NP[Location] NP[Theme -definite]
+PREP[+loc] NP[Location] VERB NP[Theme]
+NP[Agent] VERB NP[Theme] PREP[+loc] NP[Location]

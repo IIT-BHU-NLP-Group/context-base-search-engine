@@ -1,5 +1,1 @@
-NP V PP.stimulus (PP; Stimulus-PP)
-  Syntax: NP[Experiencer] VERB PREP[to] NP[Stimulus]
-  Semantics:
-    * emotional_state(result(E), Emotion, Experiencer)
-    * in_reaction_to(E, Stimulus)
+NP[Experiencer] VERB PREP[to] NP[Stimulus]

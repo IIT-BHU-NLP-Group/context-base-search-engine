@@ -1,8 +1,2 @@
-NP V NP.location PP.theme (NP-PP; Location Object, Theme-PP)
-  Syntax: NP[Agent] VERB NP[Location] PREP[for] NP[Theme]
-  Semantics:
-    * search(during(E), Agent, Location, Theme)
-NP V NP.location (Transitive; Location Object)
-  Syntax: NP[Agent] VERB NP[Location]
-  Semantics:
-    * search(during(E), Agent, Location, ?Theme)
+NP[Agent] VERB NP[Location] PREP[for] NP[Theme]
+NP[Agent] VERB NP[Location]

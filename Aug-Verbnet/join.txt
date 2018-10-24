@@ -1,32 +1,8 @@
-NP V PP.theme (PP; on-PP)
-  Syntax: NP[Agent +plural] VERB PREP[on] NP[Theme -sentential]
-  Semantics:
-    * cooperate(during(E), Agent_i, Agent_j, Theme)
-NP V PP.co-agent PP.theme (PP-PP; with-PP on-PP)
-  Syntax: NP[Agent] VERB PREP[with] NP[Co-Agent] PREP[on] NP[Theme -sentential]
-  Semantics:
-    * cooperate(during(E), Agent, Co-Agent, Theme)
-NP V PP.theme (PP; in-PP)
-  Syntax: NP[Agent +plural] VERB PREP[in] NP[Theme -sentential]
-  Semantics:
-    * cooperate(during(E), Agent_i, Agent_j, Theme)
-NP V PP.co-agent PP.theme (PP-PP; with-PP in-PP)
-  Syntax: NP[Agent +plural] VERB PREP[with] NP[Co-Agent] PREP[in] NP[Theme -sentential]
-  Semantics:
-    * cooperate(during(E), Agent, Co-Agent, Theme)
-NP V PP.theme S_ING (P-ING-SC; in-PP)
-  Syntax: NP[Agent +plural] VERB PREP[in] NP[Theme +sc_ing]
-  Semantics:
-    * cooperate(during(E), Agent_i, Agent_j, Theme)
-NP V PP.patient (PP; with/into/to-PP)
-  Syntax: NP[Patient] VERB PREP[with into to] NP[Co-Patient]
-  Semantics:
-    * together(end(E), physical, Patient, Co-Patient)
-NP V (Simple Reciprocal Intransitive)
-  Syntax: NP[Patient +plural] VERB
-  Semantics:
-    * together(end(E), physical, Patient_i, Patient_j)
-NP V together (Together Reciprocal Alternation Intransitive)
-  Syntax: NP[Patient +plural] VERB LEX[together]
-  Semantics:
-    * together(end(E), physical, Patient_i, Patient_j)
+NP[Agent +plural] VERB PREP[on] NP[Theme -sentential]
+NP[Agent] VERB PREP[with] NP[Co-Agent] PREP[on] NP[Theme -sentential]
+NP[Agent +plural] VERB PREP[in] NP[Theme -sentential]
+NP[Agent +plural] VERB PREP[with] NP[Co-Agent] PREP[in] NP[Theme -sentential]
+NP[Agent +plural] VERB PREP[in] NP[Theme +sc_ing]
+NP[Patient] VERB PREP[with into to] NP[Co-Patient]
+NP[Patient +plural] VERB
+NP[Patient +plural] VERB LEX[together]

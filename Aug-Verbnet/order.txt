@@ -1,61 +1,9 @@
-NP V NP (Basic Transitive)
-  Syntax: NP[Agent] VERB NP[Theme]
-  Semantics:
-    * has_possession(start(E), ?Source, Theme)
-    * transfer(during(E), Theme)
-    * has_possession(end(E), Agent, Theme)
-    * cause(Agent, E)
-NP V NP PP.source (NP-PP; from-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[from] NP[Source]
-  Semantics:
-    * has_possession(start(E), Source, Theme)
-    * transfer(during(E), Theme)
-    * has_possession(end(E), Agent, Theme)
-    * cause(Agent, E)
-NP V NP PP.beneficiary (NP-PP; Beneficiary Object)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[for] NP[Beneficiary]
-  Semantics:
-    * has_possession(start(E), ?Source, Theme)
-    * transfer(during(E), Theme)
-    * has_possession(end(E), Agent, Theme)
-    * cause(Agent, E)
-    * benefit(E, Beneficiary)
-NP V NP.beneficiary NP (Benefactive Alternation; double object)
-  Syntax: NP[Agent] VERB NP[Beneficiary] NP[Theme]
-  Semantics:
-    * has_possession(start(E), ?Source, Theme)
-    * transfer(during(E), Theme)
-    * has_possession(end(E), Agent, Theme)
-    * cause(Agent, E)
-    * benefit(E, Beneficiary)
-NP V NP PP.asset (NP-PP; Asset Subject)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[for] NP[Asset]
-  Semantics:
-    * has_possession(start(E), ?Source, Theme)
-    * transfer(during(E), Theme)
-    * has_possession(end(E), Agent, Theme)
-    * cause(Agent, E)
-    * cost(E, Asset)
-NP.asset V NP (NP; Asset Subject)
-  Syntax: NP[Asset] VERB NP[Theme]
-  Semantics:
-    * has_possession(start(E), ?Source, Theme)
-    * transfer(during(E), Theme)
-    * has_possession(end(E), ?Agent, Theme)
-    * cause(?Agent, E)
-    * cost(E, Asset)
-NP V NP PP.source NP.asset (NP-PP-PP; Source-PP, Asset-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[from] NP[Source] PREP[at for] NP[Asset]
-  Semantics:
-    * has_possession(start(E), Source, Theme)
-    * has_possession(end(E), Agent, Theme)
-    * transfer(during(E), Theme)
-    * cost(E, Asset)
-NP V that S (S-SUBJUNCT)
-  Syntax: NP[Agent] VERB NP[Topic +that_comp -tensed_that]
-  Semantics:
-    * command(during(E), Agent, ?Recipient, Topic)
-NP V that S (THAT-S)
-  Syntax: NP[Agent] VERB NP[Topic +that_comp]
-  Semantics:
-    * command(during(E), Agent, ?Recipient, Topic)
+NP[Agent] VERB NP[Theme]
+NP[Agent] VERB NP[Theme] PREP[from] NP[Source]
+NP[Agent] VERB NP[Theme] PREP[for] NP[Beneficiary]
+NP[Agent] VERB NP[Beneficiary] NP[Theme]
+NP[Agent] VERB NP[Theme] PREP[for] NP[Asset]
+NP[Asset] VERB NP[Theme]
+NP[Agent] VERB NP[Theme] PREP[from] NP[Source] PREP[at for] NP[Asset]
+NP[Agent] VERB NP[Topic +that_comp -tensed_that]
+NP[Agent] VERB NP[Topic +that_comp]

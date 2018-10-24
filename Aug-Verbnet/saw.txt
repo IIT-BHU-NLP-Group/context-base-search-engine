@@ -1,38 +1,7 @@
-NP V NP (Transitive; Body-part or reflexive Object)
-  Syntax: NP[Agent] VERB NP[Patient]
-  Semantics:
-    * manner(during(E), Motion, Agent)
-    * contact(during(E), ?Instrument, Patient)
-    * degradation_material_integrity(result(E), Patient)
-NP V NP PP.co-patient (NP-PP; Source-PP)
-  Syntax: NP[Agent] VERB NP[Patient] PREP[off off of from] NP[Co-Patient]
-  Semantics:
-    * cause(Agent, E)
-    * together(start(E), physical, Patient, Co-Patient)
-    * apart(result(E), physical, Patient, Co-Patient)
-NP V NP apart (Apart Reciprocal Alternation Transitive)
-  Syntax: NP[Agent] VERB NP[Patient +plural] LEX[apart]
-  Semantics:
-    * cause(Agent, E)
-    * together(start(E), physical, Patient_i, Patient_j)
-    * apart(result(E), physical, Patient_i, Patient_j)
-NP V PP.co-patient (PP; Source-PP)
-  Syntax: NP[Patient] VERB PREP[off off of from] NP[Co-Patient]
-  Semantics:
-    * together(start(E), physical, Patient, Co-Patient)
-    * apart(result(E), physical, Patient, Co-Patient)
-NP V apart (Apart Reciprocal Alternation Intransitive)
-  Syntax: NP[Patient +plural] VERB LEX[apart]
-  Semantics:
-    * together(start(E), physical, Patient_i, Patient_j)
-    * apart(result(E), physical, Patient_i, Patient_j)
-NP V PP ADV-Middle (Middle Construction)
-  Syntax: NP[Patient] VERB PREP[off off of from] NP[Co-Patient] ADV
-  Semantics:
-    * together(start(E), physical, Patient, Co-Patient)
-    * apart(result(E), physical, Patient, Co-Patient)
-NP V ADV-Middle (Middle Construction)
-  Syntax: NP[Patient +plural] VERB LEX[apart] ADV
-  Semantics:
-    * together(start(E), physical, Patient_i, Patient_j)
-    * apart(result(E), physical, Patient_i, Patient_j)
+NP[Agent] VERB NP[Patient]
+NP[Agent] VERB NP[Patient] PREP[off off of from] NP[Co-Patient]
+NP[Agent] VERB NP[Patient +plural] LEX[apart]
+NP[Patient] VERB PREP[off off of from] NP[Co-Patient]
+NP[Patient +plural] VERB LEX[apart]
+NP[Patient] VERB PREP[off off of from] NP[Co-Patient] ADV
+NP[Patient +plural] VERB LEX[apart] ADV

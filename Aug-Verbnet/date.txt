@@ -1,20 +1,4 @@
-NP V NP (Basic Transitive)
-  Syntax: NP[Agent] VERB NP[Destination]
-  Semantics:
-    * created_image(result(E), ?Theme)
-    * location(end(E), ?Theme, Destination)
-    * cause(Agent, E)
-NP V NP PP.theme (NP-PP; with-PP)
-  Syntax: NP[Agent] VERB NP[Destination] PREP[with] NP[Theme]
-  Semantics:
-    * created_image(result(E), Theme)
-    * location(end(E), Theme, Destination)
-    * cause(Agent, E)
-NP V (Intransitive; Plural Subject)
-  Syntax: NP[Agent +plural] VERB
-  Semantics:
-    * social_interaction(during(E), Agent_i, Agent_j)
-NP V NP (Transitive)
-  Syntax: NP[Agent] VERB NP[Co-Agent]
-  Semantics:
-    * social_interaction(during(E), Agent, Co-Agent)
+NP[Agent] VERB NP[Destination]
+NP[Agent] VERB NP[Destination] PREP[with] NP[Theme]
+NP[Agent +plural] VERB
+NP[Agent] VERB NP[Co-Agent]

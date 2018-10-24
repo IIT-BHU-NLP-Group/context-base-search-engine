@@ -1,28 +1,6 @@
-NP V how S_INF (HOW-TO-INF)
-  Syntax: NP[Agent] VERB NP[Theme +wh_inf]
-  Semantics:
-    * declare(during(E), Agent, Theme, ?Result)
-NP V NP (Basic Transitive)
-  Syntax: NP[Agent] VERB NP[Theme]
-  Semantics:
-    * appear(during(E), Theme)
-    * cause(Agent, E)
-NP V NP PP.recipient (NP-PP; Recipient-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[to] NP[Recipient]
-  Semantics:
-    * appear(during(E), Theme)
-    * cause(Agent, E)
-NP V NP (Reflexive of Appearance)
-  Syntax: NP[Theme] VERB NP[Reflexive +refl]
-  Semantics:
-    * appear(during(E), Theme)
-NP V that S (S)
-  Syntax: NP[Agent] VERB NP[Topic +that_comp]
-  Semantics:
-    * transfer_info(during(E), Agent, ?Recipient, Topic)
-    * cause(Agent, E)
-NP V that S (S-SUBJUNCT)
-  Syntax: NP[Agent] VERB NP[Topic +that_comp -tensed_that]
-  Semantics:
-    * transfer_info(during(E), Agent, ?Recipient, Topic)
-    * cause(Agent, E)
+NP[Agent] VERB NP[Theme +wh_inf]
+NP[Agent] VERB NP[Theme]
+NP[Agent] VERB NP[Theme] PREP[to] NP[Recipient]
+NP[Theme] VERB NP[Reflexive +refl]
+NP[Agent] VERB NP[Topic +that_comp]
+NP[Agent] VERB NP[Topic +that_comp -tensed_that]

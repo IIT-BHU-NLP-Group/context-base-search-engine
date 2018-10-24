@@ -1,73 +1,14 @@
-NP V NP PP.destination (NP-PP; path-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[+path -dest_dir] NP[Destination]
-  Semantics:
-    * motion(during(E), Theme)
-    * Prep(start(E), Theme, Destination)
-    * Prep(E, Theme, Destination)
-    * cause(Agent, E)
-NP V NP ADVP (NP-ADVP-PRED; here/there)
-  Syntax: NP[Agent] VERB NP[Theme] NP[Destination +adv_loc]
-  Semantics:
-    * motion(during(E), Theme)
-    * Prep(start(E), Theme, Destination)
-    * Prep(E, Theme, Destination)
-    * cause(Agent, E)
-NP V PP.destination (PP; path-PP)
-  Syntax: NP[Theme] VERB PREP[+path -dest_dir] NP[Destination]
-  Semantics:
-    * motion(during(E), Theme)
-    * Prep(start(E), Theme, Destination)
-    * Prep(E, Theme, Destination)
-NP V NP PP.initial_location PP.destination (NP-PP-PP; Initial_Location-PP path-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[+src] NP[Initial_Location] PREP[+dest_conf] NP[Destination]
-  Semantics:
-    * Prep(start(E), Theme, Destination)
-    * Prep(E, Theme, Initial_Location)
-    * Prep(E, Theme, Destination)
-    * cause(Agent, E)
-NP V PP.initial_location PP.destination (PP-PP; Initial_Location-PP path-PP)
-  Syntax: NP[Theme] VERB PREP[+src] NP[Initial_Location] PREP[+dest_conf] NP[Destination]
-  Semantics:
-    * Prep(start(E), Theme, Destination)
-    * Prep(E, Theme, Initial_Location)
-    * Prep(E, Theme, Destination)
-NP V (Basic Intransitive)
-  Syntax: NP[Source] VERB
-  Semantics:
-    * emit(during(E), Source, ?Theme)
-NP V NP (Transitive)
-  Syntax: NP[Source] VERB NP[Theme]
-  Semantics:
-    * emit(during(E), Source, Theme)
-NP.theme V PP.source (PP; Substance Subject, Source-PP)
-  Syntax: NP[Theme] VERB PREP[from out_of] NP[Source]
-  Semantics:
-    * emit(during(E), Source, Theme)
-NP V PP.location (NP-PP; Location-PP)
-  Syntax: NP[Theme] VERB PREP[+path] NP[Location]
-  Semantics:
-    * emit(during(E), ?Source, Theme)
-    * Prep(during(E), Theme, Location)
-NP.location V PP.theme (PP; Location Subject, with-PP)
-  Syntax: NP[Location] VERB PREP[with] NP[Theme]
-  Semantics:
-    * emit(during(E), ?Source, Theme)
-    * location(during(E), Theme, Location)
-PP.location V NP (Locative Inversion)
-  Syntax: PREP[+loc] NP[Location] VERB NP[Theme]
-  Semantics:
-    * emit(during(E), ?Source, Theme)
-    * Prep(during(E), Theme, Location)
-There V NP PP (NP-PP; Expletive-there Subject)
-  Syntax: LEX[there] VERB NP[Theme] PREP[+loc] NP[Location]
-  Semantics:
-    * emit(during(E), ?Source, Theme)
-    * Prep(during(E), Theme, Location)
-NP V out (PARTout)
-  Syntax: NP[Theme] VERB LEX[out]
-  Semantics:
-    * emit(during(E), ?Source, Theme)
-NP V NP (Basic Transitive)
-  Syntax: NP[Source] VERB NP[Theme]
-  Semantics:
-    * emit(during(E), Source, Theme)
+NP[Agent] VERB NP[Theme] PREP[+path -dest_dir] NP[Destination]
+NP[Agent] VERB NP[Theme] NP[Destination +adv_loc]
+NP[Theme] VERB PREP[+path -dest_dir] NP[Destination]
+NP[Agent] VERB NP[Theme] PREP[+src] NP[Initial_Location] PREP[+dest_conf] NP[Destination]
+NP[Theme] VERB PREP[+src] NP[Initial_Location] PREP[+dest_conf] NP[Destination]
+NP[Source] VERB
+NP[Source] VERB NP[Theme]
+NP[Theme] VERB PREP[from out_of] NP[Source]
+NP[Theme] VERB PREP[+path] NP[Location]
+NP[Location] VERB PREP[with] NP[Theme]
+PREP[+loc] NP[Location] VERB NP[Theme]
+LEX[there] VERB NP[Theme] PREP[+loc] NP[Location]
+NP[Theme] VERB LEX[out]
+NP[Source] VERB NP[Theme]

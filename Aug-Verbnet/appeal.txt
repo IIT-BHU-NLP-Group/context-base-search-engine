@@ -1,5 +1,1 @@
-NP V (Basic Intransitive)
-  Syntax: NP[Stimulus] VERB
-  Semantics:
-    * emotional_state(E, Emotion, ?Experiencer)
-    * cause(Stimulus, E)
+NP[Stimulus] VERB

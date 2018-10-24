@@ -1,71 +1,15 @@
-NP V NP PP.co-patient (NP-PP; to-PP)
-  Syntax: NP[Agent] VERB NP[Patient] PREP[with into to] NP[Co-Patient]
-  Semantics:
-    * cause(Agent, E)
-    * together(end(E), physical, Patient, Co-Patient)
-NP V NP (Simple Reciprocal Transitive)
-  Syntax: NP[Agent] VERB NP[Patient +plural]
-  Semantics:
-    * cause(Agent, E)
-    * together(end(E), physical, Patient_i, Patient_j)
-NP V NP together (Together Reciprocal Alternation Transitive)
-  Syntax: NP[Agent] VERB NP[Patient +plural] LEX[together]
-  Semantics:
-    * cause(Agent, E)
-    * together(end(E), physical, Patient_i, Patient_j)
-NP V ADVP-Middle PP (Middle Construction)
-  Syntax: NP[Patient] VERB ADV PREP[with into to] NP[Co-Patient]
-  Semantics:
-    * together(end(E), physical, Patient, Co-Patient)
-NP V ADVP-Middle (Middle Construction)
-  Syntax: NP[Patient +plural] VERB ADV
-  Semantics:
-    * together(end(E), physical, Patient, Co-Patient)
-NP V ADVP-Middle (Middle Construction)
-  Syntax: NP[Patient +plural] VERB ADV LEX[together]
-  Semantics:
-    * together(end(E), physical, Patient, Co-Patient)
-NP V NP (NP; Plural object)
-  Syntax: NP[Agent] VERB NP[Theme +plural]
-  Semantics:
-    * calculate(during(E), Agent, Theme)
-NP V NP.topic (Basic Transitive; Topic Object)
-  Syntax: NP[Agent] VERB NP[Topic]
-  Semantics:
-    * transfer_info(during(E), Agent, ?Recipient, Topic)
-    * cause(Agent, E)
-NP V NP PP.recipient (NP-PP; to-PP)
-  Syntax: NP[Agent] VERB NP[Topic] PREP[to] NP[Recipient]
-  Semantics:
-    * transfer_info(during(E), Agent, Recipient, Topic)
-    * cause(Agent, E)
-NP V PP.recipient S-Quote (PP-S; to-PP)
-  Syntax: NP[Agent] VERB PREP[to] NP[Recipient] NP[Topic +quotation]
-  Semantics:
-    * transfer_info(during(E), Agent, Recipient, Topic)
-    * cause(Agent, E)
-NP V S-Quote (QUOT)
-  Syntax: NP[Agent] VERB NP[Topic +quotation]
-  Semantics:
-    * transfer_info(during(E), Agent, ?Recipient, Topic)
-    * cause(Agent, E)
-NP V how S (HOW-S)
-  Syntax: NP[Agent] VERB NP[Topic +how_extract]
-  Semantics:
-    * transfer_info(during(E), Agent, ?Recipient, Topic)
-    * cause(Agent, E)
-NP V how S_INF (HOW-TO-INF)
-  Syntax: NP[Agent] VERB NP[Topic +wh_inf]
-  Semantics:
-    * transfer_info(during(E), Agent, ?Recipient, Topic)
-    * cause(Agent, E)
-NP V what S_INF (WHAT-TO-INF)
-  Syntax: NP[Agent] VERB NP[Topic +what_inf]
-  Semantics:
-    * transfer_info(during(E), Agent, ?Recipient, Topic)
-    * cause(Agent, E)
-NP V what S (WHAT-S)
-  Syntax: NP[Agent] VERB NP[Topic +what_extract]
-  Semantics:
-    * transfer_info(during(E), Agent, ?Recipient, Topic)
-    * cause(Agent, E)
+NP[Agent] VERB NP[Patient] PREP[with into to] NP[Co-Patient]
+NP[Agent] VERB NP[Patient +plural]
+NP[Agent] VERB NP[Patient +plural] LEX[together]
+NP[Patient] VERB ADV PREP[with into to] NP[Co-Patient]
+NP[Patient +plural] VERB ADV
+NP[Patient +plural] VERB ADV LEX[together]
+NP[Agent] VERB NP[Theme +plural]
+NP[Agent] VERB NP[Topic]
+NP[Agent] VERB NP[Topic] PREP[to] NP[Recipient]
+NP[Agent] VERB PREP[to] NP[Recipient] NP[Topic +quotation]
+NP[Agent] VERB NP[Topic +quotation]
+NP[Agent] VERB NP[Topic +how_extract]
+NP[Agent] VERB NP[Topic +wh_inf]
+NP[Agent] VERB NP[Topic +what_inf]
+NP[Agent] VERB NP[Topic +what_extract]

@@ -1,36 +1,9 @@
-NP V NP to be NP (Infinitival Copular Clause)
-  Syntax: NP[Agent] VERB NP[Theme] LEX[to] LEX[be] NP[Predicate]
-  Semantics:
-    * believe(during(E), Agent, Theme, Predicate)
-NP V that S (S)
-  Syntax: NP[Agent] VERB NP[Theme +that_comp]
-  Semantics:
-    * believe(during(E), Agent, Theme, ?Predicate)
-NP V NP (Basic Transitive)
-  Syntax: NP[Agent] VERB NP[Theme -sentential]
-  Semantics:
-    * believe(during(E), Agent, Theme, ?Predicate)
-NP V for NP S_INF (FOR-TO-INF)
-  Syntax: NP[Experiencer] VERB NP[Stimulus +for_comp]
-  Semantics:
-    * desire(E, Experiencer, Stimulus)
-NP V NP (NP)
-  Syntax: NP[Experiencer] VERB NP[Stimulus -sentential]
-  Semantics:
-    * desire(E, Experiencer, Stimulus)
-NP V NP to be ADJ (Infinitival Copular Clause)
-  Syntax: NP[Experiencer] VERB NP[Stimulus +to_be]
-  Semantics:
-    * desire(E, Experiencer, Stimulus)
-NP V NP ADJ (NP-VEN-NP-OMIT)
-  Syntax: NP[Experiencer] VERB NP[Stimulus +np_ppart]
-  Semantics:
-    * desire(E, Experiencer, Stimulus)
-NP V that S (S)
-  Syntax: NP[Experiencer] VERB NP[Stimulus +that_comp]
-  Semantics:
-    * desire(E, Experiencer, Stimulus)
-NP V S_INF (TO-INF-SC)
-  Syntax: NP[Experiencer] VERB NP[Stimulus +sc_to_inf]
-  Semantics:
-    * desire(E, Experiencer, Stimulus)
+NP[Agent] VERB NP[Theme] LEX[to] LEX[be] NP[Predicate]
+NP[Agent] VERB NP[Theme +that_comp]
+NP[Agent] VERB NP[Theme -sentential]
+NP[Experiencer] VERB NP[Stimulus +for_comp]
+NP[Experiencer] VERB NP[Stimulus -sentential]
+NP[Experiencer] VERB NP[Stimulus +to_be]
+NP[Experiencer] VERB NP[Stimulus +np_ppart]
+NP[Experiencer] VERB NP[Stimulus +that_comp]
+NP[Experiencer] VERB NP[Stimulus +sc_to_inf]

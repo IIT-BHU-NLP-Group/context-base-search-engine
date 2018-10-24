@@ -1,25 +1,4 @@
-NP V NP PP.initial_location (NP-PP; Initial_Location-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[+src] NP[Initial_Location]
-  Semantics:
-    * cause(Agent, E)
-    * location(start(E), Theme, Initial_Location)
-    * location(end(E), Theme, Initial_Location)
-NP V NP.initial_location (Transitive; Initial_Location Object)
-  Syntax: NP[Agent] VERB NP[Initial_Location]
-  Semantics:
-    * cause(Agent, E)
-    * location(start(E), ?Theme, Initial_Location)
-    * location(end(E), ?Theme, Initial_Location)
-NP V (Unspecified Object)
-  Syntax: NP[Agent] VERB
-  Semantics:
-    * cause(Agent, E)
-    * location(start(E), ?Theme, ?Initial_Location)
-    * location(end(E), ?Theme, ?Initial_Location)
-NP V NP ADJP-Result (NP-ADJP; Resultative)
-  Syntax: NP[Agent] VERB NP[Initial_Location] NP[Result]
-  Semantics:
-    * cause(Agent, E)
-    * location(start(E), ?Theme, Initial_Location)
-    * location(end(E), ?Theme, Initial_Location)
-    * Pred(result(E), Initial_Location)
+NP[Agent] VERB NP[Theme] PREP[+src] NP[Initial_Location]
+NP[Agent] VERB NP[Initial_Location]
+NP[Agent] VERB
+NP[Agent] VERB NP[Initial_Location] NP[Result]

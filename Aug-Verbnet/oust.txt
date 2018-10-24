@@ -1,30 +1,5 @@
-NP V NP (NP)
-  Syntax: NP[Agent] VERB NP[Theme]
-  Semantics:
-    * cause(Agent, E)
-    * location(start(E), Theme, ?Source)
-    * location(end(E), Theme, ?Source)
-NP V NP PP.source (NP-PP; from-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[from] NP[Source]
-  Semantics:
-    * cause(Agent, E)
-    * location(start(E), Theme, Source)
-    * location(end(E), Theme, Source)
-NP V NP PP.attribute (NP-PP; as-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[as] NP[Attribute -sentential]
-  Semantics:
-    * cause(Agent, E)
-    * location(start(E), Theme, ?Source, Attribute)
-    * location(end(E), Theme, ?Source, Attribute)
-NP V NP (Basic Transitive)
-  Syntax: NP[Agent] VERB NP[Theme]
-  Semantics:
-    * cause(Agent, E)
-    * location(start(E), Theme, ?Source)
-    * location(end(E), Theme, ?Source)
-NP V NP PP.source (NP-PP; Source-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[+src] NP[Source]
-  Semantics:
-    * cause(Agent, E)
-    * location(start(E), Theme, Source)
-    * location(end(E), Theme, Source)
+NP[Agent] VERB NP[Theme]
+NP[Agent] VERB NP[Theme] PREP[from] NP[Source]
+NP[Agent] VERB NP[Theme] PREP[as] NP[Attribute -sentential]
+NP[Agent] VERB NP[Theme]
+NP[Agent] VERB NP[Theme] PREP[+src] NP[Source]

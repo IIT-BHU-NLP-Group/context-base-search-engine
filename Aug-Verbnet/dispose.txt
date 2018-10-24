@@ -1,10 +1,2 @@
-NP V NP PP.stimulus (NP-PP; to-PP)
-  Syntax: NP[Agent] VERB NP[Patient] PREP[to] NP[Stimulus]
-  Semantics:
-    * cause(Agent, E)
-    * desire(result(E), Patient, Stimulus)
-NP V NP S_ING (NP-P-ING-SC; to-PP)
-  Syntax: NP[Agent] VERB NP[Patient] PREP[to] NP[Stimulus +sc_ing]
-  Semantics:
-    * cause(Agent, E)
-    * desire(result(E), Patient, Stimulus)
+NP[Agent] VERB NP[Patient] PREP[to] NP[Stimulus]
+NP[Agent] VERB NP[Patient] PREP[to] NP[Stimulus +sc_ing]

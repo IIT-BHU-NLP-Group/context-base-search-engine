@@ -1,34 +1,8 @@
-NP V how S (HOW-S)
-  Syntax: NP[Cause] VERB NP[Topic +how_extract]
-  Semantics:
-    * indicate(during(E), Cause, ?Recipient, Topic)
-NP V how S_INF (HOW-TO-INF)
-  Syntax: NP[Cause] VERB NP[Topic +wh_inf]
-  Semantics:
-    * indicate(during(E), Cause, ?Recipient, Topic)
-NP V NP (Basic Transitive)
-  Syntax: NP[Cause] VERB NP[Topic -sentential]
-  Semantics:
-    * indicate(during(E), Cause, ?Recipient, Topic)
-NP V whether/if S (WH-S)
-  Syntax: NP[Cause] VERB NP[Topic +wh_comp]
-  Semantics:
-    * indicate(during(E), Cause, ?Recipient, Topic)
-NP V what S (WHAT-S)
-  Syntax: NP[Cause] VERB NP[Topic +what_extract]
-  Semantics:
-    * indicate(during(E), Cause, ?Recipient, Topic)
-NP V NP (Basic Transitive)
-  Syntax: NP[Agent] VERB NP[Theme]
-  Semantics:
-    * appear(during(E), Theme)
-    * cause(Agent, E)
-NP V NP PP.recipient (NP-PP; Recipient-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[to] NP[Recipient]
-  Semantics:
-    * appear(during(E), Theme)
-    * cause(Agent, E)
-NP V NP (Reflexive of Appearance)
-  Syntax: NP[Theme] VERB NP[Reflexive +refl]
-  Semantics:
-    * appear(during(E), Theme)
+NP[Cause] VERB NP[Topic +how_extract]
+NP[Cause] VERB NP[Topic +wh_inf]
+NP[Cause] VERB NP[Topic -sentential]
+NP[Cause] VERB NP[Topic +wh_comp]
+NP[Cause] VERB NP[Topic +what_extract]
+NP[Agent] VERB NP[Theme]
+NP[Agent] VERB NP[Theme] PREP[to] NP[Recipient]
+NP[Theme] VERB NP[Reflexive +refl]

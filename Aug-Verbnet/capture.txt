@@ -1,8 +1,1 @@
-NP V                     NP NP (Ditransitive)
-  Syntax: NP[Agent] VERB NP[Beneficiary] NP[Theme]
-  Semantics:
-    * manner(during(E), illegal, Agent)
-    * has_possession(start(E), Source, Theme)
-    * has_possession(end(E), Beneficiary, Theme)
-    * has_possession(end(E), Source, Theme)
-    * cause(Agent, E)
+NP[Agent] VERB NP[Beneficiary] NP[Theme]

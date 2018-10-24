@@ -1,8 +1,2 @@
-NP V PP.attribute (PP; like-PP)
-  Syntax: NP[Agent] VERB LEX[like] NP[Attribute]
-  Semantics:
-    * masquerade(during(E), Agent, Attribute)
-NP V NP (NP-PRED-RS)
-  Syntax: NP[Theme] VERB NP[Attribute -sentential]
-  Semantics:
-    * seem(E, Theme, Attribute)
+NP[Agent] VERB LEX[like] NP[Attribute]
+NP[Theme] VERB NP[Attribute -sentential]

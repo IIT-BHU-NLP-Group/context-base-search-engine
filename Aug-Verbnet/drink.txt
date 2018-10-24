@@ -1,13 +1,3 @@
-NP V NP (Basic Transitive)
-  Syntax: NP[Agent] VERB NP[Patient]
-  Semantics:
-    * take_in(during(E), Agent, Patient)
-NP V (Unspecified Object)
-  Syntax: NP[Agent] VERB
-  Semantics:
-    * take_in(during(E), Agent, ?Patient)
-NP V PP.source (PP; Source-PP)
-  Syntax: NP[Agent] VERB PREP[+src] NP[Source]
-  Semantics:
-    * take_in(during(E), Agent, ?Patient)
-    * Prep(during(E), ?Patient, Source)
+NP[Agent] VERB NP[Patient]
+NP[Agent] VERB
+NP[Agent] VERB PREP[+src] NP[Source]

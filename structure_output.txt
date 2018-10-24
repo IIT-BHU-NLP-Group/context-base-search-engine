@@ -1,0 +1,8 @@
+DATA:ROOT | PHRASE:   Shah  built  Taj  in   memory  of  his beloved wife Mumtaz . | HEAD:built | RELATION:[] | TAG:[] | LEVEL:0 
+	DATA:VP | PHRASE:built | HEAD:built | RELATION:[] | TAG:[] | LEVEL:1 
+		DATA:NP | PHRASE:Shah  | HEAD:Shah | RELATION:[] | TAG:set(['Asset', 'Agent']) | LEVEL:2 
+		DATA:. | PHRASE:. | HEAD:. | RELATION:[] | TAG:[] | LEVEL:2 
+		DATA:NP | PHRASE:Taj  | HEAD:Taj | RELATION:[] | TAG:set(['Beneficiary', 'Theme', 'Product']) | LEVEL:2 
+		DATA:NP | PHRASE:memory  | HEAD:memory | RELATION:['in'] | TAG:set(['Source', 'Material', 'Asset']) | LEVEL:2 
+			DATA:NP | PHRASE:wife Mumtaz  | HEAD:None | RELATION:['of'] | TAG:[] | LEVEL:3 
+				DATA:JJ | PHRASE:beloved | HEAD:beloved | RELATION:['modifier'] | TAG:[] | LEVEL:4 

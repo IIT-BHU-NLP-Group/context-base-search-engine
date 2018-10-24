@@ -1,46 +1,9 @@
-NP V (Understood Reciprocal Object)
-  Syntax: NP[Theme] LEX[and] NP[Co-Theme] VERB
-  Semantics:
-    * contact(during(E), Theme, Co-Theme)
-    * exist(during(E), Theme)
-    * exist(during(E), Co-Theme)
-NP V NP (Basic Transitive)
-  Syntax: NP[Agent] VERB NP[Patient]
-  Semantics:
-    * cause(Agent, E)
-    * transfer_info(during(E), Agent, ?Recipient, ?Theme)
-NP V NP PP.recipient (NP-PP; Recipient-PP)
-  Syntax: NP[Agent] VERB NP[Patient] PREP[+dest_dir] NP[Recipient]
-  Semantics:
-    * cause(Agent, E)
-    * transfer_info(during(E), Agent, Recipient, ?Theme)
-NP V NP PP.recipient PP.theme (NP-PP-PP; Recipient-PP Theme-PP)
-  Syntax: NP[Agent] VERB NP[Patient] PREP[+dest_dir] NP[Recipient] PREP[in] NP[Theme]
-  Semantics:
-    * cause(Agent, E)
-    * transfer_info(during(E), Agent, Recipient, Theme)
-NP V NP (Locative Preposition Drop)
-  Syntax: NP[Theme] VERB NP[Trajectory]
-  Semantics:
-    * motion(during(E), Theme)
-    * path(during(E), Theme, ?Initial_Location, Trajectory, ?Destination)
-NP V PP.location (PP; path-PP)
-  Syntax: NP[Theme] VERB PREP[+path] NP[Location]
-  Semantics:
-    * Prep(during(E), Theme, Location)
-    * exist(during(E), Theme)
-PP.location V NP (Locative Inversion)
-  Syntax: PREP[+path] NP[Location] VERB NP[Theme]
-  Semantics:
-    * Prep(during(E), Theme, Location)
-    * exist(during(E), Theme)
-There V PP NP (PP-NP; Expletive-there Subject)
-  Syntax: LEX[there] VERB PREP[+path] NP[Location] NP[Theme]
-  Semantics:
-    * Prep(during(E), Theme, Location)
-    * exist(during(E), Theme)
-There V NP PP (NP-PP; Expletive-there Subject)
-  Syntax: LEX[there] VERB NP[Theme] PREP[+path] NP[Location]
-  Semantics:
-    * Prep(during(E), Theme, Location)
-    * exist(during(E), Theme)
+NP[Theme] LEX[and] NP[Co-Theme] VERB
+NP[Agent] VERB NP[Patient]
+NP[Agent] VERB NP[Patient] PREP[+dest_dir] NP[Recipient]
+NP[Agent] VERB NP[Patient] PREP[+dest_dir] NP[Recipient] PREP[in] NP[Theme]
+NP[Theme] VERB NP[Trajectory]
+NP[Theme] VERB PREP[+path] NP[Location]
+PREP[+path] NP[Location] VERB NP[Theme]
+LEX[there] VERB PREP[+path] NP[Location] NP[Theme]
+LEX[there] VERB NP[Theme] PREP[+path] NP[Location]

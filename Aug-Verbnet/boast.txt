@@ -1,0 +1,9 @@
+NP[Agent] VERB
+NP[Agent] VERB PREP[to] NP[Recipient]
+NP[Agent] VERB NP[Topic +that_comp]
+NP[Agent] VERB PREP[to] NP[Recipient] NP[Topic +that_comp]
+NP[Agent] VERB PREP[about] NP[Topic]
+NP[Agent] VERB PREP[about] NP[Topic] PREP[to] NP[Recipient]
+NP[Agent] VERB NP[Topic +quotation]
+NP[Agent] VERB PREP[to] NP[Recipient] NP[Topic +quotation]
+NP[Agent] VERB PREP[to] NP[Recipient] PREP[about] NP[Topic]

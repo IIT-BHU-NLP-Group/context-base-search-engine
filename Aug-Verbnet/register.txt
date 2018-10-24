@@ -1,9 +1,2 @@
-NP V NP (NP)
-  Syntax: NP[Agent] VERB NP[Theme]
-  Semantics:
-    * license(result(E), Theme)
-    * cause(Agent, E)
-NP V NP.value (Transitive; Attribute Object)
-  Syntax: NP[Theme] VERB NP[Value]
-  Semantics:
-    * value(E, Agent, Theme, Value)
+NP[Agent] VERB NP[Theme]
+NP[Theme] VERB NP[Value]

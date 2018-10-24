@@ -1,10 +1,2 @@
-NP V NP NP (NP-NP)
-  Syntax: NP[Agent] VERB NP[Theme] NP[Result]
-  Semantics:
-    * designated(result(E), Theme, Result)
-    * cause(Agent, E)
-NP V NP (Basic Transitive)
-  Syntax: NP[Agent] VERB NP[Theme]
-  Semantics:
-    * cause(Agent, E)
-    * designated(result(E), Theme, ?Result)
+NP[Agent] VERB NP[Theme] NP[Result]
+NP[Agent] VERB NP[Theme]

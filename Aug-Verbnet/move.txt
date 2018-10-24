@@ -1,115 +1,22 @@
-NP V NP (Basic Transitive)
-  Syntax: NP[Stimulus] VERB NP[Experiencer]
-  Semantics:
-    * cause(Stimulus, E)
-    * emotional_state(result(E), Emotion, Experiencer)
-NP V ADV-Middle (Middle Construction)
-  Syntax: NP[Experiencer] VERB ADV
-  Semantics:
-    * emotional_state(result(E), ?Emotion, Experiencer)
-NP V NP-PRO-ARB (PRO-Arb Object Alternation)
-  Syntax: NP[Stimulus] VERB
-  Semantics:
-    * cause(Stimulus, E)
-    * emotional_state(result(E), Emotion, ?Experiencer)
-NP.cause V NP (NP; Attribute Subject)
-  Syntax: NP[Stimulus +genitive] LEX['s] VERB NP[Experiencer]
-  Semantics:
-    * cause(Stimulus, E)
-    * emotional_state(result(E), Emotion, Experiencer)
-NP V NP ADJ (NP-ADJP; Resultative)
-  Syntax: NP[Stimulus] VERB NP[Experiencer] NP[Result]
-  Semantics:
-    * cause(Stimulus, E)
-    * emotional_state(result(E), Emotion, Experiencer)
-    * Pred(result(E), Experiencer)
-NP.attribute V (Intransitive; Attribute Subject)
-  Syntax: NP[Patient] LEX['s] NP[Attribute] VERB
-  Semantics:
-    * change_value(during(E), Direction, Attribute, Patient)
-NP.theme V (Basic Intransitive; inchoative)
-  Syntax: NP[Theme] VERB
-  Semantics:
-    * motion(during(E), Theme)
-NP V PP.location (PP; locative-PP)
-  Syntax: NP[Theme] VERB PREP[+spatial] NP[Location]
-  Semantics:
-    * motion(during(E), Theme)
-    * Prep(E, Theme, Location)
-NP V NP.theme (Transitive; Causative)
-  Syntax: NP[Agent] VERB NP[Theme]
-  Semantics:
-    * motion(during(E), Theme)
-    * cause(Agent, E)
-NP V NP PP.location (NP-PP; path-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[+path] NP[Location]
-  Semantics:
-    * motion(during(E), Theme)
-    * Prep(E, Theme, Location)
-    * cause(Agent, E)
-NP V ADJ (ADJP; Resultative)
-  Syntax: NP[Theme] VERB NP[Result]
-  Semantics:
-    * motion(during(E), Theme)
-    * Pred(result(E), Theme)
-NP V PP.result (PP; Result-PP)
-  Syntax: NP[Theme] VERB PREP[to into] NP[Result +state]
-  Semantics:
-    * motion(during(E), Theme)
-    * Pred(result(E), Theme)
-NP V NP ADJ (NP-ADJP; Resultative)
-  Syntax: NP[Agent] VERB NP[Theme] NP[Result]
-  Semantics:
-    * motion(during(E), Theme)
-    * cause(Agent, E)
-    * Pred(result(E), Theme)
-NP V NP PP.result (NP-PP; Result-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[to into] NP[Result +state]
-  Semantics:
-    * motion(during(E), Theme)
-    * cause(Agent, E)
-    * Pred(result(E), Theme)
-NP V (Intransitive)
-  Syntax: NP[Theme] VERB
-  Semantics:
-    * motion(during(E), Theme)
-NP V PP.initial_location (PP; path-PP)
-  Syntax: NP[Theme] VERB PREP[+path -dest_dir] NP[Initial_Location]
-  Semantics:
-    * motion(during(E), Theme)
-    * location(start(E), Theme, Initial_Location)
-NP V PP.destination (PP; path-PP)
-  Syntax: NP[Theme] VERB PREP[to] NP[Destination]
-  Semantics:
-    * motion(during(E), Theme)
-    * location(end(E), Theme, Destination)
-NP V PP.initial_location PP.destination (PP; path-PP)
-  Syntax: NP[Theme] VERB PREP[+src] NP[Initial_Location] PREP[to] NP[Destination]
-  Semantics:
-    * motion(during(E), Theme)
-    * location(start(E), Theme, Initial_Location)
-    * location(end(E), Theme, Destination)
-NP.agent V NP (Basic Transitive; Causative)
-  Syntax: NP[Agent] VERB NP[Theme]
-  Semantics:
-    * motion(during(E), Theme)
-    * cause(Agent, E)
-NP V NP PP.initial_location (NP-PP; path-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[+path -dest_dir] NP[Trajectory]
-  Semantics:
-    * motion(during(E), Theme)
-    * location(start(E), Theme, Initial_Location)
-    * cause(Agent, E)
-NP V NP PP.destination (NP-PP; path-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[to] NP[Destination]
-  Semantics:
-    * motion(during(E), Theme)
-    * location(end(E), Theme, Destination)
-    * cause(Agent, E)
-NP V NP PP.initial_location PP.destination (NP-PP; path-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[+src] NP[Initial_Location] PREP[to] NP[Destination]
-  Semantics:
-    * motion(during(E), Theme)
-    * location(start(E), Theme, Initial_Location)
-    * location(end(E), Theme, Destination)
-    * cause(Agent, E)
+NP[Stimulus] VERB NP[Experiencer]
+NP[Experiencer] VERB ADV
+NP[Stimulus] VERB
+NP[Stimulus +genitive] LEX['s] VERB NP[Experiencer]
+NP[Stimulus] VERB NP[Experiencer] NP[Result]
+NP[Patient] LEX['s] NP[Attribute] VERB
+NP[Theme] VERB
+NP[Theme] VERB PREP[+spatial] NP[Location]
+NP[Agent] VERB NP[Theme]
+NP[Agent] VERB NP[Theme] PREP[+path] NP[Location]
+NP[Theme] VERB NP[Result]
+NP[Theme] VERB PREP[to into] NP[Result +state]
+NP[Agent] VERB NP[Theme] NP[Result]
+NP[Agent] VERB NP[Theme] PREP[to into] NP[Result +state]
+NP[Theme] VERB
+NP[Theme] VERB PREP[+path -dest_dir] NP[Initial_Location]
+NP[Theme] VERB PREP[to] NP[Destination]
+NP[Theme] VERB PREP[+src] NP[Initial_Location] PREP[to] NP[Destination]
+NP[Agent] VERB NP[Theme]
+NP[Agent] VERB NP[Theme] PREP[+path -dest_dir] NP[Trajectory]
+NP[Agent] VERB NP[Theme] PREP[to] NP[Destination]
+NP[Agent] VERB NP[Theme] PREP[+src] NP[Initial_Location] PREP[to] NP[Destination]

@@ -1,5 +1,1 @@
-NP V S_ING (ING-SC/BE-ING-SC)
-  Syntax: NP[Agent] VERB NP[Theme +be_sc_ing]
-  Semantics:
-    * end(E, Theme)
-    * cause(Agent, E)
+NP[Agent] VERB NP[Theme +be_sc_ing]

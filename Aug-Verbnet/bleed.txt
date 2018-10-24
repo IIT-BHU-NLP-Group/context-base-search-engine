@@ -1,50 +1,9 @@
-NP V (Basic Intransitive)
-  Syntax: NP[Agent] VERB
-  Semantics:
-    * body_process(E, Agent)
-    * emit(during(E), Agent, ?Theme)
-NP V PP.destination (PP; Destination-PP)
-  Syntax: NP[Agent] VERB PREP[on onto] NP[Destination]
-  Semantics:
-    * body_process(E, Agent)
-    * emit(during(E), Agent, ?Theme)
-    * Prep(E, ?Theme, Destination)
-NP V NP.theme (Transitive; Substance Object)
-  Syntax: NP[Agent] VERB NP[Theme]
-  Semantics:
-    * body_process(E, Agent)
-    * emit(during(E), Agent, Theme)
-NP V NP.theme PP.destination (NP-PP; Substance Object Destination-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[on onto] NP[Destination]
-  Semantics:
-    * body_process(E, Agent)
-    * emit(during(E), Agent, Theme)
-    * Prep(E, Theme, Destination)
-NP V NP PP.theme (NP-PP; of-PP)
-  Syntax: NP[Agent] VERB NP[Source] PREP[of] NP[Theme]
-  Semantics:
-    * cause(Agent, E)
-    * location(start(E), Theme, Source)
-    * location(end(E), Theme, Source)
-NP V NP PP.theme (NP-PP; out_of-PP)
-  Syntax: NP[Agent] VERB NP[Source] PREP[out_of] NP[Theme]
-  Semantics:
-    * cause(Agent, E)
-    * location(start(E), Theme, Source)
-    * location(end(E), Theme, Source)
-NP V NP (Transitive; dropped Theme)
-  Syntax: NP[Agent] VERB NP[Source]
-  Semantics:
-    * cause(Agent, E)
-    * location(start(E), ?Theme, Source)
-    * location(end(E), ?Theme, Source)
-NP V PP.stimulus (PP; Stimulus-PP)
-  Syntax: NP[Experiencer] VERB PREP[for] NP[Stimulus]
-  Semantics:
-    * emotional_state(result(E), Emotion, Experiencer)
-    * in_reaction_to(E, Stimulus)
-NP V NP.source (NP; Causative variant)
-  Syntax: NP[Agent] VERB NP[Source]
-  Semantics:
-    * emit(during(E), Source, ?Theme)
-    * cause(Agent, E)
+NP[Agent] VERB
+NP[Agent] VERB PREP[on onto] NP[Destination]
+NP[Agent] VERB NP[Theme]
+NP[Agent] VERB NP[Theme] PREP[on onto] NP[Destination]
+NP[Agent] VERB NP[Source] PREP[of] NP[Theme]
+NP[Agent] VERB NP[Source] PREP[out_of] NP[Theme]
+NP[Agent] VERB NP[Source]
+NP[Experiencer] VERB PREP[for] NP[Stimulus]
+NP[Agent] VERB NP[Source]

@@ -1,7 +1,1 @@
-NP V PP.destination NP (PP-NP; upon/on-PP)
-  Syntax: NP[Agent] VERB PREP[on upon] NP[Destination] NP[Theme]
-  Semantics:
-    * motion(during(E), Theme)
-    * Prep(start(E), Theme, Destination)
-    * Prep(end(E), Theme, Destination)
-    * cause(Agent, E)
+NP[Agent] VERB PREP[on upon] NP[Destination] NP[Theme]

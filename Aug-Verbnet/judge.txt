@@ -1,56 +1,13 @@
-NP V PP.beneficiary (PP; for-PP)
-  Syntax: NP[Agent] VERB PREP[for] NP[Beneficiary]
-  Semantics:
-    * masquerade(during(E), Agent, Role)
-    * benefit(E, Beneficiary)
-NP V NP S_ING (NP-P-ING-OC; as-PP)
-  Syntax: NP[Agent] VERB NP[Theme] LEX[as] NP[Attribute +oc_ing]
-  Semantics:
-    * characterize(during(E), Theme, Attribute)
-    * cause(Agent, E)
-NP V NP to be ADJ (NP-TOBE)
-  Syntax: NP[Agent] VERB NP[Theme] LEX[as] NP[Attribute +small_clause]
-  Semantics:
-    * characterize(during(E), Theme, Attribute)
-    * cause(Agent, E)
-NP V NP PP.attribute (NP-PP; as-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[as] NP[Attribute -sentential]
-  Semantics:
-    * characterize(during(E), Theme, Attribute)
-    * cause(Agent, E)
-NP V whether/if S (WH-S)
-  Syntax: NP[Agent] VERB NP[Theme +wh_comp]
-  Semantics:
-    * declare(during(E), Agent, Theme, ?Result)
-NP V whether/if S_INF (WH-TO-INF)
-  Syntax: NP[Agent] VERB NP[Theme +wheth_inf]
-  Semantics:
-    * declare(during(E), Agent, Theme, ?Result)
-NP V NP (NP)
-  Syntax: NP[Agent] VERB NP[Theme]
-  Semantics:
-    * assess(during(E), Agent, Theme, ?Value)
-NP V NP PP.value (NP-PP; at-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[at] NP[Value]
-  Semantics:
-    * assess(during(E), Agent, Theme, Value)
-NP V how S (HOW-S)
-  Syntax: NP[Agent] VERB NP[Value +how_extract]
-  Semantics:
-    * assess(during(E), Agent, ?Theme, Value)
-NP V NP to be ADJ (NP-TOBE)
-  Syntax: NP[Agent] VERB NP[Theme +to_be]
-  Semantics:
-    * assess(during(E), Agent, Theme, ?Value)
-NP V that S (S)
-  Syntax: NP[Agent] VERB NP[Theme +that_comp]
-  Semantics:
-    * assess(during(E), Agent, Theme, ?Value)
-NP V what S (WHAT-S)
-  Syntax: NP[Agent] VERB NP[Theme +what_extract]
-  Semantics:
-    * assess(during(E), Agent, Theme, ?Value)
-NP V NP to be NP (NP-TOBE)
-  Syntax: NP[Agent] VERB NP[Theme] NP[Attribute +small_clause]
-  Semantics:
-    * declare(during(E), Agent, Theme, Attribute)
+NP[Agent] VERB PREP[for] NP[Beneficiary]
+NP[Agent] VERB NP[Theme] LEX[as] NP[Attribute +oc_ing]
+NP[Agent] VERB NP[Theme] LEX[as] NP[Attribute +small_clause]
+NP[Agent] VERB NP[Theme] PREP[as] NP[Attribute -sentential]
+NP[Agent] VERB NP[Theme +wh_comp]
+NP[Agent] VERB NP[Theme +wheth_inf]
+NP[Agent] VERB NP[Theme]
+NP[Agent] VERB NP[Theme] PREP[at] NP[Value]
+NP[Agent] VERB NP[Value +how_extract]
+NP[Agent] VERB NP[Theme +to_be]
+NP[Agent] VERB NP[Theme +that_comp]
+NP[Agent] VERB NP[Theme +what_extract]
+NP[Agent] VERB NP[Theme] NP[Attribute +small_clause]

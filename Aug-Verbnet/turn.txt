@@ -1,119 +1,22 @@
-NP V NP ADJ
-  Syntax: NP[Patient] VERB NP[Result]
-  Semantics:
-    * state(result(E), Result, Patient)
-    * Pred(result(E), Patient)
-NP V S_ING (P-ING-SC; to-PP)
-  Syntax: NP[Patient] VERB PREP[to] NP[Goal +sc_ing]
-  Semantics:
-    * convert(during(E), Patient, ?Source, Goal)
-NP V PP.goal (PP; to-PP)
-  Syntax: NP[Patient] VERB PREP[to] NP[Goal]
-  Semantics:
-    * convert(during(E), Patient, ?Source, Goal)
-NP V NP (Basic Transitive)
-  Syntax: NP[Agent] VERB NP[Patient]
-  Semantics:
-    * cause(Agent, E)
-    * transfer_info(during(E), Agent, ?Recipient, ?Theme)
-NP V NP PP.recipient (NP-PP; Recipient-PP)
-  Syntax: NP[Agent] VERB NP[Patient] PREP[+dest_dir] NP[Recipient]
-  Semantics:
-    * cause(Agent, E)
-    * transfer_info(during(E), Agent, Recipient, ?Theme)
-NP V NP PP.recipient PP.theme (NP-PP-PP; Recipient-PP Theme-PP)
-  Syntax: NP[Agent] VERB NP[Patient] PREP[+dest_dir] NP[Recipient] PREP[in] NP[Theme]
-  Semantics:
-    * cause(Agent, E)
-    * transfer_info(during(E), Agent, Recipient, Theme)
-NP V (Intransitive)
-  Syntax: NP[Patient] VERB
-  Semantics:
-    * harmed(during(E), Patient)
-    * experience(E, ?Experiencer)
-NP V PP.location (PP; path-PP)
-  Syntax: NP[Theme] VERB PREP[+path] NP[Location]
-  Semantics:
-    * Prep(during(E), Theme, Location)
-    * exist(during(E), Theme)
-PP.location V NP (Locative Inversion)
-  Syntax: PREP[+path] NP[Location] VERB NP[Theme]
-  Semantics:
-    * Prep(during(E), Theme, Location)
-    * exist(during(E), Theme)
-There V PP NP (PP-NP; Expletive-there Subject)
-  Syntax: LEX[there] VERB PREP[+path] NP[Location] NP[Theme]
-  Semantics:
-    * Prep(during(E), Theme, Location)
-    * exist(during(E), Theme)
-There V NP PP (NP-PP; Expletive-there Subject)
-  Syntax: LEX[there] VERB NP[Theme] PREP[+path] NP[Location]
-  Semantics:
-    * Prep(during(E), Theme, Location)
-    * exist(during(E), Theme)
-NP.theme V (Basic Intransitive; inchoative)
-  Syntax: NP[Theme] VERB
-  Semantics:
-    * motion(during(E), Theme)
-NP V PP.location (PP; locative-PP)
-  Syntax: NP[Theme] VERB PREP[+spatial] NP[Location]
-  Semantics:
-    * motion(during(E), Theme)
-    * Prep(E, Theme, Location)
-NP V NP.theme (Transitive; Causative)
-  Syntax: NP[Agent] VERB NP[Theme]
-  Semantics:
-    * motion(during(E), Theme)
-    * cause(Agent, E)
-NP V NP PP.location (NP-PP; path-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[+path] NP[Location]
-  Semantics:
-    * motion(during(E), Theme)
-    * Prep(E, Theme, Location)
-    * cause(Agent, E)
-NP V ADJ (ADJP; Resultative)
-  Syntax: NP[Theme] VERB NP[Result]
-  Semantics:
-    * motion(during(E), Theme)
-    * Pred(result(E), Theme)
-NP V PP.result (PP; Result-PP)
-  Syntax: NP[Theme] VERB PREP[to into] NP[Result +state]
-  Semantics:
-    * motion(during(E), Theme)
-    * Pred(result(E), Theme)
-NP V NP ADJ (NP-ADJP; Resultative)
-  Syntax: NP[Agent] VERB NP[Theme] NP[Result]
-  Semantics:
-    * motion(during(E), Theme)
-    * cause(Agent, E)
-    * Pred(result(E), Theme)
-NP V NP PP.result (NP-PP; Result-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[to into] NP[Result +state]
-  Semantics:
-    * motion(during(E), Theme)
-    * cause(Agent, E)
-    * Pred(result(E), Theme)
-NP V PP.result (PP; w/ endstate)
-  Syntax: NP[Agent] VERB PREP[to] NP[Result]
-  Semantics:
-    * state(start(E), ?Material, Agent)
-    * state(result(E), Result, Agent)
-    * state(start(E), Result, Agent)
-    * state(result(E), ?Material, Agent)
-    * cause(Agent, E)
-NP V PP.material PP.result (PP-PP; w/ beginning state w/ end state)
-  Syntax: NP[Agent] VERB PREP[from] NP[Material] PREP[to] NP[Result]
-  Semantics:
-    * state(start(E), Material, ?Patient)
-    * state(start(E), Result, ?Patient)
-    * state(result(E), Result, ?Patient)
-    * state(result(E), Material, ?Patient)
-    * cause(Agent, E)
-NP V                     PP.result  PP.material (PP-PP; w/ end state w/ beginning state)
-  Syntax: NP[Agent] VERB PREP[to] NP[Result] PREP[from] NP[Material]
-  Semantics:
-    * state(start(E), Material, ?Patient)
-    * state(start(E), Result, ?Patient)
-    * state(result(E), Result, ?Patient)
-    * state(result(E), Material, ?Patient)
-    * cause(Agent, E)
+NP[Patient] VERB NP[Result]
+NP[Patient] VERB PREP[to] NP[Goal +sc_ing]
+NP[Patient] VERB PREP[to] NP[Goal]
+NP[Agent] VERB NP[Patient]
+NP[Agent] VERB NP[Patient] PREP[+dest_dir] NP[Recipient]
+NP[Agent] VERB NP[Patient] PREP[+dest_dir] NP[Recipient] PREP[in] NP[Theme]
+NP[Patient] VERB
+NP[Theme] VERB PREP[+path] NP[Location]
+PREP[+path] NP[Location] VERB NP[Theme]
+LEX[there] VERB PREP[+path] NP[Location] NP[Theme]
+LEX[there] VERB NP[Theme] PREP[+path] NP[Location]
+NP[Theme] VERB
+NP[Theme] VERB PREP[+spatial] NP[Location]
+NP[Agent] VERB NP[Theme]
+NP[Agent] VERB NP[Theme] PREP[+path] NP[Location]
+NP[Theme] VERB NP[Result]
+NP[Theme] VERB PREP[to into] NP[Result +state]
+NP[Agent] VERB NP[Theme] NP[Result]
+NP[Agent] VERB NP[Theme] PREP[to into] NP[Result +state]
+NP[Agent] VERB PREP[to] NP[Result]
+NP[Agent] VERB PREP[from] NP[Material] PREP[to] NP[Result]
+NP[Agent] VERB PREP[to] NP[Result] PREP[from] NP[Material]

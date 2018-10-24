@@ -1,39 +1,7 @@
-NP V NP PP.beneficiary (NP-PP; Beneficiary-PP)
-  Syntax: NP[Agent] VERB NP[Patient] PREP[from] NP[Beneficiary]
-  Semantics:
-    * cause(Agent, E)
-    * visible(start(E), Patient)
-    * visible(end(E), Patient)
-    * Prep(E, Patient, Beneficiary)
-NP V NP PP.location (NP-PP; Location-PP)
-  Syntax: NP[Agent] VERB NP[Patient] PREP[+loc] NP[Location]
-  Semantics:
-    * cause(Agent, E)
-    * visible(start(E), Patient)
-    * visible(end(E), Patient)
-    * location(result(E), Patient, Location)
-NP V NP (Basic Transitive)
-  Syntax: NP[Agent] VERB NP[Patient]
-  Semantics:
-    * visible(start(E), Patient)
-    * visible(end(E), Patient)
-    * cause(Agent, E)
-NP V NP PP.theme (NP-PP; Theme-PP)
-  Syntax: NP[Agent] VERB NP[Destination] PREP[in] NP[Theme]
-  Semantics:
-    * motion(during(E), Theme)
-    * location(start(E), Theme, Destination)
-    * location(end(E), Theme, Destination)
-    * cause(Agent, E)
-NP V S_ING (POSSING)
-  Syntax: NP[Agent] VERB NP[Theme +poss_ing]
-  Semantics:
-    * forbid(during(E), Agent, Theme)
-NP V S_ING (ING-AC)
-  Syntax: NP[Agent] VERB NP[Theme +ac_ing]
-  Semantics:
-    * forbid(during(E), Agent, Theme)
-NP V NP (Basic Transitive)
-  Syntax: NP[Agent] VERB NP[Theme -sentential]
-  Semantics:
-    * forbid(during(E), Agent, Theme)
+NP[Agent] VERB NP[Patient] PREP[from] NP[Beneficiary]
+NP[Agent] VERB NP[Patient] PREP[+loc] NP[Location]
+NP[Agent] VERB NP[Patient]
+NP[Agent] VERB NP[Destination] PREP[in] NP[Theme]
+NP[Agent] VERB NP[Theme +poss_ing]
+NP[Agent] VERB NP[Theme +ac_ing]
+NP[Agent] VERB NP[Theme -sentential]

@@ -1,10 +1,2 @@
-NP V NP (Basic Transitive)
-  Syntax: NP[Agent] VERB NP[Beneficiary]
-  Semantics:
-    * masquerade(during(E), Agent, Role)
-    * benefit(E, Beneficiary)
-NP V NP (Basic Transitive)
-  Syntax: NP[Experiencer] VERB NP[Stimulus]
-  Semantics:
-    * perceive(during(E), Experiencer, Stimulus)
-    * in_reaction_to(E, Stimulus)
+NP[Agent] VERB NP[Beneficiary]
+NP[Experiencer] VERB NP[Stimulus]

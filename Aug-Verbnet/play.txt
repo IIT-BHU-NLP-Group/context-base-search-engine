@@ -1,21 +1,5 @@
-NP V PP.co-agent (PP; with-PP)
-  Syntax: NP[Agent] VERB PREP[with] NP[Co-Agent]
-  Semantics:
-    * social_interaction(during(E), Agent, Co-Agent)
-NP V (Simple Reciprocal Intransitive)
-  Syntax: NP[Agent +plural] VERB
-  Semantics:
-    * social_interaction(during(E), Agent, Co-Agent)
-NP V NP (With Preposition Drop)
-  Syntax: NP[Agent] VERB NP[Co-Agent]
-  Semantics:
-    * social_interaction(during(E), Agent, Co-Agent)
-NP V (Intransitive; Plural Subject)
-  Syntax: NP[Agent +plural] VERB
-  Semantics:
-    * social_interaction(during(E), Agent_i, Agent_j)
-NP V NP.beneficiary NP (NP-NP; Beneficiary Object)
-  Syntax: NP[Agent] VERB NP[Beneficiary] NP[Theme]
-  Semantics:
-    * perform(during(E), Agent, Theme)
-    * benefit(E, Beneficiary)
+NP[Agent] VERB PREP[with] NP[Co-Agent]
+NP[Agent +plural] VERB
+NP[Agent] VERB NP[Co-Agent]
+NP[Agent +plural] VERB
+NP[Agent] VERB NP[Beneficiary] NP[Theme]

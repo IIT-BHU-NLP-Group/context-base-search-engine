@@ -1,12 +1,3 @@
-It V (Intransitive; Expletive Subject)
-  Syntax: LEX[it] LEX[[+be]] VERB
-  Semantics:
-    * weather(during(E), Weather_type, ?Theme)
-It V NP.theme (NP; Expletive Subject, Theme Object)
-  Syntax: LEX[it] LEX[[+be]] VERB NP[Theme]
-  Semantics:
-    * weather(during(E), Weather_type, Theme)
-It V PP.theme (PP; Expletive Subject, Theme-PP)
-  Syntax: LEX[it[+be]] VERB PREP[with] NP[Theme]
-  Semantics:
-    * weather(during(E), Weather_type, Theme)
+LEX[it] LEX[[+be]] VERB
+LEX[it] LEX[[+be]] VERB NP[Theme]
+LEX[it[+be]] VERB PREP[with] NP[Theme]

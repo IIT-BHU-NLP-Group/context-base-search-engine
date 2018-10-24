@@ -1,49 +1,10 @@
-NP V (Simple Reciprocal Intransitive)
-  Syntax: NP[Patient +plural] VERB
-  Semantics:
-    * together(end(E), physical, Patient_i, Patient_j)
-NP V NP (Basic Transitive)
-  Syntax: NP[Stimulus] VERB NP[Experiencer]
-  Semantics:
-    * cause(Stimulus, E)
-    * emotional_state(result(E), Emotion, Experiencer)
-NP V ADV-Middle (Middle Construction)
-  Syntax: NP[Experiencer] VERB ADV
-  Semantics:
-    * emotional_state(result(E), ?Emotion, Experiencer)
-NP V NP-PRO-ARB (PRO-Arb Object Alternation)
-  Syntax: NP[Stimulus] VERB
-  Semantics:
-    * cause(Stimulus, E)
-    * emotional_state(result(E), Emotion, ?Experiencer)
-NP.cause V NP (NP; Attribute Subject)
-  Syntax: NP[Stimulus +genitive] LEX['s] VERB NP[Experiencer]
-  Semantics:
-    * cause(Stimulus, E)
-    * emotional_state(result(E), Emotion, Experiencer)
-NP V NP ADJ (NP-ADJP; Resultative)
-  Syntax: NP[Stimulus] VERB NP[Experiencer] NP[Result]
-  Semantics:
-    * cause(Stimulus, E)
-    * emotional_state(result(E), Emotion, Experiencer)
-    * Pred(result(E), Experiencer)
-NP V NP (NP)
-  Syntax: NP[Agent] VERB NP[Theme]
-  Semantics:
-    * cause(Agent, E)
-    * location(start(E), Theme)
-    * location(end(E), Theme)
-NP V NP PP.attribute (NP-PP; as-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[as] NP[Attribute -sentential]
-  Semantics:
-    * cause(Agent, E)
-    * location(start(E), Theme, Attribute)
-    * location(end(E), Theme, Attribute)
-NP V NP (NP)
-  Syntax: NP[Agent] VERB NP[Theme]
-  Semantics:
-    * involve(during(E), Agent, Theme, ?Goal)
-NP V NP PP.goal (NP-PP; in-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[in] NP[Goal]
-  Semantics:
-    * involve(during(E), Agent, Theme, Goal)
+NP[Patient +plural] VERB
+NP[Stimulus] VERB NP[Experiencer]
+NP[Experiencer] VERB ADV
+NP[Stimulus] VERB
+NP[Stimulus +genitive] LEX['s] VERB NP[Experiencer]
+NP[Stimulus] VERB NP[Experiencer] NP[Result]
+NP[Agent] VERB NP[Theme]
+NP[Agent] VERB NP[Theme] PREP[as] NP[Attribute -sentential]
+NP[Agent] VERB NP[Theme]
+NP[Agent] VERB NP[Theme] PREP[in] NP[Goal]

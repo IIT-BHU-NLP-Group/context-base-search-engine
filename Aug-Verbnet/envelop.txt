@@ -1,6 +1,1 @@
-NP V NP (Basic Transitive)
-  Syntax: NP[Theme] VERB NP[Co-Theme]
-  Semantics:
-    * contact(during(E), Theme, Co-Theme)
-    * exist(during(E), Theme)
-    * exist(during(E), Co-Theme)
+NP[Theme] VERB NP[Co-Theme]

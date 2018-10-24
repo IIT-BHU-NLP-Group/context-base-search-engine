@@ -1,20 +1,4 @@
-NP V PP.topic (PP; on-PP)
-  Syntax: NP[Agent] VERB PREP[on] NP[Topic -sentential]
-  Semantics:
-    * think(during(E), Agent, Topic)
-    * cause(E, Agent)
-NP V PP.theme S_ING (P-ING-SC; on-PP)
-  Syntax: NP[Agent] VERB PREP[on] NP[Topic +sc_ing]
-  Semantics:
-    * think(during(E), Agent, Topic)
-    * cause(E, Agent)
-NP V PP.topic what S (P-WHAT-S; on-PP)
-  Syntax: NP[Agent] VERB PREP[on] NP[Topic +what_extract]
-  Semantics:
-    * think(during(E), Agent, Topic)
-    * cause(E, Agent)
-NP V PP.topic what S_INF (P-WHAT-TO-INF; on-PP)
-  Syntax: NP[Agent] VERB PREP[on] NP[Topic +what_inf]
-  Semantics:
-    * think(during(E), Agent, Topic)
-    * cause(E, Agent)
+NP[Agent] VERB PREP[on] NP[Topic -sentential]
+NP[Agent] VERB PREP[on] NP[Topic +sc_ing]
+NP[Agent] VERB PREP[on] NP[Topic +what_extract]
+NP[Agent] VERB PREP[on] NP[Topic +what_inf]

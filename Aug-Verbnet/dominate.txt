@@ -1,6 +1,1 @@
-NP V (Unspecified Object)
-  Syntax: NP[Theme] VERB
-  Semantics:
-    * contact(during(E), Theme, ?Co-Theme)
-    * exist(during(E), Theme)
-    * exist(during(E), ?Co-Theme)
+NP[Theme] VERB

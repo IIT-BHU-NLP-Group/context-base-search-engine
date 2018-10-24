@@ -1,32 +1,6 @@
-NP V NP (NP)
-  Syntax: NP[Cause] VERB NP[Theme]
-  Semantics:
-    * cause(Cause, E)
-    * ensure(Theme, ?Beneficiary)
-NP V NP NP (NP-NP)
-  Syntax: NP[Cause] VERB NP[Beneficiary] NP[Theme -sentential]
-  Semantics:
-    * cause(Cause, E)
-    * ensure(Theme, Beneficiary)
-NP V NP PP.beneficiary (NP-PP; for-PP)
-  Syntax: NP[Cause] VERB NP[Theme] PREP[for] NP[Beneficiary]
-  Semantics:
-    * cause(Cause, E)
-    * ensure(Theme, Beneficiary)
-NP V that S (S)
-  Syntax: NP[Cause] VERB NP[Theme +oc_to_inf]
-  Semantics:
-    * cause(Cause, E)
-    * ensure(Theme, ?Beneficiary)
-NP V NP PP.source (NP-PP; for/on Source (abstract))
-  Syntax: NP[Agent] VERB NP[Theme] PREP[from for on] NP[Source]
-  Semantics:
-    * has_possession(start(E), Source, Theme)
-    * has_possession(end(E), Agent, Theme)
-    * transfer(during(E), Theme)
-    * cause(Agent, E)
-NP V NP (Transitive; understood Patient2)
-  Syntax: NP[Agent] VERB NP[Patient]
-  Semantics:
-    * cause(Agent, E)
-    * together(end(E), physical, Patient, ?Co-Patient)
+NP[Cause] VERB NP[Theme]
+NP[Cause] VERB NP[Beneficiary] NP[Theme -sentential]
+NP[Cause] VERB NP[Theme] PREP[for] NP[Beneficiary]
+NP[Cause] VERB NP[Theme +oc_to_inf]
+NP[Agent] VERB NP[Theme] PREP[from for on] NP[Source]
+NP[Agent] VERB NP[Patient]

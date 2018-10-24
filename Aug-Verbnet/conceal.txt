@@ -1,20 +1,3 @@
-NP V NP PP.beneficiary (NP-PP; Beneficiary-PP)
-  Syntax: NP[Agent] VERB NP[Patient] PREP[from] NP[Beneficiary]
-  Semantics:
-    * cause(Agent, E)
-    * visible(start(E), Patient)
-    * visible(end(E), Patient)
-    * Prep(E, Patient, Beneficiary)
-NP V NP PP.location (NP-PP; Location-PP)
-  Syntax: NP[Agent] VERB NP[Patient] PREP[+loc] NP[Location]
-  Semantics:
-    * cause(Agent, E)
-    * visible(start(E), Patient)
-    * visible(end(E), Patient)
-    * location(result(E), Patient, Location)
-NP V NP (Basic Transitive)
-  Syntax: NP[Agent] VERB NP[Patient]
-  Semantics:
-    * visible(start(E), Patient)
-    * visible(end(E), Patient)
-    * cause(Agent, E)
+NP[Agent] VERB NP[Patient] PREP[from] NP[Beneficiary]
+NP[Agent] VERB NP[Patient] PREP[+loc] NP[Location]
+NP[Agent] VERB NP[Patient]

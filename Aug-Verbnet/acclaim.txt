@@ -1,4 +1,1 @@
-NP V NP to be NP (NP-TOBE)
-  Syntax: NP[Agent] VERB NP[Theme] NP[Attribute +small_clause]
-  Semantics:
-    * declare(during(E), Agent, Theme, Attribute)
+NP[Agent] VERB NP[Theme] NP[Attribute +small_clause]

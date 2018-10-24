@@ -1,0 +1,6 @@
+NP[Theme] VERB
+NP[Theme] VERB PREP[+loc] NP[Location]
+NP[Location] VERB PREP[with] NP[Theme]
+PREP[+loc] NP[Location] VERB NP[Theme]
+LEX[there] VERB NP[Theme] PREP[+loc] NP[Location]
+NP[Agent] VERB NP[Theme]

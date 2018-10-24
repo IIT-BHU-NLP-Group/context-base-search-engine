@@ -1,12 +1,3 @@
-NP V NP (Basic Transitive)
-  Syntax: NP[Agent] VERB NP[Theme]
-  Semantics:
-    * declare(during(E), Agent, Theme, ?Attribute)
-NP V NP PP.attribute (NP-PP; Cause-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[for] NP[Attribute]
-  Semantics:
-    * declare(during(E), Agent, Theme, Attribute)
-NP V NP.theme (NP; Theme Object)
-  Syntax: NP[Agent] VERB NP[Theme +genitive]
-  Semantics:
-    * declare(during(E), Agent, Theme, ?Attribute)
+NP[Agent] VERB NP[Theme]
+NP[Agent] VERB NP[Theme] PREP[for] NP[Attribute]
+NP[Agent] VERB NP[Theme +genitive]

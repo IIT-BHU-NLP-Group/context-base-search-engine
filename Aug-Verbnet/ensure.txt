@@ -1,20 +1,4 @@
-NP V NP (NP)
-  Syntax: NP[Cause] VERB NP[Theme]
-  Semantics:
-    * cause(Cause, E)
-    * ensure(Theme, ?Beneficiary)
-NP V NP NP (NP-NP)
-  Syntax: NP[Cause] VERB NP[Beneficiary] NP[Theme -sentential]
-  Semantics:
-    * cause(Cause, E)
-    * ensure(Theme, Beneficiary)
-NP V NP PP.beneficiary (NP-PP; for-PP)
-  Syntax: NP[Cause] VERB NP[Theme] PREP[for] NP[Beneficiary]
-  Semantics:
-    * cause(Cause, E)
-    * ensure(Theme, Beneficiary)
-NP V that S (S)
-  Syntax: NP[Cause] VERB NP[Theme +oc_to_inf]
-  Semantics:
-    * cause(Cause, E)
-    * ensure(Theme, ?Beneficiary)
+NP[Cause] VERB NP[Theme]
+NP[Cause] VERB NP[Beneficiary] NP[Theme -sentential]
+NP[Cause] VERB NP[Theme] PREP[for] NP[Beneficiary]
+NP[Cause] VERB NP[Theme +oc_to_inf]

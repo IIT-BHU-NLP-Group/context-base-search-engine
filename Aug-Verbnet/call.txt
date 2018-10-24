@@ -1,163 +1,30 @@
-NP V (Basic Intransitive)
-  Syntax: NP[Agent] VERB
-  Semantics:
-    * emit(during(E), Agent, Sound)
-NP V PP.recipient (PP; Recipient-PP)
-  Syntax: NP[Agent] VERB PREP[+dest_dir] NP[Recipient]
-  Semantics:
-    * emit(during(E), Agent, Sound)
-    * Prep(during(E), Sound, Recipient)
-NP V NP.theme (NP; Theme Object)
-  Syntax: NP[Agent] VERB NP[Theme]
-  Semantics:
-    * emit(during(E), Agent, Theme)
-NP V PP.location (PP; Location-PP)
-  Syntax: NP[Agent] VERB NP[Location]
-  Semantics:
-    * emit(during(E), Agent, Sound)
-    * location(during(E), Agent, Location)
-NP.location V PP.agent (PP; Location Subject, with-PP)
-  Syntax: NP[Location] VERB PREP[with] NP[Agent]
-  Semantics:
-    * emit(during(E), Agent, Sound)
-    * location(during(E), Agent, Location)
-NP V NP NP (NP-NP)
-  Syntax: NP[Agent] VERB NP[Theme] NP[Result]
-  Semantics:
-    * designated(result(E), Theme, Result)
-    * cause(Agent, E)
-NP V NP (Basic Transitive)
-  Syntax: NP[Agent] VERB NP[Theme]
-  Semantics:
-    * cause(Agent, E)
-    * designated(result(E), Theme, ?Result)
-NP V NP (Basic Transitive)
-  Syntax: NP[Agent] VERB NP[Theme]
-  Semantics:
-    * has_possession(start(E), ?Source, Theme)
-    * transfer(during(E), Theme)
-    * has_possession(end(E), Agent, Theme)
-    * cause(Agent, E)
-NP V NP PP.source (NP-PP; from-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[from] NP[Source]
-  Semantics:
-    * has_possession(start(E), Source, Theme)
-    * transfer(during(E), Theme)
-    * has_possession(end(E), Agent, Theme)
-    * cause(Agent, E)
-NP V NP PP.beneficiary (NP-PP; Beneficiary Object)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[for] NP[Beneficiary]
-  Semantics:
-    * has_possession(start(E), ?Source, Theme)
-    * transfer(during(E), Theme)
-    * has_possession(end(E), Agent, Theme)
-    * cause(Agent, E)
-    * benefit(E, Beneficiary)
-NP V NP.beneficiary NP (Benefactive Alternation; double object)
-  Syntax: NP[Agent] VERB NP[Beneficiary] NP[Theme]
-  Semantics:
-    * has_possession(start(E), ?Source, Theme)
-    * transfer(during(E), Theme)
-    * has_possession(end(E), Agent, Theme)
-    * cause(Agent, E)
-    * benefit(E, Beneficiary)
-NP V NP PP.asset (NP-PP; Asset Subject)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[for] NP[Asset]
-  Semantics:
-    * has_possession(start(E), ?Source, Theme)
-    * transfer(during(E), Theme)
-    * has_possession(end(E), Agent, Theme)
-    * cause(Agent, E)
-    * cost(E, Asset)
-NP.asset V NP (NP; Asset Subject)
-  Syntax: NP[Asset] VERB NP[Theme]
-  Semantics:
-    * has_possession(start(E), ?Source, Theme)
-    * transfer(during(E), Theme)
-    * has_possession(end(E), ?Agent, Theme)
-    * cause(?Agent, E)
-    * cost(E, Asset)
-NP V NP PP.source NP.asset (NP-PP-PP; Source-PP, Asset-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[from] NP[Source] PREP[at for] NP[Asset]
-  Semantics:
-    * has_possession(start(E), Source, Theme)
-    * has_possession(end(E), Agent, Theme)
-    * transfer(during(E), Theme)
-    * cost(E, Asset)
-NP v (Basic Intransitive)
-  Syntax: NP[Agent] VERB
-  Semantics:
-    * cause(Agent, E)
-NP V PP.recipient (PP; Recipient-PP)
-  Syntax: NP[Agent] VERB PREP[+dest_dir] NP[Recipient]
-  Semantics:
-    * transfer_info(during(E), Agent, Recipient, ?Topic)
-    * cause(Agent, E)
-NP V PP.topic (PP; Topic-PP)
-  Syntax: NP[Agent] VERB PREP[about] NP[Topic]
-  Semantics:
-    * transfer_info(during(E), Agent, ?Recipient, Topic)
-    * cause(Agent, E)
-NP V NP (Basic Transitive)
-  Syntax: NP[Agent] VERB NP[Topic]
-  Semantics:
-    * transfer_info(during(E), Agent, ?Recipient, Topic)
-    * cause(Agent, E)
-NP V S-Quote (QUOT)
-  Syntax: NP[Agent] VERB NP[Topic]
-  Semantics:
-    * transfer_info(during(E), Agent, ?Recipient, Topic)
-    * cause(Agent, E)
-NP V NP PP.recipient (NP-PP; Recipient-PP)
-  Syntax: NP[Agent] VERB NP[Topic] PREP[+dest_dir] NP[Recipient]
-  Semantics:
-    * transfer_info(during(E), Agent, Recipient, Topic)
-    * cause(Agent, E)
-NP V that S (S)
-  Syntax: NP[Agent] VERB NP[Topic +that_comp]
-  Semantics:
-    * transfer_info(during(E), Agent, ?Recipient, Topic)
-    * cause(Agent, E)
-NP V how S_INF (HOW-TO-INF)
-  Syntax: NP[Agent] VERB NP[Topic +wh_inf]
-  Semantics:
-    * transfer_info(during(E), Agent, ?Recipient, Topic)
-    * cause(Agent, E)
-NP V S_INF (TO-INF-AC)
-  Syntax: NP[Agent] VERB NP[Topic +ac_to_inf]
-  Semantics:
-    * transfer_info(during(E), Agent, ?Recipient, Topic)
-    * cause(Agent, E)
-NP V PP.recipient that S (PP-S; Recipient-PP)
-  Syntax: NP[Agent] VERB PREP[+dest_dir] NP[Recipient] NP[Topic +that_comp]
-  Semantics:
-    * transfer_info(during(E), Agent, Recipient, Topic)
-    * cause(Agent, E)
-NP V PP.recipient how S_INF (PP-HOW-TO-INF; Recipient-PP)
-  Syntax: NP[Agent] VERB PREP[+dest_dir] NP[Recipient] NP[Topic +wh_inf]
-  Semantics:
-    * transfer_info(during(E), Agent, Recipient, Topic)
-    * cause(Agent, E)
-NP V PP.recipient S_INF (PP-TO-INF-OC; Recipient-PP)
-  Syntax: NP[Agent] VERB PREP[+dest_dir] NP[Recipient] NP[Topic +oc_to_inf]
-  Semantics:
-    * transfer_info(during(E), Agent, Recipient, Topic)
-    * cause(Agent, E)
-NP V PP.recipient S_INF (PP-TO-INF-OC; Recipient-PP)
-  Syntax: NP[Agent] VERB PREP[for] NP[Recipient] NP[Topic +oc_to_inf]
-  Semantics:
-    * transfer_info(during(E), Agent, Recipient, Topic)
-    * cause(Agent, E)
-NP V PP.recipient S-Quote (PP-QUOT; Recipient-PP)
-  Syntax: NP[Agent] VERB PREP[+dest_dir] NP[Recipient] NP[Topic]
-  Semantics:
-    * transfer_info(during(E), Agent, Recipient, Topic)
-    * cause(Agent, E)
-NP V NP (Basic Transitive)
-  Syntax: NP[Agent] VERB NP[Recipient]
-  Semantics:
-    * command(during(E), Agent, Recipient, ?Topic)
-NP V NP S_INF (NP-TO-INF-OC)
-  Syntax: NP[Agent] VERB NP[Recipient] NP[Topic +oc_to_inf]
-  Semantics:
-    * command(during(E), Agent, Recipient, Topic)
+NP[Agent] VERB
+NP[Agent] VERB PREP[+dest_dir] NP[Recipient]
+NP[Agent] VERB NP[Theme]
+NP[Agent] VERB NP[Location]
+NP[Location] VERB PREP[with] NP[Agent]
+NP[Agent] VERB NP[Theme] NP[Result]
+NP[Agent] VERB NP[Theme]
+NP[Agent] VERB NP[Theme]
+NP[Agent] VERB NP[Theme] PREP[from] NP[Source]
+NP[Agent] VERB NP[Theme] PREP[for] NP[Beneficiary]
+NP[Agent] VERB NP[Beneficiary] NP[Theme]
+NP[Agent] VERB NP[Theme] PREP[for] NP[Asset]
+NP[Asset] VERB NP[Theme]
+NP[Agent] VERB NP[Theme] PREP[from] NP[Source] PREP[at for] NP[Asset]
+NP[Agent] VERB
+NP[Agent] VERB PREP[+dest_dir] NP[Recipient]
+NP[Agent] VERB PREP[about] NP[Topic]
+NP[Agent] VERB NP[Topic]
+NP[Agent] VERB NP[Topic]
+NP[Agent] VERB NP[Topic] PREP[+dest_dir] NP[Recipient]
+NP[Agent] VERB NP[Topic +that_comp]
+NP[Agent] VERB NP[Topic +wh_inf]
+NP[Agent] VERB NP[Topic +ac_to_inf]
+NP[Agent] VERB PREP[+dest_dir] NP[Recipient] NP[Topic +that_comp]
+NP[Agent] VERB PREP[+dest_dir] NP[Recipient] NP[Topic +wh_inf]
+NP[Agent] VERB PREP[+dest_dir] NP[Recipient] NP[Topic +oc_to_inf]
+NP[Agent] VERB PREP[for] NP[Recipient] NP[Topic +oc_to_inf]
+NP[Agent] VERB PREP[+dest_dir] NP[Recipient] NP[Topic]
+NP[Agent] VERB NP[Recipient]
+NP[Agent] VERB NP[Recipient] NP[Topic +oc_to_inf]

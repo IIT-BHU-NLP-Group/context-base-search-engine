@@ -1,15 +1,3 @@
-NP V PP.destination (NP-PP; to-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[to] NP[Destination]
-  Semantics:
-    * location(start(E), Theme, Destination)
-    * location(end(E), Theme, Destination)
-    * confined(result(E), Theme)
-    * cause(Agent, E)
-NP V NP S_ING (NP-P-ING-SC; to-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[to] NP[Goal +sc_ing]
-  Semantics:
-    * dedicate(during(E), Agent, Theme, Goal)
-NP V NP PP.goal (NP-PP; to-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[to] NP[Goal -sentential]
-  Semantics:
-    * dedicate(during(E), Agent, Theme, Goal)
+NP[Agent] VERB NP[Theme] PREP[to] NP[Destination]
+NP[Agent] VERB NP[Theme] PREP[to] NP[Goal +sc_ing]
+NP[Agent] VERB NP[Theme] PREP[to] NP[Goal -sentential]

@@ -1,43 +1,8 @@
-NP V NP (Basic Transitive)
-  Syntax: NP[Stimulus] VERB NP[Experiencer]
-  Semantics:
-    * cause(Stimulus, E)
-    * emotional_state(result(E), Emotion, Experiencer)
-NP V ADV-Middle (Middle Construction)
-  Syntax: NP[Experiencer] VERB ADV
-  Semantics:
-    * emotional_state(result(E), ?Emotion, Experiencer)
-NP V NP-PRO-ARB (PRO-Arb Object Alternation)
-  Syntax: NP[Stimulus] VERB
-  Semantics:
-    * cause(Stimulus, E)
-    * emotional_state(result(E), Emotion, ?Experiencer)
-NP.cause V NP (NP; Attribute Subject)
-  Syntax: NP[Stimulus +genitive] LEX['s] VERB NP[Experiencer]
-  Semantics:
-    * cause(Stimulus, E)
-    * emotional_state(result(E), Emotion, Experiencer)
-NP V NP ADJ (NP-ADJP; Resultative)
-  Syntax: NP[Stimulus] VERB NP[Experiencer] NP[Result]
-  Semantics:
-    * cause(Stimulus, E)
-    * emotional_state(result(E), Emotion, Experiencer)
-    * Pred(result(E), Experiencer)
-NP V NP PP.theme (NP-PP; of-PP)
-  Syntax: NP[Agent] VERB NP[Source] PREP[of] NP[Theme]
-  Semantics:
-    * cause(Agent, E)
-    * location(start(E), Theme, Source)
-    * location(end(E), Theme, Source)
-NP V NP PP.theme (NP-PP; out_of-PP)
-  Syntax: NP[Agent] VERB NP[Source] PREP[out_of] NP[Theme]
-  Semantics:
-    * cause(Agent, E)
-    * location(start(E), Theme, Source)
-    * location(end(E), Theme, Source)
-NP V NP (Transitive; dropped Theme)
-  Syntax: NP[Agent] VERB NP[Source]
-  Semantics:
-    * cause(Agent, E)
-    * location(start(E), ?Theme, Source)
-    * location(end(E), ?Theme, Source)
+NP[Stimulus] VERB NP[Experiencer]
+NP[Experiencer] VERB ADV
+NP[Stimulus] VERB
+NP[Stimulus +genitive] LEX['s] VERB NP[Experiencer]
+NP[Stimulus] VERB NP[Experiencer] NP[Result]
+NP[Agent] VERB NP[Source] PREP[of] NP[Theme]
+NP[Agent] VERB NP[Source] PREP[out_of] NP[Theme]
+NP[Agent] VERB NP[Source]

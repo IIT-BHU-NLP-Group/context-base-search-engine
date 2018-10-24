@@ -1,35 +1,6 @@
-NP V NP (Basic Transitive)
-  Syntax: NP[Agent] VERB NP[Product]
-  Semantics:
-    * exist(start(E), Product)
-    * exist(result(E), Product)
-    * cause(Agent, E)
-NP V NP.beneficiary NP (NP-NP; Beneficiary Object)
-  Syntax: NP[Agent] VERB NP[Beneficiary] NP[Product]
-  Semantics:
-    * exist(start(E), Product)
-    * exist(result(E), Product)
-    * cause(Agent, E)
-    * benefit(E, Beneficiary)
-NP V NP PP.beneficiary (NP-PP; for-PP)
-  Syntax: NP[Agent] VERB NP[Product] PREP[for] NP[Beneficiary]
-  Semantics:
-    * exist(start(E), Product)
-    * exist(result(E), Product)
-    * cause(Agent, E)
-    * benefit(E, Beneficiary)
-NP V NP.patient (Basic Transitive; Causative)
-  Syntax: NP[Agent] VERB NP[Patient]
-  Semantics:
-    * cause(Agent, E)
-    * state(result(E), Endstate, Patient)
-NP V NP PP.instrument (NP-PP; Instrument-PP)
-  Syntax: NP[Agent] VERB NP[Patient] PREP[with] NP[Instrument]
-  Semantics:
-    * cause(Agent, E)
-    * state(result(E), Endstate, Patient)
-    * use(during(E), Agent, Instrument)
-NP V ADV-Middle (Middle Construction)
-  Syntax: NP[Patient] VERB ADV
-  Semantics:
-    * state(result(E), Endstate, Patient)
+NP[Agent] VERB NP[Product]
+NP[Agent] VERB NP[Beneficiary] NP[Product]
+NP[Agent] VERB NP[Product] PREP[for] NP[Beneficiary]
+NP[Agent] VERB NP[Patient]
+NP[Agent] VERB NP[Patient] PREP[with] NP[Instrument]
+NP[Patient] VERB ADV

@@ -1,8 +1,2 @@
-NP V (Basic Intransitive)
-  Syntax: NP[Theme] VERB
-  Semantics:
-    * exist(during(E), Theme)
-NP V PP.patient (PP; Patient-PP)
-  Syntax: NP[Agent] VERB PREP[on] NP[Patient]
-  Semantics:
-    * take_in(during(E), Agent, Patient)
+NP[Theme] VERB
+NP[Agent] VERB PREP[on] NP[Patient]

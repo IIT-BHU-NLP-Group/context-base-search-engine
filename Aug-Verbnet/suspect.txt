@@ -1,44 +1,11 @@
-NP V NP to be NP (Infinitival Copular Clause)
-  Syntax: NP[Agent] VERB NP[Theme] LEX[to] LEX[be] NP[Predicate]
-  Semantics:
-    * believe(during(E), Agent, Theme, Predicate)
-NP V that S (S)
-  Syntax: NP[Agent] VERB NP[Theme +that_comp]
-  Semantics:
-    * believe(during(E), Agent, Theme, ?Predicate)
-NP V NP (Basic Transitive)
-  Syntax: NP[Agent] VERB NP[Theme -sentential]
-  Semantics:
-    * believe(during(E), Agent, Theme, ?Predicate)
-NP V NP ADJ (NP-ADJP-PRED)
-  Syntax: NP[Agent] VERB NP[Theme] NP[Attribute -sentential]
-  Semantics:
-    * consider(during(E), Agent, Theme)
-NP V NP NP (NP-NP-PRED)
-  Syntax: NP[Agent] VERB NP[Theme] NP[Attribute -sentential]
-  Semantics:
-    * consider(during(E), Agent, Theme)
-NP V NP to be NP (NP-TOBE)
-  Syntax: NP[Agent] VERB NP[Theme +to_be]
-  Semantics:
-    * consider(during(E), Agent, Theme)
-NP V NP ADJ (NP-VEN-NP-OMIT)
-  Syntax: NP[Agent] VERB NP[Theme +np_ppart] NP[Attribute -sentential]
-  Semantics:
-    * consider(during(E), Agent, Theme)
-NP V that S (S)
-  Syntax: NP[Agent] VERB NP[Theme +that_comp]
-  Semantics:
-    * consider(during(E), Agent, Theme)
-NP V NP PP.attribute (NP-PP; of-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[of] NP[Attribute -sentential]
-  Semantics:
-    * suspect(during(E), Agent, Theme, Attribute)
-NP V PP.attribute S_ING (NP-P-ING-OC; of-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[of] NP[Attribute +oc_ing]
-  Semantics:
-    * suspect(during(E), Agent, Theme, Attribute)
-NP V PP.theme S_ING (POSSING; of-PP)
-  Syntax: NP[Agent] VERB NP[Theme +poss_ing]
-  Semantics:
-    * suspect(during(E), Agent, Theme, ?Attribute)
+NP[Agent] VERB NP[Theme] LEX[to] LEX[be] NP[Predicate]
+NP[Agent] VERB NP[Theme +that_comp]
+NP[Agent] VERB NP[Theme -sentential]
+NP[Agent] VERB NP[Theme] NP[Attribute -sentential]
+NP[Agent] VERB NP[Theme] NP[Attribute -sentential]
+NP[Agent] VERB NP[Theme +to_be]
+NP[Agent] VERB NP[Theme +np_ppart] NP[Attribute -sentential]
+NP[Agent] VERB NP[Theme +that_comp]
+NP[Agent] VERB NP[Theme] PREP[of] NP[Attribute -sentential]
+NP[Agent] VERB NP[Theme] PREP[of] NP[Attribute +oc_ing]
+NP[Agent] VERB NP[Theme +poss_ing]

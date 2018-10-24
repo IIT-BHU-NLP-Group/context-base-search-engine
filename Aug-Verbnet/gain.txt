@@ -1,11 +1,2 @@
-NP.attribute V (Intransitive; Attribute Subject)
-  Syntax: NP[Patient] LEX['s] NP[Attribute] VERB
-  Semantics:
-    * change_value(during(E), Direction, Attribute, Patient)
-NP V NP PP.source (NP-PP; for/on Source (abstract))
-  Syntax: NP[Agent] VERB NP[Theme] PREP[from for on] NP[Source]
-  Semantics:
-    * has_possession(start(E), Source, Theme)
-    * has_possession(end(E), Agent, Theme)
-    * transfer(during(E), Theme)
-    * cause(Agent, E)
+NP[Patient] LEX['s] NP[Attribute] VERB
+NP[Agent] VERB NP[Theme] PREP[from for on] NP[Source]

@@ -1,62 +1,9 @@
-NP V NP PP.source (NP-PP; on-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[on] NP[Source]
-  Semantics:
-    * cause(E, Agent)
-    * base(E, Theme, Source)
-NP V NP PP.source whether S (NP-P-WH-S; on-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[on] NP[Source +wh_comp]
-  Semantics:
-    * cause(E, Agent)
-    * base(E, Theme, Source)
-NP V NP PP.source S_ING (NP-P-POSSING; on-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[on] NP[Source +poss_ing]
-  Semantics:
-    * cause(E, Agent)
-    * base(E, Theme, Source)
-NP V NP PP.source S (NP-P-NP-ING; on-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[on] NP[Source +ac_ing]
-  Semantics:
-    * cause(E, Agent)
-    * base(E, Theme, Source)
-NP V NP P.asset (NP-PP; Asset-PP)
-  Syntax: NP[Agent] VERB NP[Product] PREP[for] NP[Asset]
-  Semantics:
-    * exist(start(E), Product)
-    * exist(result(E), Product)
-    * made_of(result(E), Product, ?Material)
-    * cause(Agent, E)
-    * cost(E, Asset)
-NP.asset V NP (NP; Asset Subject)
-  Syntax: NP[Asset] VERB NP[Product]
-  Semantics:
-    * exist(start(E), Product)
-    * exist(result(E), Product)
-    * made_of(result(E), Product, ?Material)
-    * cause(?Agent, E)
-    * cost(E, Asset)
-NP.asset V NP NP (NP-NP; Asset Subject)
-  Syntax: NP[Asset] VERB NP[Beneficiary] NP[Product]
-  Semantics:
-    * exist(start(E), Product)
-    * exist(result(E), Product)
-    * made_of(result(E), Product, ?Material)
-    * cause(?Agent, E)
-    * benefit(E, Beneficiary)
-    * cost(E, Asset)
-NP.asset V PP (NP-PP; Asset Subject)
-  Syntax: NP[Asset] VERB NP[Product] PREP[from out_of] NP[Material]
-  Semantics:
-    * exist(start(E), Product)
-    * exist(result(E), Product)
-    * made_of(result(E), Product, Material)
-    * cause(?Agent, E)
-    * cost(E, Asset)
-NP.asset V NP PP (NP-NP-PP; Asset Subject)
-  Syntax: NP[Asset] VERB NP[Beneficiary] NP[Product] PREP[from out_of] NP[Material]
-  Semantics:
-    * exist(start(E), Product)
-    * exist(result(E), Product)
-    * made_of(result(E), Product, Material)
-    * cause(?Agent, E)
-    * benefit(E, Beneficiary)
-    * cost(E, Asset)
+NP[Agent] VERB NP[Theme] PREP[on] NP[Source]
+NP[Agent] VERB NP[Theme] PREP[on] NP[Source +wh_comp]
+NP[Agent] VERB NP[Theme] PREP[on] NP[Source +poss_ing]
+NP[Agent] VERB NP[Theme] PREP[on] NP[Source +ac_ing]
+NP[Agent] VERB NP[Product] PREP[for] NP[Asset]
+NP[Asset] VERB NP[Product]
+NP[Asset] VERB NP[Beneficiary] NP[Product]
+NP[Asset] VERB NP[Product] PREP[from out_of] NP[Material]
+NP[Asset] VERB NP[Beneficiary] NP[Product] PREP[from out_of] NP[Material]

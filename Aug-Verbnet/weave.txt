@@ -1,136 +1,21 @@
-NP V NP (Basic Transitive)
-  Syntax: NP[Agent] VERB NP[Product]
-  Semantics:
-    * exist(start(E), Product)
-    * exist(result(E), Product)
-    * made_of(result(E), Product, ?Material)
-    * cause(Agent, E)
-NP V (Unspecified Object)
-  Syntax: NP[Agent] VERB
-  Semantics:
-    * exist(start(E), ?Product)
-    * exist(result(E), ?Product)
-    * made_of(result(E), ?Product, ?Material)
-    * cause(Agent, E)
-NP V NP.product PP.material (Material/Product Alternation Transitive; Product Object)
-  Syntax: NP[Agent] VERB NP[Product] PREP[from out_of] NP[Material]
-  Semantics:
-    * exist(start(E), Product)
-    * exist(result(E), Product)
-    * made_of(result(E), Product, Material)
-    * cause(Agent, E)
-NP V NP.material PP.product (Material/Product Alternation Transitive; Material Object)
-  Syntax: NP[Agent] VERB NP[Material] PREP[into] NP[Product]
-  Semantics:
-    * exist(start(E), Product)
-    * exist(result(E), Product)
-    * made_of(result(E), Product, Material)
-    * cause(Agent, E)
-NP V NP PP.beneficiary (NP-PP; for-PP)
-  Syntax: NP[Agent] VERB NP[Product] PREP[for] NP[Beneficiary]
-  Semantics:
-    * exist(start(E), Product)
-    * exist(result(E), Product)
-    * made_of(result(E), Product, ?Material)
-    * cause(Agent, E)
-    * benefit(E, Beneficiary)
-NP V NP.beneficiary NP PP (NP-NP; Object Beneficiary)
-  Syntax: NP[Agent] VERB NP[Beneficiary] NP[Product] PREP[from out_of] NP[Material]
-  Semantics:
-    * exist(start(E), Product)
-    * exist(result(E), Product)
-    * made_of(result(E), Product, Material)
-    * cause(Agent, E)
-    * benefit(E, Beneficiary)
-NP V NP PP.material PP.beneficiary (NP-PP-PP; Source-PP Beneficiary-PP)
-  Syntax: NP[Agent] VERB NP[Product] PREP[from out_of] NP[Material] PREP[for] NP[Beneficiary]
-  Semantics:
-    * exist(start(E), Product)
-    * exist(result(E), Product)
-    * made_of(result(E), Product, Material)
-    * cause(Agent, E)
-    * benefit(E, Beneficiary)
-NP V NP PP.beneficiary (NP-PP; for-PP)
-  Syntax: NP[Agent] VERB NP[Material] PREP[for] NP[Beneficiary]
-  Semantics:
-    * exist(start(E), ?Product)
-    * exist(result(E), ?Product)
-    * made_of(result(E), ?Product, Material)
-    * cause(Agent, E)
-    * benefit(E, Beneficiary)
-NP V NP PP.product PP.beneficiary (NP-PP-PP; Product-PP Beneficiary-PP)
-  Syntax: NP[Agent] VERB NP[Material] PREP[into] NP[Product] PREP[for] NP[Beneficiary]
-  Semantics:
-    * exist(start(E), Product)
-    * exist(result(E), Product)
-    * made_of(result(E), Product, Material)
-    * cause(Agent, E)
-    * benefit(E, Beneficiary)
-NP.material V NP (Raw Material Subject)
-  Syntax: NP[Material] VERB NP[Product]
-  Semantics:
-    * exist(start(E), Product)
-    * exist(result(E), Product)
-    * made_of(result(E), Product, Material)
-    * cause(?Agent, E)
-NP V NP NP PP.asset (NP-NP-PP; Asset-PP)
-  Syntax: NP[Agent] VERB NP[Beneficiary] NP[Product] PREP[for] NP[Asset]
-  Semantics:
-    * exist(start(E), Product)
-    * exist(result(E), Product)
-    * made_of(result(E), Product, ?Material)
-    * cause(Agent, E)
-    * benefit(E, Beneficiary)
-    * cost(E, Asset)
-NP V NP PP.material PP.asset (NP-PP-PP; Material-PP, Asset-PP)
-  Syntax: NP[Agent] VERB NP[Product] PREP[from out_of] NP[Material] PREP[for] NP[Asset]
-  Semantics:
-    * exist(start(E), Product)
-    * exist(result(E), Product)
-    * made_of(result(E), Product, Material)
-    * cause(Agent, E)
-    * cost(E, Asset)
-NP V PP.location (PP; path-PP)
-  Syntax: NP[Theme] VERB PREP[+path] NP[Location]
-  Semantics:
-    * Prep(during(E), Theme, Location)
-    * exist(during(E), Theme)
-PP.location V NP (Locative Inversion)
-  Syntax: PREP[+path] NP[Location] VERB NP[Theme]
-  Semantics:
-    * Prep(during(E), Theme, Location)
-    * exist(during(E), Theme)
-There V PP NP (PP-NP; Expletive-there Subject)
-  Syntax: LEX[there] VERB PREP[+path] NP[Location] NP[Theme]
-  Semantics:
-    * Prep(during(E), Theme, Location)
-    * exist(during(E), Theme)
-There V NP PP (NP-PP; Expletive-there Subject)
-  Syntax: LEX[there] VERB NP[Theme] PREP[+path] NP[Location]
-  Semantics:
-    * Prep(during(E), Theme, Location)
-    * exist(during(E), Theme)
-NP V (Basic Intransitive; inchoative)
-  Syntax: NP[Theme] VERB
-  Semantics:
-    * motion(during(E), Theme)
-NP V PP.location (PP; over-PP)
-  Syntax: NP[Theme] VERB PREP[+spatial] NP[Location]
-  Semantics:
-    * motion(during(E), Theme)
-    * Prep(E, Theme, Location)
-There V PP NP (PP-NP; Expletive-there Subject)
-  Syntax: LEX[there] VERB PREP[+path] NP[Location +concrete] NP[Theme -definite]
-  Semantics:
-    * motion(during(E), Theme)
-    * Prep(E, Theme, Location)
-There V NP PP (NP-PP; Expletive-there Subject)
-  Syntax: LEX[there] VERB NP[Theme -definite] PREP[+path] NP[Location]
-  Semantics:
-    * motion(during(E), Theme)
-    * Prep(E, Theme, Location)
-PP.location V NP (Locative Inversion)
-  Syntax: PREP[+path] NP[Location] VERB NP[Theme]
-  Semantics:
-    * motion(during(E), Theme)
-    * Prep(E, Theme, Location)
+NP[Agent] VERB NP[Product]
+NP[Agent] VERB
+NP[Agent] VERB NP[Product] PREP[from out_of] NP[Material]
+NP[Agent] VERB NP[Material] PREP[into] NP[Product]
+NP[Agent] VERB NP[Product] PREP[for] NP[Beneficiary]
+NP[Agent] VERB NP[Beneficiary] NP[Product] PREP[from out_of] NP[Material]
+NP[Agent] VERB NP[Product] PREP[from out_of] NP[Material] PREP[for] NP[Beneficiary]
+NP[Agent] VERB NP[Material] PREP[for] NP[Beneficiary]
+NP[Agent] VERB NP[Material] PREP[into] NP[Product] PREP[for] NP[Beneficiary]
+NP[Material] VERB NP[Product]
+NP[Agent] VERB NP[Beneficiary] NP[Product] PREP[for] NP[Asset]
+NP[Agent] VERB NP[Product] PREP[from out_of] NP[Material] PREP[for] NP[Asset]
+NP[Theme] VERB PREP[+path] NP[Location]
+PREP[+path] NP[Location] VERB NP[Theme]
+LEX[there] VERB PREP[+path] NP[Location] NP[Theme]
+LEX[there] VERB NP[Theme] PREP[+path] NP[Location]
+NP[Theme] VERB
+NP[Theme] VERB PREP[+spatial] NP[Location]
+LEX[there] VERB PREP[+path] NP[Location +concrete] NP[Theme -definite]
+LEX[there] VERB NP[Theme -definite] PREP[+path] NP[Location]
+PREP[+path] NP[Location] VERB NP[Theme]

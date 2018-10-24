@@ -1,20 +1,5 @@
-NP V NP (Basic Transitive)
-  Syntax: NP[Agent] VERB NP[Recipient]
-  Semantics:
-    * command(during(E), Agent, Recipient, ?Topic)
-NP V NP S_INF (NP-TO-INF-OC)
-  Syntax: NP[Agent] VERB NP[Recipient] NP[Topic +oc_to_inf]
-  Semantics:
-    * command(during(E), Agent, Recipient, Topic)
-NP V NP (NP)
-  Syntax: NP[Agent] VERB NP[Theme]
-  Semantics:
-    * promote(during(E), Agent, Theme)
-NP V S_ING (ING-AC)
-  Syntax: NP[Agent] VERB NP[Theme +ac_ing]
-  Semantics:
-    * promote(during(E), Agent, Theme)
-NP V S_ING (POSSING)
-  Syntax: NP[Agent] VERB NP[Theme +poss_ing]
-  Semantics:
-    * promote(during(E), Agent, Theme)
+NP[Agent] VERB NP[Recipient]
+NP[Agent] VERB NP[Recipient] NP[Topic +oc_to_inf]
+NP[Agent] VERB NP[Theme]
+NP[Agent] VERB NP[Theme +ac_ing]
+NP[Agent] VERB NP[Theme +poss_ing]

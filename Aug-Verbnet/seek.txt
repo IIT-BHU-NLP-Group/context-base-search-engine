@@ -1,24 +1,6 @@
-NP V NP PP.theme (NP-PP; Theme-PP)
-  Syntax: NP[Agent] VERB NP[Location] PREP[for] NP[Theme]
-  Semantics:
-    * search(during(E), Agent, Location, Theme)
-NP V PP.theme PP.location (PP-PP; Theme-PP Location-PP)
-  Syntax: NP[Agent] VERB PREP[for] NP[Theme] PREP[+loc] NP[Location]
-  Semantics:
-    * search(during(E), Agent, Location, Theme)
-NP V PP.location PP.theme (PP; Location-PP Theme-PP)
-  Syntax: NP[Agent] VERB PREP[+loc] NP[Location] PREP[for] NP[Theme]
-  Semantics:
-    * search(during(E), Agent, Location, Theme)
-NP V NP PP.location (NP-PP; Location-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[+loc] NP[Location]
-  Semantics:
-    * search(during(E), Agent, Location, Theme)
-NP V NP (Basic Transitive)
-  Syntax: NP[Agent] VERB NP[Theme]
-  Semantics:
-    * search(during(E), Agent, ?Location, Theme)
-NP V (Basic Intransitive)
-  Syntax: NP[Agent] VERB
-  Semantics:
-    * search(during(E), Agent, ?Location, ?Theme)
+NP[Agent] VERB NP[Location] PREP[for] NP[Theme]
+NP[Agent] VERB PREP[for] NP[Theme] PREP[+loc] NP[Location]
+NP[Agent] VERB PREP[+loc] NP[Location] PREP[for] NP[Theme]
+NP[Agent] VERB NP[Theme] PREP[+loc] NP[Location]
+NP[Agent] VERB NP[Theme]
+NP[Agent] VERB

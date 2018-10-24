@@ -1,5 +1,1 @@
-NP V NP-Dative NP (Dative)
-  Syntax: NP[Agent] VERB NP[Recipient] NP[Topic -sentential]
-  Semantics:
-    * transfer_info(during(E), Agent, Recipient, Topic)
-    * cause(Agent, E)
+NP[Agent] VERB NP[Recipient] NP[Topic -sentential]

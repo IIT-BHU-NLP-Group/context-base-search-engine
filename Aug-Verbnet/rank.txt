@@ -1,19 +1,4 @@
-NP V NP S_ING (NP-P-ING-OC; as-PP)
-  Syntax: NP[Agent] VERB NP[Theme] LEX[as] NP[Attribute +oc_ing]
-  Semantics:
-    * characterize(during(E), Theme, Attribute)
-    * cause(Agent, E)
-NP V NP to be ADJ (NP-TOBE)
-  Syntax: NP[Agent] VERB NP[Theme] LEX[as] NP[Attribute +small_clause]
-  Semantics:
-    * characterize(during(E), Theme, Attribute)
-    * cause(Agent, E)
-NP V NP PP.attribute (NP-PP; as-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[as] NP[Attribute -sentential]
-  Semantics:
-    * characterize(during(E), Theme, Attribute)
-    * cause(Agent, E)
-NP V PP.attribute (PP; as-PP)
-  Syntax: NP[Agent] VERB LEX[as] NP[Attribute]
-  Semantics:
-    * masquerade(during(E), Agent, Attribute)
+NP[Agent] VERB NP[Theme] LEX[as] NP[Attribute +oc_ing]
+NP[Agent] VERB NP[Theme] LEX[as] NP[Attribute +small_clause]
+NP[Agent] VERB NP[Theme] PREP[as] NP[Attribute -sentential]
+NP[Agent] VERB LEX[as] NP[Attribute]

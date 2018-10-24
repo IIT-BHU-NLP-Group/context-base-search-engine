@@ -1,20 +1,7 @@
-NP V NP (NP)
-  Syntax: NP[Agent] VERB NP[Theme]
-  Semantics:
-    * admit(during(E), Agent, Theme, ?Location)
-NP V NP ADV (NP-ADVP-PRED)
-  Syntax: NP[Agent] VERB NP[Theme] NP[Location +adv_loc]
-  Semantics:
-    * admit(during(E), Agent, Theme, Location)
-NP V NP PP.location (NP-PP; locative-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[+loc] NP[Location +location -region]
-  Semantics:
-    * admit(during(E), Agent, Theme, Location)
-NP V NP (NP)
-  Syntax: NP[Agent] VERB NP[Theme]
-  Semantics:
-    * involve(during(E), Agent, Theme, ?Goal)
-NP V NP PP.goal (NP-PP; in-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[in] NP[Goal]
-  Semantics:
-    * involve(during(E), Agent, Theme, Goal)
+NP[Agent] VERB NP[Theme]
+NP[Agent] VERB NP[Theme] NP[Location +adv_loc]
+NP[Agent] VERB NP[Theme] PREP[+loc] NP[Location +location -region]
+NP[Agent] VERB NP[Theme]
+NP[Agent] VERB NP[Theme] PREP[in] NP[Goal]
+
+

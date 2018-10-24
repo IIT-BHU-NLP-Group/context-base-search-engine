@@ -1,12 +1,2 @@
-NP V NP (Basic Transitive)
-  Syntax: NP[Cause] VERB NP[Theme]
-  Semantics:
-    * exist(start(E), Theme)
-    * exist(result(E), Theme)
-    * nonagentive_cause(Cause, E)
-NP V that S (S)
-  Syntax: NP[Cause] VERB NP[Theme] NP[Predicate +that_comp]
-  Semantics:
-    * exist(start(E), Theme)
-    * exist(result(E), Theme)
-    * nonagentive_cause(Cause, E)
+NP[Cause] VERB NP[Theme]
+NP[Cause] VERB NP[Theme] NP[Predicate +that_comp]

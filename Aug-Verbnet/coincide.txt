@@ -1,13 +1,3 @@
-NP V (Simple Reciprocal Intransitive)
-  Syntax: NP[Patient +plural] VERB
-  Semantics:
-    * together(end(E), physical, Patient_i, Patient_j)
-NP V S_ING (P-ING-AC; with-PP)
-  Syntax: NP[Theme] VERB PREP[with] NP[Co-Theme +ac_ing]
-  Semantics:
-    * correlate(E, Theme, Co-Theme)
-NP V NP S_ING (NP-P-ING-AC; with-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[with] NP[Co-Theme +ac_ing]
-  Semantics:
-    * cause(E, Agent)
-    * correlate(E, Theme, Co-Theme)
+NP[Patient +plural] VERB
+NP[Theme] VERB PREP[with] NP[Co-Theme +ac_ing]
+NP[Agent] VERB NP[Theme] PREP[with] NP[Co-Theme +ac_ing]

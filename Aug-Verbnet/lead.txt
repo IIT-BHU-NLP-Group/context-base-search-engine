@@ -1,24 +1,5 @@
-NP V NP (Basic Transitive)
-  Syntax: NP[Agent] VERB NP[Theme]
-  Semantics:
-    * motion(during(E), Agent)
-    * motion(during(E), Theme)
-NP V NP PP.destination (NP-PP; path-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[+spatial] NP[Destination]
-  Semantics:
-    * motion(during(E), Agent)
-    * motion(during(E), Theme)
-    * Prep(E, Theme, Destination)
-    * Prep(E, Agent, Destination)
-NP V NP (Basic Transitive)
-  Syntax: NP[Agent] VERB NP[Patient]
-  Semantics:
-    * force(during(E), Agent, Patient, ?Result)
-NP V NP S_ING (NP-P-ING-OC; into-PP)
-  Syntax: NP[Agent] VERB NP[Patient] PREP[into] NP[Result +oc_ing]
-  Semantics:
-    * force(during(E), Agent, Patient, Result)
-NP V NP PP.result (NP-PP; into-PP)
-  Syntax: NP[Agent] VERB NP[Patient] PREP[into] NP[Result -sentential]
-  Semantics:
-    * force(during(E), Agent, Patient, Result)
+NP[Agent] VERB NP[Theme]
+NP[Agent] VERB NP[Theme] PREP[+spatial] NP[Destination]
+NP[Agent] VERB NP[Patient]
+NP[Agent] VERB NP[Patient] PREP[into] NP[Result +oc_ing]
+NP[Agent] VERB NP[Patient] PREP[into] NP[Result -sentential]

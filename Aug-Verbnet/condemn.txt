@@ -1,16 +1,4 @@
-NP V NP PP.attribute (NP-PP; as-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[as] NP[Attribute]
-  Semantics:
-    * declare(during(E), Agent, Theme, Attribute)
-NP V NP PP.attribute (NP-PP; of-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[of] NP[Attribute -sentential]
-  Semantics:
-    * suspect(during(E), Agent, Theme, Attribute)
-NP V PP.attribute S_ING (NP-P-ING-OC; of-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[of] NP[Attribute +oc_ing]
-  Semantics:
-    * suspect(during(E), Agent, Theme, Attribute)
-NP V PP.theme S_ING (POSSING; of-PP)
-  Syntax: NP[Agent] VERB NP[Theme +poss_ing]
-  Semantics:
-    * suspect(during(E), Agent, Theme, ?Attribute)
+NP[Agent] VERB NP[Theme] PREP[as] NP[Attribute]
+NP[Agent] VERB NP[Theme] PREP[of] NP[Attribute -sentential]
+NP[Agent] VERB NP[Theme] PREP[of] NP[Attribute +oc_ing]
+NP[Agent] VERB NP[Theme +poss_ing]

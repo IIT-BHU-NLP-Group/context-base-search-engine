@@ -1,16 +1,4 @@
-NP V (Basic Intransitive)
-  Syntax: NP[Agent] VERB
-  Semantics:
-    * conspire(during(E), Agent_i, Agent_j, ?Theme)
-NP V PP.co-agent (PP; with-PP)
-  Syntax: NP[Agent] VERB PREP[with] NP[Co-Agent]
-  Semantics:
-    * conspire(during(E), Agent, Co-Agent, ?Theme)
-NP V PP.beneficiary (PP; against-PP)
-  Syntax: NP[Agent] VERB PREP[against] NP[Beneficiary]
-  Semantics:
-    * conspire(during(E), Agent, Theme)
-NP V S_INF (TO-INF; N-SC)
-  Syntax: NP[Agent] VERB NP[Theme +sc_to_inf]
-  Semantics:
-    * conspire(during(E), Agent, Theme)
+NP[Agent] VERB
+NP[Agent] VERB PREP[with] NP[Co-Agent]
+NP[Agent] VERB PREP[against] NP[Beneficiary]
+NP[Agent] VERB NP[Theme +sc_to_inf]

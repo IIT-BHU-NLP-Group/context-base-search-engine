@@ -1,23 +1,4 @@
-NP.location V NP (Location Subject Alternation)
-  Syntax: NP[Location] VERB NP[Value]
-  Semantics:
-    * capacity(E, Location, Value)
-NP V NP PP.location (NP-PP; Location-PP)
-  Syntax: NP[Agent] VERB NP[Value] PREP[in] NP[Location]
-  Semantics:
-    * capacity(E, Location, Value)
-    * cause(Agent, E)
-NP V NP.theme (Basic Transitive; Theme Object)
-  Syntax: NP[Agent] VERB NP[Theme]
-  Semantics:
-    * motion(during(E), Theme)
-    * location(start(E), Theme, Destination)
-    * location(end(E), Theme, Destination)
-    * cause(Agent, E)
-NP V NP PP.destination (NP-PP; Destination-PP)
-  Syntax: NP[Agent] VERB NP[Theme] PREP[in on under] NP[Destination]
-  Semantics:
-    * motion(during(E), Theme)
-    * Prep(start(E), Theme, Destination)
-    * Prep(end(E), Theme, Destination)
-    * cause(Agent, E)
+NP[Location] VERB NP[Value]
+NP[Agent] VERB NP[Value] PREP[in] NP[Location]
+NP[Agent] VERB NP[Theme]
+NP[Agent] VERB NP[Theme] PREP[in on under] NP[Destination]
